@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Página não encontrada</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Inter,sans-serif;
+background:#F6F4EE;
+color:#2F3A2F;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+min-height:100vh;
+
+padding:25px;
+
+}
+
+.card{
+
+background:white;
+
+max-width:650px;
+width:100%;
+
+padding:45px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+
+}
+
+h1{
+
+font-family:"Playfair Display";
+font-size:44px;
+
+margin-bottom:15px;
+
+}
+
+h2{
+
+font-size:28px;
+margin-bottom:20px;
+
+}
+
+p{
+
+font-size:18px;
+line-height:1.8;
+opacity:.85;
+
+}
+
+.button{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:15px 35px;
+
+background:#4F6F52;
+color:white;
+
+text-decoration:none;
+
+border-radius:40px;
+
+transition:.3s;
+
+}
+
+.button:hover{
+
+transform:translateY(-3px);
+
+}
+
+#contador{
+
+margin-top:25px;
+font-size:15px;
+opacity:.6;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🌿</h1>
+
+<h2 id="titulo">Verificando página...</h2>
+
+<p id="texto">
+
+Aguarde um instante.
+
+</p>
+
+<a href="index.html" class="button">
+
+Voltar ao início
+
+</a>
+
+<div id="contador"></div>
+
+</div>
+
+<script>
+
+const pagina = window.location.pathname.split("/").pop();
+
+const match = pagina.match(/^dia(\d+)\.html$/);
+
+if(match){
+
+    const numero = Number(match[1]);
+
+    if(numero >= 3 && numero <= 40){
+
+        document.getElementById("titulo").innerHTML =
+        "Este capítulo ainda não foi publicado.";
+
+        document.getElementById("texto").innerHTML =
+        "Estamos preparando esse conteúdo com muito carinho. Você será levado para a página <b>Em breve</b>.";
+
+        let tempo = 3;
+
+        document.getElementById("contador").innerHTML =
+        "Redirecionando em 3 segundos...";
+
+        const intervalo = setInterval(()=>{
+
+            tempo--;
+
+            document.getElementById("contador").innerHTML =
+            `Redirecionando em ${tempo} segundos...`;
+
+            if(tempo==0){
+
+                clearInterval(intervalo);
+
+                window.location.replace("em-breve.html");
+
+            }
+
+        },1000);
+
+    }
+
+    else{
+
+        mostrar404();
+
+    }
+
+}
+
+else{
+
+    mostrar404();
+
+}
+
+function mostrar404(){
+
+    document.getElementById("titulo").innerHTML =
+    "Página não encontrada";
+
+    document.getElementById("texto").innerHTML =
+    "A página que você tentou acessar não faz parte do projeto <b>Uma Vida com Propósitos</b>.";
+
+}
+
+</script>
+
+</body>
+</html>
