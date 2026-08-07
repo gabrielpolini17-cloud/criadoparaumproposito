@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uma Vida com Propósitos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Inter,sans-serif;
+background:#F6F4EE;
+color:#2F3A2F;
+transition:.4s;
+}
+
+body.dark{
+background:#1b1f1d;
+color:white;
+}
+
+header{
+
+height:330px;
+
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+color:white;
+position:relative;
+
+}
+
+header h1{
+
+font-family:"Playfair Display";
+font-size:50px;
+margin-bottom:15px;
+
+}
+
+header p{
+
+font-size:20px;
+opacity:.9;
+
+}
+
+.theme{
+
+position:absolute;
+right:25px;
+top:25px;
+
+border:none;
+font-size:25px;
+
+background:white;
+
+width:55px;
+height:55px;
+
+border-radius:50%;
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.theme:hover{
+
+transform:rotate(20deg) scale(1.1);
+
+}
+
+.container{
+
+width:90%;
+max-width:1200px;
+margin:auto;
+margin-top:-70px;
+
+}
+
+.card{
+
+background:white;
+padding:30px;
+
+border-radius:18px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:30px;
+
+transition:.4s;
+
+}
+
+body.dark .card{
+
+background:#2a2f2d;
+
+}
+
+.progress{
+
+background:#ddd;
+height:18px;
+border-radius:20px;
+overflow:hidden;
+
+margin-top:15px;
+
+}
+
+.progress span{
+
+display:block;
+
+height:100%;
+width:3%;
+
+background:#4F6F52;
+
+}
+
+.button{
+
+display:inline-block;
+margin-top:25px;
+
+padding:14px 30px;
+
+background:#4F6F52;
+color:white;
+
+border-radius:40px;
+
+text-decoration:none;
+transition:.3s;
+
+}
+
+.button:hover{
+
+transform:translateY(-3px);
+
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+gap:20px;
+
+}
+
+.day{
+
+padding:20px;
+
+border-radius:15px;
+
+background:#f2f2f2;
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.day:hover{
+
+transform:translateY(-5px);
+
+}
+
+body.dark .day{
+
+background:#3b423f;
+
+}
+
+.done{
+
+border-left:6px solid #2ecc71;
+
+}
+
+.current{
+
+border-left:6px solid orange;
+
+}
+
+.lock{
+
+opacity:.5;
+
+}
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+text-align:center;
+
+gap:20px;
+
+}
+
+.stats h2{
+
+font-size:35px;
+margin-bottom:5px;
+
+color:#4F6F52;
+
+}
+
+body.dark .stats h2{
+
+color:#7ecb8b;
+
+}
+
+footer{
+
+text-align:center;
+padding:40px;
+opacity:.6;
+
+}
+
+@media(max-width:700px){
+
+header h1{
+font-size:35px;
+}
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<button class="theme" onclick="tema()">🌙</button>
+
+<div>
+
+<h1>🌿 Uma Vida com Propósitos</h1>
+
+<p>Você foi criado por Deus e para Deus.</p>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>📅 Seu progresso</h2>
+
+<br>
+
+<p>Dia atual: <b>1 de 40</b></p>
+
+<div class="progress">
+
+<span></span>
+
+</div>
+
+<a id="continuar" href="dia1.html" class="button">▶ Continuar leitura</a>
+
+</div>
+
+<div class="card">
+
+<h2>📖 Capítulos</h2>
+
+<br>
+
+<div class="grid" id="dias"></div>
+
+</div>
+
+<div class="card">
+
+<h2>❤️ Minha caminhada</h2>
+
+<br>
+
+<div class="stats">
+
+<div>
+
+<h2>1</h2>
+
+<p>Dias concluídos</p>
+
+</div>
+
+<div>
+
+<h2>1</h2>
+
+<p>Orações</p>
+
+</div>
+
+<div>
+
+<h2>1</h2>
+
+<p>Reflexões</p>
+
+</div>
+
+<div>
+
+<h2>0</h2>
+
+<p>Favoritos</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📖 Versículo do dia</h2>
+
+<br>
+
+<p style="font-size:22px;line-height:1.7">
+
+"Todas as coisas foram criadas nele e nele encontram propósito."
+
+</p>
+
+<br>
+
+<b>Colossenses 1:16</b>
+
+</div>
+
+</div>
+
+<footer>
+
+Feito com ❤️ para registrar sua jornada com Deus.
+
+</footer>
+
+<script>
+
+const container = document.getElementById("dias");
+
+
+const dia1Concluido = localStorage.getItem("dia1") === "concluido";
+const dia2Concluido = localStorage.getItem("dia2") === "concluido";
+
+
+// Define o dia atual
+let diaAtual = 1;
+
+if(dia1Concluido){
+    diaAtual = 2;
+}
+
+if(dia2Concluido){
+    diaAtual = 3;
+}
+
+
+// Atualiza texto do progresso
+document.querySelector(".card p b").innerHTML = `${diaAtual} de 40`;
+
+
+// Atualiza botão continuar
+document.getElementById("continuar").href = `dia${diaAtual}.html`;
+
+
+
+for(let i = 1; i <= 40; i++){
+
+    let status = "lock";
+    let emoji = "🔒";
+    let link = "";
+
+
+    if(i == 1){
+
+        if(dia1Concluido){
+
+            status = "done";
+            emoji = "✅";
+
+        }else{
+
+            status = "current";
+            emoji = "📖";
+
+        }
+
+        link = "dia1.html";
+
+    }
+
+
+
+    if(i == 2 && dia1Concluido){
+
+        status = "current";
+        emoji = "📖";
+        link = "dia2.html";
+
+    }
+
+
+
+    if(i == 2 && dia2Concluido){
+
+        status = "done";
+        emoji = "✅";
+        link = "dia2.html";
+
+    }
+
+
+
+  const titulos = [
+""
+,"Tudo começa com Deus"
+,"Você não é um acidente"
+,"O que dirige sua vida?"
+,"Criado para ser eterno"
+,"Enxergando a vida do ponto de vista de Deus"
+,"A vida é uma atribuição temporária"
+,"A razão de tudo"
+,"Planejado para agradar a Deus"
+,"O que faz Deus sorrir?"
+,"A essência da adoração"
+,"Tornando-se amigo de Deus"
+,"Desenvolvendo a amizade com Deus"
+,"A adoração que agrada a Deus"
+,"Quando Deus parece distante"
+,"Formado para fazer parte da família de Deus"
+,"O que realmente importa"
+,"Um lugar ao qual pertencer"
+,"Tendo uma vida em comum"
+,"Cultivando a comunidade"
+,"Restaurando a comunhão quebrada"
+,"Protegendo sua igreja"
+,"Criado para se tornar semelhante a Cristo"
+,"Como crescemos"
+,"Transformado pela verdade"
+,"Transformado pela provação"
+,"Crescendo por meio da tentação"
+,"Derrotando a tentação"
+,"Isso leva tempo!"
+,"Aceitando sua missão"
+,"Moldado para servir a Deus"
+,"Entendendo sua FORMA"
+,"Usando o que Deus lhe deu"
+,"Como os verdadeiros servos agem"
+,"Pensando como servo"
+,"O poder de Deus na fraqueza"
+,"Feito para uma missão"
+,"Partilhando sua mensagem de vida"
+,"Tornando-se um cristão de primeira classe"
+,"Equilibrando sua vida"
+,"Vivendo com propósitos"
+];
+
+
+
+    container.innerHTML += `
+
+    <div class="day ${status}"
+    onclick="${link ? `window.location.href='${link}'` : ''}">
+
+        <h3>${emoji} Dia ${i}</h3>
+
+        <br>
+
+        <p>${titulos[i]}</p>
+
+    </div>
+
+    `;
+
+}
+
+
+
+function tema(){
+
+    document.body.classList.toggle("dark");
+
+
+    if(document.body.classList.contains("dark")){
+
+        localStorage.setItem("tema","dark");
+
+    }else{
+
+        localStorage.setItem("tema","light");
+
+    }
+
+}
+
+
+
+if(localStorage.getItem("tema")=="dark"){
+
+    document.body.classList.add("dark");
+
+}
+
+</script>
+
+</body>
+</html>
