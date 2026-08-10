@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -8,6 +9,9 @@
 
 <title>Caminhos de Propósito</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -17,26 +21,26 @@
 ========================= */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
 
-font-family:'Inter',sans-serif;
+    font-family:'Inter',sans-serif;
 
-background:#f5f3ed;
+    background:#f5f3ed;
 
-color:#344238;
+    color:#344238;
 
-line-height:1.7;
+    line-height:1.7;
 
-overflow-x:hidden;
+    overflow-x:hidden;
 
 }
 
@@ -47,41 +51,41 @@ overflow-x:hidden;
 
 body::before{
 
-content:"";
+    content:"";
 
-position:fixed;
+    position:fixed;
 
-width:500px;
-height:500px;
+    width:500px;
+    height:500px;
 
-border-radius:50%;
+    border-radius:50%;
 
-background:rgba(79,111,82,.06);
+    background:rgba(79,111,82,.06);
 
-top:-200px;
-left:-200px;
+    top:-200px;
+    left:-200px;
 
-z-index:-1;
+    z-index:-1;
 
 }
 
 body::after{
 
-content:"";
+    content:"";
 
-position:fixed;
+    position:fixed;
 
-width:450px;
-height:450px;
+    width:450px;
+    height:450px;
 
-border-radius:50%;
+    border-radius:50%;
 
-background:rgba(180,154,93,.05);
+    background:rgba(180,154,93,.05);
 
-bottom:-200px;
-right:-150px;
+    bottom:-200px;
+    right:-150px;
 
-z-index:-1;
+    z-index:-1;
 
 }
 
@@ -92,118 +96,120 @@ z-index:-1;
 
 .hero{
 
-min-height:650px;
+    min-height:650px;
 
-position:relative;
+    position:relative;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-text-align:center;
+    text-align:center;
 
-color:white;
+    color:white;
 
-padding:40px 20px;
+    padding:40px 20px;
 
-background:
-linear-gradient(
-rgba(18,31,22,.45),
-rgba(18,31,22,.72)
-),
-url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=90");
+    background:
 
-background-size:cover;
+        linear-gradient(
+            rgba(18,31,22,.45),
+            rgba(18,31,22,.72)
+        ),
 
-background-position:center;
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=90");
+
+    background-size:cover;
+
+    background-position:center;
 
 }
 
 .hero::after{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-bottom:0;
-left:0;
+    bottom:0;
+    left:0;
 
-width:100%;
+    width:100%;
 
-height:130px;
+    height:130px;
 
-background:linear-gradient(
-transparent,
-#f5f3ed
-);
+    background:linear-gradient(
+        transparent,
+        #f5f3ed
+    );
 
 }
 
 .hero-content{
 
-position:relative;
+    position:relative;
 
-z-index:2;
+    z-index:2;
 
-max-width:900px;
+    max-width:900px;
 
-animation:fadeUp 1.2s ease;
+    animation:fadeUp 1.2s ease;
 
 }
 
 .symbol{
 
-font-size:55px;
+    font-size:55px;
 
-margin-bottom:18px;
+    margin-bottom:18px;
 
-filter:drop-shadow(0 5px 15px rgba(0,0,0,.3));
+    filter:drop-shadow(0 5px 15px rgba(0,0,0,.3));
 
 }
 
 .hero h1{
 
-font-family:"DM Serif Display",serif;
+    font-family:"DM Serif Display",serif;
 
-font-size:78px;
+    font-size:78px;
 
-line-height:1.05;
+    line-height:1.05;
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
-letter-spacing:-1px;
+    letter-spacing:-1px;
 
-text-shadow:0 5px 25px rgba(0,0,0,.25);
+    text-shadow:0 5px 25px rgba(0,0,0,.25);
 
 }
 
 .hero p{
 
-font-size:21px;
+    font-size:21px;
 
-font-weight:300;
+    font-weight:300;
 
-max-width:720px;
+    max-width:720px;
 
-margin:auto;
+    margin:auto;
 
-opacity:.94;
+    opacity:.94;
 
 }
 
 .hero-small{
 
-margin-top:30px;
+    margin-top:30px;
 
-font-size:13px;
+    font-size:13px;
 
-letter-spacing:3px;
+    letter-spacing:3px;
 
-text-transform:uppercase;
+    text-transform:uppercase;
 
-opacity:.75;
+    opacity:.75;
 
 }
 
@@ -214,13 +220,13 @@ opacity:.75;
 
 .container{
 
-width:90%;
+    width:90%;
 
-max-width:1180px;
+    max-width:1180px;
 
-margin:auto;
+    margin:auto;
 
-position:relative;
+    position:relative;
 
 }
 
@@ -231,71 +237,71 @@ position:relative;
 
 .intro{
 
-margin-top:-35px;
+    margin-top:-35px;
 
-position:relative;
+    position:relative;
 
-z-index:5;
+    z-index:5;
 
-background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.92);
 
-backdrop-filter:blur(15px);
+    backdrop-filter:blur(15px);
 
--webkit-backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
 
-border:1px solid rgba(255,255,255,.8);
+    border:1px solid rgba(255,255,255,.8);
 
-border-radius:28px;
+    border-radius:28px;
 
-padding:42px 45px;
+    padding:42px 45px;
 
-text-align:center;
+    text-align:center;
 
-box-shadow:0 20px 60px rgba(40,55,43,.10);
+    box-shadow:0 20px 60px rgba(40,55,43,.10);
 
-animation:fadeUp 1.2s ease .2s both;
+    animation:fadeUp 1.2s ease .2s both;
 
 }
 
 .intro-label{
 
-display:inline-block;
+    display:inline-block;
 
-font-size:12px;
+    font-size:12px;
 
-letter-spacing:2px;
+    letter-spacing:2px;
 
-text-transform:uppercase;
+    text-transform:uppercase;
 
-font-weight:700;
+    font-weight:700;
 
-color:#718271;
+    color:#718271;
 
-margin-bottom:10px;
+    margin-bottom:10px;
 
 }
 
 .intro h2{
 
-font-family:"DM Serif Display",serif;
+    font-family:"DM Serif Display",serif;
 
-font-size:38px;
+    font-size:38px;
 
-color:#405a45;
+    color:#405a45;
 
-margin-bottom:10px;
+    margin-bottom:10px;
 
 }
 
 .intro p{
 
-max-width:720px;
+    max-width:720px;
 
-margin:auto;
+    margin:auto;
 
-font-size:17px;
+    font-size:17px;
 
-color:#687268;
+    color:#687268;
 
 }
 
@@ -306,37 +312,37 @@ color:#687268;
 
 .section{
 
-margin-top:75px;
+    margin-top:75px;
 
 }
 
 .section-heading{
 
-display:flex;
+    display:flex;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-align-items:end;
+    align-items:end;
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
 .section-heading h2{
 
-font-family:"DM Serif Display",serif;
+    font-family:"DM Serif Display",serif;
 
-font-size:36px;
+    font-size:36px;
 
-color:#35483a;
+    color:#35483a;
 
 }
 
 .section-heading p{
 
-font-size:14px;
+    font-size:14px;
 
-color:#7a827a;
+    color:#7a827a;
 
 }
 
@@ -347,134 +353,136 @@ color:#7a827a;
 
 .feature{
 
-position:relative;
+    position:relative;
 
-min-height:390px;
+    min-height:390px;
 
-border-radius:30px;
+    border-radius:30px;
 
-overflow:hidden;
+    overflow:hidden;
 
-display:flex;
+    display:flex;
 
-align-items:flex-end;
+    align-items:flex-end;
 
-background:
-linear-gradient(
-90deg,
-rgba(20,35,23,.88),
-rgba(20,35,23,.35),
-rgba(20,35,23,.08)
-),
-url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1800&q=90");
+    background:
 
-background-size:cover;
+        linear-gradient(
+            90deg,
+            rgba(20,35,23,.88),
+            rgba(20,35,23,.35),
+            rgba(20,35,23,.08)
+        ),
 
-background-position:center;
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1800&q=90");
 
-box-shadow:0 20px 55px rgba(30,45,34,.15);
+    background-size:cover;
 
-transition:.4s;
+    background-position:center;
+
+    box-shadow:0 20px 55px rgba(30,45,34,.15);
+
+    transition:.4s;
 
 }
 
 .feature:hover{
 
-transform:translateY(-5px);
+    transform:translateY(-5px);
 
-box-shadow:0 30px 70px rgba(30,45,34,.20);
+    box-shadow:0 30px 70px rgba(30,45,34,.20);
 
 }
 
 .feature-content{
 
-padding:45px;
+    padding:45px;
 
-max-width:650px;
+    max-width:650px;
 
-color:white;
+    color:white;
 
-position:relative;
+    position:relative;
 
-z-index:2;
+    z-index:2;
 
 }
 
 .badge{
 
-display:inline-flex;
+    display:inline-flex;
 
-align-items:center;
+    align-items:center;
 
-gap:7px;
+    gap:7px;
 
-background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.15);
 
-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
 
-padding:7px 14px;
+    padding:7px 14px;
 
-border-radius:30px;
+    border-radius:30px;
 
-font-size:12px;
+    font-size:12px;
 
-font-weight:600;
+    font-weight:600;
 
-letter-spacing:.5px;
+    letter-spacing:.5px;
 
-margin-bottom:18px;
+    margin-bottom:18px;
 
-border:1px solid rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.18);
 
 }
 
 .feature h3{
 
-font-family:"DM Serif Display",serif;
+    font-family:"DM Serif Display",serif;
 
-font-size:46px;
+    font-size:46px;
 
-line-height:1.1;
+    line-height:1.1;
 
-margin-bottom:15px;
+    margin-bottom:15px;
 
 }
 
 .feature p{
 
-font-size:16px;
+    font-size:16px;
 
-opacity:.9;
+    opacity:.9;
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
-max-width:560px;
+    max-width:560px;
 
 }
 
 .meta{
 
-display:flex;
+    display:flex;
 
-gap:10px;
+    gap:10px;
 
-flex-wrap:wrap;
+    flex-wrap:wrap;
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
 .meta span{
 
-background:rgba(255,255,255,.12);
+    background:rgba(255,255,255,.12);
 
-border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.15);
 
-padding:7px 13px;
+    padding:7px 13px;
 
-border-radius:20px;
+    border-radius:20px;
 
-font-size:12px;
+    font-size:12px;
 
 }
 
@@ -485,47 +493,47 @@ font-size:12px;
 
 .btn{
 
-display:inline-flex;
+    display:inline-flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-gap:10px;
+    gap:10px;
 
-padding:14px 25px;
+    padding:14px 25px;
 
-background:white;
+    background:white;
 
-color:#405b45;
+    color:#405b45;
 
-border-radius:40px;
+    border-radius:40px;
 
-text-decoration:none;
+    text-decoration:none;
 
-font-weight:700;
+    font-weight:700;
 
-font-size:14px;
+    font-size:14px;
 
-transition:.3s;
+    transition:.3s;
 
-box-shadow:0 8px 25px rgba(0,0,0,.12);
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
 
 }
 
 .btn:hover{
 
-transform:translateY(-3px);
+    transform:translateY(-3px);
 
-box-shadow:0 12px 30px rgba(0,0,0,.18);
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
 
 }
 
 .btn-green{
 
-background:#4f6f52;
+    background:#4f6f52;
 
-color:white;
+    color:white;
 
 }
 
@@ -536,12 +544,12 @@ color:white;
 
 .grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-repeat(3,1fr);
+    grid-template-columns:
+        repeat(3,1fr);
 
-gap:24px;
+    gap:24px;
 
 }
 
@@ -552,152 +560,152 @@ gap:24px;
 
 .card{
 
-background:white;
+    background:white;
 
-border-radius:24px;
+    border-radius:24px;
 
-overflow:hidden;
+    overflow:hidden;
 
-box-shadow:0 10px 35px rgba(30,45,35,.07);
+    box-shadow:0 10px 35px rgba(30,45,35,.07);
 
-border:1px solid rgba(60,80,65,.05);
+    border:1px solid rgba(60,80,65,.05);
 
-transition:.4s;
+    transition:.4s;
 
-position:relative;
+    position:relative;
 
 }
 
 .card:hover{
 
-transform:translateY(-8px);
+    transform:translateY(-8px);
 
-box-shadow:0 22px 50px rgba(30,45,35,.13);
+    box-shadow:0 22px 50px rgba(30,45,35,.13);
 
 }
 
 .card-image{
 
-height:190px;
+    height:190px;
 
-position:relative;
+    position:relative;
 
-background-size:cover;
+    background-size:cover;
 
-background-position:center;
+    background-position:center;
 
 }
 
 .card-image::after{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-inset:0;
+    inset:0;
 
-background:linear-gradient(
-transparent 30%,
-rgba(15,25,18,.55)
-);
+    background:linear-gradient(
+        transparent 30%,
+        rgba(15,25,18,.55)
+    );
 
 }
 
 .card-icon{
 
-position:absolute;
+    position:absolute;
 
-z-index:2;
+    z-index:2;
 
-left:22px;
+    left:22px;
 
-bottom:18px;
+    bottom:18px;
 
-width:50px;
+    width:50px;
 
-height:50px;
+    height:50px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-border-radius:16px;
+    border-radius:16px;
 
-background:rgba(255,255,255,.18);
+    background:rgba(255,255,255,.18);
 
-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
 
-font-size:25px;
+    font-size:25px;
 
-border:1px solid rgba(255,255,255,.25);
+    border:1px solid rgba(255,255,255,.25);
 
 }
 
 .card-body{
 
-padding:25px;
+    padding:25px;
 
 }
 
 .card-status{
 
-font-size:11px;
+    font-size:11px;
 
-font-weight:700;
+    font-weight:700;
 
-letter-spacing:1px;
+    letter-spacing:1px;
 
-text-transform:uppercase;
+    text-transform:uppercase;
 
-color:#5d795f;
+    color:#5d795f;
 
-margin-bottom:9px;
+    margin-bottom:9px;
 
-display:block;
+    display:block;
 
 }
 
 .card h3{
 
-font-family:"DM Serif Display",serif;
+    font-family:"DM Serif Display",serif;
 
-font-size:27px;
+    font-size:27px;
 
-color:#35483a;
+    color:#35483a;
 
-margin-bottom:8px;
+    margin-bottom:8px;
 
 }
 
 .card p{
 
-font-size:14px;
+    font-size:14px;
 
-color:#707870;
+    color:#707870;
 
-margin-bottom:20px;
+    margin-bottom:20px;
 
 }
 
 .card-footer{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-gap:10px;
+    gap:10px;
 
 }
 
 .duration{
 
-font-size:12px;
+    font-size:12px;
 
-color:#7c837c;
+    color:#7c837c;
 
 }
 
@@ -708,87 +716,87 @@ color:#7c837c;
 
 .locked{
 
-filter:saturate(.55);
+    filter:saturate(.55);
 
 }
 
 .locked .card-image{
 
-position:relative;
+    position:relative;
 
 }
 
 .locked .card-image::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-inset:0;
+    inset:0;
 
-background:rgba(40,45,40,.28);
+    background:rgba(40,45,40,.28);
 
-z-index:1;
+    z-index:1;
 
 }
 
 .locked .card-status{
 
-color:#999d98;
+    color:#999d98;
 
 }
 
 .lock{
 
-position:absolute;
+    position:absolute;
 
-top:18px;
+    top:18px;
 
-right:18px;
+    right:18px;
 
-z-index:3;
+    z-index:3;
 
-width:40px;
+    width:40px;
 
-height:40px;
+    height:40px;
 
-border-radius:50%;
+    border-radius:50%;
 
-background:rgba(255,255,255,.2);
+    background:rgba(255,255,255,.2);
 
-backdrop-filter:blur(8px);
+    backdrop-filter:blur(8px);
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-font-size:17px;
+    font-size:17px;
 
 }
 
 .locked h3{
 
-color:#636a63;
+    color:#636a63;
 
 }
 
 .coming{
 
-display:inline-block;
+    display:inline-block;
 
-padding:9px 16px;
+    padding:9px 16px;
 
-border-radius:30px;
+    border-radius:30px;
 
-background:#f0f0eb;
+    background:#f0f0eb;
 
-color:#858a83;
+    color:#858a83;
 
-font-size:12px;
+    font-size:12px;
 
-font-weight:600;
+    font-weight:600;
 
 }
 
@@ -799,49 +807,49 @@ font-weight:600;
 
 .quote{
 
-margin:90px auto;
+    margin:90px auto;
 
-max-width:850px;
+    max-width:850px;
 
-text-align:center;
+    text-align:center;
 
-padding:20px;
+    padding:20px;
 
 }
 
 .quote-symbol{
 
-font-size:35px;
+    font-size:35px;
 
-margin-bottom:20px;
+    margin-bottom:20px;
 
 }
 
 .quote p{
 
-font-family:"DM Serif Display",serif;
+    font-family:"DM Serif Display",serif;
 
-font-size:34px;
+    font-size:34px;
 
-font-style:italic;
+    font-style:italic;
 
-line-height:1.35;
+    line-height:1.35;
 
-color:#4c654f;
+    color:#4c654f;
 
 }
 
 .quote small{
 
-display:block;
+    display:block;
 
-margin-top:18px;
+    margin-top:18px;
 
-font-size:13px;
+    font-size:13px;
 
-letter-spacing:1px;
+    letter-spacing:1px;
 
-color:#8a9088;
+    color:#8a9088;
 
 }
 
@@ -852,90 +860,91 @@ color:#8a9088;
 
 .cta{
 
-position:relative;
+    position:relative;
 
-overflow:hidden;
+    overflow:hidden;
 
-background:
-linear-gradient(
-135deg,
-#3d5842,
-#607d63
-);
+    background:
 
-border-radius:30px;
+        linear-gradient(
+            135deg,
+            #3d5842,
+            #607d63
+        );
 
-padding:55px 40px;
+    border-radius:30px;
 
-text-align:center;
+    padding:55px 40px;
 
-color:white;
+    text-align:center;
 
-box-shadow:0 20px 50px rgba(50,75,55,.18);
+    color:white;
+
+    box-shadow:0 20px 50px rgba(50,75,55,.18);
 
 }
 
 .cta::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-width:250px;
-height:250px;
+    width:250px;
+    height:250px;
 
-border-radius:50%;
+    border-radius:50%;
 
-background:rgba(255,255,255,.06);
+    background:rgba(255,255,255,.06);
 
-top:-100px;
-left:-70px;
+    top:-100px;
+    left:-70px;
 
 }
 
 .cta::after{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-width:200px;
-height:200px;
+    width:200px;
+    height:200px;
 
-border-radius:50%;
+    border-radius:50%;
 
-background:rgba(255,255,255,.05);
+    background:rgba(255,255,255,.05);
 
-bottom:-100px;
-right:-50px;
+    bottom:-100px;
+    right:-50px;
 
 }
 
 .cta-content{
 
-position:relative;
+    position:relative;
 
-z-index:2;
+    z-index:2;
 
 }
 
 .cta h2{
 
-font-family:"DM Serif Display",serif;
+    font-family:"DM Serif Display",serif;
 
-font-size:36px;
+    font-size:36px;
 
-margin-bottom:12px;
+    margin-bottom:12px;
 
 }
 
 .cta p{
 
-max-width:650px;
+    max-width:650px;
 
-margin:0 auto 25px;
+    margin:0 auto 25px;
 
-opacity:.9;
+    opacity:.9;
 
 }
 
@@ -946,25 +955,25 @@ opacity:.9;
 
 footer{
 
-margin-top:80px;
+    margin-top:80px;
 
-padding:45px 20px;
+    padding:45px 20px;
 
-text-align:center;
+    text-align:center;
 
-color:#7c827c;
+    color:#7c827c;
 
-font-size:13px;
+    font-size:13px;
 
-border-top:1px solid rgba(60,80,65,.08);
+    border-top:1px solid rgba(60,80,65,.08);
 
 }
 
 .footer-symbol{
 
-font-size:25px;
+    font-size:25px;
 
-margin-bottom:10px;
+    margin-bottom:10px;
 
 }
 
@@ -975,21 +984,21 @@ margin-bottom:10px;
 
 @keyframes fadeUp{
 
-from{
+    from{
 
-opacity:0;
+        opacity:0;
 
-transform:translateY(25px);
+        transform:translateY(25px);
 
-}
+    }
 
-to{
+    to{
 
-opacity:1;
+        opacity:1;
 
-transform:translateY(0);
+        transform:translateY(0);
 
-}
+    }
 
 }
 
@@ -1000,138 +1009,138 @@ transform:translateY(0);
 
 @media(max-width:900px){
 
-.hero h1{
+    .hero h1{
 
-font-size:58px;
+        font-size:58px;
 
-}
+    }
 
-.grid{
+    .grid{
 
-grid-template-columns:
-repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
 
-}
+    }
 
 }
 
 @media(max-width:650px){
 
-.hero{
+    .hero{
 
-min-height:560px;
+        min-height:560px;
 
-}
+    }
 
-.hero h1{
+    .hero h1{
 
-font-size:43px;
+        font-size:43px;
 
-}
+    }
 
-.hero p{
+    .hero p{
 
-font-size:17px;
+        font-size:17px;
 
-}
+    }
 
-.symbol{
+    .symbol{
 
-font-size:45px;
+        font-size:45px;
 
-}
+    }
 
-.container{
+    .container{
 
-width:92%;
+        width:92%;
 
-}
+    }
 
-.intro{
+    .intro{
 
-padding:30px 22px;
+        padding:30px 22px;
 
-}
+    }
 
-.intro h2{
+    .intro h2{
 
-font-size:30px;
+        font-size:30px;
 
-}
+    }
 
-.section{
+    .section{
 
-margin-top:55px;
+        margin-top:55px;
 
-}
+    }
 
-.section-heading{
+    .section-heading{
 
-display:block;
+        display:block;
 
-}
+    }
 
-.section-heading h2{
+    .section-heading h2{
 
-font-size:30px;
+        font-size:30px;
 
-margin-bottom:5px;
+        margin-bottom:5px;
 
-}
+    }
 
-.grid{
+    .grid{
 
-grid-template-columns:1fr;
+        grid-template-columns:1fr;
 
-}
+    }
 
-.feature{
+    .feature{
 
-min-height:480px;
+        min-height:480px;
 
-}
+    }
 
-.feature-content{
+    .feature-content{
 
-padding:30px 25px;
+        padding:30px 25px;
 
-}
+    }
 
-.feature h3{
+    .feature h3{
 
-font-size:36px;
+        font-size:36px;
 
-}
+    }
 
-.card-image{
+    .card-image{
 
-height:180px;
+        height:180px;
 
-}
+    }
 
-.quote{
+    .quote{
 
-margin:65px auto;
+        margin:65px auto;
 
-}
+    }
 
-.quote p{
+    .quote p{
 
-font-size:27px;
+        font-size:27px;
 
-}
+    }
 
-.cta{
+    .cta{
 
-padding:45px 25px;
+        padding:45px 25px;
 
-}
+    }
 
-.cta h2{
+    .cta h2{
 
-font-size:30px;
+        font-size:30px;
 
-}
+    }
 
 }
 
@@ -1149,27 +1158,29 @@ font-size:30px;
 
 <header class="hero">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="symbol">🌿</div>
+        <div class="symbol">🌿</div>
 
-<h1>Caminhos de Propósito</h1>
+        <h1>
+            Caminhos de Propósito
+        </h1>
 
-<p>
+        <p>
 
-Jornadas para conhecer melhor a Deus,
-fortalecer sua fé e descobrir como viver
-uma vida que realmente tenha propósito.
+            Jornadas para conhecer melhor a Deus,
+            fortalecer sua fé e descobrir como viver
+            uma vida que realmente tenha propósito.
 
-</p>
+        </p>
 
-<div class="hero-small">
+        <div class="hero-small">
 
-FÉ • REFLEXÃO • TRANSFORMAÇÃO
+            FÉ • REFLEXÃO • TRANSFORMAÇÃO
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </header>
 
@@ -1184,18 +1195,23 @@ FÉ • REFLEXÃO • TRANSFORMAÇÃO
 
 <section class="intro">
 
-<span class="intro-label">
-Uma jornada começa com um passo
-</span>
+    <span class="intro-label">
+        Uma jornada começa com um passo
+    </span>
 
-<h2>Escolha o caminho que fala com você</h2>
+    <h2>
+        Escolha o caminho que fala com você
+    </h2>
 
-<p>
+    <p>
 
-Cada jornada foi criada para abordar uma área diferente da caminhada com Deus.
-Escolha uma, reserve alguns minutos do seu dia e permita-se viver essa experiência.
+        Cada jornada foi criada para abordar uma área
+        diferente da caminhada com Deus.
 
-</p>
+        Escolha uma, reserve alguns minutos do seu dia
+        e permita-se viver essa experiência.
+
+    </p>
 
 </section>
 
@@ -1207,381 +1223,984 @@ Escolha uma, reserve alguns minutos do seu dia e permita-se viver essa experiên
 
 <section class="section">
 
-<div class="section-heading">
+    <div class="section-heading">
 
-<div>
+        <div>
 
-<h2>🌿 Comece por aqui</h2>
+            <h2>🌿 Comece por aqui</h2>
 
-</div>
+        </div>
 
-<p>Uma jornada disponível agora</p>
+        <p>
+            Uma jornada disponível agora
+        </p>
 
-</div>
+    </div>
 
 
-<div class="feature">
+    <div class="feature">
 
-<div class="feature-content">
+        <div class="feature-content">
 
-<span class="badge">
-● DISPONÍVEL AGORA
-</span>
+            <span class="badge">
+                ● DISPONÍVEL AGORA
+            </span>
 
-<h3>
-Criado para um Propósito
-</h3>
+            <h3>
+                Criado para um Propósito
+            </h3>
 
-<p>
+            <p>
 
-Uma jornada de 40 dias para descobrir quem você é,
-entender o propósito de Deus para sua vida e aprender
-a enxergar sua caminhada através da perspectiva dEle.
+                Uma jornada de 40 dias para descobrir quem você é,
+                entender o propósito de Deus para sua vida e aprender
+                a enxergar sua caminhada através da perspectiva dEle.
 
-</p>
+            </p>
 
-<div class="meta">
+            <div class="meta">
 
-<span>📖 40 dias</span>
+                <span>📖 40 dias</span>
 
-<span>🌿 Reflexão diária</span>
+                <span>🌿 Reflexão diária</span>
 
-<span>🙏 Oração</span>
+                <span>🙏 Oração</span>
 
-</div>
+            </div>
 
-<a href="index.html" class="btn">
+            <a href="index.html" class="btn">
 
-Começar minha jornada
+                Começar minha jornada
 
-<span>→</span>
+                <span>→</span>
 
-</a>
+            </a>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
 
 <!-- =========================
-     FUTUROS
+     FUTURAS JORNADAS
 ========================= -->
 
 <section class="section">
 
-<div class="section-heading">
+    <div class="section-heading">
 
-<div>
+        <div>
 
-<h2>✨ Próximas jornadas</h2>
+            <h2>✨ Próximas jornadas</h2>
 
-</div>
+        </div>
 
-<p>Novas experiências estão chegando</p>
+        <p>
+            Novas experiências estão chegando
+        </p>
 
-</div>
+    </div>
 
 
-<div class="grid">
+    <div class="grid">
 
 
-<!-- CARD -->
+        <!-- 01 -->
 
-<div class="card locked">
+        <div class="card locked">
 
-<div
-class="card-image"
-style="background-image:url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1000&q=85');">
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1000&q=85');">
 
-<div class="lock">🔒</div>
+                <div class="lock">🔒</div>
 
-<div class="card-icon">🙏</div>
+                <div class="card-icon">🙏</div>
 
-</div>
+            </div>
 
-<div class="card-body">
+            <div class="card-body">
 
-<span class="card-status">
-EM BREVE
-</span>
+                <span class="card-status">
+                    EM BREVE
+                </span>
 
-<h3>
-40 Dias de Oração
-</h3>
+                <h3>
+                    40 Dias de Oração
+                </h3>
 
-<p>
+                <p>
+                    Uma jornada para desenvolver uma vida de oração
+                    mais profunda, constante e sincera com Deus.
+                </p>
 
-Uma jornada para desenvolver uma vida de oração
-mais profunda, constante e sincera com Deus.
+                <div class="card-footer">
 
-</p>
+                    <span class="duration">
+                        🙏 Oração
+                    </span>
 
-<div class="card-footer">
+                    <span class="coming">
+                        Em breve
+                    </span>
 
-<span class="duration">
-📖 40 dias
-</span>
+                </div>
 
-<span class="coming">
-Em breve
-</span>
+            </div>
 
-</div>
+        </div>
 
-</div>
 
-</div>
 
+        <!-- 02 -->
 
+        <div class="card locked">
 
-<!-- CARD -->
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1000&q=85');">
 
-<div class="card locked">
+                <div class="lock">🔒</div>
 
-<div
-class="card-image"
-style="background-image:url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1000&q=85');">
+                <div class="card-icon">🕊️</div>
 
-<div class="lock">🔒</div>
+            </div>
 
-<div class="card-icon">🕊️</div>
+            <div class="card-body">
 
-</div>
+                <span class="card-status">
+                    EM BREVE
+                </span>
 
-<div class="card-body">
+                <h3>
+                    Coração em Paz
+                </h3>
 
-<span class="card-status">
-EM BREVE
-</span>
+                <p>
+                    Reflexões para aprender a confiar em Deus,
+                    entregar preocupações e encontrar descanso nEle.
+                </p>
 
-<h3>
-Coração em Paz
-</h3>
+                <div class="card-footer">
 
-<p>
+                    <span class="duration">
+                        🕊️ Interior
+                    </span>
 
-Reflexões para aprender a confiar em Deus,
-entregar preocupações e encontrar descanso nEle.
+                    <span class="coming">
+                        Em breve
+                    </span>
 
-</p>
+                </div>
 
-<div class="card-footer">
+            </div>
 
-<span class="duration">
-📖 21 dias
-</span>
+        </div>
 
-<span class="coming">
-Em breve
-</span>
 
-</div>
 
-</div>
+        <!-- 03 -->
 
-</div>
+        <div class="card locked">
 
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85');">
 
+                <div class="lock">🔒</div>
 
-<!-- CARD -->
+                <div class="card-icon">📖</div>
 
-<div class="card locked">
+            </div>
 
-<div
-class="card-image"
-style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85');">
+            <div class="card-body">
 
-<div class="lock">🔒</div>
+                <span class="card-status">
+                    EM BREVE
+                </span>
 
-<div class="card-icon">📖</div>
+                <h3>
+                    Conhecendo a Palavra
+                </h3>
 
-</div>
+                <p>
+                    Uma jornada para conhecer melhor a Bíblia
+                    e transformar conhecimento em prática.
+                </p>
 
-<div class="card-body">
+                <div class="card-footer">
 
-<span class="card-status">
-EM BREVE
-</span>
+                    <span class="duration">
+                        📖 Bíblia
+                    </span>
 
-<h3>
-Conhecendo a Palavra
-</h3>
+                    <span class="coming">
+                        Em breve
+                    </span>
 
-<p>
+                </div>
 
-Uma jornada para conhecer melhor a Bíblia
-e transformar conhecimento em prática.
+            </div>
 
-</p>
+        </div>
 
-<div class="card-footer">
 
-<span class="duration">
-📖 30 dias
-</span>
 
-<span class="coming">
-Em breve
-</span>
+        <!-- 04 -->
 
-</div>
+        <div class="card locked">
 
-</div>
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85');">
 
-</div>
+                <div class="lock">🔒</div>
 
+                <div class="card-icon">🔥</div>
 
+            </div>
 
-<!-- CARD -->
+            <div class="card-body">
 
-<div class="card locked">
+                <span class="card-status">
+                    EM BREVE
+                </span>
 
-<div
-class="card-image"
-style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85');">
+                <h3>
+                    Reacendendo a Fé
+                </h3>
 
-<div class="lock">🔒</div>
+                <p>
+                    Uma jornada para quem deseja se aproximar
+                    novamente de Deus e reconstruir sua vida espiritual.
+                </p>
 
-<div class="card-icon">🔥</div>
+                <div class="card-footer">
 
-</div>
+                    <span class="duration">
+                        🔥 Renovação
+                    </span>
 
-<div class="card-body">
+                    <span class="coming">
+                        Em breve
+                    </span>
 
-<span class="card-status">
-EM BREVE
-</span>
+                </div>
 
-<h3>
-Reacendendo a Fé
-</h3>
+            </div>
 
-<p>
+        </div>
 
-Uma jornada para quem deseja se aproximar
-novamente de Deus e reconstruir sua vida espiritual.
 
-</p>
 
-<div class="card-footer">
+        <!-- 05 -->
 
-<span class="duration">
-📖 21 dias
-</span>
+        <div class="card locked">
 
-<span class="coming">
-Em breve
-</span>
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=85');">
 
-</div>
+                <div class="lock">🔒</div>
 
-</div>
+                <div class="card-icon">🎯</div>
 
-</div>
+            </div>
 
+            <div class="card-body">
 
+                <span class="card-status">
+                    EM BREVE
+                </span>
 
-<!-- CARD -->
+                <h3>
+                    Descobrindo o Chamado
+                </h3>
 
-<div class="card locked">
+                <p>
+                    Uma jornada para descobrir dons, talentos
+                    e maneiras de servir a Deus e às pessoas.
+                </p>
 
-<div
-class="card-image"
-style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=85');">
+                <div class="card-footer">
 
-<div class="lock">🔒</div>
+                    <span class="duration">
+                        🎯 Direção
+                    </span>
 
-<div class="card-icon">🎯</div>
+                    <span class="coming">
+                        Em breve
+                    </span>
 
-</div>
+                </div>
 
-<div class="card-body">
+            </div>
 
-<span class="card-status">
-EM BREVE
-</span>
+        </div>
 
-<h3>
-Descobrindo seu Chamado
-</h3>
 
-<p>
 
-Uma jornada para descobrir dons, talentos
-e maneiras de servir a Deus e às pessoas.
+        <!-- 06 -->
 
-</p>
+        <div class="card locked">
 
-<div class="card-footer">
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=85');">
 
-<span class="duration">
-📖 30 dias
-</span>
+                <div class="lock">🔒</div>
 
-<span class="coming">
-Em breve
-</span>
+                <div class="card-icon">❤️</div>
 
-</div>
+            </div>
 
-</div>
+            <div class="card-body">
 
-</div>
+                <span class="card-status">
+                    EM BREVE
+                </span>
 
+                <h3>
+                    Preparando o Coração
+                </h3>
 
+                <p>
+                    Uma jornada sobre identidade, espera,
+                    amor e relacionamentos guiados por Deus.
+                </p>
 
-<!-- CARD -->
+                <div class="card-footer">
 
-<div class="card locked">
+                    <span class="duration">
+                        ❤️ Preparação
+                    </span>
 
-<div
-class="card-image"
-style="background-image:url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=85');">
+                    <span class="coming">
+                        Em breve
+                    </span>
 
-<div class="lock">🔒</div>
+                </div>
 
-<div class="card-icon">❤️</div>
+            </div>
 
-</div>
+        </div>
 
-<div class="card-body">
 
-<span class="card-status">
-EM BREVE
-</span>
 
-<h3>
-Preparando o Coração
-</h3>
+        <!-- 07 -->
 
-<p>
+        <div class="card locked">
 
-Uma jornada sobre identidade, espera,
-amor e relacionamentos guiados por Deus.
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85');">
 
-</p>
+                <div class="lock">🔒</div>
 
-<div class="card-footer">
+                <div class="card-icon">🤝</div>
 
-<span class="duration">
-📖 30 dias
-</span>
+            </div>
 
-<span class="coming">
-Em breve
-</span>
+            <div class="card-body">
 
-</div>
+                <span class="card-status">
+                    EM BREVE
+                </span>
 
-</div>
+                <h3>
+                    30 Dias Fazendo o Bem
+                </h3>
 
-</div>
+                <p>
+                    Uma jornada de pequenas atitudes para transformar
+                    o dia de outras pessoas através do amor e do serviço.
+                </p>
 
+                <div class="card-footer">
 
-</div>
+                    <span class="duration">
+                        🤝 Ação
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 08 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">⚡</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    21 Dias de Disciplina
+                </h3>
+
+                <p>
+                    Um desafio para desenvolver constância,
+                    autocontrole e hábitos que fortalecem sua caminhada.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        ⚡ Desafio
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 09 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">🙏</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    30 Dias de Gratidão
+                </h3>
+
+                <p>
+                    Um registro diário para perceber, lembrar
+                    e agradecer pelas coisas boas que Deus coloca no caminho.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        🙏 Registro
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 10 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">✍️</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    40 Dias Escrevendo para Deus
+                </h3>
+
+                <p>
+                    Um diário espiritual para colocar em palavras
+                    pensamentos, sentimentos, sonhos e orações.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        ✍️ Diário
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 11 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">🌊</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    30 Dias Entregando as Preocupações
+                </h3>
+
+                <p>
+                    Uma experiência diária para colocar diante de Deus
+                    aquilo que pesa no coração e aprender a entregar.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        🌊 Interação
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 12 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">👥</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    21 Dias para Melhorar seus Relacionamentos
+                </h3>
+
+                <p>
+                    Uma jornada para aprender a ouvir, perdoar,
+                    valorizar e construir relacionamentos mais saudáveis.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        👥 Pessoas
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 13 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">🎁</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    30 Dias de Generosidade
+                </h3>
+
+                <p>
+                    Uma jornada para transformar generosidade em prática
+                    através de atitudes concretas de amor e serviço.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        🎁 Serviço
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 14 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">🎯</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    30 Dias Vivendo com Intenção
+                </h3>
+
+                <p>
+                    Uma jornada para sair do automático,
+                    tomar decisões conscientes e viver com propósito.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        🎯 Mudança
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 15 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">🌙</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    7 Dias de Silêncio
+                </h3>
+
+                <p>
+                    Uma experiência para desacelerar, silenciar
+                    os ruídos e criar espaço para ouvir e refletir.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        🌙 Experiência
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 16 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">🪞</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    30 Dias Conhecendo a Si Mesmo
+                </h3>
+
+                <p>
+                    Uma jornada de autoconhecimento para compreender
+                    melhor seus pensamentos, emoções, valores e escolhas.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        🪞 Autoconhecimento
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 17 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">📋</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    30 Dias Construindo seu Futuro
+                </h3>
+
+                <p>
+                    Uma jornada para organizar sonhos, metas,
+                    decisões e próximos passos para o futuro.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        📋 Planejamento
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 18 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">🌅</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    21 Dias Reconstruindo a Esperança
+                </h3>
+
+                <p>
+                    Uma jornada de recomeço para recuperar esperança,
+                    enxergar possibilidades e dar novos passos.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        🌅 Recomeço
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 19 -->
+
+        <div class="card locked">
+
+            <div
+                class="card-image"
+                style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85');">
+
+                <div class="lock">🔒</div>
+
+                <div class="card-icon">🕊️</div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-status">
+                    EM BREVE
+                </span>
+
+                <h3>
+                    40 Dias de Pequenas Renúncias
+                </h3>
+
+                <p>
+                    Uma jornada de disciplina espiritual baseada
+                    em pequenas escolhas de entrega, simplicidade e fé.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="duration">
+                        🕊️ Disciplina espiritual
+                    </span>
+
+                    <span class="coming">
+                        Em breve
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 </section>
 
@@ -1593,20 +2212,20 @@ Em breve
 
 <div class="quote">
 
-<div class="quote-symbol">
-✦
-</div>
+    <div class="quote-symbol">
+        ✦
+    </div>
 
-<p>
+    <p>
 
-"Cada jornada começa com um passo.
-Dê o primeiro na direção de Deus."
+        "Cada jornada começa com um passo.
+        Dê o primeiro na direção de Deus."
 
-</p>
+    </p>
 
-<small>
-CAMINHOS DE PROPÓSITO
-</small>
+    <small>
+        CAMINHOS DE PROPÓSITO
+    </small>
 
 </div>
 
@@ -1618,27 +2237,27 @@ CAMINHOS DE PROPÓSITO
 
 <section class="cta">
 
-<div class="cta-content">
+    <div class="cta-content">
 
-<h2>
-Comece sua jornada hoje
-</h2>
+        <h2>
+            Comece sua jornada hoje
+        </h2>
 
-<p>
+        <p>
 
-Você não precisa entender tudo de uma vez.
-Talvez tudo o que você precise agora seja
-dar o primeiro passo.
+            Você não precisa entender tudo de uma vez.
+            Talvez tudo o que você precise agora seja
+            dar o primeiro passo.
 
-</p>
+        </p>
 
-<a href="index.html" class="btn">
+        <a href="index.html" class="btn">
 
-🌿 Começar Criado para um Propósito
+            🌿 Começar Criado para um Propósito
 
-</a>
+        </a>
 
-</div>
+    </div>
 
 </section>
 
@@ -1649,19 +2268,21 @@ dar o primeiro passo.
 
 <footer>
 
-<div class="footer-symbol">
-🌿
-</div>
+    <div class="footer-symbol">
+        🌿
+    </div>
 
-<strong>Caminhos de Propósito</strong>
+    <strong>
+        Caminhos de Propósito
+    </strong>
 
-<br><br>
+    <br><br>
 
-Jornadas de fé, reflexão e transformação.
+    Jornadas de fé, reflexão e transformação.
 
-<br><br>
+    <br><br>
 
-© 2026 • Feito para crescer, refletir e caminhar com Deus.
+    © 2026 • Feito para crescer, refletir e caminhar com Deus.
 
 </footer>
 
@@ -1669,3 +2290,4 @@ Jornadas de fé, reflexão e transformação.
 </body>
 
 </html>
+```
