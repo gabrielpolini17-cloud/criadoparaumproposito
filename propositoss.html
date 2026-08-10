@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Caminhos de Propósito</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:#f5f3ed;
+
+color:#344238;
+
+line-height:1.7;
+
+overflow-x:hidden;
+
+}
+
+
+/* =========================
+   FUNDO DECORATIVO
+========================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+height:500px;
+
+border-radius:50%;
+
+background:rgba(79,111,82,.06);
+
+top:-200px;
+left:-200px;
+
+z-index:-1;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:450px;
+height:450px;
+
+border-radius:50%;
+
+background:rgba(180,154,93,.05);
+
+bottom:-200px;
+right:-150px;
+
+z-index:-1;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+min-height:650px;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+color:white;
+
+padding:40px 20px;
+
+background:
+linear-gradient(
+rgba(18,31,22,.45),
+rgba(18,31,22,.72)
+),
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=90");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+bottom:0;
+left:0;
+
+width:100%;
+
+height:130px;
+
+background:linear-gradient(
+transparent,
+#f5f3ed
+);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:900px;
+
+animation:fadeUp 1.2s ease;
+
+}
+
+.symbol{
+
+font-size:55px;
+
+margin-bottom:18px;
+
+filter:drop-shadow(0 5px 15px rgba(0,0,0,.3));
+
+}
+
+.hero h1{
+
+font-family:"DM Serif Display",serif;
+
+font-size:78px;
+
+line-height:1.05;
+
+margin-bottom:25px;
+
+letter-spacing:-1px;
+
+text-shadow:0 5px 25px rgba(0,0,0,.25);
+
+}
+
+.hero p{
+
+font-size:21px;
+
+font-weight:300;
+
+max-width:720px;
+
+margin:auto;
+
+opacity:.94;
+
+}
+
+.hero-small{
+
+margin-top:30px;
+
+font-size:13px;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+opacity:.75;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+width:90%;
+
+max-width:1180px;
+
+margin:auto;
+
+position:relative;
+
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+
+margin-top:-35px;
+
+position:relative;
+
+z-index:5;
+
+background:rgba(255,255,255,.92);
+
+backdrop-filter:blur(15px);
+
+-webkit-backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.8);
+
+border-radius:28px;
+
+padding:42px 45px;
+
+text-align:center;
+
+box-shadow:0 20px 60px rgba(40,55,43,.10);
+
+animation:fadeUp 1.2s ease .2s both;
+
+}
+
+.intro-label{
+
+display:inline-block;
+
+font-size:12px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+font-weight:700;
+
+color:#718271;
+
+margin-bottom:10px;
+
+}
+
+.intro h2{
+
+font-family:"DM Serif Display",serif;
+
+font-size:38px;
+
+color:#405a45;
+
+margin-bottom:10px;
+
+}
+
+.intro p{
+
+max-width:720px;
+
+margin:auto;
+
+font-size:17px;
+
+color:#687268;
+
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+
+margin-top:75px;
+
+}
+
+.section-heading{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:end;
+
+margin-bottom:25px;
+
+}
+
+.section-heading h2{
+
+font-family:"DM Serif Display",serif;
+
+font-size:36px;
+
+color:#35483a;
+
+}
+
+.section-heading p{
+
+font-size:14px;
+
+color:#7a827a;
+
+}
+
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.feature{
+
+position:relative;
+
+min-height:390px;
+
+border-radius:30px;
+
+overflow:hidden;
+
+display:flex;
+
+align-items:flex-end;
+
+background:
+linear-gradient(
+90deg,
+rgba(20,35,23,.88),
+rgba(20,35,23,.35),
+rgba(20,35,23,.08)
+),
+url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1800&q=90");
+
+background-size:cover;
+
+background-position:center;
+
+box-shadow:0 20px 55px rgba(30,45,34,.15);
+
+transition:.4s;
+
+}
+
+.feature:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 30px 70px rgba(30,45,34,.20);
+
+}
+
+.feature-content{
+
+padding:45px;
+
+max-width:650px;
+
+color:white;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:7px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(10px);
+
+padding:7px 14px;
+
+border-radius:30px;
+
+font-size:12px;
+
+font-weight:600;
+
+letter-spacing:.5px;
+
+margin-bottom:18px;
+
+border:1px solid rgba(255,255,255,.18);
+
+}
+
+.feature h3{
+
+font-family:"DM Serif Display",serif;
+
+font-size:46px;
+
+line-height:1.1;
+
+margin-bottom:15px;
+
+}
+
+.feature p{
+
+font-size:16px;
+
+opacity:.9;
+
+margin-bottom:25px;
+
+max-width:560px;
+
+}
+
+.meta{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-bottom:25px;
+
+}
+
+.meta span{
+
+background:rgba(255,255,255,.12);
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:7px 13px;
+
+border-radius:20px;
+
+font-size:12px;
+
+}
+
+
+/* =========================
+   BOTÃO PRINCIPAL
+========================= */
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+padding:14px 25px;
+
+background:white;
+
+color:#405b45;
+
+border-radius:40px;
+
+text-decoration:none;
+
+font-weight:700;
+
+font-size:14px;
+
+transition:.3s;
+
+box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+}
+
+.btn-green{
+
+background:#4f6f52;
+
+color:white;
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:24px;
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+background:white;
+
+border-radius:24px;
+
+overflow:hidden;
+
+box-shadow:0 10px 35px rgba(30,45,35,.07);
+
+border:1px solid rgba(60,80,65,.05);
+
+transition:.4s;
+
+position:relative;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 22px 50px rgba(30,45,35,.13);
+
+}
+
+.card-image{
+
+height:190px;
+
+position:relative;
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.card-image::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+transparent 30%,
+rgba(15,25,18,.55)
+);
+
+}
+
+.card-icon{
+
+position:absolute;
+
+z-index:2;
+
+left:22px;
+
+bottom:18px;
+
+width:50px;
+
+height:50px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(10px);
+
+font-size:25px;
+
+border:1px solid rgba(255,255,255,.25);
+
+}
+
+.card-body{
+
+padding:25px;
+
+}
+
+.card-status{
+
+font-size:11px;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+text-transform:uppercase;
+
+color:#5d795f;
+
+margin-bottom:9px;
+
+display:block;
+
+}
+
+.card h3{
+
+font-family:"DM Serif Display",serif;
+
+font-size:27px;
+
+color:#35483a;
+
+margin-bottom:8px;
+
+}
+
+.card p{
+
+font-size:14px;
+
+color:#707870;
+
+margin-bottom:20px;
+
+}
+
+.card-footer{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:10px;
+
+}
+
+.duration{
+
+font-size:12px;
+
+color:#7c837c;
+
+}
+
+
+/* =========================
+   CARDS FUTUROS
+========================= */
+
+.locked{
+
+filter:saturate(.55);
+
+}
+
+.locked .card-image{
+
+position:relative;
+
+}
+
+.locked .card-image::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:rgba(40,45,40,.28);
+
+z-index:1;
+
+}
+
+.locked .card-status{
+
+color:#999d98;
+
+}
+
+.lock{
+
+position:absolute;
+
+top:18px;
+
+right:18px;
+
+z-index:3;
+
+width:40px;
+
+height:40px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.2);
+
+backdrop-filter:blur(8px);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:17px;
+
+}
+
+.locked h3{
+
+color:#636a63;
+
+}
+
+.coming{
+
+display:inline-block;
+
+padding:9px 16px;
+
+border-radius:30px;
+
+background:#f0f0eb;
+
+color:#858a83;
+
+font-size:12px;
+
+font-weight:600;
+
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote{
+
+margin:90px auto;
+
+max-width:850px;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+.quote-symbol{
+
+font-size:35px;
+
+margin-bottom:20px;
+
+}
+
+.quote p{
+
+font-family:"DM Serif Display",serif;
+
+font-size:34px;
+
+font-style:italic;
+
+line-height:1.35;
+
+color:#4c654f;
+
+}
+
+.quote small{
+
+display:block;
+
+margin-top:18px;
+
+font-size:13px;
+
+letter-spacing:1px;
+
+color:#8a9088;
+
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#3d5842,
+#607d63
+);
+
+border-radius:30px;
+
+padding:55px 40px;
+
+text-align:center;
+
+color:white;
+
+box-shadow:0 20px 50px rgba(50,75,55,.18);
+
+}
+
+.cta::before{
+
+content:"";
+
+position:absolute;
+
+width:250px;
+height:250px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.06);
+
+top:-100px;
+left:-70px;
+
+}
+
+.cta::after{
+
+content:"";
+
+position:absolute;
+
+width:200px;
+height:200px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+bottom:-100px;
+right:-50px;
+
+}
+
+.cta-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.cta h2{
+
+font-family:"DM Serif Display",serif;
+
+font-size:36px;
+
+margin-bottom:12px;
+
+}
+
+.cta p{
+
+max-width:650px;
+
+margin:0 auto 25px;
+
+opacity:.9;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+margin-top:80px;
+
+padding:45px 20px;
+
+text-align:center;
+
+color:#7c827c;
+
+font-size:13px;
+
+border-top:1px solid rgba(60,80,65,.08);
+
+}
+
+.footer-symbol{
+
+font-size:25px;
+
+margin-bottom:10px;
+
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:58px;
+
+}
+
+.grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.hero{
+
+min-height:560px;
+
+}
+
+.hero h1{
+
+font-size:43px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+.symbol{
+
+font-size:45px;
+
+}
+
+.container{
+
+width:92%;
+
+}
+
+.intro{
+
+padding:30px 22px;
+
+}
+
+.intro h2{
+
+font-size:30px;
+
+}
+
+.section{
+
+margin-top:55px;
+
+}
+
+.section-heading{
+
+display:block;
+
+}
+
+.section-heading h2{
+
+font-size:30px;
+
+margin-bottom:5px;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.feature{
+
+min-height:480px;
+
+}
+
+.feature-content{
+
+padding:30px 25px;
+
+}
+
+.feature h3{
+
+font-size:36px;
+
+}
+
+.card-image{
+
+height:180px;
+
+}
+
+.quote{
+
+margin:65px auto;
+
+}
+
+.quote p{
+
+font-size:27px;
+
+}
+
+.cta{
+
+padding:45px 25px;
+
+}
+
+.cta h2{
+
+font-size:30px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="symbol">🌿</div>
+
+<h1>Caminhos de Propósito</h1>
+
+<p>
+
+Jornadas para conhecer melhor a Deus,
+fortalecer sua fé e descobrir como viver
+uma vida que realmente tenha propósito.
+
+</p>
+
+<div class="hero-small">
+
+FÉ • REFLEXÃO • TRANSFORMAÇÃO
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<div class="container">
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+<span class="intro-label">
+Uma jornada começa com um passo
+</span>
+
+<h2>Escolha o caminho que fala com você</h2>
+
+<p>
+
+Cada jornada foi criada para abordar uma área diferente da caminhada com Deus.
+Escolha uma, reserve alguns minutos do seu dia e permita-se viver essa experiência.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================
+     DESTAQUE
+========================= -->
+
+<section class="section">
+
+<div class="section-heading">
+
+<div>
+
+<h2>🌿 Comece por aqui</h2>
+
+</div>
+
+<p>Uma jornada disponível agora</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-content">
+
+<span class="badge">
+● DISPONÍVEL AGORA
+</span>
+
+<h3>
+Criado para um Propósito
+</h3>
+
+<p>
+
+Uma jornada de 40 dias para descobrir quem você é,
+entender o propósito de Deus para sua vida e aprender
+a enxergar sua caminhada através da perspectiva dEle.
+
+</p>
+
+<div class="meta">
+
+<span>📖 40 dias</span>
+
+<span>🌿 Reflexão diária</span>
+
+<span>🙏 Oração</span>
+
+</div>
+
+<a href="index.html" class="btn">
+
+Começar minha jornada
+
+<span>→</span>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FUTUROS
+========================= -->
+
+<section class="section">
+
+<div class="section-heading">
+
+<div>
+
+<h2>✨ Próximas jornadas</h2>
+
+</div>
+
+<p>Novas experiências estão chegando</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<!-- CARD -->
+
+<div class="card locked">
+
+<div
+class="card-image"
+style="background-image:url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1000&q=85');">
+
+<div class="lock">🔒</div>
+
+<div class="card-icon">🙏</div>
+
+</div>
+
+<div class="card-body">
+
+<span class="card-status">
+EM BREVE
+</span>
+
+<h3>
+40 Dias de Oração
+</h3>
+
+<p>
+
+Uma jornada para desenvolver uma vida de oração
+mais profunda, constante e sincera com Deus.
+
+</p>
+
+<div class="card-footer">
+
+<span class="duration">
+📖 40 dias
+</span>
+
+<span class="coming">
+Em breve
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CARD -->
+
+<div class="card locked">
+
+<div
+class="card-image"
+style="background-image:url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1000&q=85');">
+
+<div class="lock">🔒</div>
+
+<div class="card-icon">🕊️</div>
+
+</div>
+
+<div class="card-body">
+
+<span class="card-status">
+EM BREVE
+</span>
+
+<h3>
+Coração em Paz
+</h3>
+
+<p>
+
+Reflexões para aprender a confiar em Deus,
+entregar preocupações e encontrar descanso nEle.
+
+</p>
+
+<div class="card-footer">
+
+<span class="duration">
+📖 21 dias
+</span>
+
+<span class="coming">
+Em breve
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CARD -->
+
+<div class="card locked">
+
+<div
+class="card-image"
+style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85');">
+
+<div class="lock">🔒</div>
+
+<div class="card-icon">📖</div>
+
+</div>
+
+<div class="card-body">
+
+<span class="card-status">
+EM BREVE
+</span>
+
+<h3>
+Conhecendo a Palavra
+</h3>
+
+<p>
+
+Uma jornada para conhecer melhor a Bíblia
+e transformar conhecimento em prática.
+
+</p>
+
+<div class="card-footer">
+
+<span class="duration">
+📖 30 dias
+</span>
+
+<span class="coming">
+Em breve
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CARD -->
+
+<div class="card locked">
+
+<div
+class="card-image"
+style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85');">
+
+<div class="lock">🔒</div>
+
+<div class="card-icon">🔥</div>
+
+</div>
+
+<div class="card-body">
+
+<span class="card-status">
+EM BREVE
+</span>
+
+<h3>
+Reacendendo a Fé
+</h3>
+
+<p>
+
+Uma jornada para quem deseja se aproximar
+novamente de Deus e reconstruir sua vida espiritual.
+
+</p>
+
+<div class="card-footer">
+
+<span class="duration">
+📖 21 dias
+</span>
+
+<span class="coming">
+Em breve
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CARD -->
+
+<div class="card locked">
+
+<div
+class="card-image"
+style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=85');">
+
+<div class="lock">🔒</div>
+
+<div class="card-icon">🎯</div>
+
+</div>
+
+<div class="card-body">
+
+<span class="card-status">
+EM BREVE
+</span>
+
+<h3>
+Descobrindo seu Chamado
+</h3>
+
+<p>
+
+Uma jornada para descobrir dons, talentos
+e maneiras de servir a Deus e às pessoas.
+
+</p>
+
+<div class="card-footer">
+
+<span class="duration">
+📖 30 dias
+</span>
+
+<span class="coming">
+Em breve
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CARD -->
+
+<div class="card locked">
+
+<div
+class="card-image"
+style="background-image:url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=85');">
+
+<div class="lock">🔒</div>
+
+<div class="card-icon">❤️</div>
+
+</div>
+
+<div class="card-body">
+
+<span class="card-status">
+EM BREVE
+</span>
+
+<h3>
+Preparando o Coração
+</h3>
+
+<p>
+
+Uma jornada sobre identidade, espera,
+amor e relacionamentos guiados por Deus.
+
+</p>
+
+<div class="card-footer">
+
+<span class="duration">
+📖 30 dias
+</span>
+
+<span class="coming">
+Em breve
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FRASE
+========================= -->
+
+<div class="quote">
+
+<div class="quote-symbol">
+✦
+</div>
+
+<p>
+
+"Cada jornada começa com um passo.
+Dê o primeiro na direção de Deus."
+
+</p>
+
+<small>
+CAMINHOS DE PROPÓSITO
+</small>
+
+</div>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+<div class="cta-content">
+
+<h2>
+Comece sua jornada hoje
+</h2>
+
+<p>
+
+Você não precisa entender tudo de uma vez.
+Talvez tudo o que você precise agora seja
+dar o primeiro passo.
+
+</p>
+
+<a href="index.html" class="btn">
+
+🌿 Começar Criado para um Propósito
+
+</a>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+
+<footer>
+
+<div class="footer-symbol">
+🌿
+</div>
+
+<strong>Caminhos de Propósito</strong>
+
+<br><br>
+
+Jornadas de fé, reflexão e transformação.
+
+<br><br>
+
+© 2026 • Feito para crescer, refletir e caminhar com Deus.
+
+</footer>
+
+
+</body>
+
+</html>
