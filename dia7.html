@@ -1,0 +1,2334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 7</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:
+        linear-gradient(180deg,#f6f3ec 0%,#f4f5ef 100%);
+
+    color:#38463a;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================
+   BARRA DE PROGRESSO
+========================= */
+
+.progress-area{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:rgba(255,255,255,.25);
+
+    z-index:9999;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    width:0%;
+
+    background:linear-gradient(90deg,#789479,#d8c79c);
+
+    transition:.2s;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:470px;
+
+    background:
+        linear-gradient(
+            rgba(24,38,27,.58),
+            rgba(24,38,27,.48)
+        ),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:50px 20px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* brilho */
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    top:-250px;
+    right:-150px;
+
+}
+
+
+.hero{
+
+    max-width:850px;
+
+    position:relative;
+
+    z-index:2;
+
+    animation:heroEntrada 1s ease;
+
+}
+
+@keyframes heroEntrada{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+.dia-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 18px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:22px;
+
+}
+
+
+header h1{
+
+    font-family:"Playfair Display";
+
+    font-size:64px;
+
+    line-height:1.15;
+
+    margin-bottom:15px;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.25);
+
+}
+
+
+header p{
+
+    font-size:22px;
+
+    opacity:.95;
+
+    max-width:720px;
+
+    margin:auto;
+
+}
+
+
+.hero-small{
+
+    margin-top:28px;
+
+    font-size:14px;
+
+    opacity:.8;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:920px;
+
+    margin:auto;
+
+    padding:65px 20px;
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:rgba(255,255,255,.96);
+
+    padding:38px;
+
+    border-radius:24px;
+
+    margin-bottom:30px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.07);
+
+    transition:.35s;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.09);
+
+}
+
+
+.card h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:29px;
+
+}
+
+
+.card p{
+
+    color:#536055;
+
+}
+
+
+ul{
+
+    padding-left:22px;
+
+}
+
+
+li{
+
+    margin-bottom:15px;
+
+    color:#536055;
+
+}
+
+
+strong{
+
+    color:#38463a;
+
+}
+
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.intro-card{
+
+    text-align:center;
+
+    background:
+        linear-gradient(135deg,#eef6ef,#f8f5eb);
+
+    border:1px solid #dbe8dc;
+
+}
+
+
+.intro-icon{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+}
+
+
+.intro-card h2{
+
+    font-family:"Playfair Display";
+
+    font-size:34px;
+
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.frase{
+
+    font-family:"Playfair Display";
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+}
+
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:24px 25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    color:#48564a;
+
+}
+
+
+/* =========================
+   PROPÓSITO Nº 1
+========================= */
+
+.purpose{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #405d45,
+            #69866c
+        );
+
+    color:white;
+
+    border:none;
+
+}
+
+
+.purpose::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    right:-100px;
+    top:-100px;
+
+}
+
+
+.purpose::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    left:-70px;
+    bottom:-70px;
+
+}
+
+
+.purpose > *{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.purpose h2,
+.purpose p,
+.purpose strong{
+
+    color:white;
+
+}
+
+
+.purpose-number{
+
+    display:inline-block;
+
+    padding:7px 15px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.14);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+
+/* =========================
+   PAUSA INTERATIVA
+========================= */
+
+.pause-card{
+
+    text-align:center;
+
+    background:
+        radial-gradient(circle at top,#edf6ee,#ffffff 70%);
+
+}
+
+
+.pause-icon{
+
+    font-size:48px;
+
+    margin-bottom:10px;
+
+}
+
+
+.pause-card h2{
+
+    font-family:"Playfair Display";
+
+}
+
+
+.pause-text{
+
+    max-width:650px;
+
+    margin:auto;
+
+}
+
+
+.pause-button{
+
+    margin-top:25px;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.pause-button:hover{
+
+    transform:translateY(-3px);
+
+    background:#3d5941;
+
+}
+
+
+.pause-experience{
+
+    display:none;
+
+    margin-top:30px;
+
+    padding:28px;
+
+    border-radius:18px;
+
+    background:#f4f7f2;
+
+    animation:aparecer .5s ease;
+
+}
+
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+.pause-experience.active{
+
+    display:block;
+
+}
+
+
+.pause-question{
+
+    font-family:"Playfair Display";
+
+    font-size:24px;
+
+    color:#4f6f52;
+
+    margin-bottom:18px;
+
+}
+
+
+/* =========================
+   DESAFIO
+========================= */
+
+.challenge{
+
+    background:#fbfaf5;
+
+}
+
+
+.challenge-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px;
+
+    margin-bottom:12px;
+
+    border-radius:14px;
+
+    background:white;
+
+    border:1px solid #e5e9e3;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+.challenge-item:hover{
+
+    transform:translateX(4px);
+
+}
+
+
+.challenge-item input{
+
+    width:20px;
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+
+.challenge-item.completed{
+
+    background:#eef6ef;
+
+}
+
+
+.challenge-item.completed span{
+
+    text-decoration:line-through;
+
+    opacity:.65;
+
+}
+
+
+/* =========================
+   REFLEXÃO PESSOAL
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:15px;
+
+    padding:18px;
+
+    border:1px solid #d9dfd8;
+
+    border-radius:15px;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+
+.saved{
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    margin-top:8px;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+
+.saved.show{
+
+    opacity:1;
+
+}
+
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.verse-hidden{
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+
+.verse-button{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:35px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.verse-button:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+.verse-content{
+
+    display:none;
+
+    margin-top:20px;
+
+}
+
+
+.verse-content.show{
+
+    display:block;
+
+    animation:aparecer .5s ease;
+
+}
+
+
+/* =========================
+   ORAÇÃO
+========================= */
+
+.prayer{
+
+    background:
+        linear-gradient(135deg,#f1f6f1,#faf8f0);
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+.conclusion{
+
+    text-align:center;
+
+    background:
+        linear-gradient(135deg,#f5f8f3,#fffdf7);
+
+}
+
+
+.conclusion-icon{
+
+    font-size:48px;
+
+    margin-bottom:10px;
+
+}
+
+
+.complete-button{
+
+    margin-top:25px;
+
+    padding:17px 42px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(79,111,82,.22);
+
+    transition:.3s;
+
+}
+
+
+.complete-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(79,111,82,.3);
+
+}
+
+
+.complete-button:active{
+
+    transform:scale(.97);
+
+}
+
+
+#mensagem{
+
+    display:none;
+
+    margin-top:25px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#eef6ef;
+
+    color:#2d7a46;
+
+    font-weight:600;
+
+    animation:aparecer .5s ease;
+
+}
+
+
+/* =========================
+   SEPARADOR
+========================= */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:45px 0;
+
+    color:#9ba49b;
+
+}
+
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    height:1px;
+
+    background:#d9ded8;
+
+    flex:1;
+
+}
+
+
+.divider span{
+
+    font-size:18px;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:50px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:430px;
+
+    }
+
+    header h1{
+
+        font-size:43px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .container{
+
+        padding:40px 15px;
+
+    }
+
+    .card{
+
+        padding:27px 22px;
+
+        border-radius:19px;
+
+    }
+
+    .card h2{
+
+        font-size:25px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .pause-question{
+
+        font-size:21px;
+
+    }
+
+}
+
+
+/* =========================
+   CONFETE
+========================= */
+
+.confete{
+
+    position:fixed;
+
+    top:-20px;
+
+    width:8px;
+    height:14px;
+
+    z-index:99999;
+
+    animation:queda 2.5s linear forwards;
+
+}
+
+
+@keyframes queda{
+
+    to{
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="progress-area">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+
+<header>
+
+    <div class="hero">
+
+        <div class="dia-label">
+            🌿 DIA 7 • 40 DIAS
+        </div>
+
+        <h1>O verdadeiro sentido da existência</h1>
+
+        <p>
+            Descubra por que sua vida existe e como até os momentos mais simples podem apontar para Deus.
+        </p>
+
+        <div class="hero-small">
+            ✨ Você chegou ao final da primeira semana
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- INTRO -->
+
+<div class="card intro-card reveal">
+
+    <div class="intro-icon">
+        🌅
+    </div>
+
+    <h2>Você chegou até aqui.</h2>
+
+    <p>
+
+        Durante os últimos dias, você refletiu sobre sua identidade,
+        sua jornada, a brevidade da vida e a maneira como Deus pode
+        usar cada detalhe da sua história.
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Hoje, chegamos a uma pergunta ainda mais profunda:
+
+        <strong>qual é o verdadeiro sentido de tudo isso?</strong>
+
+    </p>
+
+</div>
+
+
+<!-- REFLEXÃO -->
+
+<div class="card reveal">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Talvez uma das perguntas mais importantes que podemos fazer seja:
+<strong>por que eu existo?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Durante a vida, podemos passar muito tempo tentando encontrar respostas
+em diferentes lugares. Buscamos realização através do trabalho,
+dos relacionamentos, dos sonhos, das conquistas, do dinheiro,
+do reconhecimento e de tantas outras coisas.
+
+</p>
+
+<br>
+
+<p>
+
+Mas existe uma verdade que muda completamente a maneira como enxergamos
+nossa existência:
+
+<strong>nossa vida não começa e termina em nós mesmos.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Tudo o que existe encontra seu verdadeiro sentido quando aponta para Deus.
+Fomos criados por Ele, recebemos nossa vida dEle e, em última análise,
+fomos criados para que nossa existência reflita Sua glória.
+
+</p>
+
+<br>
+
+<p>
+
+Quando entendemos isso, a pergunta deixa de ser apenas
+<strong>"O que eu quero fazer da minha vida?"</strong>
+
+e começa a se transformar em:
+
+<strong>"Como posso viver de uma maneira que agrade a Deus?"</strong>
+
+</p>
+
+</div>
+
+
+<!-- TUDO COMEÇA EM DEUS -->
+
+<div class="card reveal">
+
+<h2>🌿 Tudo começa em Deus</h2>
+
+<p>
+
+É fácil olhar para nossa própria vida e imaginar que tudo gira ao nosso redor.
+Nossos problemas, sonhos, planos e necessidades podem ocupar tanto espaço
+que esquecemos de olhar para Aquele que nos criou.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Deus não é apenas uma parte da nossa existência.
+Ele é a origem dela e o centro para o qual ela deve apontar.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>
+🌿 <strong>Deus nos criou:</strong>
+nossa existência não é um acidente sem significado.
+</li>
+
+<li>
+🌿 <strong>Deus sustenta nossa vida:</strong>
+tudo aquilo que temos e somos depende, em última análise, dEle.
+</li>
+
+<li>
+🌿 <strong>Deus nos deu dons e capacidades:</strong>
+aquilo que sabemos fazer pode ser usado para algo maior.
+</li>
+
+<li>
+🌿 <strong>Deus deseja relacionamento:</strong>
+Ele não quer apenas que saibamos sobre Ele, mas que O conheçamos.
+</li>
+
+<li>
+🌿 <strong>Deus merece a glória:</strong>
+nossa vida encontra seu verdadeiro sentido quando aponta para Ele.
+</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Quando Deus ocupa o centro,
+<strong>nossa vida não perde significado.</strong>
+
+Ela encontra o significado para o qual foi criada.
+
+</p>
+
+</div>
+
+
+<!-- AGRADAR A DEUS -->
+
+<div class="card reveal">
+
+<h2>❤️ Você foi criado para agradar a Deus</h2>
+
+<p>
+
+Agradar a Deus não significa viver tentando conquistar Seu amor
+ou provar que somos bons o suficiente.
+
+</p>
+
+<br>
+
+<p>
+
+Deus nos ama. E justamente por causa desse amor,
+podemos escolher viver de uma maneira que O honre.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🤍 Fazer o que é certo mesmo quando ninguém está olhando.</li>
+
+<li>🤍 Tratar as pessoas com amor, respeito e compaixão.</li>
+
+<li>🤍 Ser honesto quando seria mais fácil esconder a verdade.</li>
+
+<li>🤍 Usar nossos talentos para fazer o bem.</li>
+
+<li>🤍 Buscar a vontade de Deus antes de seguir apenas nossos desejos.</li>
+
+<li>🤍 Permanecer fiel mesmo quando não recebemos reconhecimento.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Agradar a Deus não é uma tarefa reservada apenas para momentos religiosos.
+
+<strong>É uma maneira de viver.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Quando nossas escolhas, palavras, pensamentos e atitudes começam a refletir
+quem Deus é, nossa própria existência passa a apontar para Ele.
+
+</p>
+
+</div>
+
+
+<!-- VIVER PARA GLÓRIA -->
+
+<div class="card reveal">
+
+<h2>🌱 Viver para a glória de Deus</h2>
+
+<p>
+
+Dar glória a Deus significa reconhecer quem Ele é
+e permitir que nossa vida reflita Sua grandeza.
+
+</p>
+
+<br>
+
+<p>
+
+Isso pode acontecer nas situações mais comuns.
+
+No trabalho, nos estudos, dentro de casa, em uma conversa,
+quando ajudamos alguém, quando enfrentamos uma dificuldade
+ou quando escolhemos permanecer firmes.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🤍 Uma atitude de amor pode glorificar a Deus.</li>
+
+<li>🤍 Um ato de perdão pode glorificar a Deus.</li>
+
+<li>🤍 Uma palavra de encorajamento pode glorificar a Deus.</li>
+
+<li>🤍 Um trabalho realizado com responsabilidade pode glorificar a Deus.</li>
+
+<li>🤍 Uma escolha correta feita em silêncio pode glorificar a Deus.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+O propósito não está apenas em
+<strong>o que fazemos</strong>,
+mas também em
+<strong>para quem fazemos.</strong>
+
+</p>
+
+</div>
+
+
+<!-- PAUSA -->
+
+<div class="card pause-card reveal">
+
+<div class="pause-icon">
+🕊️
+</div>
+
+<h2>Pare por um momento</h2>
+
+<p class="pause-text">
+
+Antes de continuar, faça uma pequena pausa.
+
+Deixe o celular quieto por alguns segundos,
+respire profundamente e pense na presença de Deus.
+
+</p>
+
+<button class="pause-button" onclick="iniciarPausa()">
+
+🕊️ Começar minha pausa
+
+</button>
+
+
+<div class="pause-experience" id="pauseExperience">
+
+<p class="pause-question" id="pauseQuestion">
+
+Respire fundo...
+
+</p>
+
+<p id="pauseText">
+
+Você não precisa resolver sua vida agora.
+Apenas reconheça que Deus está presente.
+
+</p>
+
+<button class="pause-button" onclick="proximaPausa()">
+
+Continuar →
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- SAINDO DO AUTOMÁTICO -->
+
+<div class="card reveal">
+
+<h2>🌅 Saindo do automático</h2>
+
+<p>
+
+Grande parte da nossa vida acontece no automático.
+
+Acordamos, pegamos o celular, trabalhamos, estudamos,
+conversamos, comemos, descansamos e repetimos tudo novamente.
+
+</p>
+
+<br>
+
+<p>
+
+Não há nada de errado com uma rotina.
+
+O problema é quando passamos pelos nossos dias
+sem perceber Deus presente neles.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Ao acordar, agradecer a Deus pelo novo dia.</li>
+
+<li>🌿 Durante o trabalho ou estudo, lembrar que podemos fazer tudo com dedicação.</li>
+
+<li>🌿 Ao encontrar alguém, lembrar que aquela pessoa foi criada por Deus.</li>
+
+<li>🌿 Diante de uma dificuldade, escolher confiar em vez de reclamar.</li>
+
+<li>🌿 Antes de uma decisão, perguntar qual escolha honra mais a Deus.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Talvez viver com propósito não signifique mudar completamente nossa rotina,
+mas <strong>mudar a maneira como enxergamos aquilo que já fazemos.</strong>
+
+</p>
+
+</div>
+
+
+<!-- DESAFIO -->
+
+<div class="card challenge reveal">
+
+<h2>🎯 Seu desafio de hoje</h2>
+
+<p>
+
+Transforme o aprendizado de hoje em uma pequena atitude.
+
+Marque cada uma conforme realizar:
+
+</p>
+
+<br>
+
+<label class="challenge-item">
+
+<input type="checkbox" onchange="marcarDesafio(this)">
+
+<span>🙏 Agradeci a Deus pelo meu dia.</span>
+
+</label>
+
+
+<label class="challenge-item">
+
+<input type="checkbox" onchange="marcarDesafio(this)">
+
+<span>❤️ Fiz algo bom por alguém.</span>
+
+</label>
+
+
+<label class="challenge-item">
+
+<input type="checkbox" onchange="marcarDesafio(this)">
+
+<span>🌿 Parei alguns segundos para reconhecer Deus.</span>
+
+</label>
+
+
+<label class="challenge-item">
+
+<input type="checkbox" onchange="marcarDesafio(this)">
+
+<span>✨ Fiz alguma tarefa com a intenção de honrar a Deus.</span>
+
+</label>
+
+
+<label class="challenge-item">
+
+<input type="checkbox" onchange="marcarDesafio(this)">
+
+<span>🕊️ Antes de uma escolha, pensei no que agradaria a Deus.</span>
+
+</label>
+
+</div>
+
+
+<!-- PROPÓSITO -->
+
+<div class="card purpose reveal">
+
+<div class="purpose-number">
+
+🎯 PROPÓSITO Nº 1
+
+</div>
+
+<h2>Você foi criado para agradar a Deus.</h2>
+
+<br>
+
+<p>
+
+Antes de descobrir qual profissão seguir,
+onde morar, com quem se relacionar ou quais sonhos realizar,
+existe uma verdade fundamental sobre sua existência:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+Você foi criado para Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Sua vida possui um propósito maior do que simplesmente alcançar
+aquilo que deseja.
+
+Você foi criado para conhecer a Deus,
+amá-Lo, agradá-Lo e refletir Sua glória através da maneira como vive.
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card reveal">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Tudo o que existe encontra seu verdadeiro sentido quando aponta para Deus."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Quando Deus deixa de ser apenas uma parte da nossa vida
+e passa a ocupar o centro dela,
+começamos a enxergar nossa existência de uma maneira completamente diferente.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card reveal">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<div class="verse-hidden">
+
+<p>
+
+Leia o versículo com calma.
+Não tenha pressa.
+
+</p>
+
+<button class="verse-button" onclick="mostrarVersiculo()">
+
+📖 Revelar versículo
+
+</button>
+
+<div class="verse-content" id="verseContent">
+
+<blockquote>
+
+<strong>
+
+"Todas as coisas vêm única e exclusivamente de Deus.
+Tudo vive por seu poder, e tudo é para sua glória.
+A Ele seja a glória para todo o sempre."
+
+</strong>
+
+<br><br>
+
+<b>Romanos 11:36</b>
+
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card reveal">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Em quais momentos da minha rotina posso parar de viver no automático
+e reconhecer a presença e a glória de Deus?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pense sobre isso</h3>
+
+<br>
+
+<p>
+
+Talvez você não precise procurar uma situação extraordinária
+para perceber Deus trabalhando em sua vida.
+
+Talvez Ele esteja presente justamente nos momentos comuns
+que você costuma passar sem perceber.
+
+</p>
+
+<br>
+
+<p>
+
+Pense na sua rotina.
+
+Como você começa o dia?
+
+Como trata as pessoas?
+
+Como trabalha?
+
+Como reage quando algo dá errado?
+
+O que ocupa sua mente durante o dia?
+
+</p>
+
+<br>
+
+<p>
+
+Existem momentos em que você poderia parar por alguns segundos
+e simplesmente agradecer a Deus?
+
+</p>
+
+<br>
+
+<p>
+
+Não se trata de transformar cada momento em algo artificialmente religioso.
+
+Trata-se de desenvolver uma consciência maior de que
+<strong>Deus está presente.</strong>
+
+</p>
+
+</div>
+
+
+<!-- ESCRITA -->
+
+<div class="card reveal">
+
+<h2>📝 Escreva o que você está pensando</h2>
+
+<p>
+
+Não precisa escrever bonito.
+Não precisa escrever muito.
+
+Apenas seja sincero.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Hoje eu percebi que..."
+oninput="salvarReflexao()"></textarea>
+
+<div class="saved" id="saved">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card prayer reveal">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado porque minha existência não é um acidente
+e porque fui criado por Ti e para Ti.
+
+<br><br>
+
+Ajuda-me a compreender cada vez mais o verdadeiro sentido da minha vida.
+
+Não quero viver apenas para meus próprios desejos,
+conquistas ou reconhecimento.
+
+<br><br>
+
+Quero aprender a viver de uma maneira que Te agrade
+e que minha vida possa refletir quem Tu és.
+
+<br><br>
+
+Ajuda-me a perceber Tua presença nos momentos simples da minha rotina.
+
+Quando eu estiver vivendo no automático,
+lembra-me de parar, agradecer e reconhecer que tudo vem de Ti.
+
+<br><br>
+
+Ensina-me a usar minhas palavras, meus talentos,
+meu tempo, minhas escolhas e minhas atitudes para Te honrar.
+
+<br><br>
+
+Que minha vida não aponte apenas para mim,
+mas para Ti.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- PARA GUARDAR -->
+
+<div class="card reveal">
+
+<h2>📖 Para guardar no coração</h2>
+
+<blockquote>
+
+<strong>
+
+"Porque o Senhor vai plantar esse povo;
+eles serão fortes e belos como carvalhos,
+e darão glória a Ele."
+
+</strong>
+
+<br><br>
+
+<b>Isaías 61:3</b>
+
+</blockquote>
+
+<br>
+
+<p style="text-align:center">
+
+Que essa promessa nos lembre que Deus está formando nossa vida
+para que ela produza frutos e aponte para Sua glória.
+
+</p>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card reveal">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Minha vida encontra seu verdadeiro sentido quando deixa de apontar apenas para mim e começa a apontar para Deus."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card conclusion reveal">
+
+<div class="conclusion-icon">
+
+🌿
+
+</div>
+
+<h2>Você chegou ao Dia 7.</h2>
+
+<p>
+
+Uma semana inteira de caminhada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre uma das verdades mais importantes desta jornada:
+
+<strong>você foi criado para Deus.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Sua existência possui um significado maior do que aquilo que você conquista,
+possui ou realiza nesta vida.
+
+</p>
+
+<br>
+
+<p>
+
+A partir de hoje, tente olhar para sua rotina de uma maneira diferente.
+
+Nas pequenas coisas, nas grandes decisões e até nos momentos mais comuns,
+pergunte:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Como posso viver este momento de uma maneira que agrade a Deus?"
+
+</p>
+
+<br>
+
+<p>
+
+<strong>
+
+Você não precisa esperar por um grande propósito para começar.
+Comece vivendo este dia para Deus.
+
+</strong>
+
+</p>
+
+
+<button class="complete-button" onclick="concluir()">
+
+✔ Concluir Dia 7
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 7 concluído! Que Deus continue guiando sua jornada.
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Caminhos de Propósito
+
+<br><br>
+
+40 dias para conhecer melhor a Deus,
+fortalecer sua fé e aprender a viver com propósito.
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+   PROTEÇÃO DA JORNADA
+========================= */
+
+if(localStorage.getItem("dia6") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   BARRA DE PROGRESSO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const altura =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progresso =
+        (window.scrollY / altura) * 100;
+
+    document.getElementById("progressBar").style.width =
+        progresso + "%";
+
+});
+
+
+/* =========================
+   ANIMAÇÃO DOS CARDS
+========================= */
+
+const observer =
+    new IntersectionObserver((entries)=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    },{
+        threshold:.12
+    });
+
+
+document.querySelectorAll(".reveal")
+    .forEach(el=>observer.observe(el));
+
+
+/* =========================
+   PAUSA INTERATIVA
+========================= */
+
+let pausaEtapa = 0;
+
+const pausas = [
+
+    {
+        titulo:"Respire fundo...",
+        texto:"Você não precisa resolver sua vida agora. Apenas reconheça que Deus está presente."
+    },
+
+    {
+        titulo:"Olhe ao seu redor...",
+        texto:"Pense em uma coisa pela qual você pode agradecer a Deus neste exato momento."
+    },
+
+    {
+        titulo:"Agora pense...",
+        texto:"Existe alguma área da sua vida em que você precisa parar de viver no automático?"
+    },
+
+    {
+        titulo:"Por fim...",
+        texto:"Diga em silêncio: Deus, este momento também pertence a Ti."
+    },
+
+    {
+        titulo:"Continue sua jornada 🌿",
+        texto:"Leve essa consciência para o restante do seu dia."
+    }
+
+];
+
+
+function iniciarPausa(){
+
+    pausaEtapa = 0;
+
+    document.getElementById("pauseExperience")
+        .classList.add("active");
+
+    atualizarPausa();
+
+}
+
+
+function proximaPausa(){
+
+    pausaEtapa++;
+
+    if(pausaEtapa >= pausas.length){
+
+        document.getElementById("pauseQuestion")
+            .innerText="🌿 Pausa concluída";
+
+        document.getElementById("pauseText")
+            .innerText=
+            "Agora continue sua jornada levando consigo esta pequena lembrança: Deus está presente até nos momentos mais simples.";
+
+        return;
+
+    }
+
+    atualizarPausa();
+
+}
+
+
+function atualizarPausa(){
+
+    document.getElementById("pauseQuestion")
+        .innerText=pausas[pausaEtapa].titulo;
+
+    document.getElementById("pauseText")
+        .innerText=pausas[pausaEtapa].texto;
+
+}
+
+
+/* =========================
+   DESAFIO
+========================= */
+
+function marcarDesafio(checkbox){
+
+    const item =
+        checkbox.closest(".challenge-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("completed");
+
+    }else{
+
+        item.classList.remove("completed");
+
+    }
+
+    salvarDesafios();
+
+}
+
+
+function salvarDesafios(){
+
+    const estados =
+        [...document.querySelectorAll(".challenge-item input")]
+        .map(input=>input.checked);
+
+    localStorage.setItem(
+        "dia7Desafios",
+        JSON.stringify(estados)
+    );
+
+}
+
+
+function carregarDesafios(){
+
+    const dados =
+        localStorage.getItem("dia7Desafios");
+
+    if(!dados) return;
+
+    const estados = JSON.parse(dados);
+
+    const inputs =
+        document.querySelectorAll(".challenge-item input");
+
+    inputs.forEach((input,index)=>{
+
+        if(estados[index]){
+
+            input.checked=true;
+
+            input.closest(".challenge-item")
+                .classList.add("completed");
+
+        }
+
+    });
+
+}
+
+carregarDesafios();
+
+
+/* =========================
+   REFLEXÃO
+========================= */
+
+function salvarReflexao(){
+
+    const texto =
+        document.getElementById("reflexao").value;
+
+    localStorage.setItem(
+        "dia7Reflexao",
+        texto
+    );
+
+    const saved =
+        document.getElementById("saved");
+
+    saved.classList.add("show");
+
+    clearTimeout(window.salvarTimer);
+
+    window.salvarTimer =
+        setTimeout(()=>{
+
+            saved.classList.remove("show");
+
+        },1800);
+
+}
+
+
+const reflexaoSalva =
+    localStorage.getItem("dia7Reflexao");
+
+if(reflexaoSalva){
+
+    document.getElementById("reflexao")
+        .value=reflexaoSalva;
+
+}
+
+
+/* =========================
+   VERSÍCULO
+========================= */
+
+function mostrarVersiculo(){
+
+    document.getElementById("verseContent")
+        .classList.add("show");
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem(
+        "dia7",
+        "concluido"
+    );
+
+    document.getElementById("mensagem")
+        .style.display="block";
+
+    criarConfetes();
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },3000);
+
+}
+
+
+/* =========================
+   CONFETES
+========================= */
+
+function criarConfetes(){
+
+    const quantidade=70;
+
+    for(let i=0;i<quantidade;i++){
+
+        const confete =
+            document.createElement("div");
+
+        confete.classList.add("confete");
+
+        confete.style.left =
+            Math.random()*100+"%";
+
+        confete.style.animationDelay =
+            Math.random()*0.8+"s";
+
+        confete.style.transform =
+            `rotate(${Math.random()*360}deg)`;
+
+        confete.style.background =
+            ["#4f6f52","#789479","#d8c79c","#eef6ef"]
+            [Math.floor(Math.random()*4)];
+
+        document.body.appendChild(confete);
+
+        setTimeout(()=>{
+
+            confete.remove();
+
+        },3500);
+
+    }
+
+}
+
+
+/* =========================
+   ESTADO CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia7")=="concluido"){
+
+    document.getElementById("mensagem")
+        .style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
