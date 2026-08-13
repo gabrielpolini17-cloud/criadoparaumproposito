@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 9</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f6f3ec;
+    color:#38463a;
+    line-height:1.8;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    min-height:390px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.38)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    position:relative;
+    overflow:hidden;
+}
+
+header::after{
+    content:"";
+    position:absolute;
+    bottom:-1px;
+    left:0;
+    width:100%;
+    height:100px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    animation:fadeDown .9s ease;
+}
+
+@keyframes fadeDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.dia-badge{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    background:rgba(20,30,25,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    margin-bottom:20px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:58px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 15px rgba(0,0,0,.4);
+
+}
+
+header p{
+
+    font-size:22px;
+
+    margin-top:12px;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 30px;
+
+    position:relative;
+
+    z-index:10;
+
+    padding:0 20px;
+
+}
+
+.progress-box{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+
+}
+
+.progress-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.progress-bar{
+
+    height:9px;
+
+    background:#e7ebe5;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    width:22.5%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #7d9b7f
+    );
+
+    border-radius:20px;
+
+    animation:progress 1.2s ease;
+
+}
+
+@keyframes progress{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:22.5%;
+    }
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:15px 20px 50px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    animation:appear .7s ease both;
+
+}
+
+.card:hover{
+
+    box-shadow:0 14px 35px rgba(0,0,0,.10);
+
+    transform:translateY(-2px);
+
+    transition:.25s ease;
+
+}
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:0;
+
+}
+
+strong{
+
+    color:#344d38;
+
+}
+
+/* =========================
+   LISTAS
+========================= */
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:24px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:24px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.highlight{
+
+    background:linear-gradient(
+        135deg,
+        #eef6ef,
+        #f7faf5
+    );
+
+    border:1px solid #dce9dc;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    margin-top:20px;
+
+}
+
+/* =========================
+   INTERAÇÃO
+========================= */
+
+.interactive{
+
+    background:#f8faf7;
+
+    border:1px solid #e0e9df;
+
+    padding:24px;
+
+    border-radius:18px;
+
+    margin-top:22px;
+
+}
+
+.option-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    margin-top:18px;
+
+}
+
+.option{
+
+    padding:15px;
+
+    border:2px solid #e1e8e0;
+
+    background:white;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    text-align:left;
+
+    color:#38463a;
+
+    font-size:15px;
+
+}
+
+.option:hover{
+
+    border-color:#4f6f52;
+
+    transform:translateY(-2px);
+
+}
+
+.option.selected{
+
+    border-color:#4f6f52;
+
+    background:#eef6ef;
+
+}
+
+#resposta{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:18px;
+
+    background:#eef6ef;
+
+    border-radius:14px;
+
+    color:#38523c;
+
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:15px;
+
+    padding:16px;
+
+    border:2px solid #e2e8e0;
+
+    border-radius:15px;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    outline:none;
+
+    color:#38463a;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+}
+
+.save-note{
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    color:#6a776c;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    margin-top:20px;
+
+}
+
+.check{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:13px;
+
+    margin-bottom:10px;
+
+    background:#f8faf7;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+}
+
+.check input{
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:#4f6f52;
+
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+button{
+
+    margin-top:20px;
+
+    padding:16px 40px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    background:#3f5d43;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:18px;
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:40px;
+
+    text-align:center;
+
+    opacity:.6;
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:650px){
+
+    header{
+
+        min-height:350px;
+
+    }
+
+    header h1{
+
+        font-size:43px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .card{
+
+        padding:26px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:20px;
+
+    }
+
+    .option-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="dia-badge">
+🌿 DIA 9 • 40 DIAS
+</div>
+
+<h1>📖 Dia 9</h1>
+
+<p>O que agrada a Deus?</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-box">
+
+<div class="progress-top">
+
+<span>🌱 Sua jornada</span>
+
+<span>9 de 40 dias</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Quando pensamos sobre o que significa agradar a Deus, talvez nossa primeira reação seja imaginar grandes atitudes, momentos religiosos ou decisões extraordinárias.
+
+</p>
+
+<br>
+
+<p>
+
+Mas agradar a Deus começa muito antes disso. Começa na maneira como escolhemos viver diante dEle todos os dias.
+
+</p>
+
+<br>
+
+<p>
+
+Deus conhece nosso coração, nossas limitações, nossos medos, nossos sonhos e até aquilo que ninguém mais conhece.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, agradar a Deus não significa tentar parecer perfeito. Significa aprender a caminhar com Ele com sinceridade, confiança e disposição para fazer Sua vontade.
+
+</p>
+
+<br>
+
+<p>
+
+E existe algo especialmente importante nessa caminhada: <strong>aprender a confiar em Deus.</strong>
+
+</p>
+
+<div class="highlight">
+
+<strong>Confiar em Deus é reconhecer que Ele sabe o que é melhor para nossa vida, mesmo quando não conseguimos enxergar o caminho inteiro.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CONFIANÇA -->
+
+<div class="card">
+
+<h2>🌿 Confiar quando não entendemos</h2>
+
+<p>
+
+É relativamente fácil confiar em Deus quando tudo está acontecendo como gostaríamos.
+
+</p>
+
+<br>
+
+<p>
+
+O verdadeiro desafio aparece quando nossos planos não acontecem, quando precisamos esperar, quando algo foge do nosso controle ou quando não entendemos por que determinada situação está acontecendo.
+
+</p>
+
+<br>
+
+<p>
+
+Nesses momentos, podemos tentar controlar tudo sozinhos. Podemos ficar ansiosos, imaginar vários cenários ou tentar encontrar rapidamente uma solução.
+
+</p>
+
+<br>
+
+<p>
+
+Mas confiar significa reconhecer nossos limites e lembrar que Deus enxerga aquilo que nós não conseguimos enxergar.
+
+</p>
+
+<ul>
+
+<li>🌱 <strong>Nem sempre teremos respostas imediatas:</strong> algumas coisas exigem paciência.</li>
+
+<li>🌱 <strong>Nem tudo está sob nosso controle:</strong> precisamos aprender a entregar aquilo que não podemos resolver.</li>
+
+<li>🌱 <strong>Deus conhece o caminho completo:</strong> nós enxergamos apenas uma parte da história.</li>
+
+<li>🌱 <strong>Esperar também pode ser uma forma de fé:</strong> confiar não significa ficar parado, mas continuar caminhando sem precisar controlar tudo.</li>
+
+</ul>
+
+</div>
+
+
+<!-- AGRADAR A DEUS -->
+
+<div class="card">
+
+<h2>❤️ O que realmente significa agradar a Deus?</h2>
+
+<p>
+
+Agradar a Deus não significa viver com medo de cometer qualquer erro.
+
+</p>
+
+<br>
+
+<p>
+
+Também não significa tentar conquistar o amor de Deus através das nossas boas ações. O relacionamento com Deus nasce de Sua graça e de Seu amor por nós.
+
+</p>
+
+<br>
+
+<p>
+
+A questão é diferente: <strong>se Deus me ama, como quero responder a esse amor?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Nossa resposta pode aparecer em atitudes simples:
+
+</p>
+
+<ul>
+
+<li>🤍 Buscar fazer o que é certo mesmo quando ninguém está observando.</li>
+
+<li>🤍 Tratar as pessoas com amor e respeito.</li>
+
+<li>🤍 Ser honesto mesmo quando a mentira parecer mais conveniente.</li>
+
+<li>🤍 Pedir perdão quando erramos.</li>
+
+<li>🤍 Perdoar quando fomos feridos.</li>
+
+<li>🤍 Cumprir nossas responsabilidades com dedicação.</li>
+
+<li>🤍 Confiar em Deus quando não conseguimos controlar o resultado.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Agradar a Deus está muito mais relacionado ao <strong>coração</strong> com que fazemos as coisas do que à aparência delas.
+
+</p>
+
+</div>
+
+
+<!-- PEQUENAS COISAS -->
+
+<div class="card">
+
+<h2>🌱 Deus também vê as pequenas coisas</h2>
+
+<p>
+
+Talvez você pense que precisa fazer algo grandioso para agradar a Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Mas grande parte da nossa vida é formada por coisas pequenas: acordar, trabalhar, estudar, cuidar da casa, conversar com alguém, cumprir uma tarefa, ajudar uma pessoa ou simplesmente escolher fazer o certo.
+
+</p>
+
+<br>
+
+<p>
+
+Essas pequenas decisões também revelam quem estamos nos tornando.
+
+</p>
+
+<div class="interactive">
+
+<h3>💭 Pense por alguns segundos</h3>
+
+<p>
+
+Qual dessas áreas você poderia começar a fazer com mais dedicação, lembrando que está fazendo isso diante de Deus?
+
+</p>
+
+<div class="option-grid">
+
+<button class="option" onclick="selecionar(this,'Meu trabalho ou estudos')">
+
+💼 Trabalho / estudos
+
+</button>
+
+<button class="option" onclick="selecionar(this,'Minha família')">
+
+🏠 Família
+
+</button>
+
+<button class="option" onclick="selecionar(this,'Meu relacionamento com as pessoas')">
+
+🤝 Pessoas
+
+</button>
+
+<button class="option" onclick="selecionar(this,'Minha vida com Deus')">
+
+🙏 Vida com Deus
+
+</button>
+
+</div>
+
+<div id="resposta">
+
+<strong>Boa escolha.</strong><br><br>
+
+Talvez Deus não esteja pedindo algo extraordinário de você hoje. Talvez Ele esteja apenas convidando você a ser fiel justamente nessa área que escolheu.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- VIVER DIANTE DE DEUS -->
+
+<div class="card">
+
+<h2>👀 Viver sabendo que Deus está presente</h2>
+
+<p>
+
+Existe uma diferença entre fazer algo porque alguém está observando e fazer algo porque entendemos que nossa vida inteira acontece diante de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Quando lembramos disso, nossas atitudes podem mudar.
+
+</p>
+
+<ul>
+
+<li>🌿 Trabalhar com responsabilidade mesmo quando ninguém confere.</li>
+
+<li>🌿 Estudar com dedicação mesmo quando ninguém elogia.</li>
+
+<li>🌿 Tratar alguém bem mesmo quando não receberemos nada em troca.</li>
+
+<li>🌿 Escolher a verdade mesmo quando seria mais fácil mentir.</li>
+
+<li>🌿 Continuar confiando mesmo quando ainda não vemos a resposta.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+A pergunta deixa de ser apenas:
+
+</p>
+
+<p class="frase">
+
+"Será que alguém está vendo?"
+
+</p>
+
+<br>
+
+<p>
+
+E começa a ser:
+
+</p>
+
+<p class="frase">
+
+"Como quero viver diante de Deus?"
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Confiar em Deus é reconhecer que Ele sabe o que é melhor para nossa vida."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Nem sempre vamos entender o que Deus está fazendo. Mas podemos escolher confiar nEle mesmo quando não temos todas as respostas.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote>
+
+<strong>
+
+"O Senhor se agrada daqueles que o adoram e confiam no seu amor."
+
+</strong>
+
+<br><br>
+
+<b>Salmos 147:11</b>
+
+</blockquote>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Em quais áreas da minha vida preciso confiar mais em Deus, entregando a Ele aquilo que não consigo controlar?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Vá além da pergunta</h3>
+
+<p>
+
+Pense nas áreas da sua vida que atualmente geram mais preocupação.
+
+</p>
+
+<br>
+
+<p>
+
+Pode ser o futuro, trabalho, estudos, relacionamentos, decisões, dinheiro, família, sonhos ou alguma situação que você simplesmente não consegue resolver.
+
+</p>
+
+<br>
+
+<p>
+
+Agora pergunte a si mesmo:
+
+</p>
+
+<div class="highlight">
+
+<strong>
+
+"Estou tentando controlar algo que preciso aprender a entregar a Deus?"
+
+</strong>
+
+</div>
+
+<br>
+
+<p>
+
+Entregar não significa abandonar suas responsabilidades. Significa fazer aquilo que está ao seu alcance e confiar a Deus aquilo que está além do seu controle.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você precise continuar trabalhando, estudando, conversando, planejando ou tomando decisões. Mas pode fazer tudo isso sem carregar sozinho o peso de precisar controlar o resultado.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Faça sua parte. Confie em Deus com aquilo que você não pode controlar.</strong>
+
+</p>
+
+<br>
+
+<h3>📝 Minha reflexão</h3>
+
+<textarea id="anotacao" placeholder="Escreva aqui o que você percebeu durante sua reflexão..."></textarea>
+
+<p class="save-note">
+
+💾 Sua reflexão fica salva neste dispositivo.
+
+</p>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Meu desafio de hoje</h2>
+
+<p>
+
+Escolha pequenas atitudes que você quer praticar hoje, lembrando que está vivendo diante de Deus.
+
+</p>
+
+<div class="checklist">
+
+<label class="check">
+
+<input type="checkbox" class="check-item">
+
+🙏 Vou separar alguns minutos para falar com Deus.
+
+</label>
+
+<label class="check">
+
+<input type="checkbox" class="check-item">
+
+🌿 Vou entregar a Deus uma preocupação que não consigo controlar.
+
+</label>
+
+<label class="check">
+
+<input type="checkbox" class="check-item">
+
+🤍 Vou fazer uma tarefa com mais dedicação.
+
+</label>
+
+<label class="check">
+
+<input type="checkbox" class="check-item">
+
+❤️ Vou tratar alguém com mais amor e paciência.
+
+</label>
+
+<label class="check">
+
+<input type="checkbox" class="check-item">
+
+🌱 Vou confiar em Deus mesmo sem saber exatamente o que acontecerá.
+
+</label>
+
+</div>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado porque posso confiar em Ti.
+
+<br><br>
+
+Tu conheces minha vida completamente. Conheces meus pensamentos, meus medos, meus sonhos e tudo aquilo que eu ainda não consigo compreender.
+
+<br><br>
+
+Ajuda-me a confiar que Tu sabes o que é melhor para mim, mesmo quando meus planos são diferentes dos Teus.
+
+<br><br>
+
+Ensina-me a não tentar controlar aquilo que está além das minhas mãos. Dá-me sabedoria para fazer a minha parte e fé para entregar a Ti aquilo que não posso resolver.
+
+<br><br>
+
+Ajuda-me também a compreender que Te agradar não significa fazer coisas grandiosas, mas viver cada dia com um coração sincero diante de Ti.
+
+<br><br>
+
+Que minhas palavras, minhas escolhas, meu trabalho, meus relacionamentos e minhas atitudes reflitam o amor que tenho por Ti.
+
+<br><br>
+
+Quando eu estiver preocupado com o futuro, lembra-me de confiar. Quando eu não entender, ajuda-me a esperar. Quando eu quiser controlar tudo, ensina-me a entregar.
+
+<br><br>
+
+Quero viver sabendo que minha vida está em Tuas mãos.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Quando entrego a Deus aquilo que não posso controlar, encontro liberdade para viver com fé aquilo que está ao meu alcance."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Você chegou ao final do nono dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre uma verdade simples, mas profunda: <strong>Deus se agrada daqueles que confiam nEle.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você ainda tenha perguntas sem resposta. Talvez algumas situações continuem fora do seu controle.
+
+</p>
+
+<br>
+
+<p>
+
+Mas você não precisa conhecer todos os detalhes do caminho para dar o próximo passo.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Faça o que está ao seu alcance e confie a Deus aquilo que está além dele."
+
+</p>
+
+<br>
+
+<p>
+
+Que a partir de hoje você possa carregar menos o peso de tentar controlar tudo e desenvolver cada vez mais um coração que confia em Deus.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Confie. Entregue. Continue caminhando.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 9 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<script>
+
+/* =========================
+   VERIFICAÇÃO DO DIA ANTERIOR
+========================= */
+
+if(localStorage.getItem("dia8") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   SELEÇÃO INTERATIVA
+========================= */
+
+function selecionar(elemento, texto){
+
+    document.querySelectorAll(".option").forEach(function(botao){
+
+        botao.classList.remove("selected");
+
+    });
+
+    elemento.classList.add("selected");
+
+    document.getElementById("resposta").style.display="block";
+
+}
+
+
+/* =========================
+   ANOTAÇÃO
+========================= */
+
+const anotacao = document.getElementById("anotacao");
+
+anotacao.value = localStorage.getItem("reflexaoDia9") || "";
+
+anotacao.addEventListener("input", function(){
+
+    localStorage.setItem(
+        "reflexaoDia9",
+        anotacao.value
+    );
+
+});
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+const checks = document.querySelectorAll(".check-item");
+
+checks.forEach(function(check, index){
+
+    check.checked =
+        localStorage.getItem("dia9Check" + index) === "true";
+
+    check.addEventListener("change", function(){
+
+        localStorage.setItem(
+            "dia9Check" + index,
+            check.checked
+        );
+
+    });
+
+});
+
+
+/* =========================
+   CONCLUIR
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia9","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(function(){
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia9") === "concluido"){
+
+    document.getElementById("mensagem").style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
