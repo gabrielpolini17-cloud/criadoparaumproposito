@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 10</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:25%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 10 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 10</h1>
+
+<p>O verdadeiro significado da adoração</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 10 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Adorar a Deus é muito mais do que cantar músicas, participar de um culto ou levantar as mãos durante uma oração.
+
+</p>
+
+<br>
+
+<p>
+
+A adoração verdadeira envolve a maneira como escolhemos viver. Ela aparece nas nossas decisões, nos nossos pensamentos, nas nossas prioridades e principalmente naquilo que estamos dispostos a entregar a Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Muitas vezes queremos seguir a vontade de Deus, mas ao mesmo tempo tentamos manter o controle sobre determinadas áreas da nossa vida. Queremos confiar, mas continuamos preocupados. Dizemos que entregamos, mas continuamos tentando resolver tudo sozinhos.
+
+</p>
+
+<br>
+
+<p>
+
+Adorar também significa reconhecer que <strong>Deus é digno de receber não apenas algumas partes da nossa vida, mas nossa vida inteira.</strong>
+
+</p>
+
+<div class="destaque">
+
+<strong>Adoração não é apenas uma música que cantamos. É uma vida que entregamos.</strong>
+
+</div>
+
+</div>
+
+
+<!-- O QUE É ADORAÇÃO -->
+
+<div class="card">
+
+<h2>🌿 O que significa adorar?</h2>
+
+<p>
+
+Quando pensamos em adoração, normalmente pensamos em momentos específicos dentro da igreja. Mas a adoração bíblica vai muito além desses momentos.
+
+</p>
+
+<br>
+
+<p>
+
+Adorar significa reconhecer quem Deus é e responder a Ele com nossa vida.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🤍 Reconhecer</h3>
+
+<p>
+
+Reconhecer que Deus é Senhor e que nossa vida pertence a Ele.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>👐 Entregar</h3>
+
+<p>
+
+Colocar diante de Deus nossos planos, desejos, medos e decisões.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌱 Obedecer</h3>
+
+<p>
+
+Escolher fazer aquilo que agrada a Deus mesmo quando não é o caminho mais fácil.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>❤️ Confiar</h3>
+
+<p>
+
+Descansar na certeza de que Deus sabe o que é melhor para nossa vida.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Por isso, uma pessoa pode cantar uma música de adoração e ainda assim manter áreas da vida completamente fechadas para Deus.
+
+</p>
+
+<br>
+
+<p>
+
+A verdadeira adoração acontece quando aquilo que cantamos começa a combinar com a maneira como vivemos.
+
+</p>
+
+</div>
+
+
+<!-- ENTREGA -->
+
+<div class="card">
+
+<h2>👐 Uma vida colocada nas mãos de Deus</h2>
+
+<p>
+
+Entregar nossa vida a Deus não significa deixar de fazer planos ou abandonar nossos sonhos.
+
+</p>
+
+<br>
+
+<p>
+
+Significa reconhecer que nossos planos não estão acima dos planos de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos continuar trabalhando, estudando, construindo relacionamentos, planejando o futuro e buscando nossos objetivos. A diferença é que fazemos tudo isso reconhecendo que Deus está no centro.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Entregar nossos <strong>planos</strong> e confiar no caminho que Deus escolher.</li>
+
+<li>🌿 Entregar nossos <strong>medos</strong> e lembrar que não precisamos controlar tudo.</li>
+
+<li>🌿 Entregar nossos <strong>sonhos</strong> e permitir que Deus direcione nossos desejos.</li>
+
+<li>🌿 Entregar nossos <strong>relacionamentos</strong> e aprender a amar de maneira saudável.</li>
+
+<li>🌿 Entregar nosso <strong>futuro</strong> e confiar que Deus já conhece aquilo que ainda não conseguimos enxergar.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Isso não acontece uma única vez. Muitas vezes precisamos entregar novamente aquilo que já havíamos colocado nas mãos de Deus.
+
+</p>
+
+<div class="destaque">
+
+<strong>Entregar não significa não se importar. Significa confiar que Deus cuida melhor do que nós daquilo que colocamos em Suas mãos.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CONTROLE -->
+
+<div class="card">
+
+<h2>🎛️ O desejo de controlar tudo</h2>
+
+<p>
+
+Uma das maiores dificuldades para confiar em Deus é o nosso desejo de controlar o resultado das coisas.
+
+</p>
+
+<br>
+
+<p>
+
+Queremos saber quando algo vai acontecer, como vai acontecer, quem estará envolvido e qual será o resultado.
+
+</p>
+
+<br>
+
+<p>
+
+Mas existem situações que simplesmente não estão sob nosso controle.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos fazer nossa parte com responsabilidade, mas não podemos controlar todas as circunstâncias, todas as pessoas ou todos os resultados.
+
+</p>
+
+<br>
+
+<p>
+
+Confiar em Deus é aprender a dizer:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Senhor, eu vou fazer a minha parte e entregar a Ti aquilo que está fora do meu controle."
+
+</p>
+
+<br>
+
+<p>
+
+Essa confiança não significa passividade. Pelo contrário. Significa agir com responsabilidade sem carregar o peso de tentar controlar aquilo que pertence a Deus.
+
+</p>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Entregar a Deus uma preocupação que está ocupando minha mente.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Fazer uma tarefa simples com dedicação, lembrando que estou fazendo para Deus.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Antes de tomar uma decisão, parar e pedir direção a Deus.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Evitar tentar controlar algo que não depende de mim.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Agradecer a Deus mesmo sem saber como determinada situação irá terminar.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Adorar a Deus também significa confiar n'Ele e entregar completamente a nossa vida."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Quando entregamos nossa vida a Deus, deixamos de tentar carregar sozinhos aquilo que nunca fomos feitos para controlar.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Entreguem-se completamente a Deus, para que ele use vocês a fim de fazerem o que é direito."
+
+</strong>
+
+<br><br>
+
+<b>Romanos 6:13</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Existe alguma área da minha vida que ainda estou tentando controlar em vez de confiar e entregar nas mãos de Deus?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Talvez exista uma área específica da sua vida que imediatamente veio à sua mente ao ler essa pergunta.
+
+</p>
+
+<br>
+
+<p>
+
+Pode ser uma decisão que você precisa tomar, um relacionamento, seu futuro, sua vida profissional, seus estudos, sua família, seus sonhos ou alguma preocupação que você não consegue deixar de lado.
+
+</p>
+
+<br>
+
+<p>
+
+Em vez de simplesmente pensar sobre isso, tente colocar essa situação diante de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Pergunte a si mesmo:
+
+<strong>O que exatamente estou tentando controlar?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Depois pergunte:
+
+<strong>O que seria, na prática, entregar isso a Deus?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Entregar não significa parar de agir. Talvez signifique continuar fazendo sua parte, mas deixar de tentar controlar o resultado.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez hoje você precise simplesmente dizer:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Deus, eu não consigo controlar isso. Mas confio que Tu sabes o que é melhor."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Meu momento de entrega</h2>
+
+<p>
+
+Escreva abaixo aquilo que você deseja entregar a Deus hoje. Não precisa ser bonito, longo ou perfeito. Escreva com sinceridade.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Senhor, hoje eu quero entregar a Ti..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, quero aprender a Te adorar não apenas com minhas palavras, mas com toda a minha vida.
+
+<br><br>
+
+Ajuda-me a reconhecer que Tu és digno de receber meus planos, meus sonhos, meus pensamentos, minhas escolhas e meu futuro.
+
+<br><br>
+
+Ensina-me a confiar em Ti quando eu não souber o que vai acontecer. Quando eu sentir vontade de controlar tudo, lembra-me de que Tu sabes o que é melhor para mim.
+
+<br><br>
+
+Ajuda-me a fazer minha parte com responsabilidade e, ao mesmo tempo, entregar a Ti aquilo que está fora do meu controle.
+
+<br><br>
+
+Que minha adoração não fique limitada às palavras que canto ou às orações que faço. Que ela apareça na maneira como trabalho, estudo, trato as pessoas, tomo decisões e enfrento as dificuldades.
+
+<br><br>
+
+Hoje eu escolho entregar novamente minha vida em Tuas mãos.
+
+<br><br>
+
+Cuida daquilo que eu não consigo controlar e ensina-me a confiar em Ti.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Adorar é confiar, entregar e permitir que Deus conduza aquilo que não conseguimos controlar."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao décimo dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre o verdadeiro significado da adoração e percebeu que ela vai muito além de momentos específicos.
+
+</p>
+
+<br>
+
+<p>
+
+Adorar a Deus também significa entregar nossa vida a Ele, confiar em Sua direção e escolher viver de uma maneira que demonstre essa confiança.
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa ter todas as respostas hoje.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Faça sua parte. Entregue o restante a Deus."
+
+</p>
+
+<br>
+
+<p>
+
+Antes de seguir para o próximo dia, pense em uma única área da sua vida que você deseja colocar novamente nas mãos de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Não tente controlar aquilo que Deus está pedindo para você entregar.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 10 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia9") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia10","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia10");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia10",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia10check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia10check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia10")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
