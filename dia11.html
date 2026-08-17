@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 11</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:27.5%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 11 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 11</h1>
+
+<p>Vivendo uma amizade com Deus</p>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     PROGRESSO
+========================= -->
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 11 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =========================
+     REFLEXÃO
+========================= -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Deus não deseja que nossa relação com Ele seja apenas uma rotina de obrigações religiosas.
+
+</p>
+
+<br>
+
+<p>
+
+Ele deseja que O conheçamos de verdade.
+
+</p>
+
+<br>
+
+<p>
+
+Uma amizade é construída através de proximidade, conversa, confiança, sinceridade e tempo. Da mesma maneira, nossa caminhada com Deus também precisa ser cultivada.
+
+</p>
+
+<br>
+
+<p>
+
+Muitas vezes queremos sentir Deus perto, mas passamos pouco tempo buscando Sua presença. Queremos ouvir Sua direção, mas nem sempre paramos para ouvir. Queremos conhecer Sua vontade, mas nem sempre abrimos espaço para conhecer Sua Palavra.
+
+</p>
+
+<br>
+
+<p>
+
+Cultivar uma amizade com Deus significa aprender a incluí-Lo na nossa rotina, não apenas nos momentos em que precisamos de alguma coisa.
+
+</p>
+
+<div class="destaque">
+
+<strong>Deus não quer ser apenas lembrado quando precisamos de ajuda. Ele deseja caminhar conosco em todos os momentos.</strong>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     O QUE É AMIZADE COM DEUS
+========================= -->
+
+<div class="card">
+
+<h2>🤝 O que significa ser amigo de Deus?</h2>
+
+<p>
+
+Ser amigo de Deus não significa tratá-Lo como tratamos qualquer outra pessoa. Deus continua sendo Senhor, Criador e digno de toda reverência.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Ele também nos convida para uma relação próxima, baseada em amor, confiança e comunhão.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>❤️ Proximidade</h3>
+
+<p>
+
+Separar momentos para estar com Deus e desenvolver consciência da Sua presença durante o dia.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>💬 Conversa</h3>
+
+<p>
+
+Falar com Deus através da oração com sinceridade, sem precisar esconder aquilo que sentimos.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>📖 Conhecimento</h3>
+
+<p>
+
+Conhecer o caráter, a vontade e os ensinamentos de Deus através da Sua Palavra.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤍 Confiança</h3>
+
+<p>
+
+Aprender a entregar nossas preocupações a Deus e confiar que Ele permanece conosco.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Uma amizade verdadeira não cresce apenas porque sabemos que a outra pessoa existe. Ela cresce quando investimos tempo nela.
+
+</p>
+
+<br>
+
+<p>
+
+Da mesma maneira, nossa intimidade com Deus precisa ser cultivada.
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     DEUS ESTÁ PRESENTE
+========================= -->
+
+<div class="card">
+
+<h2>🌿 Deus está presente no cotidiano</h2>
+
+<p>
+
+É possível transformar nossa percepção de Deus simplesmente começando a reconhecê-Lo nos momentos comuns.
+
+</p>
+
+<br>
+
+<p>
+
+Deus não está presente somente durante um culto, uma oração ou um momento de louvor.
+
+</p>
+
+<br>
+
+<p>
+
+Ele pode ser lembrado enquanto você trabalha, estuda, dirige, caminha, conversa, descansa ou enfrenta uma dificuldade.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌱 Ao acordar, agradecer por mais um dia.</li>
+
+<li>🌱 Durante o trabalho, pedir sabedoria para realizar suas tarefas.</li>
+
+<li>🌱 Antes de uma decisão, buscar direção através da oração.</li>
+
+<li>🌱 Durante uma dificuldade, conversar com Deus em vez de carregar tudo sozinho.</li>
+
+<li>🌱 Ao receber uma boa notícia, agradecer.</li>
+
+<li>🌱 Antes de dormir, refletir sobre aquilo que Deus fez durante o dia.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Não precisamos transformar cada momento em uma longa oração.
+
+</p>
+
+<br>
+
+<p>
+
+Às vezes, uma simples frase durante o dia já pode nos lembrar de Deus:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Senhor, fica comigo neste momento e me ajuda a viver isso contigo."
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     CONVERSA CONSTANTE
+========================= -->
+
+<div class="card">
+
+<h2>💬 Uma conversa constante com Deus</h2>
+
+<p>
+
+A oração não precisa acontecer somente quando estamos ajoelhados em um quarto silencioso.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos conversar com Deus ao longo do dia.
+
+</p>
+
+<br>
+
+<p>
+
+Quando estivermos preocupados:
+
+<strong>"Deus, estou preocupado com isso. Ajuda-me a confiar em Ti."</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Quando precisarmos tomar uma decisão:
+
+<strong>"Senhor, dá-me sabedoria para escolher o caminho certo."</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Quando algo bom acontecer:
+
+<strong>"Obrigado, Deus. Eu reconheço que essa bênção veio de Ti."</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Quando estivermos tristes:
+
+<strong>"Senhor, Tu sabes como estou me sentindo. Fica comigo."</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Essa conversa constante não significa falar sem parar.
+
+</p>
+
+<br>
+
+<p>
+
+Significa desenvolver uma consciência de que podemos recorrer a Deus durante todo o nosso dia.
+
+</p>
+
+<div class="destaque">
+
+<strong>Orar é mais do que apresentar pedidos. É abrir o coração para Deus e aprender a caminhar com Ele.</strong>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     OUVIR DEUS
+========================= -->
+
+<div class="card">
+
+<h2>📖 Não é apenas falar — também é ouvir</h2>
+
+<p>
+
+Uma conversa verdadeira possui os dois lados.
+
+</p>
+
+<br>
+
+<p>
+
+Muitas vezes nossa oração se transforma apenas em uma lista de pedidos. Falamos, pedimos, reclamamos e terminamos.
+
+</p>
+
+<br>
+
+<p>
+
+Mas cultivar uma amizade com Deus também envolve aprender a ouvir.
+
+</p>
+
+<br>
+
+<p>
+
+Deus nos orienta principalmente através da Sua Palavra. Por isso, ler a Bíblia não deve ser apenas uma tarefa que precisamos cumprir.
+
+</p>
+
+<br>
+
+<p>
+
+Quando abrimos as Escrituras, estamos permitindo que nossa mente seja confrontada, ensinada, corrigida e direcionada pela verdade de Deus.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>📖 Leia com atenção.</li>
+
+<li>🧠 Pense sobre aquilo que está sendo ensinado.</li>
+
+<li>❤️ Pergunte o que isso revela sobre Deus.</li>
+
+<li>🌱 Pergunte como essa verdade pode transformar sua vida.</li>
+
+<li>🙏 Ore sobre aquilo que aprendeu.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Quanto mais conhecemos alguém, melhor entendemos seu caráter e sua maneira de agir.
+
+</p>
+
+<br>
+
+<p>
+
+Da mesma forma, quanto mais conhecemos a Palavra de Deus, mais aprendemos sobre quem Ele é.
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     PRÁTICA
+========================= -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Escolha as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Separar alguns minutos para conversar sinceramente com Deus.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Ler um trecho da Bíblia com atenção e refletir sobre ele.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Conversar com Deus durante uma atividade comum do meu dia.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Agradecer conscientemente a Deus por algo que aconteceu hoje.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Entregar a Deus uma preocupação em vez de tentar carregar tudo sozinho.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     TEMA
+========================= -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Deus deseja que nossa relação com Ele seja próxima, sincera e constante."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Não precisamos esperar por um momento perfeito para buscar a Deus. Podemos começar agora, exatamente onde estamos.
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Uma amizade com Deus cresce quando escolhemos conhecê-Lo, conversar com Ele, ouvir Sua Palavra e confiar nEle diariamente.
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     VERSÍCULO
+========================= -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"O Senhor é amigo chegado de quem o respeita e lhe obedece."
+
+</strong>
+
+<br><br>
+
+<b>Salmos 25:14</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     PERGUNTA
+========================= -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+O que posso mudar na minha rotina para me lembrar mais de Deus e cultivar uma conversa constante com Ele ao longo do meu dia?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Talvez você já tenha percebido que não é necessariamente a falta de vontade que impede uma vida mais próxima de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Muitas vezes é a correria.
+
+</p>
+
+<br>
+
+<p>
+
+Trabalho, estudos, celular, responsabilidades, preocupações, relacionamentos e inúmeras outras coisas acabam ocupando nossa atenção.
+
+</p>
+
+<br>
+
+<p>
+
+E, quando percebemos, o dia terminou.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, cultivar uma amizade com Deus exige intencionalidade.
+
+</p>
+
+<br>
+
+<p>
+
+Não significa abandonar sua rotina ou passar o dia inteiro fazendo atividades religiosas.
+
+</p>
+
+<br>
+
+<p>
+
+Significa encontrar pequenos espaços para lembrar que Deus está presente.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você possa começar o dia com uma oração simples.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez possa ler alguns versículos antes de pegar o celular.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez possa fazer uma pequena oração durante o trabalho ou estudo.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez possa terminar o dia agradecendo a Deus por três coisas que aconteceram.
+
+</p>
+
+<br>
+
+<p>
+
+O importante não é criar uma rotina impossível de manter.
+
+</p>
+
+<br>
+
+<p>
+
+É criar pequenos hábitos que ajudem você a permanecer consciente da presença de Deus.
+
+</p>
+
+<div class="destaque">
+
+<strong>Uma amizade profunda não nasce de um grande momento. Ela cresce através de pequenos momentos repetidos com sinceridade.</strong>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     DIÁRIO
+========================= -->
+
+<div class="card">
+
+<h2>📝 Meu momento com Deus</h2>
+
+<p>
+
+Escreva abaixo o que você gostaria de conversar com Deus hoje.
+
+</p>
+
+<br>
+
+<p>
+
+Pode ser uma preocupação, um agradecimento, um pedido, um sonho ou simplesmente aquilo que está no seu coração.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Senhor, hoje eu quero conversar contigo sobre..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- =========================
+     ORAÇÃO
+========================= -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado porque posso me aproximar de Ti e conhecer-Te de maneira mais profunda.
+
+<br><br>
+
+Eu não quero que minha relação contigo seja apenas uma rotina ou algo que eu procure somente quando preciso de ajuda.
+
+<br><br>
+
+Quero aprender a caminhar contigo todos os dias.
+
+<br><br>
+
+Ajuda-me a separar tempo para estar na Tua presença, ler a Tua Palavra e conversar contigo com sinceridade.
+
+<br><br>
+
+Ensina-me a lembrar de Ti durante minha rotina, inclusive nos momentos mais simples.
+
+<br><br>
+
+Quando eu estiver preocupado, lembra-me de falar contigo.
+
+<br><br>
+
+Quando eu estiver feliz, ensina-me a agradecer.
+
+<br><br>
+
+Quando eu estiver perdido, mostra-me o caminho.
+
+<br><br>
+
+Quando eu estiver cansado, lembra-me de que não preciso carregar tudo sozinho.
+
+<br><br>
+
+Que minha vida seja marcada por uma amizade verdadeira contigo.
+
+<br><br>
+
+Quero Te conhecer mais, confiar mais em Ti e aprender a ouvir a Tua voz através da Tua Palavra.
+
+<br><br>
+
+Que eu nunca me acostume a viver longe da Tua presença.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- =========================
+     FRASE
+========================= -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Quanto mais tempo passo com Deus, mais aprendo a reconhecer Sua presença na minha caminhada."
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     CONCLUSÃO
+========================= -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao décimo primeiro dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre uma verdade muito especial: Deus não deseja apenas que saibamos sobre Ele. Ele deseja que O conheçamos e caminhemos com Ele.
+
+</p>
+
+<br>
+
+<p>
+
+Uma amizade com Deus é construída através de pequenos momentos de proximidade, oração, leitura da Palavra, confiança e obediência.
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa transformar sua vida inteira de uma vez.
+
+</p>
+
+<br>
+
+<p>
+
+Comece pequeno.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Encontre um momento hoje para simplesmente estar com Deus."
+
+</p>
+
+<br>
+
+<p>
+
+Converse com Ele.
+
+</p>
+
+<br>
+
+<p>
+
+Conte aquilo que está no seu coração.
+
+</p>
+
+<br>
+
+<p>
+
+Agradeça.
+
+</p>
+
+<br>
+
+<p>
+
+Peça direção.
+
+</p>
+
+<br>
+
+<p>
+
+E depois abra a Palavra e permita que Deus também fale com você.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Uma amizade com Deus é construída todos os dias. E hoje pode ser mais um desses dias.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 11 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<!-- BOTÃO VOLTAR AO TOPO -->
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia10") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia11","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+
+        top:document.body.scrollHeight,
+
+        behavior:"smooth"
+
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia11");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia11",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia11check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* =========================
+   RECUPERAR CHECKLIST
+========================= */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia11check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia11")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
