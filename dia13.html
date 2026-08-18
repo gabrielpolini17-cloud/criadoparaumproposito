@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 13</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:32.5%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 13 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 13</h1>
+
+<p>Uma vida de adoração</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 13 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Adoração é uma palavra que muitas vezes associamos à música, aos cultos e aos momentos em que estamos reunidos com outras pessoas. Mas a verdadeira adoração vai muito além disso.
+
+</p>
+
+<br>
+
+<p>
+
+Adorar a Deus é reconhecer quem Ele é e permitir que essa verdade transforme a maneira como vivemos.
+
+</p>
+
+<br>
+
+<p>
+
+Deus não deseja apenas alguns momentos da nossa semana. Ele deseja nosso coração, nossos pensamentos, nossas escolhas, nossos relacionamentos, nossos sonhos e nossa maneira de viver.
+
+</p>
+
+<br>
+
+<p>
+
+Isso significa que a adoração não termina quando a música acaba ou quando saímos da igreja. Ela continua quando estamos trabalhando, estudando, conversando, descansando e até mesmo quando estamos sozinhos.
+
+</p>
+
+<br>
+
+<p>
+
+Uma vida de adoração é uma vida que procura honrar a Deus em todos os momentos, inclusive naqueles que ninguém vê.
+
+</p>
+
+<div class="destaque">
+
+<strong>Deus não deseja apenas uma parte de mim. Ele deseja uma vida inteira entregue a Ele.</strong>
+
+</div>
+
+</div>
+
+
+<!-- O QUE É ADORAÇÃO -->
+
+<div class="card">
+
+<h2>🌿 O que significa viver em adoração?</h2>
+
+<p>
+
+Adoração não significa apenas cantar ou participar de momentos religiosos. Adorar significa reconhecer o valor de Deus e responder a Ele com toda a nossa vida.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>❤️ Coração</h3>
+
+<p>
+
+Amar a Deus acima das coisas que ocupam o primeiro lugar em nossa vida.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🧠 Mente</h3>
+
+<p>
+
+Permitir que nossos pensamentos sejam guiados pela verdade de Deus.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤲 Atitudes</h3>
+
+<p>
+
+Demonstrar nossa fé através das escolhas e comportamentos do cotidiano.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌱 Vida</h3>
+
+<p>
+
+Entregar cada área da nossa existência aos cuidados e à direção de Deus.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Quando compreendemos isso, percebemos que praticamente qualquer momento pode se tornar uma oportunidade de adoração.
+
+</p>
+
+<br>
+
+<p>
+
+Uma conversa pode ser uma oportunidade de demonstrar amor. Um trabalho pode ser realizado com excelência. Uma dificuldade pode ser enfrentada com fé. Uma decisão pode ser tomada buscando a vontade de Deus.
+
+</p>
+
+</div>
+
+
+<!-- CORAÇÃO INTEIRO -->
+
+<div class="card">
+
+<h2>❤️ Deus quer o coração inteiro</h2>
+
+<p>
+
+É possível oferecer a Deus algumas áreas da nossa vida enquanto tentamos manter outras sob nosso próprio controle.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos confiar a Deus nossos problemas, mas não nossos planos. Podemos entregar nossos sonhos, mas não nossos relacionamentos. Podemos buscar Sua direção em algumas decisões, mas insistir em fazer outras coisas do nosso jeito.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, viver uma vida de adoração também significa perguntar com sinceridade:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Existe alguma área da minha vida que ainda não entreguei completamente a Deus?"
+
+</p>
+
+<br>
+
+<p>
+
+Deus não quer apenas uma versão religiosa de nós mesmos. Ele deseja transformar quem somos por inteiro.
+
+</p>
+
+<ul>
+
+<li>🌿 Entregar nossos <strong>sonhos</strong> e confiar que Deus sabe o que é melhor.</li>
+
+<li>🌿 Entregar nossos <strong>relacionamentos</strong> e aprender a amar de acordo com Sua vontade.</li>
+
+<li>🌿 Entregar nosso <strong>futuro</strong> e confiar mesmo quando não sabemos o que virá.</li>
+
+<li>🌿 Entregar nossos <strong>medos</strong> e lembrar que Deus continua presente.</li>
+
+<li>🌿 Entregar nossas <strong>decisões</strong> e buscar Sua direção antes de agir.</li>
+
+</ul>
+
+<div class="destaque">
+
+<strong>Adoração verdadeira começa quando paramos de separar nossa vida em "áreas de Deus" e "áreas minhas".</strong>
+
+</div>
+
+</div>
+
+
+<!-- SOZINHO -->
+
+<div class="card">
+
+<h2>🌙 Quem sou quando ninguém está olhando?</h2>
+
+<p>
+
+Uma das formas mais sinceras de avaliar nossa adoração é observar quem somos quando estamos sozinhos.
+
+</p>
+
+<br>
+
+<p>
+
+É fácil demonstrar fé quando estamos diante de outras pessoas. Mas nossa vida particular também revela aquilo que realmente ocupa nosso coração.
+
+</p>
+
+<br>
+
+<p>
+
+O que fazemos quando ninguém está vendo? O que pensamos quando ninguém pode ouvir? Como usamos nosso tempo quando não existe ninguém para nos cobrar?
+
+</p>
+
+<br>
+
+<p>
+
+Essas perguntas não servem para produzir culpa, mas para nos levar à sinceridade diante de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Deus conhece cada detalhe da nossa vida. Não precisamos fingir diante dEle.
+
+</p>
+
+<br>
+
+<p>
+
+Uma vida de adoração começa quando permitimos que nossa fé seja verdadeira tanto no público quanto no secreto.
+
+</p>
+
+<div class="destaque">
+
+<strong>A verdadeira adoração não depende de quem está olhando. Ela nasce de um coração que deseja agradar a Deus.</strong>
+
+</div>
+
+</div>
+
+
+<!-- AMAR A DEUS -->
+
+<div class="card">
+
+<h2>🔥 Amar a Deus acima de tudo</h2>
+
+<p>
+
+Jesus ensinou que o maior mandamento é amar a Deus de todo o coração, de toda a alma, de todo o entendimento e de todas as forças.
+
+</p>
+
+<br>
+
+<p>
+
+Isso mostra que Deus não quer apenas nossas ações externas. Ele deseja nosso amor.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos cumprir tarefas religiosas e ainda assim estar distantes de Deus. Por isso, a pergunta não é apenas "Estou fazendo coisas para Deus?", mas também:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Meu coração realmente ama a Deus?"
+
+</p>
+
+<br>
+
+<p>
+
+Quando amamos alguém, naturalmente desejamos conhecê-lo, estar perto dele, ouvi-lo e agradá-lo.
+
+</p>
+
+<br>
+
+<p>
+
+O mesmo acontece em nossa caminhada com Deus. Quanto mais O conhecemos, mais nosso coração aprende a desejá-Lo.
+
+</p>
+
+</div>
+
+
+<!-- AMOR AO PRÓXIMO -->
+
+<div class="card">
+
+<h2>🤍 Adoração também é amar pessoas</h2>
+
+<p>
+
+Marcos 12:33 também nos lembra que amar o próximo está profundamente ligado ao amor por Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Isso significa que nossa adoração não pode ser separada da maneira como tratamos as pessoas.
+
+</p>
+
+<ul>
+
+<li>🤍 Perdoar quando seria mais fácil guardar ressentimento.</li>
+
+<li>🤍 Ter paciência quando alguém nos irrita.</li>
+
+<li>🤍 Ajudar alguém que precisa.</li>
+
+<li>🤍 Tratar as pessoas com respeito mesmo quando não recebemos nada em troca.</li>
+
+<li>🤍 Escolher palavras que edifiquem em vez de destruir.</li>
+
+<li>🤍 Demonstrar compaixão por quem está passando por dificuldades.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Nossa relação com Deus deve produzir frutos na maneira como nos relacionamos com aqueles que estão ao nosso redor.
+
+</p>
+
+<div class="destaque">
+
+<strong>Uma vida que ama a Deus começa a refletir esse amor na maneira como trata as pessoas.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Separar alguns minutos para estar sozinho com Deus.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Fazer uma tarefa comum com dedicação, lembrando que posso honrar a Deus através dela.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Observar uma atitude minha que preciso entregar a Deus.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Demonstrar amor de forma prática a alguém.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Quando estiver sozinho, escolher fazer aquilo que agrada a Deus.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Deus não deseja apenas uma parte de mim, mas uma vida inteira dedicada a Ele."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Uma vida dedicada a Deus não é uma vida perfeita. É uma vida que, todos os dias, escolhe voltar o coração para Ele.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Amá-lo de todo o coração, de todo entendimento e de todas as forças, e amar ao próximo como a si mesmo é mais importante do que todos os sacrifícios e ofertas."
+
+</strong>
+
+<br><br>
+
+<b>Marcos 12:33</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Minha vida demonstra a mesma devoção a Deus quando estou sozinho e quando estou diante de outras pessoas? O que posso mudar para que minha adoração seja verdadeira em todos os momentos?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Essa pergunta pode ser desconfortável, mas também pode ser extremamente importante para nossa caminhada com Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Existe alguma diferença entre a pessoa que você demonstra ser diante de outras pessoas e a pessoa que você é quando está sozinho?
+
+</p>
+
+<br>
+
+<p>
+
+Talvez existam hábitos, pensamentos, escolhas ou comportamentos que você não gostaria que outras pessoas conhecessem.
+
+</p>
+
+<br>
+
+<p>
+
+Lembre-se: Deus já conhece tudo isso. Você não precisa esconder nada dEle.
+
+</p>
+
+<br>
+
+<p>
+
+Em vez de permitir que essa reflexão produza culpa, permita que ela produza transformação.
+
+</p>
+
+<br>
+
+<p>
+
+Pergunte a si mesmo:
+
+<strong>O que preciso entregar a Deus para que minha adoração seja mais verdadeira?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Talvez seja um hábito. Talvez seja uma escolha. Talvez seja uma área da sua vida que você insiste em controlar.
+
+</p>
+
+<br>
+
+<p>
+
+Comece pequeno. Escolha uma coisa e coloque diante de Deus com sinceridade.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Senhor, quero que minha vida seja verdadeira diante de Ti, tanto no público quanto no secreto."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Minha entrega de hoje</h2>
+
+<p>
+
+Escreva abaixo uma área da sua vida que você deseja dedicar mais completamente a Deus.
+
+</p>
+
+<p>
+
+Não precisa escrever algo perfeito. Seja sincero. Este é um momento entre você e Deus.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Senhor, hoje eu quero Te entregar..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, quero aprender a Te adorar com toda a minha vida.
+
+<br><br>
+
+Não quero entregar apenas uma parte de mim. Quero aprender a colocar diante de Ti meus pensamentos, meus sentimentos, meus planos, meus sonhos, meus relacionamentos e meu futuro.
+
+<br><br>
+
+Ajuda-me a Te amar de todo o coração, de todo o entendimento e de todas as minhas forças.
+
+<br><br>
+
+Ensina-me a buscar Tua presença não apenas quando estou diante de outras pessoas, mas também quando estou sozinho.
+
+<br><br>
+
+Que minha fé seja verdadeira no secreto. Que minhas escolhas reflitam aquilo que digo acreditar.
+
+<br><br>
+
+Ajuda-me também a amar as pessoas ao meu redor. Que minha maneira de tratar os outros seja uma expressão do amor que tenho por Ti.
+
+<br><br>
+
+Quando eu errar, ajuda-me a reconhecer, pedir perdão e continuar caminhando contigo.
+
+<br><br>
+
+Não quero viver uma fé apenas de palavras. Quero que minha vida seja uma verdadeira adoração.
+
+<br><br>
+
+Recebe minha vida, Senhor. Tudo o que sou e tudo o que tenho pertence a Ti.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Minha adoração é verdadeira quando aquilo que vivo combina com aquilo que digo crer."
+
+</p>
+
+</div>
+
+
+<!-- PARA GUARDAR -->
+
+<div class="card">
+
+<h2>🌿 Para guardar no coração</h2>
+
+<blockquote>
+
+"Entreguem-se completamente a Deus, para que ele use vocês a fim de fazerem o que é direito."
+
+<br><br>
+
+<b>Romanos 6:13</b>
+
+</blockquote>
+
+<br>
+
+<p style="text-align:center">
+
+Adorar também é entregar. Quando colocamos nossa vida nas mãos de Deus, permitimos que Ele transforme nossas escolhas, nossos pensamentos e nossa maneira de viver.
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao décimo terceiro dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre o verdadeiro significado de uma vida de adoração.
+
+</p>
+
+<br>
+
+<p>
+
+Adorar a Deus não significa apenas cantar, orar ou participar de momentos religiosos. Significa permitir que nossa vida inteira seja direcionada para Ele.
+
+</p>
+
+<br>
+
+<p>
+
+Isso inclui aquilo que fazemos quando ninguém está olhando, nossas escolhas, nossos pensamentos, nossos relacionamentos e a maneira como tratamos as pessoas.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Deus não deseja apenas uma parte de mim. Ele deseja minha vida inteira."
+
+</p>
+
+<br>
+
+<p>
+
+Antes de seguir para o próximo dia, escolha uma área da sua vida que você deseja entregar novamente a Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Não precisa mudar tudo de uma vez.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Comece com uma escolha sincera hoje e permita que Deus transforme o restante ao longo da caminhada.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 13 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia12") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia13","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+
+        top:document.body.scrollHeight,
+
+        behavior:"smooth"
+
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia13");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia13",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia13check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia13check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia13")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
