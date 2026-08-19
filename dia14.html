@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uma Vida com Propósitos • Dia 14</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:35%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 14 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 14</h1>
+
+<p>Quando Deus parece em silêncio</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 14 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Existem momentos na caminhada com Deus em que tudo parece diferente. Oramos, mas não sentimos uma resposta. Buscamos Sua presença, mas parece que o céu está em silêncio.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você já tenha vivido um momento assim. Você continua acreditando em Deus, continua orando, continua lendo a Bíblia, mas parece que aquela sensação de proximidade desapareceu.
+
+</p>
+
+<br>
+
+<p>
+
+Nesses momentos, é fácil começar a pensar que Deus se afastou, que fizemos alguma coisa errada ou que nossas orações não estão sendo ouvidas.
+
+</p>
+
+<br>
+
+<p>
+
+Mas precisamos aprender uma verdade importante:
+
+<strong>o silêncio de Deus não significa a ausência de Deus.</strong>
+
+</p>
+
+<div class="destaque">
+
+<strong>Mesmo quando não consigo sentir Sua presença, Deus continua presente. Mesmo quando não vejo o que Ele está fazendo, Ele continua trabalhando.</strong>
+
+</div>
+
+</div>
+
+
+<!-- QUANDO DEUS PARECE DISTANTE -->
+
+<div class="card">
+
+<h2>🌿 Quando Deus parece distante</h2>
+
+<p>
+
+Nossa fé pode ser facilmente confundida com aquilo que sentimos. Quando sentimos paz, pensamos que Deus está perto. Quando sentimos alegria, acreditamos que Ele está conosco.
+
+</p>
+
+<br>
+
+<p>
+
+Mas e quando esses sentimentos desaparecem?
+
+</p>
+
+<br>
+
+<p>
+
+Deus continua sendo Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Nossa percepção pode mudar de um dia para o outro. Nossas emoções podem oscilar. Podemos estar cansados, preocupados, frustrados ou atravessando uma fase difícil.
+
+</p>
+
+<br>
+
+<p>
+
+Mas a presença de Deus não depende da nossa capacidade de percebê-la.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🤍 Deus continua presente</h3>
+
+<p>
+
+Mesmo quando não sentimos nada diferente, Deus não deixou de estar conosco.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌱 Deus continua ouvindo</h3>
+
+<p>
+
+O silêncio não significa que nossas orações foram ignoradas.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🕊️ Deus continua trabalhando</h3>
+
+<p>
+
+Nem tudo o que Deus faz pode ser percebido imediatamente por nós.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🙏 Deus continua sendo digno de confiança</h3>
+
+<p>
+
+Nossa confiança precisa estar baseada em quem Deus é, e não apenas naquilo que sentimos.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FÉ ALÉM DOS SENTIMENTOS -->
+
+<div class="card">
+
+<h2>🕊️ Fé além dos sentimentos</h2>
+
+<p>
+
+A fé verdadeira não existe apenas nos dias em que sentimos Deus perto.
+
+</p>
+
+<br>
+
+<p>
+
+É fácil orar quando estamos emocionados. É fácil agradecer quando tudo está acontecendo como gostaríamos. É fácil falar sobre confiança quando temos respostas.
+
+</p>
+
+<br>
+
+<p>
+
+O desafio aparece quando não entendemos o que Deus está fazendo.
+
+</p>
+
+<br>
+
+<p>
+
+Nesses momentos, nossa fé pode amadurecer.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos aprender a dizer:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Deus, eu não consigo perceber o que Tu estás fazendo, mas escolho confiar em quem Tu és."
+
+</p>
+
+<br>
+
+<p>
+
+Isso não significa fingir que está tudo bem. Também não significa esconder nossas dúvidas, tristezas ou perguntas.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos ser sinceros com Deus. Podemos dizer que estamos cansados. Podemos dizer que não entendemos. Podemos chorar, perguntar e abrir o coração.
+
+</p>
+
+<br>
+
+<p>
+
+O importante é não transformar o silêncio em uma conclusão de que Deus nos abandonou.
+
+</p>
+
+<div class="destaque">
+
+<strong>Sentir a ausência de Deus não é o mesmo que estar abandonado por Deus.</strong>
+
+</div>
+
+</div>
+
+
+<!-- O QUE FAZER NO SILÊNCIO -->
+
+<div class="card">
+
+<h2>🛤️ O que fazer quando Deus parece em silêncio?</h2>
+
+<p>
+
+Quando não conseguimos perceber Deus, talvez nossa primeira reação seja parar de buscá-Lo.
+
+</p>
+
+<br>
+
+<p>
+
+Mas o silêncio pode ser justamente uma oportunidade para aprofundar nossa confiança.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 <strong>Continue orando:</strong> mesmo quando não sentir vontade ou não perceber respostas imediatas.</li>
+
+<li>🌿 <strong>Continue lendo a Palavra:</strong> permita que as verdades de Deus sejam maiores do que suas emoções.</li>
+
+<li>🌿 <strong>Continue obedecendo:</strong> não abandone aquilo que você sabe que é certo apenas porque está passando por um período difícil.</li>
+
+<li>🌿 <strong>Continue agradecendo:</strong> procure reconhecer aquilo que Deus já fez, mesmo enquanto espera por novas respostas.</li>
+
+<li>🌿 <strong>Continue confiando:</strong> lembre-se de que Deus conhece o que você ainda não consegue enxergar.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+A caminhada com Deus não é construída apenas nos momentos em que tudo parece claro.
+
+</p>
+
+<br>
+
+<p>
+
+Muitas vezes, ela se fortalece justamente quando continuamos caminhando mesmo sem enxergar o caminho inteiro.
+
+</p>
+
+</div>
+
+
+<!-- NÃO CONFUNDA SILÊNCIO COM ABANDONO -->
+
+<div class="card">
+
+<h2>🌅 Silêncio não é abandono</h2>
+
+<p>
+
+Imagine uma criança caminhando ao lado do pai. Em determinado momento, o pai fica em silêncio.
+
+</p>
+
+<br>
+
+<p>
+
+O silêncio significa que ele foi embora?
+
+</p>
+
+<br>
+
+<p>
+
+Não.
+
+</p>
+
+<br>
+
+<p>
+
+O pai continua caminhando ao lado dela, mesmo que não esteja falando naquele momento.
+
+</p>
+
+<br>
+
+<p>
+
+Às vezes fazemos algo parecido com Deus. Quando não recebemos uma resposta imediata, pensamos que Ele desapareceu.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Deus não prometeu que entenderíamos todas as coisas imediatamente. Ele prometeu que estaria conosco.
+
+</p>
+
+<br>
+
+<p>
+
+Isso muda a pergunta.
+
+</p>
+
+<br>
+
+<p>
+
+Em vez de perguntar apenas:
+
+<strong>"Por que Deus está em silêncio?"</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Podemos também perguntar:
+
+<strong>"Como posso continuar confiando em Deus enquanto espero?"</strong>
+
+</p>
+
+<div class="destaque">
+
+<strong>Nem sempre precisamos de uma explicação imediata. Às vezes precisamos apenas aprender a permanecer.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Vou separar alguns minutos para conversar sinceramente com Deus.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Vou lembrar de uma situação em que Deus já cuidou de mim.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Vou evitar interpretar o silêncio como abandono.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Vou continuar buscando a Deus mesmo sem sentir Sua presença.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Vou entregar a Deus uma preocupação que tenho carregado sozinho.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"A presença de Deus não depende do que sinto; Ele continua presente mesmo quando não consigo percebê-Lo."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Nem todos os dias serão emocionalmente iguais. Haverá dias de alegria, dias de dúvidas, dias de silêncio e dias em que sentiremos Deus de maneira muito clara.
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+A nossa segurança não deve estar na intensidade dos nossos sentimentos, mas na fidelidade de Deus.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Deus mesmo disse: Nunca os deixarei e jamais os abandonarei."
+
+</strong>
+
+<br><br>
+
+<b>Hebreus 13:5</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Quando Deus parece distante, o que posso fazer para lembrar que Ele continua presente e confiar n'Ele mesmo sem sentir Sua presença?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Talvez você esteja passando por uma fase em que Deus parece silencioso.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez exista uma oração que você está esperando para ver respondida. Talvez você esteja enfrentando uma situação que não entende. Talvez tenha acontecido algo que fez você questionar por que Deus permitiu determinada circunstância.
+
+</p>
+
+<br>
+
+<p>
+
+Nesses momentos, não tente simplesmente ignorar aquilo que está sentindo.
+
+</p>
+
+<br>
+
+<p>
+
+Converse com Deus sobre isso.
+
+</p>
+
+<br>
+
+<p>
+
+Diga exatamente o que está no seu coração. Conte a Ele suas dúvidas, seus medos e suas frustrações.
+
+</p>
+
+<br>
+
+<p>
+
+Depois, lembre-se daquilo que você sabe sobre Deus, mesmo quando aquilo que você sente estiver dizendo o contrário.
+
+</p>
+
+<br>
+
+<p>
+
+Pergunte a si mesmo:
+
+<strong>O que Deus já fez na minha vida que prova que posso confiar n'Ele?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+E então:
+
+<strong>O que posso continuar fazendo enquanto espero?</strong>
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Senhor, mesmo sem entender e mesmo sem sentir, eu escolho confiar em Ti."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Meu momento com Deus</h2>
+
+<p>
+
+Escreva abaixo aquilo que você gostaria de conversar com Deus hoje. Pode ser uma dúvida, uma preocupação, uma oração ou simplesmente aquilo que está no seu coração.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Deus, hoje eu quero Te contar que..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- PROPÓSITO 2 -->
+
+<div class="card">
+
+<h2>🎯 Propósito nº 2</h2>
+
+<p class="frase">
+
+"Você foi criado para fazer parte da família de Deus."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+A caminhada com Deus não foi feita para ser vivida completamente sozinho.
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Deus nos chama para fazer parte de Sua família e desenvolver relacionamentos com outras pessoas que também caminham com Ele.
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+A fé não é apenas uma experiência individual. Somos chamados a amar, servir, encorajar, perdoar e caminhar uns com os outros.
+
+</p>
+
+<div class="destaque">
+
+<strong>Você não foi criado apenas para conhecer a Deus, mas também para fazer parte de uma família espiritual.</strong>
+
+</div>
+
+</div>
+
+
+<!-- COMUNIDADE -->
+
+<div class="card">
+
+<h2>🤝 Não fomos feitos para caminhar sozinhos</h2>
+
+<p>
+
+Existem momentos em que podemos querer viver nossa fé completamente sozinhos.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez por medo de sermos decepcionados, por experiências ruins ou simplesmente porque acreditamos que conseguimos lidar com tudo por conta própria.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Deus criou a Igreja como uma família.
+
+</p>
+
+<br>
+
+<p>
+
+Precisamos de pessoas que possam orar conosco, nos aconselhar, nos encorajar e também nos corrigir quando necessário.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🤍 <strong>Comunidade:</strong> pessoas para compartilhar a caminhada.</li>
+
+<li>🤍 <strong>Encorajamento:</strong> pessoas que nos ajudam a continuar quando estamos cansados.</li>
+
+<li>🤍 <strong>Serviço:</strong> oportunidades de usar aquilo que Deus nos deu para abençoar outros.</li>
+
+<li>🤍 <strong>Amor:</strong> relacionamentos que refletem o amor de Cristo.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Fazer parte da família de Deus significa aprender a receber e também a oferecer cuidado.
+
+</p>
+
+</div>
+
+
+<!-- PARA GUARDAR NO CORAÇÃO -->
+
+<div class="card">
+
+<h2>📖 Para guardar no coração</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo(this)">
+
+<strong>
+
+"Eu sou a videira; vocês são os ramos."
+
+</strong>
+
+<br><br>
+
+<b>João 15:5</b>
+
+</blockquote>
+
+<br>
+
+<blockquote class="versiculo" onclick="destacarVersiculo(this)">
+
+<strong>
+
+"Assim nós, que somos muitos, somos um só corpo em Cristo e estamos ligados uns aos outros."
+
+</strong>
+
+<br><br>
+
+<b>Romanos 12:5</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique nos versículos para destacá-los.
+
+</p>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, existem momentos em que não consigo perceber Tua presença e não entendo o que estás fazendo.
+
+<br><br>
+
+Nesses momentos, ajuda-me a não confundir Teu silêncio com abandono.
+
+<br><br>
+
+Ensina-me a confiar em Ti mesmo quando minhas emoções mudarem e quando eu não tiver respostas para minhas perguntas.
+
+<br><br>
+
+Ajuda-me a continuar buscando Tua presença, lendo Tua Palavra, orando e caminhando contigo mesmo quando eu não sentir nada diferente.
+
+<br><br>
+
+Lembra-me de tudo aquilo que Tu já fizeste por mim e fortalece minha fé para continuar confiando.
+
+<br><br>
+
+Também agradeço porque não preciso caminhar sozinho. Obrigado por me permitir fazer parte da Tua família e por colocar pessoas ao meu redor para compartilhar essa caminhada.
+
+<br><br>
+
+Ajuda-me a amar, servir, encorajar e cuidar daqueles que colocaste em minha vida.
+
+<br><br>
+
+Quando eu não entender o caminho, ajuda-me a confiar em Ti.
+
+<br><br>
+
+Quando eu não sentir Tua presença, ajuda-me a lembrar que Tu continuas comigo.
+
+<br><br>
+
+E quando eu me sentir sozinho, lembra-me de que faço parte da Tua família.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Mesmo quando não consigo perceber Deus, posso continuar confiando porque Sua presença não depende dos meus sentimentos."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao décimo quarto dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre aqueles momentos em que Deus parece estar em silêncio.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez nem sempre você consiga sentir Sua presença. Talvez nem sempre compreenda aquilo que Ele está fazendo. Mas isso não significa que Deus deixou de estar perto.
+
+</p>
+
+<br>
+
+<p>
+
+A fé também significa continuar caminhando quando não temos todas as respostas.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Mesmo no silêncio, Deus continua presente."
+
+</p>
+
+<br>
+
+<p>
+
+E hoje também começamos a olhar para um novo propósito: <strong>você foi criado para fazer parte da família de Deus.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa enfrentar a caminhada sozinho. Deus nos chama para viver em comunhão, amar pessoas, servir, encorajar e também permitir que outros caminhem ao nosso lado.
+
+</p>
+
+<br>
+
+<p>
+
+Antes de seguir para o próximo dia, pense em uma pessoa que Deus colocou em sua vida e agradeça por ela.
+
+</p>
+
+<br>
+
+<p>
+
+Depois, lembre-se:
+
+<strong>quando Deus parece em silêncio, continue caminhando. Quando parecer que você está sozinho, lembre-se de que você pertence à família de Deus.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 14 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia13") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia14","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+
+        top:document.body.scrollHeight,
+
+        behavior:"smooth"
+
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia14");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia14",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia14check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* =========================
+   RECUPERAR CHECKLIST
+========================= */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia14check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DOS VERSÍCULOS
+========================= */
+
+function destacarVersiculo(elemento){
+
+    const versiculo =
+    elemento || document.querySelector(".versiculo");
+
+    const fundoOriginal =
+    versiculo.style.background;
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background =
+        fundoOriginal || "#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia14")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
