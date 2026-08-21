@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 16</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:40%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 16 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 16</h1>
+
+<p>O que tem valor eterno</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 16 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Vivemos em uma sociedade que frequentemente nos ensina a medir o sucesso por aquilo que conseguimos conquistar.
+
+</p>
+
+<br>
+
+<p>
+
+Dinheiro, carreira, bens, reconhecimento, títulos e realizações podem ocupar grande parte dos nossos pensamentos. Trabalhamos para construir algo, estudamos para alcançar nossos objetivos e planejamos o futuro tentando deixar algo que demonstre que nossa vida valeu a pena.
+
+</p>
+
+<br>
+
+<p>
+
+Mas existe uma pergunta importante que precisamos fazer:
+
+<strong>O que realmente permanecerá quando muitas dessas coisas deixarem de existir?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Muitas das coisas que conquistamos nesta vida são temporárias. Bens podem ser perdidos, posições podem mudar, dinheiro pode acabar e o reconhecimento das pessoas pode desaparecer.
+
+</p>
+
+<br>
+
+<p>
+
+Os relacionamentos, porém, possuem um valor diferente. As pessoas que Deus colocou em nossa vida não são apenas parte da nossa caminhada; elas são oportunidades para amar, servir, cuidar, perdoar e demonstrar o caráter de Cristo.
+
+</p>
+
+<div class="destaque">
+
+<strong>Entre tudo aquilo que podemos construir nesta vida, o amor que oferecemos às pessoas possui um valor que ultrapassa aquilo que é material.</strong>
+
+</div>
+
+</div>
+
+
+<!-- O QUE REALMENTE TEM VALOR -->
+
+<div class="card">
+
+<h2>🌿 O que realmente tem valor?</h2>
+
+<p>
+
+Isso não significa que trabalho, dinheiro, estudos ou conquistas não tenham importância.
+
+</p>
+
+<br>
+
+<p>
+
+Essas coisas fazem parte da vida e podem ser usadas para bons propósitos. O problema começa quando elas ocupam um lugar maior do que deveriam e passamos a sacrificar pessoas importantes para alcançá-las.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🤍 Pessoas</h3>
+
+<p>
+
+Pessoas possuem valor porque foram criadas por Deus. Nenhuma conquista deveria nos fazer esquecer disso.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>❤️ Amor</h3>
+
+<p>
+
+Amar significa demonstrar cuidado, presença, paciência, perdão e disposição para servir.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤝 Comunhão</h3>
+
+<p>
+
+Deus não nos chamou para caminhar sozinhos. Precisamos uns dos outros.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌱 Influência</h3>
+
+<p>
+
+Nossa maneira de tratar as pessoas pode deixar marcas muito mais profundas do que aquilo que possuímos.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Talvez, no final da vida, algumas das coisas que hoje parecem extremamente importantes tenham perdido completamente o significado.
+
+</p>
+
+<br>
+
+<p>
+
+Mas as pessoas que amamos, os momentos que compartilhamos e a maneira como tratamos aqueles que Deus colocou ao nosso redor terão um peso muito maior em nossa memória e em nossa história.
+
+</p>
+
+</div>
+
+
+<!-- RELACIONAMENTOS -->
+
+<div class="card">
+
+<h2>❤️ Pessoas antes de coisas</h2>
+
+<p>
+
+É muito fácil dizer que as pessoas são importantes. Mais difícil é demonstrar isso através das nossas escolhas.
+
+</p>
+
+<br>
+
+<p>
+
+Às vezes estamos tão ocupados tentando construir nosso próprio futuro que esquecemos de perceber quem está caminhando ao nosso lado.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos estar fisicamente presentes, mas emocionalmente distantes. Podemos ouvir alguém enquanto continuamos olhando para o celular. Podemos dizer que amamos alguém, mas nunca separar tempo para demonstrar esse amor.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, valorizar relacionamentos exige presença e intenção.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Separar tempo para conversar com alguém que amo.</li>
+
+<li>🌿 Ouvir sem ficar pensando apenas no que vou responder.</li>
+
+<li>🌿 Demonstrar gratidão pelas pessoas que fazem parte da minha vida.</li>
+
+<li>🌿 Pedir perdão quando eu estiver errado.</li>
+
+<li>🌿 Perdoar quando alguém me machucar.</li>
+
+<li>🌿 Ajudar alguém sem esperar algo em troca.</li>
+
+<li>🌿 Estar presente nos momentos importantes.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Amar não precisa significar fazer grandes coisas.
+
+</p>
+
+<br>
+
+<p>
+
+Muitas vezes, o amor aparece justamente em atitudes pequenas que dizem:
+
+<strong>"Eu me importo com você."</strong>
+
+</p>
+
+</div>
+
+
+<!-- O PERIGO DA CORRERIA -->
+
+<div class="card">
+
+<h2>⏳ Quando a correria rouba o que importa</h2>
+
+<p>
+
+Um dos maiores perigos da vida moderna é estarmos sempre ocupados.
+
+</p>
+
+<br>
+
+<p>
+
+Temos compromissos, trabalho, estudos, responsabilidades, redes sociais, entretenimento e inúmeros objetivos pessoais.
+
+</p>
+
+<br>
+
+<p>
+
+E, sem perceber, podemos começar a tratar pessoas como obstáculos para aquilo que queremos realizar.
+
+</p>
+
+<br>
+
+<p>
+
+Dizemos:
+
+<strong>"Depois eu converso."</strong>
+
+</p>
+
+<br>
+
+<p>
+
+<strong>"Depois eu visito."</strong>
+
+</p>
+
+<br>
+
+<p>
+
+<strong>"Depois eu ligo."</strong>
+
+</p>
+
+<br>
+
+<p>
+
+<strong>"Quando eu tiver mais tempo, eu vou estar mais presente."</strong>
+
+</p>
+
+<br>
+
+<p>
+
+O problema é que não sabemos quanto tempo temos.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, precisamos aprender a colocar aquilo que realmente importa dentro da nossa agenda, e não simplesmente esperar que sobre tempo.
+
+</p>
+
+<div class="destaque">
+
+<strong>Se alguém é importante para você, não espere sobrar tempo. Crie tempo.</strong>
+
+</div>
+
+</div>
+
+
+<!-- COMO AMAR -->
+
+<div class="card">
+
+<h2>🌱 Como posso amar melhor?</h2>
+
+<p>
+
+Amar as pessoas não significa concordar com tudo o que elas fazem ou permitir que qualquer pessoa ultrapasse nossos limites.
+
+</p>
+
+<br>
+
+<p>
+
+Amor verdadeiro também envolve sabedoria, verdade, respeito e limites saudáveis.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos começar perguntando:
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🤍 Quem precisa da minha atenção hoje?</li>
+
+<li>🤍 Existe alguém que estou deixando de ouvir?</li>
+
+<li>🤍 Existe alguém que precisa de uma palavra de encorajamento?</li>
+
+<li>🤍 Existe algum relacionamento que precisa de perdão?</li>
+
+<li>🤍 Tenho demonstrado gratidão às pessoas que amo?</li>
+
+<li>🤍 Estou priorizando coisas enquanto negligencio pessoas?</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Às vezes, uma simples mensagem, uma conversa sincera, uma visita ou alguns minutos de atenção podem significar muito para alguém.
+
+</p>
+
+<br>
+
+<p>
+
+Não precisamos esperar uma ocasião especial para demonstrar amor.
+
+</p>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Separar alguns minutos para conversar de verdade com alguém importante para mim.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Enviar uma mensagem de carinho ou encorajamento para alguém.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Demonstrar gratidão a alguém que faz parte da minha vida.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Ouvir alguém com atenção, sem ficar distraído pelo celular.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Fazer alguma coisa por alguém sem esperar nada em troca.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Entre tudo o que construímos nesta vida, os relacionamentos são aquilo que realmente permanece."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+As coisas que conquistamos podem ter valor, mas as pessoas que Deus colocou em nossa caminhada possuem um valor que não pode ser medido apenas por aquilo que é material.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Toda a Lei se resume num só mandamento: Ame o seu próximo como a si mesmo."
+
+</strong>
+
+<br><br>
+
+<b>Gálatas 5:14</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Tenho dado aos meus relacionamentos a importância que eles merecem? O que posso mudar na minha rotina para demonstrar mais amor, presença e cuidado pelas pessoas que Deus colocou em minha vida?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Pense por alguns instantes nas pessoas que fazem parte da sua vida.
+
+</p>
+
+<br>
+
+<p>
+
+Quem esteve ao seu lado nos momentos difíceis? Quem já acreditou em você quando você mesmo não acreditava? Quem precisa da sua presença neste momento? Existe alguém que você ama, mas para quem quase nunca demonstra isso?
+
+</p>
+
+<br>
+
+<p>
+
+Também pense na maneira como você tem utilizado seu tempo.
+
+</p>
+
+<br>
+
+<p>
+
+Quanto tempo você dedica às coisas que deseja conquistar e quanto tempo dedica às pessoas que ama?
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você descubra que não precisa fazer uma grande mudança.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez precise apenas começar com uma atitude simples: mandar uma mensagem, fazer uma ligação, ouvir alguém, pedir perdão, agradecer ou simplesmente estar presente.
+
+</p>
+
+<br>
+
+<p>
+
+Pergunte a si mesmo:
+
+<strong>"Quem Deus colocou na minha vida e que eu preciso valorizar mais?"</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Depois pergunte:
+
+<strong>"Qual atitude concreta posso tomar hoje para demonstrar esse amor?"</strong>
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Não espere perder alguém para perceber o valor da presença que Deus colocou ao seu lado."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Meu momento de reflexão</h2>
+
+<p>
+
+Escreva abaixo sobre uma pessoa ou relacionamento que você deseja valorizar mais. Pense no que essa pessoa significa para você e em uma atitude concreta que pode tomar.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Hoje percebi que preciso valorizar mais..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado pelas pessoas que colocaste em minha vida.
+
+<br><br>
+
+Obrigado por aqueles que caminham comigo, pelos que me apoiam, pelos que me ensinam e até mesmo por aqueles através dos quais Tu estás trabalhando em meu caráter.
+
+<br><br>
+
+Ajuda-me a não ficar tão ocupado tentando construir minha própria vida a ponto de esquecer das pessoas que estão ao meu redor.
+
+<br><br>
+
+Ensina-me a amar de verdade, com atitudes e não apenas com palavras.
+
+<br><br>
+
+Dá-me sabedoria para saber ouvir, paciência para compreender, humildade para pedir perdão e coragem para perdoar.
+
+<br><br>
+
+Ajuda-me a demonstrar gratidão enquanto ainda tenho a oportunidade de fazê-lo.
+
+<br><br>
+
+Que eu não permita que o celular, o trabalho, os estudos, os problemas ou meus próprios objetivos roubem de mim momentos importantes com as pessoas que amo.
+
+<br><br>
+
+Ensina-me a reconhecer que os relacionamentos possuem um valor eterno e que cada pessoa ao meu redor carrega uma história que merece ser tratada com amor e respeito.
+
+<br><br>
+
+Mostra-me hoje quem precisa da minha atenção, da minha presença, de uma palavra ou simplesmente de alguém disposto a ouvir.
+
+<br><br>
+
+Que minha vida seja marcada não apenas por aquilo que conquistei, mas principalmente pelo amor que ofereci.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Minha maior riqueza não está apenas naquilo que possuo, mas nas pessoas que Deus colocou ao meu lado para amar e cuidar."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao décimo sexto dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre aquilo que realmente possui valor e percebeu que muitas das coisas que consideramos importantes são temporárias.
+
+</p>
+
+<br>
+
+<p>
+
+Relacionamentos, porém, nos oferecem oportunidades únicas de amar, servir, perdoar, cuidar e demonstrar o caráter de Cristo.
+
+</p>
+
+<br>
+
+<p>
+
+Não permita que a correria da vida faça você esquecer das pessoas que Deus colocou no seu caminho.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Valorize hoje as pessoas que você não gostaria de perder amanhã."
+
+</p>
+
+<br>
+
+<p>
+
+Antes de seguir para o próximo dia, escolha uma pessoa específica e faça algo concreto para demonstrar que ela é importante para você.
+
+</p>
+
+<br>
+
+<p>
+
+Pode ser uma mensagem, uma ligação, uma conversa, uma visita, um pedido de perdão ou simplesmente alguns minutos de atenção verdadeira.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Não espere uma ocasião especial para amar. O melhor momento para demonstrar valor é enquanto a pessoa ainda está ao seu lado.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 16 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia15") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia16","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia16");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia16",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia16check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia16check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia16")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
