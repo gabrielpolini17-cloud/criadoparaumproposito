@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uma Vida com Propósitos • Dia 17</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:42.5%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 17 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 17</h1>
+
+<p>Encontrando seu lugar</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 17 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Deus não nos chamou para viver a caminhada cristã completamente sozinhos.
+
+</p>
+
+<br>
+
+<p>
+
+Desde o início, existe algo especial no fato de pertencermos a uma família. Na família de Deus, encontramos pessoas com diferentes histórias, personalidades, dons e experiências, mas que possuem algo em comum: foram alcançadas pela graça de Deus e fazem parte do mesmo corpo.
+
+</p>
+
+<br>
+
+<p>
+
+Ser parte da família de Deus não significa apenas frequentar uma igreja ou estar presente em um culto. Significa desenvolver relacionamentos, participar, servir, cuidar de pessoas e permitir também que outras pessoas cuidem de nós.
+
+</p>
+
+<br>
+
+<p>
+
+Existe um lugar para você no corpo de Cristo.
+
+</p>
+
+<div class="destaque">
+
+<strong>Você não foi criado apenas para assistir àquilo que Deus está fazendo. Você foi chamado para fazer parte.</strong>
+
+</div>
+
+</div>
+
+
+<!-- FAMÍLIA DE DEUS -->
+
+<div class="card">
+
+<h2>🌿 Fazer parte é mais do que estar presente</h2>
+
+<p>
+
+Podemos estar fisicamente em um lugar sem realmente fazer parte dele.
+
+</p>
+
+<br>
+
+<p>
+
+É possível frequentar uma igreja durante anos e continuar mantendo distância das pessoas, sem desenvolver amizades, sem servir e sem permitir que ninguém conheça verdadeiramente nossa vida.
+
+</p>
+
+<br>
+
+<p>
+
+A família de Deus funciona de maneira diferente.
+
+</p>
+
+<p>
+
+Fazer parte significa construir vínculos e compreender que nossa caminhada também envolve outras pessoas.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🤝 Pertencer</h3>
+
+<p>
+
+Reconhecer que existe um lugar para mim entre o povo de Deus e que não preciso caminhar sozinho.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>❤️ Amar</h3>
+
+<p>
+
+Aprender a enxergar, ouvir, respeitar e cuidar das pessoas que Deus colocou ao meu redor.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>👐 Servir</h3>
+
+<p>
+
+Usar aquilo que Deus me deu para contribuir com a vida de outras pessoas.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌱 Crescer</h3>
+
+<p>
+
+Permitir que relacionamentos saudáveis também contribuam para meu crescimento espiritual.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+A igreja não é apenas um lugar para onde vamos. É uma comunidade da qual fazemos parte.
+
+</p>
+
+</div>
+
+
+<!-- CADA PESSOA TEM UM PAPEL -->
+
+<div class="card">
+
+<h2>🌱 Existe um lugar para você</h2>
+
+<p>
+
+Talvez você já tenha pensado que não tem muito a oferecer.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez ache que outras pessoas são mais talentosas, mais preparadas, mais experientes ou mais espirituais.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Deus não compara pessoas como se todas precisassem cumprir exatamente a mesma função.
+
+</p>
+
+<br>
+
+<p>
+
+No corpo de Cristo, existem diferentes membros e diferentes funções. Cada pessoa pode contribuir de alguma maneira.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Algumas pessoas têm facilidade para <strong>ensinar</strong>.</li>
+
+<li>🌿 Outras sabem <strong>encorajar</strong> quem está passando por dificuldades.</li>
+
+<li>🌿 Algumas têm facilidade para <strong>servir nos bastidores</strong>.</li>
+
+<li>🌿 Outras conseguem <strong>acolher e ouvir</strong> pessoas.</li>
+
+<li>🌿 Algumas usam seus talentos para <strong>organizar e liderar</strong>.</li>
+
+<li>🌿 Outras simplesmente estão presentes quando alguém precisa de companhia.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Nem todo serviço será visível. Nem todo trabalho será reconhecido. Mas isso não significa que seja menos importante.
+
+</p>
+
+<div class="destaque">
+
+<strong>O valor do seu serviço não depende de quantas pessoas percebem aquilo que você faz.</strong>
+
+</div>
+
+</div>
+
+
+<!-- SERVIR -->
+
+<div class="card">
+
+<h2>👐 Servir também é uma forma de amar</h2>
+
+<p>
+
+Servir não significa necessariamente ocupar uma posição importante ou realizar algo grandioso.
+
+</p>
+
+<br>
+
+<p>
+
+Às vezes, servir significa fazer algo simples que facilita a vida de outra pessoa.
+
+</p>
+
+<br>
+
+<p>
+
+Pode ser ajudar alguém que está com dificuldade, receber uma pessoa nova, ouvir alguém que precisa conversar, participar de uma atividade da igreja ou simplesmente estar disponível quando alguém precisa.
+
+</p>
+
+<br>
+
+<p>
+
+O serviço cristão começa quando deixamos de perguntar apenas:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"O que eu posso receber?"
+
+</p>
+
+<br>
+
+<p>
+
+e começamos a perguntar:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"O que eu posso oferecer?"
+
+</p>
+
+<br>
+
+<p>
+
+Quando servimos com amor, deixamos de colocar nossa própria importância no centro e começamos a procurar maneiras de abençoar outras pessoas.
+
+</p>
+
+</div>
+
+
+<!-- RELACIONAMENTOS -->
+
+<div class="card">
+
+<h2>❤️ Você também precisa de pessoas</h2>
+
+<p>
+
+Existe uma tendência de acreditar que precisamos resolver tudo sozinhos.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Deus não nos criou dessa maneira.
+
+</p>
+
+<br>
+
+<p>
+
+Precisamos de pessoas que possam caminhar conosco, nos encorajar, nos corrigir quando necessário, celebrar nossas conquistas e permanecer ao nosso lado durante momentos difíceis.
+
+</p>
+
+<br>
+
+<p>
+
+Isso exige vulnerabilidade.
+
+</p>
+
+<br>
+
+<p>
+
+Precisamos permitir que algumas pessoas conheçam nossa realidade para além daquilo que mostramos superficialmente.
+
+</p>
+
+<br>
+
+<p>
+
+Também precisamos aprender a receber ajuda.
+
+</p>
+
+<div class="destaque">
+
+<strong>Fazer parte da família de Deus significa não apenas servir aos outros, mas também permitir que os outros caminhem conosco.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Escolha as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Enviar uma mensagem de encorajamento para alguém.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Perguntar sinceramente a alguém como ela está.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Oferecer ajuda em alguma tarefa sem esperar reconhecimento.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Participar de alguma forma da vida da minha igreja ou comunidade.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Orar por alguém que faz parte da família de Deus.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Fazer parte da família de Deus significa mais do que acreditar; significa participar, servir e contribuir."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Deus não deseja apenas que façamos parte de uma multidão. Ele deseja que desenvolvamos comunhão verdadeira, aprendendo a amar, servir e caminhar com outras pessoas.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Assim também em Cristo nós, que somos muitos, formamos um corpo, e cada membro está ligado a todos os outros."
+
+</strong>
+
+<br><br>
+
+<b>Romanos 12:5</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Minha participação na igreja demonstra que realmente faço parte da família de Deus? Existe alguma forma de servir, ajudar ou me envolver mais com as pessoas ao meu redor?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Talvez você esteja presente nos cultos, nas reuniões ou nas atividades da igreja, mas será que está realmente construindo relacionamentos?
+
+</p>
+
+<br>
+
+<p>
+
+Existe alguém que você poderia conhecer melhor? Alguém que precisa de ajuda? Alguém que precisa de uma palavra de encorajamento?
+
+</p>
+
+<br>
+
+<p>
+
+Também vale olhar para dentro e perguntar se existe alguma razão pela qual você tem evitado se envolver.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez seja medo de ser rejeitado. Talvez seja timidez. Talvez experiências passadas tenham feito você se fechar.
+
+</p>
+
+<br>
+
+<p>
+
+Esses sentimentos são reais, mas não precisam determinar para sempre a maneira como você se relaciona com a família de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Comece pequeno.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Deus, mostra-me onde posso servir e quem posso amar hoje."
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa descobrir imediatamente qual é o seu grande papel. Comece simplesmente estando disponível.
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Meu lugar na família de Deus</h2>
+
+<p>
+
+Escreva abaixo suas reflexões. Pense nas pessoas que Deus colocou ao seu redor e em como você pode participar mais da vida delas.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Deus, hoje percebo que posso contribuir com a família de Deus através de..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- PROPÓSITO -->
+
+<div class="card">
+
+<h2>🎯 Propósito nº 2</h2>
+
+<p class="frase">
+
+"Você foi criado para fazer parte da família de Deus."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Nossa caminhada com Deus não foi planejada para acontecer isoladamente.
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Fomos chamados para pertencer a uma família espiritual, desenvolver relacionamentos, amar pessoas, servir com nossos dons e crescer junto com outros seguidores de Cristo.
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+<strong>Você não precisa caminhar sozinho.</strong>
+
+</p>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado porque não preciso caminhar sozinho.
+
+<br><br>
+
+Obrigado porque me chamaste para fazer parte da Tua família e porque colocaste pessoas ao meu redor para caminhar comigo.
+
+<br><br>
+
+Ajuda-me a não viver apenas como alguém que observa de longe, mas como alguém que participa, ama e serve.
+
+<br><br>
+
+Mostra-me os dons, habilidades e oportunidades que posso usar para abençoar outras pessoas.
+
+<br><br>
+
+Dá-me humildade para servir sem buscar reconhecimento e também humildade para receber ajuda quando eu precisar.
+
+<br><br>
+
+Ajuda-me a enxergar as pessoas com amor, paciência e compaixão.
+
+<br><br>
+
+Se existe alguém que precisa de uma palavra, uma ajuda, uma oração ou simplesmente da minha presença, mostra-me.
+
+<br><br>
+
+Que eu encontre meu lugar na Tua família e que minha presença possa ser uma bênção para aqueles que estão ao meu redor.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- PARA GUARDAR -->
+
+<div class="card">
+
+<h2>📖 Para guardar no coração</h2>
+
+<blockquote>
+
+<strong>
+
+"Assim nós, que somos muitos, somos um só corpo em Cristo e estamos ligados uns aos outros."
+
+</strong>
+
+<br><br>
+
+<b>Romanos 12:5</b>
+
+</blockquote>
+
+<br>
+
+<p style="text-align:center">
+
+Você não é apenas alguém que está entre outras pessoas. Em Cristo, você faz parte de um corpo. Existe um lugar para você, existe algo que você pode oferecer e existem pessoas com quem você pode caminhar.
+
+</p>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Meu lugar na família de Deus não é apenas onde eu recebo, mas também onde eu amo, sirvo e contribuo."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao décimo sétimo dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre uma verdade importante: <strong>você foi criado para fazer parte da família de Deus.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Isso significa que sua caminhada não precisa ser solitária. Deus deseja que você desenvolva relacionamentos, encontre pessoas com quem possa caminhar e também descubra maneiras de servir e contribuir.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você ainda não saiba exatamente qual é o seu lugar.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Comece estando disponível."
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa fazer algo grandioso hoje. Pode começar com uma mensagem, uma ajuda, uma oração, uma conversa ou uma pequena atitude de amor.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Seu lugar pode começar a ser descoberto quando você deixa de perguntar apenas onde pode receber e começa a perguntar onde pode servir.</strong>
+
+</p>
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+<div id="mensagem">
+
+🎉 Dia 17 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia16") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia17","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+
+        top:document.body.scrollHeight,
+
+        behavior:"smooth"
+
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia17");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia17",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia17check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia17check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia17")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
