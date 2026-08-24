@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uma Vida com Propósitos • Dia 18</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:45%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HERO -->
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 18 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 18</h1>
+
+<p>Vivendo em comunhão</p>
+
+</div>
+
+</header>
+
+
+<!-- PROGRESSO -->
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 18 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Ninguém foi criado para caminhar completamente sozinho.
+
+</p>
+
+<br>
+
+<p>
+
+Precisamos de pessoas para compartilhar alegrias, enfrentar dificuldades, receber conselhos, aprender, amadurecer e continuar caminhando quando nossas forças parecem pequenas.
+
+</p>
+
+<br>
+
+<p>
+
+Da mesma forma, nossa caminhada com Deus também não foi planejada para ser vivida em isolamento.
+
+</p>
+
+<br>
+
+<p>
+
+A comunhão nos lembra que fazemos parte de algo maior do que nós mesmos. Existem pessoas que podem nos encorajar, corrigir, ensinar e caminhar ao nosso lado.
+
+</p>
+
+<br>
+
+<p>
+
+Mas comunhão verdadeira exige mais do que simplesmente estar perto de outras pessoas.
+
+</p>
+
+<div class="destaque">
+
+<strong>Comunhão acontece quando deixamos de apenas dividir o mesmo espaço e começamos a compartilhar a vida.</strong>
+
+</div>
+
+</div>
+
+
+<!-- O QUE É COMUNHÃO -->
+
+<div class="card">
+
+<h2>🤝 O que significa viver em comunhão?</h2>
+
+<p>
+
+Comunhão não significa ter centenas de amigos ou estar cercado de pessoas o tempo todo.
+
+</p>
+
+<br>
+
+<p>
+
+É possível estar em uma multidão e, ainda assim, sentir-se sozinho.
+
+</p>
+
+<br>
+
+<p>
+
+A verdadeira comunhão nasce quando existem relacionamentos construídos com confiança, sinceridade, respeito e amor.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>💬 Compartilhar</h3>
+
+<p>
+
+Ter pessoas com quem podemos conversar sobre aquilo que estamos vivendo.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>❤️ Cuidar</h3>
+
+<p>
+
+Demonstrar interesse verdadeiro pela vida e pelas dificuldades dos outros.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🙏 Orar</h3>
+
+<p>
+
+Levar diante de Deus as necessidades e lutas das pessoas que caminham conosco.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌱 Crescer</h3>
+
+<p>
+
+Aprender com outras pessoas e permitir que relacionamentos saudáveis contribuam para nossa maturidade.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Quando caminhamos juntos, aprendemos que não precisamos carregar tudo sozinhos.
+
+</p>
+
+</div>
+
+
+<!-- COMPARTILHAR -->
+
+<div class="card">
+
+<h2>👐 Aprendendo a compartilhar os pesos</h2>
+
+<p>
+
+Todos enfrentamos momentos difíceis.
+
+</p>
+
+<br>
+
+<p>
+
+Existem preocupações, dúvidas, medos, frustrações e situações que podem se tornar ainda mais pesadas quando tentamos carregar tudo sozinhos.
+
+</p>
+
+<br>
+
+<p>
+
+Às vezes acreditamos que precisamos parecer fortes o tempo todo. Não queremos preocupar ninguém, temos medo de sermos julgados ou simplesmente não sabemos como expressar aquilo que estamos sentindo.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Deus também pode cuidar de nós através das pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Uma conversa sincera, uma oração, uma palavra de encorajamento ou simplesmente a presença de alguém pode fazer diferença em um momento difícil.
+
+</p>
+
+<div class="destaque">
+
+<strong>Pedir ajuda não significa fraqueza. Muitas vezes, é reconhecer que não fomos feitos para carregar todos os pesos sozinhos.</strong>
+
+</div>
+
+</div>
+
+
+<!-- SER UMA BOA COMPANHIA -->
+
+<div class="card">
+
+<h2>❤️ Não é apenas receber, é também estar presente</h2>
+
+<p>
+
+Quando pensamos em comunhão, podemos pensar imediatamente nas pessoas que gostaríamos que estivessem ao nosso lado.
+
+</p>
+
+<br>
+
+<p>
+
+Mas existe outra pergunta importante:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Que tipo de pessoa eu tenho sido na caminhada dos outros?"
+
+</p>
+
+<br>
+
+<p>
+
+Assim como precisamos de pessoas que nos escutem, também podemos aprender a ouvir.
+
+</p>
+
+<br>
+
+<p>
+
+Assim como precisamos de encorajamento, também podemos encorajar.
+
+</p>
+
+<br>
+
+<p>
+
+Assim como desejamos que alguém ore por nós, também podemos interceder pelas pessoas que Deus colocou em nossa vida.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Ouvir alguém com atenção.</li>
+
+<li>🌿 Perguntar como a pessoa realmente está.</li>
+
+<li>🌿 Oferecer ajuda quando possível.</li>
+
+<li>🌿 Orar por quem está enfrentando dificuldades.</li>
+
+<li>🌿 Celebrar sinceramente as conquistas dos outros.</li>
+
+<li>🌿 Permanecer presente mesmo quando não há nada a ganhar em troca.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Comunhão saudável não é construída apenas quando precisamos de alguma coisa. Ela cresce quando aprendemos a amar e servir uns aos outros.
+
+</p>
+
+</div>
+
+
+<!-- SINCERIDADE -->
+
+<div class="card">
+
+<h2>🌱 A importância da sinceridade</h2>
+
+<p>
+
+Relacionamentos superficiais podem ser agradáveis, mas dificilmente conseguem nos acompanhar profundamente.
+
+</p>
+
+<br>
+
+<p>
+
+Para que uma amizade se torne verdadeira, precisamos construir confiança ao longo do tempo.
+
+</p>
+
+<br>
+
+<p>
+
+Isso não significa contar todos os detalhes da nossa vida para qualquer pessoa.
+
+</p>
+
+<br>
+
+<p>
+
+Sabedoria também faz parte da comunhão. Algumas conversas exigem maturidade, confiança e pessoas que saibam cuidar daquilo que compartilhamos.
+
+</p>
+
+<br>
+
+<p>
+
+Mas quando encontramos pessoas confiáveis, podemos aprender a ser sinceros.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos deixar de fingir que está tudo bem quando não está.
+
+</p>
+
+<div class="destaque">
+
+<strong>Deus não precisa que você esconda sua realidade. E relacionamentos verdadeiros também crescem quando existe espaço para sinceridade.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Escolha atitudes que podem ajudá-lo a fortalecer seus relacionamentos e viver mais em comunhão:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Enviar uma mensagem sincera para alguém perguntando como essa pessoa está.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Compartilhar uma preocupação ou dificuldade com alguém de confiança.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Orar por uma pessoa que está enfrentando um momento difícil.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Agradecer a alguém que já fez diferença na minha caminhada.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Dar um passo para construir ou fortalecer uma amizade saudável.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Deus não nos criou para caminhar sozinhos; precisamos de pessoas para compartilhar a vida e crescer na fé."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+A caminhada se torna mais forte quando aprendemos a dividir alegrias, dificuldades, dúvidas e aprendizados com pessoas que também desejam crescer.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Compartilhem os seus problemas e transtornos uns com os outros e dessa forma obedeçam à lei de Cristo."
+
+</strong>
+
+<br><br>
+
+<b>Gálatas 6:2</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Existe alguém com quem posso me aproximar mais, compartilhar minha caminhada e construir uma amizade baseada em confiança, sinceridade e fé? Qual passo posso dar hoje?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Talvez um nome já tenha surgido em sua mente.
+
+</p>
+
+<br>
+
+<p>
+
+Pode ser alguém da igreja, um amigo, um familiar ou uma pessoa que você admira e com quem gostaria de construir uma relação mais próxima.
+
+</p>
+
+<br>
+
+<p>
+
+Relacionamentos profundos normalmente não surgem de uma única conversa. Eles são construídos pouco a pouco.
+
+</p>
+
+<br>
+
+<p>
+
+Uma mensagem pode ser o começo.
+
+</p>
+
+<br>
+
+<p>
+
+Uma conversa sincera pode aproximar duas pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Um convite para tomar um café, caminhar ou simplesmente conversar também pode ser um passo.
+
+</p>
+
+<br>
+
+<p>
+
+Não espere que a amizade perfeita apareça do nada.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Relacionamentos saudáveis também são construídos por pequenos passos."
+
+</p>
+
+<br>
+
+<p>
+
+Talvez hoje Deus esteja convidando você a sair um pouco do isolamento e dar espaço para que outras pessoas façam parte da sua caminhada.
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Minha caminhada em comunhão</h2>
+
+<p>
+
+Escreva abaixo o nome de alguém ou uma reflexão sobre o tipo de relacionamento que você deseja construir. Depois, pense em um passo simples que pode dar hoje.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Hoje eu percebo que posso fortalecer minha comunhão com outras pessoas através de..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- PROPÓSITO -->
+
+<div class="card">
+
+<h2>🎯 Propósito nº 2</h2>
+
+<p class="frase">
+
+"Você foi criado para fazer parte da família de Deus."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Fazer parte da família de Deus significa caminhar com outras pessoas.
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Significa aprender a amar, compartilhar, servir, receber ajuda e permitir que relacionamentos saudáveis também façam parte do nosso crescimento espiritual.
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+<strong>Você não precisa enfrentar a caminhada sozinho.</strong>
+
+</p>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado porque não me criaste para caminhar sozinho.
+
+<br><br>
+
+Obrigado pelas pessoas que colocaste em minha vida e por aquelas que ainda colocará no meu caminho.
+
+<br><br>
+
+Ajuda-me a construir relacionamentos saudáveis, sinceros e baseados no amor.
+
+<br><br>
+
+Dá-me sabedoria para escolher boas companhias e também para ser uma boa companhia para outras pessoas.
+
+<br><br>
+
+Ensina-me a ouvir com atenção, a encorajar quem precisa e a estar presente quando alguém estiver enfrentando dificuldades.
+
+<br><br>
+
+Quando eu estiver tentando carregar tudo sozinho, lembra-me de que posso pedir ajuda.
+
+<br><br>
+
+Quando alguém precisar de mim, ajuda-me a estar disponível dentro das possibilidades que tenho.
+
+<br><br>
+
+Que minha vida seja marcada por relacionamentos que me aproximem de Ti e que também aproximem outras pessoas do Teu amor.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- PARA GUARDAR -->
+
+<div class="card">
+
+<h2>📖 Para guardar no coração</h2>
+
+<blockquote>
+
+<strong>
+
+"Levem os fardos pesados uns dos outros e, assim, cumpram a lei de Cristo."
+
+</strong>
+
+<br><br>
+
+<b>Gálatas 6:2</b>
+
+</blockquote>
+
+<br>
+
+<p style="text-align:center">
+
+Uma das maneiras pelas quais Deus demonstra cuidado é através das pessoas. Às vezes somos nós que precisamos de ajuda. Em outros momentos, somos nós que Deus usa para ajudar alguém.
+
+</p>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Não preciso caminhar sozinho. Posso crescer com Deus enquanto caminho ao lado das pessoas que Ele coloca em minha vida."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao décimo oitavo dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre a importância da comunhão e percebeu que relacionamentos saudáveis fazem parte da nossa caminhada com Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Não fomos chamados para carregar tudo sozinhos.
+
+</p>
+
+<br>
+
+<p>
+
+Precisamos aprender a compartilhar nossas dificuldades, celebrar nossas alegrias, pedir ajuda quando necessário e também estar presentes para outras pessoas.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Às vezes, o próximo passo da sua caminhada com Deus pode começar com uma conversa sincera."
+
+</p>
+
+<br>
+
+<p>
+
+Pense em uma pessoa e dê um pequeno passo hoje.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Uma mensagem, uma oração, uma conversa ou um gesto de cuidado pode ser o começo de uma comunhão mais profunda.</strong>
+
+</p>
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+<div id="mensagem">
+
+🎉 Dia 18 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia17") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia18","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+
+        top:document.body.scrollHeight,
+
+        behavior:"smooth"
+
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia18");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia18",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia18check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia18check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia18")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
