@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 19</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:47.5%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 19 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 19</h1>
+
+<p>Construindo relacionamentos saudáveis</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 19 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Relacionamentos verdadeiros não são construídos apenas pela proximidade física ou pelo tempo que passamos ao lado das pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Uma comunidade saudável é construída através de escolhas. Escolhemos estar presentes, ouvir, cuidar, perdoar, ajudar e permanecer mesmo quando seria mais fácil nos afastar.
+
+</p>
+
+<br>
+
+<p>
+
+É possível estar cercado por muitas pessoas e, ainda assim, sentir-se sozinho. Isso acontece porque comunhão verdadeira vai além de simplesmente frequentar o mesmo lugar.
+
+</p>
+
+<br>
+
+<p>
+
+Deus deseja que aprendamos a construir relacionamentos baseados no amor, na sinceridade e no cuidado mútuo.
+
+</p>
+
+<div class="destaque">
+
+<strong>Uma comunidade verdadeira não é formada por pessoas perfeitas, mas por pessoas dispostas a amar, cuidar e caminhar juntas.</strong>
+
+</div>
+
+</div>
+
+
+<!-- COMUNIDADE -->
+
+<div class="card">
+
+<h2>🤝 O que constrói uma comunidade verdadeira?</h2>
+
+<p>
+
+Relacionamentos saudáveis não acontecem automaticamente. Eles precisam ser cultivados.
+
+</p>
+
+<br>
+
+<p>
+
+Assim como uma planta precisa de cuidado constante para crescer, nossos relacionamentos também precisam de atenção, tempo e dedicação.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>👂 Presença</h3>
+
+<p>
+
+Estar presente de verdade, não apenas fisicamente, mas com atenção e interesse pela vida das pessoas.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>❤️ Cuidado</h3>
+
+<p>
+
+Perceber quando alguém precisa de ajuda, apoio, uma conversa ou simplesmente de alguém disposto a ouvir.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🗣️ Sinceridade</h3>
+
+<p>
+
+Construir relações onde exista espaço para ser verdadeiro, compartilhar dificuldades e crescer juntos.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌿 Compromisso</h3>
+
+<p>
+
+Escolher permanecer e construir vínculos mesmo quando os relacionamentos exigem paciência e maturidade.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+A comunhão se fortalece quando deixamos de pensar apenas no que podemos receber e começamos a perguntar:
+
+<strong>"Como posso contribuir para a vida das pessoas ao meu redor?"</strong>
+
+</p>
+
+</div>
+
+
+<!-- AMOR EM AÇÃO -->
+
+<div class="card">
+
+<h2>❤️ O amor precisa se tornar atitude</h2>
+
+<p>
+
+É fácil dizer que amamos as pessoas. O verdadeiro desafio é transformar esse amor em atitudes concretas.
+
+</p>
+
+<br>
+
+<p>
+
+O amor aparece quando dedicamos nosso tempo, oferecemos ajuda, ouvimos com paciência e permanecemos presentes durante momentos difíceis.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Enviar uma mensagem para alguém que pode estar precisando de apoio.</li>
+
+<li>🌿 Ouvir uma pessoa sem interromper ou tentar resolver tudo imediatamente.</li>
+
+<li>🌿 Perdoar quando seria mais fácil guardar mágoa.</li>
+
+<li>🌿 Oferecer ajuda sem esperar algo em troca.</li>
+
+<li>🌿 Celebrar sinceramente a conquista de outra pessoa.</li>
+
+<li>🌿 Permanecer presente quando alguém está passando por um momento difícil.</li>
+
+</ul>
+
+<div class="destaque">
+
+<strong>Amar como Cristo amou significa permitir que o amor deixe de ser apenas uma intenção e se transforme em uma escolha diária.</strong>
+
+</div>
+
+</div>
+
+
+<!-- PRESENÇA -->
+
+<div class="card">
+
+<h2>🫂 A importância de estar presente</h2>
+
+<p>
+
+Vivemos em uma época em que podemos conversar com qualquer pessoa através de uma tela, mas isso não significa que estamos construindo relacionamentos profundos.
+
+</p>
+
+<br>
+
+<p>
+
+Estar presente é mais do que responder mensagens. É demonstrar interesse, prestar atenção e criar espaço para que as pessoas possam ser ouvidas.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez alguém próximo de você não precise de uma grande solução hoje.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez precise apenas saber que não está sozinho.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Às vezes, uma das maiores formas de amor é simplesmente permanecer."
+
+</p>
+
+<br>
+
+<p>
+
+Deus pode usar uma conversa, uma mensagem, uma visita ou uma simples demonstração de cuidado para fortalecer alguém que está enfrentando uma luta silenciosa.
+
+</p>
+
+</div>
+
+
+<!-- COMPROMISSO -->
+
+<div class="card">
+
+<h2>🌱 Relacionamentos também exigem compromisso</h2>
+
+<p>
+
+Nenhum relacionamento saudável é construído sem desafios.
+
+</p>
+
+<br>
+
+<p>
+
+Em algum momento haverá diferenças, mal-entendidos, expectativas frustradas e situações que exigirão maturidade.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, construir uma comunidade verdadeira significa aprender a não abandonar as pessoas na primeira dificuldade.
+
+</p>
+
+<br>
+
+<p>
+
+Isso não significa aceitar relacionamentos abusivos ou permitir que outras pessoas desrespeitem constantemente seus limites.
+
+</p>
+
+<br>
+
+<p>
+
+Mas significa compreender que relacionamentos saudáveis exigem paciência, diálogo, perdão e disposição para resolver conflitos de maneira madura.
+
+</p>
+
+<div class="destaque">
+
+<strong>Relacionamentos fortes não são aqueles que nunca enfrentam dificuldades, mas aqueles em que existe disposição para enfrentar as dificuldades juntos.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Escolha algumas atitudes para praticar e fortalecer seus relacionamentos:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Enviar uma mensagem para alguém e demonstrar interesse sincero por como essa pessoa está.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Ouvir alguém com atenção, sem ficar distraído ou pensando no que vou responder.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Agradecer a uma pessoa que tem sido importante na minha caminhada.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Oferecer ajuda a alguém sem esperar receber algo em troca.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Dar um passo para fortalecer a união e a comunhão dentro da minha igreja.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Uma comunidade verdadeira é construída quando escolhemos estar presentes, cuidar uns dos outros e permanecer comprometidos."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Deus não nos chamou apenas para receber amor. Ele também nos chamou para aprender a amar, servir e fortalecer aqueles que caminham ao nosso lado.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Nós compreendemos o que é o amor quando descobrimos que Cristo deu sua vida por nós. Significa que temos de dar nossa vida pelos outros crentes."
+
+</strong>
+
+<br><br>
+
+<b>1 João 3:16</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Que atitude posso tomar hoje para fortalecer a união, a confiança e o cuidado dentro da minha igreja e das pessoas com quem compartilho minha fé?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Pense nas pessoas que fazem parte da sua caminhada.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez exista alguém de quem você tenha se afastado. Talvez alguém esteja passando por um momento difícil. Talvez exista uma amizade que poderia ser fortalecida ou uma pessoa nova que você ainda não teve a oportunidade de conhecer melhor.
+
+</p>
+
+<br>
+
+<p>
+
+Comunhão não acontece apenas quando esperamos que outras pessoas se aproximem de nós.
+
+</p>
+
+<br>
+
+<p>
+
+Às vezes, Deus pode estar nos chamando para dar o primeiro passo.
+
+</p>
+
+<br>
+
+<p>
+
+Pergunte a si mesmo:
+
+<strong>Quem Deus colocou perto de mim?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Depois pergunte:
+
+<strong>Como posso demonstrar amor e cuidado por essa pessoa de maneira prática?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Não precisa ser algo grandioso.
+
+</p>
+
+<br>
+
+<p>
+
+Uma conversa sincera, uma mensagem, uma oração ou uma simples demonstração de presença pode fortalecer um relacionamento.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Talvez o relacionamento que precisa de atenção não esteja longe. Talvez esteja ao seu lado."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Meu passo de hoje</h2>
+
+<p>
+
+Escreva abaixo uma atitude prática que você deseja tomar para fortalecer um relacionamento ou demonstrar mais amor e cuidado por alguém.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Hoje eu quero fortalecer meus relacionamentos através de..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado pelas pessoas que colocaste em minha caminhada.
+
+<br><br>
+
+Ajuda-me a não viver de maneira isolada e a compreender a importância da comunhão e dos relacionamentos que construo.
+
+<br><br>
+
+Ensina-me a amar não apenas com palavras, mas também com atitudes.
+
+<br><br>
+
+Dá-me sensibilidade para perceber quando alguém precisa de ajuda, paciência para ouvir, humildade para pedir perdão e coragem para dar o primeiro passo quando for necessário.
+
+<br><br>
+
+Ajuda-me a construir relacionamentos saudáveis, baseados em sinceridade, respeito, cuidado e amor.
+
+<br><br>
+
+Que eu não esteja presente apenas nos momentos fáceis, mas que também saiba permanecer ao lado das pessoas durante as dificuldades.
+
+<br><br>
+
+Usa minha vida para fortalecer a união dentro da Tua família.
+
+<br><br>
+
+Que através das minhas atitudes, outras pessoas possam perceber um pouco do amor de Cristo.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Relacionamentos saudáveis são construídos quando transformamos amor em presença, cuidado e compromisso."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao décimo nono dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre a importância de construir relacionamentos saudáveis e de fortalecer a comunidade que Deus colocou ao seu redor.
+
+</p>
+
+<br>
+
+<p>
+
+Uma família verdadeira não é construída apenas por pessoas que frequentam o mesmo lugar.
+
+</p>
+
+<br>
+
+<p>
+
+Ela é construída quando pessoas escolhem amar, cuidar, servir, perdoar e caminhar juntas.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez hoje Deus esteja colocando alguém em sua mente.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Não espere sempre que alguém dê o primeiro passo. Às vezes, Deus pode estar chamando você para ser essa pessoa."
+
+</p>
+
+<br>
+
+<p>
+
+Antes de encerrar este dia, pense em uma atitude simples que você pode tomar para demonstrar amor e fortalecer algum relacionamento.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Comunidade verdadeira começa quando cada pessoa decide fazer sua parte.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 19 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia18") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia19","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo =
+document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia19");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia19",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia19check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia19check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia19")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
