@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 21</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f6f3ec;
+    color:#38463a;
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    position:relative;
+    overflow:hidden;
+}
+
+header::after{
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+    left:0;
+
+    width:100%;
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    animation:aparecer 1s ease;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+}
+
+header h1{
+    font-family:"Playfair Display",serif;
+    font-size:62px;
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+}
+
+header p{
+    font-size:23px;
+    margin-top:12px;
+    opacity:.95;
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+    z-index:5;
+}
+
+.progress-card{
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.progress-info{
+    min-width:130px;
+
+    font-size:14px;
+    font-weight:600;
+
+    color:#4f6f52;
+}
+
+.progress-bar{
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:52.5%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width:900px;
+    margin:auto;
+
+    padding:20px 20px 60px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+}
+
+h2{
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+}
+
+h3{
+    color:#4f6f52;
+    margin-bottom:12px;
+}
+
+p{
+    margin-bottom:3px;
+}
+
+ul{
+    padding-left:22px;
+}
+
+li{
+    margin-bottom:14px;
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+}
+
+.destaque strong{
+    color:#36563b;
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+}
+
+blockquote::before{
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+}
+
+.mini-card{
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+}
+
+.mini-card:hover{
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+}
+
+.mini-card h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.check-item{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+}
+
+.check-item:hover{
+    border-color:#b9cbb9;
+}
+
+.check-item input{
+    width:20px;
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+}
+
+.check-item.checked{
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+}
+
+button:active{
+    transform:scale(.97);
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.versiculo:hover{
+    transform:scale(1.01);
+}
+
+.versiculo-hint{
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+textarea:focus{
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+}
+
+.salvo{
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+}
+
+/* =========================
+   PROPÓSITO
+========================= */
+
+.proposito{
+    background:
+    linear-gradient(
+        135deg,
+        #36563b,
+        #5f7d62
+    );
+
+    color:white;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.proposito h2{
+    color:white;
+}
+
+.proposito .frase{
+    color:#f2f7f1;
+}
+
+.proposito::before{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    top:-100px;
+    right:-80px;
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+        min-height:390px;
+    }
+
+    header h1{
+        font-size:45px;
+    }
+
+    header p{
+        font-size:18px;
+    }
+
+    .badge{
+        font-size:13px;
+        padding:9px 17px;
+    }
+
+    .card{
+        padding:26px 22px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    .frase{
+        font-size:21px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .progress-card{
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+    }
+
+    .progress-info{
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 21 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 21</h1>
+
+<p>Cuidando da igreja de Cristo</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 21 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+A igreja não é apenas um lugar que frequentamos. Ela é uma família formada por pessoas diferentes, com histórias, personalidades, opiniões, dons e dificuldades diferentes, mas unidas por Cristo.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, cuidar da igreja também significa cuidar da maneira como nos relacionamos com as pessoas que fazem parte dela.
+
+</p>
+
+<br>
+
+<p>
+
+É fácil desejar uma comunidade perfeita. Difícil é lembrar que nós também fazemos parte dela e que nossas palavras, atitudes e escolhas ajudam a construir — ou podem enfraquecer — a unidade entre os irmãos.
+
+</p>
+
+<br>
+
+<p>
+
+Cada vez que escolhemos amar, ouvir, perdoar, servir e agir com humildade, estamos contribuindo para uma igreja mais saudável.
+
+</p>
+
+<div class="destaque">
+
+<strong>A unidade da igreja não depende apenas do que os outros fazem. Ela também é construída pelas minhas escolhas todos os dias.</strong>
+
+</div>
+
+</div>
+
+
+<!-- UNIDADE -->
+
+<div class="card">
+
+<h2>🤝 Construindo a unidade</h2>
+
+<p>
+
+Unidade não significa que todas as pessoas precisam pensar, agir ou ter exatamente as mesmas opiniões.
+
+</p>
+
+<br>
+
+<p>
+
+Uma comunidade saudável pode ter diferenças. O problema começa quando essas diferenças se transformam em orgulho, competição, julgamentos ou divisões.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>❤️ Amar</h3>
+
+<p>
+
+Escolher tratar as pessoas com amor, mesmo quando elas são diferentes de nós.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>👂 Ouvir</h3>
+
+<p>
+
+Aprender a escutar antes de responder ou tirar conclusões precipitadas.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤍 Perdoar</h3>
+
+<p>
+
+Não alimentar ressentimentos e estar disposto a buscar reconciliação.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>👐 Servir</h3>
+
+<p>
+
+Usar nosso tempo, nossos dons e nossas capacidades para ajudar outras pessoas.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+A verdadeira comunhão não nasce porque todos são iguais. Ela cresce quando pessoas diferentes decidem colocar o amor acima do orgulho.
+
+</p>
+
+</div>
+
+
+<!-- MINHAS ATITUDES -->
+
+<div class="card">
+
+<h2>🗣️ Minhas palavras também constroem</h2>
+
+<p>
+
+Muitas vezes não percebemos o poder que nossas palavras possuem dentro de uma comunidade.
+
+</p>
+
+<br>
+
+<p>
+
+Uma palavra pode encorajar alguém que está desanimado. Uma conversa sincera pode resolver um mal-entendido. Um pedido de perdão pode restaurar um relacionamento.
+
+</p>
+
+<br>
+
+<p>
+
+Mas também podemos usar nossas palavras para reclamar, criticar, espalhar conflitos ou alimentar divisões.
+
+</p>
+
+<br>
+
+<p>
+
+Antes de falar sobre alguém, vale a pena perguntar:
+
+</p>
+
+<div class="destaque">
+
+<strong>O que estou prestes a dizer vai ajudar a construir ou pode contribuir para destruir a comunhão?</strong>
+
+</div>
+
+<br>
+
+<p>
+
+Cuidar da igreja também significa aprender a usar nossas palavras para trazer paz, encorajamento e crescimento.
+
+</p>
+
+</div>
+
+
+<!-- HARMONIA -->
+
+<div class="card">
+
+<h2>🌿 Escolhendo aquilo que promove a harmonia</h2>
+
+<p>
+
+Nem toda discussão precisa ser vencida. Nem toda diferença precisa se transformar em conflito.
+
+</p>
+
+<br>
+
+<p>
+
+Em alguns momentos, maturidade significa saber quando falar. Em outros, significa saber quando ouvir, esperar ou simplesmente escolher não alimentar uma discussão.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Escolher compreender antes de julgar.</li>
+
+<li>🌿 Conversar diretamente em vez de alimentar comentários sobre outras pessoas.</li>
+
+<li>🌿 Pedir perdão quando reconhecemos que erramos.</li>
+
+<li>🌿 Perdoar quando alguém nos machuca.</li>
+
+<li>🌿 Celebrar as conquistas dos outros sem transformar tudo em competição.</li>
+
+<li>🌿 Procurar soluções em vez de apenas apontar problemas.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Promover a harmonia não significa ignorar problemas. Significa lidar com eles de uma maneira que reflita o caráter de Cristo.
+
+</p>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Escolha atitudes que você deseja praticar para fortalecer a unidade e a comunhão:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Usar minhas palavras para encorajar alguém da minha comunidade.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Evitar alimentar críticas, fofocas ou comentários que possam causar divisão.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Demonstrar interesse sincero por alguém que esteja precisando de apoio.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Escolher ouvir com mais atenção antes de responder ou julgar.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Orar pela união, pelo crescimento e pelas pessoas da minha igreja.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"A unidade da igreja também depende das minhas atitudes, palavras e escolhas."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Não posso controlar as atitudes de todas as pessoas, mas posso escolher qual será a minha contribuição para a comunidade da qual faço parte.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Portanto, concentremo-nos nas coisas que contribuem para a harmonia e no crescimento de nossa comunhão conjunta."
+
+</strong>
+
+<br><br>
+
+<b>Romanos 14:19</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Minhas palavras e atitudes têm contribuído para a união da minha igreja? O que posso fazer hoje para promover mais amor, respeito e harmonia entre os irmãos?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Quando pensamos na igreja, muitas vezes observamos aquilo que poderia melhorar nas outras pessoas ou na própria comunidade.
+
+</p>
+
+<br>
+
+<p>
+
+Mas hoje a pergunta é mais pessoal: <strong>qual tem sido a minha contribuição?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Minhas palavras aproximam ou afastam? Minhas atitudes ajudam ou dificultam? Sou alguém que promove paz ou alguém que aumenta conflitos?
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você não consiga resolver todos os problemas da sua comunidade. Mas pode escolher começar por aquilo que está ao seu alcance.
+
+</p>
+
+<br>
+
+<p>
+
+Pode ser uma conversa, um pedido de perdão, uma palavra de encorajamento, uma oração ou simplesmente uma mudança na maneira como você reage às pessoas.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Senhor, ajuda-me a não apenas fazer parte da igreja, mas a ajudar a construí-la com amor."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Minha contribuição para a comunhão</h2>
+
+<p>
+
+Escreva abaixo uma atitude concreta que você deseja tomar para fortalecer a união, o amor ou a harmonia entre as pessoas que fazem parte da sua caminhada de fé.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Hoje eu posso contribuir para a comunhão da igreja..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- PROPÓSITO Nº 3 -->
+
+<div class="card proposito">
+
+<h2>🎯 Propósito nº 3</h2>
+
+<p class="frase">
+
+"Você foi criado para se tornar semelhante a Cristo."
+
+</p>
+
+<br>
+
+<p>
+
+Até aqui, esta jornada nos lembrou que fomos criados para viver para Deus e também para fazer parte da família de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Agora entramos em uma nova etapa: Deus não deseja apenas que conheçamos mais sobre Jesus. Ele deseja transformar nossa maneira de viver.
+
+</p>
+
+<br>
+
+<p>
+
+Ser semelhante a Cristo não significa perder nossa personalidade. Significa permitir que nosso caráter seja moldado por Ele.
+
+</p>
+
+<br>
+
+<p>
+
+É um processo de crescimento. Aos poucos, aprendemos a amar mais, perdoar mais, confiar mais, servir mais e reagir às situações de uma maneira cada vez mais parecida com Jesus.
+
+</p>
+
+</div>
+
+
+<!-- PARA GUARDAR -->
+
+<div class="card">
+
+<h2>📖 Para guardar no coração</h2>
+
+<blockquote>
+
+<strong>
+
+"Deixem que as raízes de vocês se aprofundem nele e extraiam dele a nutrição. Cuidem de continuar a crescer no Senhor, e tornem-se fortes e vigorosos na verdade. E que a vida de vocês transborde de alegria e gratidão por tudo quanto Ele tem feito."
+
+</strong>
+
+<br><br>
+
+<b>Colossenses 2:7</b>
+
+</blockquote>
+
+<br>
+
+<p style="text-align:center">
+
+Assim como uma árvore precisa aprofundar suas raízes para crescer forte, nossa vida precisa permanecer conectada a Cristo.
+
+</p>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado porque não me criaste para caminhar sozinho.
+
+<br><br>
+
+Obrigado pela família da fé e pelas pessoas que colocaste em minha caminhada.
+
+<br><br>
+
+Ajuda-me a reconhecer que minhas palavras, atitudes e escolhas também influenciam a comunhão da igreja.
+
+<br><br>
+
+Que eu não seja alguém que alimenta divisões, críticas ou conflitos, mas uma pessoa que promove paz, amor e crescimento.
+
+<br><br>
+
+Ensina-me a ouvir com humildade, a falar com sabedoria, a perdoar quando for necessário e a pedir perdão quando eu errar.
+
+<br><br>
+
+Ajuda-me a servir sem buscar reconhecimento e a cuidar das pessoas ao meu redor com sinceridade.
+
+<br><br>
+
+E, a partir de hoje, começa também a transformar meu coração para que eu me torne cada vez mais semelhante a Jesus.
+
+<br><br>
+
+Que minhas raízes se aprofundem em Ti e que minha vida produza frutos que revelem o Teu amor.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Uma igreja mais unida começa quando eu decido que minhas palavras e atitudes serão instrumentos de amor."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao vigésimo primeiro dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre a responsabilidade de cuidar da igreja de Cristo e percebeu que a unidade não é apenas responsabilidade de líderes ou de outras pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Cada pessoa contribui para a comunidade através das suas palavras, escolhas e atitudes.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você não consiga mudar tudo ao seu redor, mas pode decidir qual tipo de presença deseja ser na vida das pessoas.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Hoje eu escolho contribuir para a unidade, e não para a divisão."
+
+</p>
+
+<br>
+
+<p>
+
+E uma nova etapa começa agora.
+
+</p>
+
+<br>
+
+<p>
+
+Nos próximos dias, a jornada vai aprofundar uma pergunta importante:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Como posso me tornar cada vez mais semelhante a Cristo?"
+
+</p>
+
+<br>
+
+<p>
+
+<strong>O objetivo não é apenas conhecer Jesus. É permitir que Ele transforme a maneira como vivemos.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 21 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia20") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia21","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia21");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia21",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia21check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia21check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia21")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
