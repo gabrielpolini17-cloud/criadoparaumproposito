@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 22</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f6f3ec;
+    color:#38463a;
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    position:relative;
+    overflow:hidden;
+}
+
+header::after{
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+    left:0;
+
+    width:100%;
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    animation:aparecer 1s ease;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+}
+
+header h1{
+    font-family:"Playfair Display",serif;
+    font-size:62px;
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+}
+
+header p{
+    font-size:23px;
+    margin-top:12px;
+    opacity:.95;
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+    z-index:5;
+}
+
+.progress-card{
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.progress-info{
+    min-width:130px;
+
+    font-size:14px;
+    font-weight:600;
+
+    color:#4f6f52;
+}
+
+.progress-bar{
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:55%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width:900px;
+    margin:auto;
+
+    padding:20px 20px 60px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+}
+
+h2{
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+}
+
+h3{
+    color:#4f6f52;
+    margin-bottom:12px;
+}
+
+p{
+    margin-bottom:3px;
+}
+
+ul{
+    padding-left:22px;
+}
+
+li{
+    margin-bottom:14px;
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+}
+
+.destaque strong{
+    color:#36563b;
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+}
+
+blockquote::before{
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+}
+
+.mini-card{
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+}
+
+.mini-card:hover{
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+}
+
+.mini-card h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.check-item{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+}
+
+.check-item:hover{
+    border-color:#b9cbb9;
+}
+
+.check-item input{
+    width:20px;
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+}
+
+.check-item.checked{
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+}
+
+button:active{
+    transform:scale(.97);
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.versiculo:hover{
+    transform:scale(1.01);
+}
+
+.versiculo-hint{
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+textarea:focus{
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+}
+
+.salvo{
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+}
+
+/* =========================
+   PROPÓSITO
+========================= */
+
+.proposito{
+    background:
+    linear-gradient(
+        135deg,
+        #36563b,
+        #5f7d62
+    );
+
+    color:white;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.proposito h2{
+    color:white;
+}
+
+.proposito .frase{
+    color:#f2f7f1;
+}
+
+.proposito::before{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    top:-100px;
+    right:-80px;
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+        min-height:390px;
+    }
+
+    header h1{
+        font-size:45px;
+    }
+
+    header p{
+        font-size:18px;
+    }
+
+    .badge{
+        font-size:13px;
+        padding:9px 17px;
+    }
+
+    .card{
+        padding:26px 22px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    .frase{
+        font-size:21px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .progress-card{
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+    }
+
+    .progress-info{
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 22 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 22</h1>
+
+<p>Refletindo o caráter de Cristo</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 22 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Deus não deseja apenas mudar aquilo que fazemos. Ele deseja transformar quem somos.
+
+</p>
+
+<br>
+
+<p>
+
+É possível mudar alguns comportamentos por um período de tempo sem que exista uma verdadeira transformação interior. Podemos aprender a falar de determinada maneira, controlar algumas reações ou até aparentar maturidade diante das pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Deus trabalha em um nível muito mais profundo: <strong>Ele transforma nosso caráter.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+À medida que caminhamos com Cristo, começamos a perceber que algumas atitudes precisam mudar. Nossa maneira de reagir às dificuldades, tratar as pessoas, lidar com o orgulho, enfrentar a frustração, perdoar e tomar decisões começa a ser confrontada pela vida de Jesus.
+
+</p>
+
+<br>
+
+<p>
+
+Esse processo não acontece de uma hora para outra. É uma caminhada diária de aprendizado, arrependimento, obediência e dependência do Espírito Santo.
+
+</p>
+
+<div class="destaque">
+
+<strong>Deus não está apenas interessado no que faço. Ele também está formando em mim o caráter de Cristo.</strong>
+
+</div>
+
+</div>
+
+
+<!-- O CARÁTER DE CRISTO -->
+
+<div class="card">
+
+<h2>🌿 O que significa refletir Cristo?</h2>
+
+<p>
+
+Refletir Cristo significa permitir que Sua maneira de viver comece a aparecer em nossas próprias atitudes.
+
+</p>
+
+<br>
+
+<p>
+
+Não significa tentar copiar Jesus apenas externamente. Significa permitir que o Espírito Santo transforme nosso interior e produza em nós características que apontem para Cristo.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>❤️ Amor</h3>
+
+<p>
+
+Aprender a amar as pessoas não apenas quando é fácil, mas também quando existem diferenças e dificuldades.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤍 Humildade</h3>
+
+<p>
+
+Reconhecer que não somos superiores aos outros e que também precisamos aprender, crescer e pedir perdão.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌿 Paciência</h3>
+
+<p>
+
+Aprender a esperar e responder com equilíbrio mesmo quando as circunstâncias nos pressionam.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🕊️ Perdão</h3>
+
+<p>
+
+Escolher não permanecer preso ao ressentimento e buscar a restauração sempre que possível.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Essas características não são produzidas apenas pelo nosso esforço. Elas são fruto de uma vida que permanece próxima de Deus e permite que o Espírito Santo trabalhe.
+
+</p>
+
+</div>
+
+
+<!-- TRANSFORMAÇÃO -->
+
+<div class="card">
+
+<h2>🌱 A transformação acontece por dentro</h2>
+
+<p>
+
+Muitas vezes queremos que Deus transforme primeiro as circunstâncias ao nosso redor.
+
+</p>
+
+<br>
+
+<p>
+
+Queremos que Ele mude determinada situação, resolva um problema, mude o comportamento de alguém ou retire uma dificuldade.
+
+</p>
+
+<br>
+
+<p>
+
+Mas, em muitos momentos, Deus utiliza justamente essas situações para trabalhar em nosso caráter.
+
+</p>
+
+<br>
+
+<p>
+
+Uma dificuldade pode revelar nossa impaciência. Uma frustração pode mostrar nosso desejo de controlar tudo. Um conflito pode revelar orgulho. Uma espera pode ensinar confiança.
+
+</p>
+
+<br>
+
+<p>
+
+Isso não significa que Deus seja o autor de tudo aquilo que acontece de ruim. Significa que, mesmo em situações difíceis, Ele pode trabalhar em nós e produzir crescimento.
+
+</p>
+
+<div class="destaque">
+
+<strong>Às vezes pedimos a Deus que mude a situação, enquanto Ele também está usando a situação para nos transformar.</strong>
+
+</div>
+
+</div>
+
+
+<!-- ÁREAS DO CARÁTER -->
+
+<div class="card">
+
+<h2>🔎 Onde Deus está trabalhando em mim?</h2>
+
+<p>
+
+Uma das partes mais importantes do crescimento espiritual é permitir que Deus revele áreas do nosso caráter que ainda precisam amadurecer.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Como reajo quando sou contrariado?</li>
+
+<li>🌿 Como trato alguém que não pode me oferecer nada em troca?</li>
+
+<li>🌿 Consigo pedir perdão quando reconheço que errei?</li>
+
+<li>🌿 Consigo perdoar sem alimentar ressentimento?</li>
+
+<li>🌿 Como lido com críticas?</li>
+
+<li>🌿 Como reajo quando outra pessoa recebe reconhecimento que eu gostaria de receber?</li>
+
+<li>🌿 Consigo confiar em Deus quando não tenho controle sobre uma situação?</li>
+
+<li>🌿 Minha maneira de agir quando estou sozinho combina com aquilo que demonstro diante das pessoas?</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Essas perguntas não existem para produzir culpa, mas para gerar consciência.
+
+</p>
+
+<br>
+
+<p>
+
+Deus não revela nossas fraquezas para nos destruir. Ele as revela para que possamos levá-las a Ele e permitir que sejam transformadas.
+
+</p>
+
+</div>
+
+
+<!-- PROCESSO -->
+
+<div class="card">
+
+<h2>🛠️ O processo de transformação</h2>
+
+<p>
+
+Tornar-se semelhante a Cristo é um processo. Não precisamos esperar perfeição para começar.
+
+</p>
+
+<br>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>1. Reconhecer</h3>
+
+<p>
+
+Admitir diante de Deus aquilo que precisa ser transformado.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>2. Entregar</h3>
+
+<p>
+
+Colocar nossas fraquezas e desejos diante de Deus em oração.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>3. Obedecer</h3>
+
+<p>
+
+Escolher praticar aquilo que Deus nos ensina, mesmo quando é difícil.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>4. Permanecer</h3>
+
+<p>
+
+Continuar caminhando com Deus mesmo quando a mudança parece lenta.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Não devemos medir nossa transformação apenas pelo quanto ainda precisamos mudar.
+
+</p>
+
+<br>
+
+<p>
+
+Também precisamos perceber o quanto Deus já está trabalhando em nós.
+
+</p>
+
+<div class="destaque">
+
+<strong>Crescimento espiritual não significa nunca mais errar. Significa continuar permitindo que Deus transforme você.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Escolha as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Pedir ao Espírito Santo que revele uma área do meu caráter que precisa crescer.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Responder com mais paciência diante de uma situação difícil.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Praticar humildade e reconhecer quando eu estiver errado.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Escolher perdoar alguém em vez de alimentar ressentimento.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Antes de reagir, perguntar: "Como Jesus agiria nessa situação?"
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Deus deseja transformar meu caráter para que minhas atitudes reflitam cada vez mais quem Cristo é."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+A transformação começa quando deixamos de perguntar apenas "O que eu quero fazer?" e começamos a perguntar: <strong>"Que tipo de pessoa Deus está me formando para ser?"</strong>
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Conforme o Espírito do Senhor trabalha em nós, tornamo-nos mais e mais como Ele e refletimos ainda mais a sua glória."
+
+</strong>
+
+<br><br>
+
+<b>2 Coríntios 3:18</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Qual área do meu caráter mais precisa ser transformada pelo Espírito Santo hoje, e como posso permitir que Ele trabalhe em mim?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Existe alguma característica sua que você sabe que precisa amadurecer?
+
+</p>
+
+<br>
+
+<p>
+
+Talvez seja a impaciência. Talvez seja o orgulho, a ansiedade, a dificuldade de perdoar, a necessidade de controlar tudo, a forma como você reage às críticas ou até a maneira como trata determinadas pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Em vez de simplesmente tentar esconder essa área, leve-a para Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Pergunte:
+
+<strong>"Senhor, o que Tu queres transformar em mim através disso?"</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Depois pense em uma atitude prática que você pode tomar hoje.
+
+</p>
+
+<br>
+
+<p>
+
+Se precisa desenvolver paciência, talvez seja escolher responder com calma em uma situação que normalmente faria você perder a paciência.
+
+</p>
+
+<br>
+
+<p>
+
+Se precisa desenvolver humildade, talvez seja reconhecer um erro sem tentar justificar-se.
+
+</p>
+
+<br>
+
+<p>
+
+Se precisa aprender a perdoar, talvez seja começar orando sinceramente pela pessoa que machucou você.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Espírito Santo, transforma em mim aquilo que ainda não se parece com Cristo."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Uma área que quero entregar a Deus</h2>
+
+<p>
+
+Escreva abaixo uma área do seu caráter que você deseja entregar ao Espírito Santo hoje. Seja sincero. Este espaço é seu momento pessoal de reflexão.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Senhor, hoje reconheço que preciso crescer em..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- PROPÓSITO -->
+
+<div class="card proposito">
+
+<h2>🎯 Propósito nº 3</h2>
+
+<p class="frase">
+
+"Você foi criado para se tornar semelhante a Cristo."
+
+</p>
+
+<br>
+
+<p>
+
+Deus não quer apenas que você frequente uma igreja, leia a Bíblia ou saiba falar sobre Jesus.
+
+</p>
+
+<br>
+
+<p>
+
+Ele deseja transformar sua vida de dentro para fora.
+
+</p>
+
+<br>
+
+<p>
+
+Isso significa que, ao longo da caminhada, seu caráter começa a refletir cada vez mais o caráter de Cristo.
+
+</p>
+
+<br>
+
+<p>
+
+Você começa a amar de maneira diferente, perdoar de maneira diferente, servir de maneira diferente e enfrentar as dificuldades de maneira diferente.
+
+</p>
+
+<br>
+
+<p>
+
+A transformação é gradual. Existem áreas que Deus muda rapidamente e outras que exigem anos de crescimento.
+
+</p>
+
+<br>
+
+<p>
+
+O importante é permanecer disponível para Deus.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Não se trata de tentar parecer perfeito. Trata-se de permitir que Cristo seja formado em você.</strong>
+
+</p>
+
+</div>
+
+
+<!-- PARA GUARDAR -->
+
+<div class="card">
+
+<h2>📖 Para guardar no coração</h2>
+
+<blockquote>
+
+<strong>
+
+"Deixem que as raízes de vocês se aprofundem nele e extraiam dele a nutrição. Cuidem de continuar a crescer no Senhor, e tornem-se fortes e vigorosos na verdade. E que a vida de vocês transborde de alegria e gratidão por tudo quanto Ele tem feito."
+
+</strong>
+
+<br><br>
+
+<b>Colossenses 2:7</b>
+
+</blockquote>
+
+<br>
+
+<p style="text-align:center">
+
+Quanto mais profundamente permanecemos em Cristo, mais nossa vida começa a refletir quem Ele é.
+
+</p>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, eu reconheço que ainda existem áreas do meu caráter que precisam ser transformadas.
+
+<br><br>
+
+Muitas vezes minhas atitudes não refletem aquilo que eu desejo viver e nem aquilo que aprendo na Tua Palavra.
+
+<br><br>
+
+Por isso, peço que o Teu Espírito Santo trabalhe profundamente em mim.
+
+<br><br>
+
+Mostra-me aquilo que precisa mudar e dá-me humildade para reconhecer minhas falhas.
+
+<br><br>
+
+Ensina-me a amar como Jesus amou, perdoar como Jesus perdoou, servir como Jesus serviu e tratar as pessoas com a mesma graça que recebo de Ti.
+
+<br><br>
+
+Quando eu estiver impaciente, ensina-me a ter paciência.
+
+<br><br>
+
+Quando eu estiver orgulhoso, ensina-me a ter humildade.
+
+<br><br>
+
+Quando eu estiver magoado, ensina-me a perdoar.
+
+<br><br>
+
+Quando eu quiser controlar tudo, ensina-me a confiar.
+
+<br><br>
+
+Não quero apenas conhecer mais sobre Cristo. Quero me tornar cada vez mais semelhante a Ele.
+
+<br><br>
+
+Que minhas palavras, escolhas, pensamentos e atitudes reflitam a Tua presença em minha vida.
+
+<br><br>
+
+Continua trabalhando em mim todos os dias.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Quanto mais permito que Deus transforme meu coração, mais minha vida começa a refletir Cristo."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao vigésimo segundo dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você começou a olhar para uma parte ainda mais profunda do propósito de Deus: <strong>a transformação do seu caráter.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Deus não deseja apenas mudar algumas coisas que fazemos. Ele deseja formar em nós um caráter semelhante ao de Cristo.
+
+</p>
+
+<br>
+
+<p>
+
+Esse processo exige tempo, paciência, humildade e disposição para permitir que o Espírito Santo trabalhe.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Não preciso ser perfeito hoje. Preciso continuar permitindo que Deus me transforme."
+
+</p>
+
+<br>
+
+<p>
+
+Antes de seguir para o próximo dia, lembre-se da área do seu caráter que você colocou diante de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Observe essa área ao longo do dia e procure uma oportunidade concreta de agir de maneira diferente.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Pequenas escolhas repetidas todos os dias podem fazer parte de uma grande transformação.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 22 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia21") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia22","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia22");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia22",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia22check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia22check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia22")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
