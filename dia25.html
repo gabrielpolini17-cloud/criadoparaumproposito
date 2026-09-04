@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 25</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:62.5%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 25 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 25</h1>
+
+<p>Aprendendo nas dificuldades</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 25 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Existem momentos em que gostaríamos que nossa caminhada fosse sempre tranquila. Queremos dias bons, respostas rápidas, portas abertas e problemas resolvidos.
+
+</p>
+
+<br>
+
+<p>
+
+Mas a vida também possui períodos difíceis. Existem perdas, frustrações, esperas, mudanças, decepções e situações que não conseguimos compreender completamente.
+
+</p>
+
+<br>
+
+<p>
+
+Nesses momentos, é comum perguntar: <strong>"Por que Deus permitiu que isso acontecesse?"</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Nem sempre teremos uma resposta imediata. E é importante reconhecer isso. A Bíblia não promete que entenderemos todas as razões pelas quais determinadas situações acontecem.
+
+</p>
+
+<br>
+
+<p>
+
+Mas existe uma verdade na qual podemos descansar: <strong>Deus continua trabalhando mesmo quando não conseguimos enxergar o que Ele está fazendo.</strong>
+
+</p>
+
+<div class="destaque">
+
+<strong>Uma dificuldade não significa necessariamente que Deus abandonou você. Às vezes, aquilo que parece apenas um obstáculo também pode se tornar parte do processo de crescimento que Deus está realizando em sua vida.</strong>
+
+</div>
+
+</div>
+
+
+<!-- DEUS NAS DIFICULDADES -->
+
+<div class="card">
+
+<h2>🌿 Deus também trabalha nos momentos difíceis</h2>
+
+<p>
+
+Quando tudo está acontecendo como gostaríamos, é relativamente fácil agradecer a Deus.
+
+</p>
+
+<br>
+
+<p>
+
+O desafio aparece quando as coisas não saem conforme planejamos.
+
+</p>
+
+<br>
+
+<p>
+
+É nesses momentos que nossa fé pode ser aprofundada. Não porque Deus tenha prazer em nosso sofrimento, mas porque dificuldades podem revelar áreas do nosso coração que precisam amadurecer.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🌱 Perseverança</h3>
+
+<p>
+
+As dificuldades podem nos ensinar a continuar caminhando mesmo quando não vemos resultados imediatos.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤍 Dependência</h3>
+
+<p>
+
+Algumas situações nos lembram de que não somos capazes de controlar tudo e precisamos confiar em Deus.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>💪 Fortalecimento</h3>
+
+<p>
+
+Momentos difíceis podem desenvolver uma fé mais firme e uma confiança menos dependente das circunstâncias.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🕊️ Maturidade</h3>
+
+<p>
+
+As experiências da vida podem nos ensinar a reagir com mais sabedoria, paciência e equilíbrio.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Isso não significa que devemos fingir que a dor não existe. Podemos chorar, lamentar, pedir ajuda e reconhecer que determinada situação é difícil.
+
+</p>
+
+<br>
+
+<p>
+
+A questão é não permitir que a dificuldade seja o ponto final da nossa história.
+
+</p>
+
+</div>
+
+
+<!-- O QUE DEUS PODE ENSINAR -->
+
+<div class="card">
+
+<h2>📚 O que posso aprender com uma dificuldade?</h2>
+
+<p>
+
+Nem toda dificuldade possui uma explicação simples. Algumas experiências permanecem difíceis de entender.
+
+</p>
+
+<br>
+
+<p>
+
+Mesmo assim, podemos perguntar: <strong>"O que Deus pode estar formando em mim através desta situação?"</strong>
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Talvez eu esteja aprendendo a <strong>ter paciência</strong>.</li>
+
+<li>🌿 Talvez esteja aprendendo a <strong>confiar mais em Deus</strong>.</li>
+
+<li>🌿 Talvez esteja percebendo que preciso <strong>mudar alguma atitude</strong>.</li>
+
+<li>🌿 Talvez esteja aprendendo a <strong>valorizar mais as pessoas</strong>.</li>
+
+<li>🌿 Talvez esteja desenvolvendo <strong>perseverança</strong>.</li>
+
+<li>🌿 Talvez esteja descobrindo uma força que eu não sabia que possuía.</li>
+
+<li>🌿 Talvez esteja aprendendo a <strong>depender menos do controle e mais da fé</strong>.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+A dificuldade pode revelar coisas que estavam escondidas dentro de nós.
+
+</p>
+
+<br>
+
+<p>
+
+Ela pode mostrar como reagimos quando perdemos o controle, quando somos contrariados, quando precisamos esperar ou quando nossos planos não acontecem.
+
+</p>
+
+<div class="destaque">
+
+<strong>Nem sempre podemos escolher aquilo que acontece conosco, mas podemos escolher o que faremos com aquilo que aconteceu.</strong>
+
+</div>
+
+</div>
+
+
+<!-- ROMANOS 8 -->
+
+<div class="card">
+
+<h2>❤️ Deus continua agindo</h2>
+
+<p>
+
+Romanos 8:28 não significa que todas as coisas que acontecem são boas.
+
+</p>
+
+<br>
+
+<p>
+
+Existem acontecimentos que realmente são dolorosos, injustos e difíceis.
+
+</p>
+
+<br>
+
+<p>
+
+A promessa é diferente: <strong>Deus pode agir em todas as coisas para cumprir Seus propósitos e produzir algo bom na vida daqueles que O amam.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Isso muda a maneira como enfrentamos as dificuldades.
+
+</p>
+
+<br>
+
+<p>
+
+Não precisamos olhar para um problema e dizer que ele é bom. Podemos reconhecer que é difícil e, ao mesmo tempo, confiar que Deus não perdeu o controle.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Eu talvez não entenda o que Deus está fazendo, mas posso confiar que Ele continua trabalhando."
+
+</p>
+
+<br>
+
+<p>
+
+A fé não elimina automaticamente a dificuldade. Ela nos ajuda a atravessá-la sabendo que não estamos sozinhos.
+
+</p>
+
+</div>
+
+
+<!-- COMO REAGIR -->
+
+<div class="card">
+
+<h2>🧭 Como reagir quando as dificuldades chegam?</h2>
+
+<p>
+
+Quando enfrentamos um problema, nossa primeira reação muitas vezes é tentar resolver tudo imediatamente.
+
+</p>
+
+<br>
+
+<p>
+
+Isso pode ser importante em algumas situações. Deus também nos chama para agir com responsabilidade.
+
+</p>
+
+<br>
+
+<p>
+
+Mas existe uma diferença entre <strong>agir</strong> e tentar carregar sozinho um peso que não conseguimos controlar.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🙏 <strong>Ore antes de reagir:</strong> converse com Deus sobre aquilo que está acontecendo.</li>
+
+<li>📖 <strong>Procure a Palavra:</strong> lembre-se das verdades de Deus quando suas emoções estiverem confusas.</li>
+
+<li>🤝 <strong>Procure pessoas confiáveis:</strong> não enfrente tudo sozinho.</li>
+
+<li>🌿 <strong>Faça sua parte:</strong> pergunte o que está ao seu alcance fazer hoje.</li>
+
+<li>🕊️ <strong>Entregue o que está fora do seu controle:</strong> confie aquilo que você não consegue resolver.</li>
+
+<li>⏳ <strong>Tenha paciência:</strong> algumas respostas precisam de tempo.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Talvez você não consiga resolver todo o problema hoje.
+
+</p>
+
+<br>
+
+<p>
+
+Mas talvez consiga dar <strong>um passo</strong> hoje.
+
+</p>
+
+<div class="destaque">
+
+<strong>Não carregue o peso de resolver amanhã aquilo que Deus está permitindo que você enfrente um dia de cada vez.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Entregar a Deus uma dificuldade que está preocupando meu coração.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Perguntar o que essa situação pode estar me ensinando.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Evitar reclamar automaticamente diante de uma dificuldade.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Conversar com alguém de confiança sobre aquilo que estou enfrentando.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Dar hoje um passo que está ao meu alcance, sem tentar controlar o resultado.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Mesmo os problemas podem fazer parte do processo que Deus usa para me ensinar, fortalecer e amadurecer."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Uma dificuldade não precisa definir quem você será. Ela também pode se tornar uma oportunidade para crescer, amadurecer e aprender a confiar mais profundamente em Deus.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Sabemos que Deus age em todas as coisas para o bem daqueles que o amam, dos que foram chamados de acordo com o seu propósito."
+
+</strong>
+
+<br><br>
+
+<b>Romanos 8:28</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Qual problema ou dificuldade da minha vida mais contribuiu para o meu crescimento, e o que Deus me ensinou por meio dessa experiência?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Pense em uma dificuldade que você já enfrentou.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez tenha sido algo relacionado à família, aos relacionamentos, ao trabalho, aos estudos, às suas escolhas, ao seu futuro ou simplesmente uma situação que você não esperava viver.
+
+</p>
+
+<br>
+
+<p>
+
+Agora tente olhar para essa experiência não apenas através da dor que ela causou, mas também através daquilo que ela produziu em você.
+
+</p>
+
+<br>
+
+<p>
+
+Você se tornou mais paciente?
+
+</p>
+
+<br>
+
+<p>
+
+Aprendeu a valorizar mais alguém?
+
+</p>
+
+<br>
+
+<p>
+
+Começou a depender mais de Deus?
+
+</p>
+
+<br>
+
+<p>
+
+Percebeu uma fraqueza que precisava ser trabalhada?
+
+</p>
+
+<br>
+
+<p>
+
+Aprendeu que nem tudo está sob seu controle?
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você ainda esteja vivendo uma dificuldade e não consiga enxergar nenhuma resposta.
+
+</p>
+
+<br>
+
+<p>
+
+Tudo bem.
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa descobrir hoje tudo aquilo que Deus fará através dessa situação.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez, por enquanto, seja suficiente continuar caminhando, confiar em Deus e dar o próximo passo.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Deus ainda está trabalhando, mesmo quando eu ainda não consigo enxergar o resultado."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Meu aprendizado na dificuldade</h2>
+
+<p>
+
+Escreva abaixo sobre uma dificuldade que marcou sua vida e sobre aquilo que você acredita que Deus ensinou — ou ainda está ensinando — através dela.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Senhor, olhando para uma dificuldade da minha vida, percebo que..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, existem momentos em que não consigo entender por que algumas coisas acontecem.
+
+<br><br>
+
+Às vezes as dificuldades me deixam cansado, confuso e até com medo do futuro.
+
+<br><br>
+
+Ajuda-me a lembrar que Tu continuas comigo mesmo quando eu não consigo compreender o que estás fazendo.
+
+<br><br>
+
+Ensina-me a olhar para as dificuldades com fé e não apenas com medo.
+
+<br><br>
+
+Mostra-me aquilo que posso aprender, aquilo que preciso mudar e aquilo que preciso entregar em Tuas mãos.
+
+<br><br>
+
+Dá-me força para continuar quando eu estiver cansado.
+
+<br><br>
+
+Dá-me sabedoria para saber o que está ao meu alcance fazer e humildade para reconhecer aquilo que não posso controlar.
+
+<br><br>
+
+Ajuda-me a não desperdiçar as experiências difíceis da minha vida. Usa cada uma delas para formar em mim um caráter mais parecido com o de Cristo.
+
+<br><br>
+
+Quando eu não entender o caminho, ajuda-me a confiar em Ti.
+
+<br><br>
+
+Quando eu não enxergar uma resposta, ajuda-me a continuar caminhando.
+
+<br><br>
+
+E quando eu olhar para trás, que eu consiga perceber que até nos momentos mais difíceis Tu estavas comigo.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Nem toda dificuldade precisa ser entendida imediatamente; algumas precisam ser atravessadas com fé."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao vigésimo quinto dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre uma verdade importante: <strong>as dificuldades também podem fazer parte do processo de crescimento que Deus realiza em nós.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Isso não significa que devemos gostar dos problemas ou fingir que a dor não existe.
+
+</p>
+
+<br>
+
+<p>
+
+Significa aprender a confiar que Deus continua presente e trabalhando mesmo quando não conseguimos compreender completamente aquilo que estamos vivendo.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você esteja passando por uma dificuldade neste momento.
+
+</p>
+
+<br>
+
+<p>
+
+Se estiver, não tente resolver toda a sua vida de uma vez.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Faça o que está ao seu alcance hoje e confie a Deus aquilo que você não consegue controlar."
+
+</p>
+
+<br>
+
+<p>
+
+Olhe para a dificuldade e pergunte:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"O que Deus quer formar em mim através disso?"
+
+</p>
+
+<br>
+
+<p>
+
+Talvez a resposta não venha imediatamente.
+
+</p>
+
+<br>
+
+<p>
+
+Mas continue caminhando.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Deus pode usar até os momentos difíceis para aproximá-lo dEle, fortalecer sua fé e prepará-lo para aquilo que ainda está por vir.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 25 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia24") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia25","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+
+        top:document.body.scrollHeight,
+
+        behavior:"smooth"
+
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia25");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia25",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia25check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia25check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia25")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
