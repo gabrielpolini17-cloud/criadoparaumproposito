@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 30</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:75%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 30 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 30</h1>
+
+<p>Preparados para servir</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 30 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Deus não criou nenhuma pessoa por acaso. Cada um de nós recebeu características, habilidades, experiências e oportunidades que podem ser usadas para cumprir um propósito maior.
+
+</p>
+
+<br>
+
+<p>
+
+Muitas vezes pensamos que servir a Deus significa fazer algo grandioso, ocupar uma posição importante ou realizar alguma atividade dentro da igreja. Mas servir pode acontecer de maneiras muito mais simples e próximas da nossa realidade.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos servir quando ajudamos alguém, quando ouvimos uma pessoa que precisa conversar, quando usamos nossas habilidades para facilitar o trabalho de outras pessoas ou quando simplesmente fazemos aquilo que está em nossas mãos com amor e dedicação.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Deus pode usar aquilo que parece pequeno aos nossos olhos para produzir algo significativo na vida de outras pessoas.</strong>
+
+</p>
+
+<div class="destaque">
+
+<strong>Servir a Deus é colocar aquilo que Ele me deu à disposição dos outros.</strong>
+
+</div>
+
+</div>
+
+
+<!-- DONS -->
+
+<div class="card">
+
+<h2>🌿 Deus me deu algo para oferecer</h2>
+
+<p>
+
+Cada pessoa possui características e habilidades diferentes. Algumas pessoas têm facilidade para ensinar. Outras sabem ouvir, organizar, liderar, acolher, criar, aconselhar, trabalhar com crianças ou ajudar nos bastidores.
+
+</p>
+
+<br>
+
+<p>
+
+Não precisamos ter os mesmos dons para sermos úteis. A diversidade faz parte da maneira como Deus constrói Sua família.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>💬 Comunicação</h3>
+
+<p>
+
+Usar palavras para ensinar, encorajar, orientar e transmitir esperança.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤝 Cuidado</h3>
+
+<p>
+
+Estar presente, ouvir, acolher e ajudar pessoas que precisam de apoio.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🧠 Habilidades</h3>
+
+<p>
+
+Colocar conhecimentos profissionais, técnicos e práticos a serviço de Deus e das pessoas.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>❤️ Serviço</h3>
+
+<p>
+
+Fazer aquilo que precisa ser feito mesmo quando ninguém está vendo ou reconhecendo.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+A pergunta não é apenas: <strong>"O que eu gostaria de fazer?"</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Também precisamos perguntar:
+
+<strong>"Como aquilo que Deus colocou em mim pode beneficiar outras pessoas?"</strong>
+
+</p>
+
+</div>
+
+
+<!-- SERVIR -->
+
+<div class="card">
+
+<h2>👐 Servir não é buscar reconhecimento</h2>
+
+<p>
+
+É fácil servir quando recebemos elogios, reconhecimento ou agradecimentos. O desafio aparece quando fazemos algo importante e ninguém percebe.
+
+</p>
+
+<br>
+
+<p>
+
+Jesus nos ensina uma forma diferente de enxergar o serviço. O valor daquilo que fazemos não depende da quantidade de pessoas que percebem.
+
+</p>
+
+<br>
+
+<p>
+
+Quando servimos por amor a Deus, não precisamos transformar cada atitude em uma oportunidade de receber aprovação.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌱 Servir mesmo quando ninguém está olhando.</li>
+
+<li>🌱 Ajudar sem esperar algo em troca.</li>
+
+<li>🌱 Fazer pequenas coisas com grande dedicação.</li>
+
+<li>🌱 Celebrar o crescimento de outras pessoas.</li>
+
+<li>🌱 Usar nossos dons para beneficiar e não apenas para aparecer.</li>
+
+</ul>
+
+<div class="destaque">
+
+<strong>O verdadeiro serviço não procura aplausos; procura oportunidades para amar e ajudar.</strong>
+
+</div>
+
+</div>
+
+
+<!-- MOTIVAÇÃO -->
+
+<div class="card">
+
+<h2>🔥 Servir com alegria e dedicação</h2>
+
+<p>
+
+Servir a Deus não deveria ser encarado apenas como uma obrigação.
+
+</p>
+
+<br>
+
+<p>
+
+Quando entendemos que Deus nos criou com propósito, começamos a enxergar nossas habilidades de outra maneira. Aquilo que sabemos fazer pode se tornar uma ferramenta para abençoar pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Isso também significa desenvolver nossas capacidades. Se Deus nos deu determinada habilidade, podemos aperfeiçoá-la e colocá-la cada vez mais à disposição d'Ele.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Deus pode usar aquilo que tenho quando decido colocá-lo em Suas mãos."
+
+</p>
+
+<br>
+
+<p>
+
+Não é necessário esperar ter tudo perfeito para começar a servir. Podemos começar com aquilo que temos hoje.
+
+</p>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Usar uma habilidade minha para ajudar alguém.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Fazer uma tarefa com dedicação mesmo que ninguém reconheça.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Perguntar a alguém se precisa de ajuda.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Identificar uma habilidade que posso desenvolver para servir melhor.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Agradecer a Deus pelos dons e capacidades que Ele me deu.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Deus me criou com dons, habilidades e características únicas para que eu possa servir a outras pessoas e cumprir o propósito que Ele preparou para mim."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Aquilo que Deus colocou em mim pode se tornar uma ferramenta de amor, cuidado e serviço quando escolho colocá-lo à disposição d'Ele.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo">
+
+<strong>
+
+"Deus age por intermédio de homens e maneiras diferentes, mas é o mesmo Deus que atinge seus propósitos mediante todos eles."
+
+</strong>
+
+<br><br>
+
+<b>1 Coríntios 12:6</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+De que maneira posso servir às outras pessoas com alegria, dedicação e paixão, encontrando prazer em usar aquilo que Deus me deu para ajudar?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Talvez você tenha habilidades que considera comuns demais para serem usadas por Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez saiba organizar coisas, ouvir pessoas, ensinar, trabalhar com tecnologia, cozinhar, cuidar de crianças, liderar, criar, resolver problemas ou simplesmente estar presente quando alguém precisa.
+
+</p>
+
+<br>
+
+<p>
+
+O fato de algo ser fácil para você não significa que não tenha valor. Muitas vezes aquilo que fazemos naturalmente pode ser exatamente uma das ferramentas que Deus deseja usar.
+
+</p>
+
+<br>
+
+<p>
+
+Pense em algumas perguntas:
+
+<strong>Quais são minhas principais habilidades?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Quais atividades faço com facilidade e alegria?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Quem poderia ser beneficiado se eu colocasse essas habilidades à disposição?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Servir começa quando deixamos de perguntar apenas o que podemos receber e começamos a perguntar:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Senhor, como posso usar aquilo que Tu me deste para abençoar alguém hoje?"
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Meu chamado para servir</h2>
+
+<p>
+
+Escreva abaixo quais dons, habilidades ou características você acredita que Deus colocou em sua vida e como poderia usá-los para servir outras pessoas.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Senhor, quero usar aquilo que me deste para..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado porque minha vida tem um propósito e porque Tu me criaste de maneira única.
+
+<br><br>
+
+Obrigado pelos dons, habilidades, experiências e características que colocaste em mim.
+
+<br><br>
+
+Ajuda-me a enxergar essas coisas não apenas como conquistas pessoais, mas como ferramentas que podem ser usadas para servir e abençoar outras pessoas.
+
+<br><br>
+
+Livra-me da necessidade de reconhecimento e dos desejos de fazer as coisas apenas para receber elogios.
+
+<br><br>
+
+Ensina-me a servir com humildade, alegria, dedicação e amor.
+
+<br><br>
+
+Mostra-me onde posso ser útil. Coloca pessoas no meu caminho que precisam de ajuda e dá-me sensibilidade para perceber essas oportunidades.
+
+<br><br>
+
+Que eu não espere ter tudo perfeito para começar a servir.
+
+<br><br>
+
+Quero colocar nas Tuas mãos aquilo que tenho hoje e confiar que Tu podes usar até mesmo aquilo que parece pequeno.
+
+<br><br>
+
+Que minhas habilidades sejam usadas para glorificar o Teu nome e para fazer diferença na vida das pessoas.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Deus não procura pessoas perfeitas para servir, mas pessoas dispostas a colocar nas mãos d'Ele aquilo que receberam."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao trigésimo dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre os dons, habilidades e características que Deus colocou em sua vida e sobre como essas coisas podem ser usadas para servir outras pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa esperar uma grande oportunidade para começar.
+
+</p>
+
+<br>
+
+<p>
+
+Muitas vezes o serviço começa em pequenas atitudes: ajudar alguém, ouvir uma pessoa, fazer uma tarefa com dedicação, ensinar aquilo que você sabe ou simplesmente estar disponível.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Comece com aquilo que Deus já colocou em suas mãos."
+
+</p>
+
+<br>
+
+<p>
+
+Que você possa olhar para sua vida não apenas perguntando o que pode conquistar, mas também perguntando:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Quem posso ajudar com aquilo que Deus me deu?"
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Quando colocamos nossos dons nas mãos de Deus, até aquilo que parece pequeno pode cumprir um grande propósito.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 30 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia29") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia30","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+
+        top:document.body.scrollHeight,
+
+        behavior:"smooth"
+
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia30");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+
+        "reflexaoDia30",
+
+        campo.value
+
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+
+            "dia30check"+index,
+
+            check.checked
+
+        );
+
+    });
+
+    document.getElementById(
+
+        "check-status"
+
+    ).textContent =
+
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+
+        "dia30check"+index
+
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia30")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
