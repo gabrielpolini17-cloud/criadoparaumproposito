@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 28</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:70%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 28 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 28</h1>
+
+<p>O crescimento acontece aos poucos</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 28 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+O crescimento espiritual não acontece de uma hora para outra. Assim como uma planta precisa de tempo, cuidado, água e luz para crescer, nossa vida com Deus também precisa de tempo, perseverança e dedicação.
+
+</p>
+
+<br>
+
+<p>
+
+Muitas vezes queremos perceber mudanças imediatamente. Queremos ter mais fé, mais domínio próprio, mais paciência, mais sabedoria e um caráter mais parecido com o de Cristo rapidamente.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Deus trabalha em nós através de um processo. Cada experiência, cada dificuldade, cada decisão e cada aprendizado pode fazer parte daquilo que Ele está construindo em nossa vida.
+
+</p>
+
+<br>
+
+<p>
+
+Isso significa que não devemos desprezar os pequenos passos. Uma oração feita hoje, uma atitude de obediência, uma palavra controlada, uma tentação vencida ou uma escolha correta podem parecer pequenas, mas fazem parte do nosso crescimento.
+
+</p>
+
+<div class="destaque">
+
+<strong>Deus não espera que eu seja perfeito hoje. Ele deseja que eu continue permitindo que Ele me transforme.</strong>
+
+</div>
+
+</div>
+
+
+<!-- PROCESSO -->
+
+<div class="card">
+
+<h2>🌱 O crescimento acontece no processo</h2>
+
+<p>
+
+É fácil olhar para outras pessoas e pensar que elas já chegaram a um nível de maturidade espiritual que nós ainda não alcançamos.
+
+</p>
+
+<br>
+
+<p>
+
+Mas cada pessoa possui uma caminhada diferente. Deus conhece o nosso coração, nossas limitações, nossas experiências e aquilo que ainda precisa ser trabalhado em nós.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🌿 Tenha paciência</h3>
+
+<p>
+
+Nem toda mudança acontece imediatamente. Algumas transformações exigem tempo e perseverança.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🙏 Continue buscando</h3>
+
+<p>
+
+Mesmo quando não perceber resultados, continue orando, lendo a Palavra e buscando a Deus.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>📖 Aprenda</h3>
+
+<p>
+
+Cada experiência pode ensinar algo e revelar áreas que precisam amadurecer.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>❤️ Permita-se mudar</h3>
+
+<p>
+
+Crescer significa estar disposto a reconhecer erros, aprender e permitir que Deus transforme nosso caráter.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+O importante não é comparar o nosso crescimento com o de outras pessoas, mas perceber se estamos caminhando na direção de Cristo.
+
+</p>
+
+</div>
+
+
+<!-- PEQUENOS PASSOS -->
+
+<div class="card">
+
+<h2>🚶 Pequenos passos também são crescimento</h2>
+
+<p>
+
+Às vezes esperamos grandes mudanças para acreditar que Deus está trabalhando em nós. Porém, o crescimento normalmente aparece nos detalhes da vida cotidiana.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌱 Escolher responder com calma em vez de agir pela irritação.</li>
+
+<li>🌱 Pedir perdão quando reconhecemos que erramos.</li>
+
+<li>🌱 Escolher obedecer a Deus mesmo quando ninguém está olhando.</li>
+
+<li>🌱 Continuar orando mesmo quando não sentimos vontade.</li>
+
+<li>🌱 Aprender a confiar em Deus diante de uma situação difícil.</li>
+
+<li>🌱 Trocar pensamentos que nos afastam de Deus por aquilo que aprendemos em Sua Palavra.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Esses pequenos passos podem parecer insignificantes, mas são evidências de que estamos aprendendo a viver de uma maneira diferente.
+
+</p>
+
+<div class="destaque">
+
+<strong>Não despreze o pequeno progresso. Uma vida transformada é construída através de muitas escolhas feitas diariamente.</strong>
+
+</div>
+
+</div>
+
+
+<!-- COMPARAÇÃO -->
+
+<div class="card">
+
+<h2>🌿 Não compare sua caminhada</h2>
+
+<p>
+
+Uma das maneiras de desanimar durante o crescimento espiritual é comparar nossa caminhada com a caminhada de outras pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos olhar para alguém que parece ter mais conhecimento bíblico, mais experiência, mais maturidade ou mais tempo de caminhada com Deus e pensar que estamos muito atrás.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Deus não chamou você para ser outra pessoa. Ele chamou você para crescer e se tornar cada vez mais parecido com Cristo.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Não preciso ser igual a outra pessoa. Preciso continuar caminhando com Deus."
+
+</p>
+
+<br>
+
+<p>
+
+Em vez de perguntar se estou tão avançado quanto outra pessoa, posso perguntar:
+
+<strong>Estou mais perto de Deus do que estava antes?</strong>
+
+</p>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Ter paciência com meu próprio processo de crescimento.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Reconhecer uma área em que Deus já me fez crescer.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Escolher uma pequena atitude que quero melhorar hoje.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Evitar me comparar com a caminhada espiritual de outras pessoas.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Continuar buscando a Deus mesmo quando eu não perceber resultados imediatos.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Não existem atalhos para alcançar a maturidade; o crescimento espiritual acontece com tempo, perseverança e disposição para continuar aprendendo com Deus."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Deus ainda está trabalhando em mim. Meu papel é continuar caminhando, aprendendo e permitindo que Ele transforme minha vida.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Deus começou a fazer uma boa obra em vocês, e tenho certeza de que ele a continuará até que seja concluída, quando Jesus Cristo voltar outra vez."
+
+</strong>
+
+<br><br>
+
+<b>Filipenses 1:6</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Em qual área do meu crescimento espiritual preciso ter mais paciência e persistência, confiando que Deus ainda está trabalhando em mim?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Talvez exista uma área da sua vida em que você gostaria de ver uma mudança imediata.
+
+</p>
+
+<br>
+
+<p>
+
+Pode ser seu relacionamento com Deus, seu domínio próprio, sua maneira de lidar com as dificuldades, seus pensamentos, seus relacionamentos, sua paciência ou alguma outra característica que você deseja desenvolver.
+
+</p>
+
+<br>
+
+<p>
+
+Em vez de olhar apenas para aquilo que ainda precisa mudar, tente perceber também aquilo que Deus já transformou.
+
+</p>
+
+<br>
+
+<p>
+
+Pergunte a si mesmo:
+
+<strong>Onde eu estava há alguns meses ou anos e onde estou hoje?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você ainda não esteja onde gostaria de estar, mas isso não significa que Deus não esteja trabalhando.
+
+</p>
+
+<br>
+
+<p>
+
+Continue caminhando.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Deus ainda não terminou Sua obra em mim."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Meu momento de reflexão</h2>
+
+<p>
+
+Escreva abaixo uma área em que você deseja crescer e amadurecer com a ajuda de Deus.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Senhor, eu quero crescer em..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- PROPÓSITO -->
+
+<div class="card">
+
+<h2>🎯 Propósito nº 4</h2>
+
+<p class="frase">
+
+Você foi moldado para servir a Deus.
+
+</p>
+
+<br>
+
+<p>
+
+O crescimento que Deus produz em nós não termina em nós mesmos. À medida que amadurecemos na fé, também somos preparados para servir, ajudar e abençoar outras pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Deus pode usar aquilo que aprendemos, aquilo que vivemos e até mesmo as dificuldades pelas quais passamos para cumprir Seus propósitos através de nossa vida.
+
+</p>
+
+<div class="destaque">
+
+<strong>Deus não está apenas formando você para receber. Ele também está formando você para servir.</strong>
+
+</div>
+
+</div>
+
+
+<!-- PARA GUARDAR -->
+
+<div class="card">
+
+<h2>📖 Para guardar no coração</h2>
+
+<blockquote>
+
+"Somos somente servidores de Deus. Cada um de nós faz o trabalho que o Senhor lhe deu para fazer: eu plantei, e Apolo regou a planta, mas foi Deus quem a fez crescer."
+
+<br><br>
+
+<b>1 Coríntios 3:5-6</b>
+
+</blockquote>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado porque Tu ainda estás trabalhando em minha vida.
+
+<br><br>
+
+Ajuda-me a não desistir quando eu perceber que ainda tenho muito para aprender e transformar.
+
+<br><br>
+
+Ensina-me a ter paciência com o meu próprio processo e a confiar que cada etapa da minha caminhada pode ser usada por Ti.
+
+<br><br>
+
+Ajuda-me a reconhecer os pequenos avanços e a não desprezar aquilo que parece pequeno.
+
+<br><br>
+
+Livra-me da comparação e ensina-me a olhar para Cristo como meu verdadeiro exemplo.
+
+<br><br>
+
+Que eu continue buscando Tua Palavra, orando, obedecendo e permitindo que o Teu Espírito transforme meu caráter.
+
+<br><br>
+
+E quando eu perceber que estou crescendo, lembra-me de que esse crescimento não é apenas para mim. Prepara-me também para servir, amar e ajudar outras pessoas.
+
+<br><br>
+
+Obrigado porque Tu começaste uma boa obra em mim e continuarás trabalhando até completá-la.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Não preciso crescer de uma vez. Preciso continuar caminhando com Deus todos os dias."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao vigésimo oitavo dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre uma verdade importante: o crescimento espiritual acontece aos poucos.
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa ter tudo resolvido. Não precisa ser perfeito. O importante é continuar permitindo que Deus trabalhe em seu coração, em seu caráter e em suas escolhas.
+
+</p>
+
+<br>
+
+<p>
+
+Cada pequeno passo de fé, obediência e transformação faz parte daquilo que Deus está construindo em você.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Deus começou uma boa obra em mim e ainda não terminou."
+
+</p>
+
+<br>
+
+<p>
+
+A partir de agora, essa transformação também começa a apontar para um novo propósito: <strong>servir a Deus com aquilo que Ele colocou em suas mãos.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Continue firme. O processo ainda está acontecendo.
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 28 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia27") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia28","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+
+        top:document.body.scrollHeight,
+
+        behavior:"smooth"
+
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia28");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia28",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia28check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia28check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia28")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
