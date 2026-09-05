@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 26</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:65%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 26 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 26</h1>
+
+<p>Vencendo as tentações</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 26 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Todos nós enfrentamos tentações. Elas fazem parte da realidade de uma vida que busca seguir a Deus em um mundo cheio de escolhas, influências e desejos que nem sempre estão de acordo com a vontade dEle.
+
+</p>
+
+<br>
+
+<p>
+
+Ser tentado não significa automaticamente que estamos pecando. A tentação aparece como uma oportunidade de escolha: podemos ceder ao desejo ou escolher permanecer firmes naquilo que sabemos ser correto.
+
+</p>
+
+<br>
+
+<p>
+
+Muitas vezes imaginamos que vencer uma tentação significa nunca mais sentir determinado desejo. Mas maturidade espiritual não significa ausência de tentações. Significa aprender a responder a elas de uma maneira diferente.
+
+</p>
+
+<br>
+
+<p>
+
+Cada vez que escolhemos obedecer a Deus mesmo quando seria mais fácil fazer o contrário, nosso caráter é fortalecido.
+
+</p>
+
+<div class="destaque">
+
+<strong>A tentação pode ser uma oportunidade para escolher Deus, fortalecer a fé e desenvolver um caráter semelhante ao de Cristo.</strong>
+
+</div>
+
+</div>
+
+
+<!-- ENTENDENDO A TENTAÇÃO -->
+
+<div class="card">
+
+<h2>🌿 Entendendo a tentação</h2>
+
+<p>
+
+A tentação normalmente começa dentro de nós. Um pensamento, um desejo, uma oportunidade ou uma situação pode despertar algo que nos convida a fazer aquilo que sabemos que não deveríamos fazer.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, é importante perceber que vencer a tentação não começa apenas no momento em que precisamos dizer "não". Muitas vezes começa antes, quando aprendemos a reconhecer aquilo que nos enfraquece.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>👀 Reconhecer</h3>
+
+<p>
+
+Identificar quais situações, pensamentos ou ambientes costumam me levar a escolhas erradas.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🛑 Resistir</h3>
+
+<p>
+
+Aprender a interromper o caminho da tentação antes que ela cresça e domine meus pensamentos.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🙏 Buscar Deus</h3>
+
+<p>
+
+Recorrer à oração e à presença de Deus em vez de depender somente da minha própria força.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌱 Escolher o certo</h3>
+
+<p>
+
+Tomar uma decisão consciente de obedecer a Deus mesmo quando isso exige esforço.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+A vitória sobre a tentação não acontece apenas pela força de vontade. Precisamos desenvolver uma vida cada vez mais próxima de Deus, alimentando nossa mente com Sua Palavra e aprendendo a depender dEle.
+
+</p>
+
+</div>
+
+
+<!-- COMO VENCER -->
+
+<div class="card">
+
+<h2>🛡️ Como posso vencer a tentação?</h2>
+
+<p>
+
+Existem atitudes práticas que podem nos ajudar a lidar melhor com as tentações.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 <strong>Conheça suas fraquezas:</strong> reconheça quais situações costumam deixar você mais vulnerável.</li>
+
+<li>🌿 <strong>Evite aquilo que alimenta a tentação:</strong> nem sempre a melhor estratégia é enfrentar diretamente; muitas vezes é necessário se afastar.</li>
+
+<li>🌿 <strong>Ore antes de agir:</strong> transforme o impulso de agir imediatamente em uma oportunidade para buscar a Deus.</li>
+
+<li>🌿 <strong>Alimente sua mente com a Palavra:</strong> aquilo que ocupa nossos pensamentos influencia nossas escolhas.</li>
+
+<li>🌿 <strong>Procure pessoas de confiança:</strong> não precisamos enfrentar todas as lutas sozinhos.</li>
+
+<li>🌿 <strong>Aprenda com as quedas:</strong> quando errar, não permaneça preso à culpa. Reconheça o erro, busque perdão e procure entender o que pode mudar.</li>
+
+</ul>
+
+<div class="destaque">
+
+<strong>Vencer uma tentação não é apenas dizer "não" ao pecado. É dizer "sim" a uma vida que deseja agradar a Deus.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CARÁTER -->
+
+<div class="card">
+
+<h2>🌱 O caráter que nasce da resistência</h2>
+
+<p>
+
+Cada tentação vencida pode produzir algo importante dentro de nós.
+
+</p>
+
+<br>
+
+<p>
+
+Quando escolhemos obedecer mesmo sem vontade, desenvolvemos <strong>domínio próprio</strong>.
+
+</p>
+
+<br>
+
+<p>
+
+Quando esperamos em Deus em vez de seguir nossos impulsos, desenvolvemos <strong>paciência</strong>.
+
+</p>
+
+<br>
+
+<p>
+
+Quando escolhemos aquilo que é correto mesmo quando ninguém está olhando, desenvolvemos <strong>integridade</strong>.
+
+</p>
+
+<br>
+
+<p>
+
+Quando dependemos de Deus para permanecer firmes, desenvolvemos <strong>fé</strong>.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, uma luta que parece apenas uma dificuldade pode também se transformar em uma oportunidade de crescimento.
+
+</p>
+
+<p class="frase">
+
+"Cada escolha certa fortalece o caráter que Deus está formando em mim."
+
+</p>
+
+</div>
+
+
+<!-- NÃO CONFIE APENAS EM SI -->
+
+<div class="card">
+
+<h2>🙏 Não dependa apenas da sua própria força</h2>
+
+<p>
+
+Um dos erros que podemos cometer é pensar que somos fortes o suficiente para enfrentar qualquer situação sozinhos.
+
+</p>
+
+<br>
+
+<p>
+
+A autoconfiança pode fazer com que baixemos a guarda. Podemos começar a pensar: "Dessa vez não vai acontecer", "Eu consigo controlar" ou "Só vou olhar um pouco".
+
+</p>
+
+<br>
+
+<p>
+
+Mas conhecer nossas limitações também é sinal de maturidade.
+
+</p>
+
+<br>
+
+<p>
+
+Precisamos reconhecer que existem situações nas quais é mais sábio simplesmente não nos colocar em determinado ambiente, conversa ou circunstância.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Não preciso provar que sou forte entrando em situações que sei que podem me derrubar."
+
+</p>
+
+<br>
+
+<p>
+
+A verdadeira força também está em reconhecer quando precisamos fugir, pedir ajuda, mudar hábitos e buscar proteção.
+
+</p>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Identificar uma situação que costuma me deixar vulnerável à tentação.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Evitar conscientemente algo que sei que pode me levar a uma escolha errada.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Separar alguns minutos para orar pedindo domínio próprio.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Ler um trecho da Bíblia quando sentir vontade de ceder a uma tentação.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Agradecer a Deus por uma tentação que consegui vencer.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Cada tentação pode se tornar uma oportunidade de fortalecer minha fé, escolher o que é certo e desenvolver um caráter cada vez mais parecido com o de Cristo."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Não preciso enxergar cada luta apenas como uma ameaça. Posso também enxergá-la como uma oportunidade de crescer, amadurecer e aprender a depender mais de Deus.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Deus abençoa os que pacientemente suportam a provação. No final, receberão a coroa da vida, que Deus prometeu aos que o amam."
+
+</strong>
+
+<br><br>
+
+<b>Tiago 1:12</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Qual característica do caráter cristão posso desenvolver ao aprender a vencer a tentação que mais aparece na minha vida?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Pense na tentação que mais costuma aparecer na sua vida. Não precisa pensar apenas em grandes situações. Às vezes ela aparece em pequenas escolhas, pensamentos, palavras, hábitos ou atitudes.
+
+</p>
+
+<br>
+
+<p>
+
+Pergunte a si mesmo:
+
+<strong>O que essa luta revela sobre aquilo que ainda precisa ser transformado em mim?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Talvez a resposta seja domínio próprio. Talvez paciência, honestidade, pureza, humildade, confiança em Deus ou perseverança.
+
+</p>
+
+<br>
+
+<p>
+
+Em vez de olhar apenas para o erro que deseja evitar, procure perceber o caráter que Deus deseja desenvolver em você através desse processo.
+
+</p>
+
+<br>
+
+<p>
+
+Ore e pergunte:
+
+<strong>"Senhor, o que Tu queres formar em mim através dessa luta?"</strong>
+
+</p>
+
+<br>
+
+<p>
+
+A vitória não está apenas em conseguir dizer "não". Está também em permitir que Deus use cada escolha para transformar quem estamos nos tornando.
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Minha reflexão de hoje</h2>
+
+<p>
+
+Escreva abaixo sobre uma tentação ou dificuldade que você deseja entregar a Deus. Seja sincero. Este espaço é para você registrar aquilo que está aprendendo durante sua caminhada.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Senhor, hoje eu percebi que..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, ajuda-me a permanecer firme diante das tentações.
+
+<br><br>
+
+Conheces minhas fraquezas, meus pensamentos e as áreas da minha vida nas quais ainda preciso crescer.
+
+<br><br>
+
+Dá-me sabedoria para reconhecer aquilo que pode me afastar de Ti e coragem para me afastar quando for necessário.
+
+<br><br>
+
+Ensina-me a não depender apenas da minha própria força, mas a buscar Tua presença, Tua Palavra e Tua direção.
+
+<br><br>
+
+Quando eu for tentado, ajuda-me a lembrar que posso escolher aquilo que Te agrada.
+
+<br><br>
+
+Desenvolve em mim domínio próprio, paciência, integridade, perseverança e fé.
+
+<br><br>
+
+Quando eu cair, não permitas que a culpa me afaste de Ti. Ensina-me a reconhecer meus erros, buscar perdão e aprender com eles.
+
+<br><br>
+
+Que cada luta produza crescimento e que meu caráter seja cada vez mais parecido com o caráter de Cristo.
+
+<br><br>
+
+Eu entrego a Ti minhas fraquezas e peço que me fortaleças para viver de acordo com a Tua vontade.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Cada vez que escolho obedecer a Deus, meu caráter se torna mais parecido com Cristo."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao vigésimo sexto dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre as tentações e percebeu que elas não precisam definir quem você é.
+
+</p>
+
+<br>
+
+<p>
+
+Você pode aprender a reconhecer suas fraquezas, evitar situações que podem levar à queda, buscar a Deus e escolher aquilo que é correto.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez algumas lutas ainda não tenham desaparecido. Isso não significa que você não esteja crescendo.
+
+</p>
+
+<br>
+
+<p>
+
+Cada escolha de permanecer firme é uma oportunidade de desenvolver um caráter mais forte e mais parecido com Cristo.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Não lute sozinho. Dependa de Deus e escolha permanecer firme."
+
+</p>
+
+<br>
+
+<p>
+
+Antes de seguir para o próximo dia, pense em uma atitude prática que você pode tomar para proteger sua vida espiritual diante da tentação.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Que suas escolhas de hoje sejam pequenas sementes de um caráter transformado por Cristo.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 26 concluído! Voltando para a página inicial...
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia25") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia26","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+
+        top:document.body.scrollHeight,
+
+        behavior:"smooth"
+
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo = document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia26");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia26",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia26check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia26check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia26")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
