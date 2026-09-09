@@ -1,0 +1,2218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 35</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:87.5%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 35 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 35</h1>
+
+<p>A força que vem da fraqueza</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 35 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Vivemos em um mundo que muitas vezes valoriza a aparência de força.
+
+</p>
+
+<br>
+
+<p>
+
+Aprendemos a esconder inseguranças, limitações, dificuldades e fracassos porque temos medo de que outras pessoas descubram que não somos tão fortes quanto parecemos.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Deus não precisa que finjamos ser invencíveis.
+
+</p>
+
+<br>
+
+<p>
+
+Na verdade, reconhecer nossas limitações pode ser justamente o começo de uma dependência mais profunda d'Ele.
+
+</p>
+
+<br>
+
+<p>
+
+Quando acreditamos que conseguimos controlar tudo sozinhos, podemos facilmente esquecer nossa necessidade de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Por outro lado, quando percebemos nossas limitações, somos lembrados de que existe uma força que não depende apenas da nossa capacidade.
+
+</p>
+
+<div class="destaque">
+
+<strong>Minha fraqueza não impede Deus de trabalhar. Muitas vezes ela se torna justamente o lugar onde aprendo a depender mais profundamente d'Ele.</strong>
+
+</div>
+
+</div>
+
+
+<!-- FRAQUEZA -->
+
+<div class="card">
+
+<h2>🌿 Reconhecer a fraqueza não é desistir</h2>
+
+<p>
+
+Existe uma diferença entre reconhecer uma limitação e usar essa limitação como desculpa para nunca crescer.
+
+</p>
+
+<br>
+
+<p>
+
+Reconhecer nossas fraquezas significa olhar com sinceridade para nós mesmos.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🪞 Sinceridade</h3>
+
+<p>
+
+Admitir aquilo que ainda é difícil sem precisar fingir que está tudo bem.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🙏 Dependência</h3>
+
+<p>
+
+Reconhecer que preciso da ajuda e da graça de Deus para continuar crescendo.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌱 Crescimento</h3>
+
+<p>
+
+Perceber minhas limitações como áreas em que ainda posso aprender e amadurecer.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤝 Comunhão</h3>
+
+<p>
+
+Permitir que pessoas maduras e confiáveis possam caminhar comigo em momentos de dificuldade.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Fraqueza não significa ausência de valor.
+
+</p>
+
+<br>
+
+<p>
+
+Também não significa que precisamos permanecer iguais para sempre.
+
+</p>
+
+<br>
+
+<p>
+
+Significa apenas reconhecer que somos humanos e que precisamos de Deus durante todo o processo.
+
+</p>
+
+</div>
+
+
+<!-- ESCONDER -->
+
+<div class="card">
+
+<h2>🎭 O peso de esconder nossas fraquezas</h2>
+
+<p>
+
+Quando tentamos parecer fortes o tempo inteiro, podemos começar a construir uma imagem que não corresponde ao que realmente estamos vivendo.
+
+</p>
+
+<br>
+
+<p>
+
+Temos medo de admitir que estamos cansados.
+
+</p>
+
+<br>
+
+<p>
+
+Temos dificuldade de dizer que precisamos de ajuda.
+
+</p>
+
+<br>
+
+<p>
+
+Escondemos inseguranças porque imaginamos que os outros pensarão menos de nós.
+
+</p>
+
+<br>
+
+<p>
+
+Mas viver dessa maneira pode se tornar cansativo.
+
+</p>
+
+<br>
+
+<p>
+
+Deus já conhece aquilo que tentamos esconder.
+
+</p>
+
+<br>
+
+<p>
+
+Não precisamos impressioná-Lo.
+
+</p>
+
+<div class="destaque">
+
+<strong>Diante de Deus, posso deixar de fingir. Ele conhece minhas limitações e ainda assim continua trabalhando em mim.</strong>
+
+</div>
+
+</div>
+
+
+<!-- GRAÇA -->
+
+<div class="card">
+
+<h2>✨ A graça é suficiente</h2>
+
+<p>
+
+Paulo ouviu de Deus uma resposta poderosa:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Minha graça é suficiente para você."
+
+</p>
+
+<br>
+
+<p>
+
+Isso não significa que todas as nossas dificuldades desaparecerão imediatamente.
+
+</p>
+
+<br>
+
+<p>
+
+Significa que a presença e a graça de Deus podem nos sustentar mesmo enquanto algumas limitações continuam existindo.
+
+</p>
+
+<br>
+
+<p>
+
+Às vezes pedimos que Deus retire determinada dificuldade.
+
+</p>
+
+<br>
+
+<p>
+
+E muitas vezes devemos pedir.
+
+</p>
+
+<br>
+
+<p>
+
+Mas também precisamos aprender a perguntar:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Senhor, enquanto isso ainda faz parte da minha caminhada, o que Tu queres me ensinar?"
+
+</p>
+
+<br>
+
+<p>
+
+Algumas das maiores transformações acontecem não quando todas as dificuldades desaparecem, mas quando aprendemos a depender de Deus no meio delas.
+
+</p>
+
+</div>
+
+
+<!-- FRAQUEZAS PODEM AJUDAR -->
+
+<div class="card">
+
+<h2>🤝 Suas limitações podem aproximar você de outras pessoas</h2>
+
+<p>
+
+Uma pessoa que nunca demonstra vulnerabilidade pode parecer distante.
+
+</p>
+
+<br>
+
+<p>
+
+Mas quando alguém compartilha com sabedoria uma dificuldade que enfrentou, outras pessoas podem perceber:
+
+</p>
+
+<br>
+
+<p>
+
+"Então eu não sou o único."
+
+</p>
+
+<br>
+
+<p>
+
+Isso pode abrir espaço para encorajamento, comunhão e apoio.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez uma experiência difícil que você viveu tenha lhe ensinado algo que hoje poderia ajudar outra pessoa.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez você saiba como é sentir medo, fracassar, recomeçar, esperar, lutar ou precisar pedir ajuda.
+
+</p>
+
+<br>
+
+<p>
+
+Essas experiências não precisam definir toda a sua identidade.
+
+</p>
+
+<br>
+
+<p>
+
+Mas podem se tornar parte da maneira como você compreende e acolhe outras pessoas.
+
+</p>
+
+<div class="destaque">
+
+<strong>Deus pode usar não apenas meus talentos e sucessos, mas também aquilo que aprendi através das minhas limitações.</strong>
+
+</div>
+
+</div>
+
+
+<!-- VULNERABILIDADE -->
+
+<div class="card">
+
+<h2>💬 Vulnerabilidade com sabedoria</h2>
+
+<p>
+
+Ser sincero sobre nossas fraquezas não significa contar tudo para todo mundo.
+
+</p>
+
+<br>
+
+<p>
+
+Vulnerabilidade precisa caminhar junto com sabedoria.
+
+</p>
+
+<br>
+
+<p>
+
+Algumas coisas pertencem à nossa conversa pessoal com Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Outras podem ser compartilhadas com alguém maduro e confiável.
+
+</p>
+
+<br>
+
+<p>
+
+E algumas experiências podem, com o tempo, se transformar em testemunhos capazes de encorajar outras pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+O importante é não permitir que a vergonha nos obrigue a carregar tudo completamente sozinhos.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🙏 Com Deus</h3>
+
+<p>
+
+Posso ser completamente sincero sobre aquilo que estou vivendo.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤝 Com pessoas confiáveis</h3>
+
+<p>
+
+Posso buscar apoio, conselho e oração quando preciso.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🧠 Com sabedoria</h3>
+
+<p>
+
+Nem toda pessoa precisa conhecer todos os detalhes da minha vida.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>❤️ Para ajudar</h3>
+
+<p>
+
+Uma experiência compartilhada no momento certo pode trazer esperança a alguém.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Reconhecer diante de Deus uma área em que tenho me sentido fraco.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Parar de me cobrar a aparência de que preciso estar forte o tempo inteiro.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Pedir ajuda ou oração a alguém confiável, se houver algo que tenho carregado sozinho.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Refletir sobre uma dificuldade que me ensinou algo importante.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Perguntar a Deus como Ele pode usar minhas experiências para encorajar alguém.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Quando reconheço minhas limitações e dependo de Deus, permito que Sua força se manifeste justamente onde sou mais fraco."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Minha fraqueza não precisa ser um lugar de vergonha. Pode se tornar um lugar de dependência, crescimento e graça.
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Minha graça é suficiente para você, pois o meu poder se aperfeiçoa na fraqueza."
+
+</strong>
+
+<br><br>
+
+<b>2 Coríntios 12:9</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Tenho escondido minhas fraquezas por medo ou vergonha? Em que área preciso ser mais sincero e permitir que Deus use até mesmo minhas limitações para ajudar outras pessoas?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Existe alguma área da sua vida que você tenta esconder porque teme ser julgado?
+
+</p>
+
+<br>
+
+<p>
+
+Talvez seja uma insegurança.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez seja uma dificuldade que ainda não conseguiu superar.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez seja uma experiência dolorosa ou uma área em que você frequentemente precisa da ajuda de outras pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Pergunte a si mesmo:
+
+<strong>Por que tenho tanta dificuldade em admitir isso?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Depois pense:
+
+<strong>Essa limitação está me ensinando alguma coisa sobre dependência, humildade, perseverança ou graça?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+E por fim:
+
+<strong>Existe alguém que poderia ser encorajado se, com sabedoria, eu compartilhasse aquilo que Deus me ensinou através dessa experiência?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa transformar sua dor em uma exposição pública.
+
+</p>
+
+<br>
+
+<p>
+
+Mas também não precisa acreditar que Deus só pode usar as partes da sua história das quais você sente orgulho.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Deus pode usar até aquilo que eu gostaria de esconder."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Minha fraqueza nas mãos de Deus</h2>
+
+<p>
+
+Escreva abaixo uma limitação, dificuldade ou experiência em que você deseja aprender a depender mais de Deus e refletir sobre como Ele pode usar isso em sua caminhada.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Senhor, existe uma área em que me sinto fraco... Quero aprender a confiar em Ti através dela..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- PROPÓSITO 5 -->
+
+<div class="card">
+
+<h2>🎯 Propósito nº 5</h2>
+
+<p class="frase">
+
+Você foi feito para uma missão.
+
+</p>
+
+<br>
+
+<p>
+
+Nos últimos dias, você refletiu sobre servir.
+
+</p>
+
+<br>
+
+<p>
+
+Descobriu que Deus pode usar seus dons, suas habilidades, sua personalidade, suas experiências e até mesmo suas limitações para tocar outras vidas.
+
+</p>
+
+<br>
+
+<p>
+
+Agora entramos no último grande propósito desta jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Sua vida não foi criada apenas para receber, crescer e servir dentro dos ambientes que você já conhece.
+
+</p>
+
+<br>
+
+<p>
+
+Deus também deseja que aquilo que Ele fez em você alcance outras pessoas.
+
+</p>
+
+<div class="destaque">
+
+<strong>Sua história, seus dons e aquilo que Deus está fazendo em sua vida também podem fazer parte da missão de levar esperança a outras pessoas.</strong>
+
+</div>
+
+</div>
+
+
+<!-- PARA GUARDAR -->
+
+<div class="card">
+
+<h2>📖 Para guardar no coração</h2>
+
+<blockquote>
+
+"O fruto da retidão é árvore de vida, e aquele que conquista almas é sábio."
+
+<br><br>
+
+<b>Provérbios 11:30</b>
+
+</blockquote>
+
+</div>
+
+
+<!-- MISSÃO -->
+
+<div class="card">
+
+<h2>🌍 Uma nova etapa começa</h2>
+
+<p>
+
+Chegamos aos últimos cinco dias da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Até aqui você refletiu sobre viver para Deus, fazer parte de Sua família, tornar-se semelhante a Cristo e usar sua vida para servir.
+
+</p>
+
+<br>
+
+<p>
+
+Agora a pergunta se amplia:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Como aquilo que Deus fez em minha vida pode alcançar outras pessoas?"
+
+</p>
+
+<br>
+
+<p>
+
+Missão não significa necessariamente viajar para outro país ou falar diante de multidões.
+
+</p>
+
+<br>
+
+<p>
+
+Ela pode começar muito mais perto.
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Compartilhando esperança com alguém que está desanimado.</li>
+
+<li>🌿 Falando sobre aquilo que Deus tem feito em sua vida.</li>
+
+<li>🌿 Demonstrando o amor de Cristo através da maneira como você trata as pessoas.</li>
+
+<li>🌿 Estando disponível para conversar com alguém que está buscando respostas.</li>
+
+<li>🌿 Usando sua história para mostrar que Deus continua transformando vidas.</li>
+
+</ul>
+
+<div class="destaque">
+
+<strong>A missão começa quando aquilo que recebi de Deus deixa de terminar em mim e começa a alcançar alguém.</strong>
+
+</div>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado porque não preciso fingir ser forte diante de Ti.
+
+<br><br>
+
+Tu conheces minhas limitações, minhas inseguranças, minhas dificuldades e até aquilo que tenho vergonha de admitir.
+
+<br><br>
+
+Ajuda-me a não esconder de Ti aquilo que já conheces.
+
+<br><br>
+
+Ensina-me a depender da Tua graça exatamente nas áreas em que reconheço minhas limitações.
+
+<br><br>
+
+Quando eu me sentir insuficiente, lembra-me de que Teu poder não depende da minha perfeição.
+
+<br><br>
+
+Dá-me humildade para pedir ajuda quando precisar e sabedoria para escolher pessoas confiáveis com quem posso caminhar.
+
+<br><br>
+
+Também transforma as dificuldades que vivi em fontes de compaixão.
+
+<br><br>
+
+Que aquilo que aprendi através da dor, da espera, dos erros e das limitações possa um dia ajudar alguém que esteja passando por algo parecido.
+
+<br><br>
+
+Não quero que minhas fraquezas sejam apenas motivo de vergonha.
+
+<br><br>
+
+Quero colocá-las em Tuas mãos.
+
+<br><br>
+
+E enquanto começo esta última parte da jornada, mostra-me também a missão que colocaste diante de mim.
+
+<br><br>
+
+Usa minha história, meus dons, minhas palavras e minha vida para levar esperança às pessoas.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Minha fraqueza não é o fim daquilo que Deus pode fazer através de mim; pode ser justamente o lugar onde Sua graça se torna mais visível."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao trigésimo quinto dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre uma verdade que pode mudar profundamente a maneira como enxerga suas próprias limitações.
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa esconder tudo aquilo que ainda está sendo trabalhado.
+
+</p>
+
+<br>
+
+<p>
+
+Não precisa aparentar força o tempo inteiro.
+
+</p>
+
+<br>
+
+<p>
+
+E não precisa esperar se tornar perfeito para que Deus comece a usar sua vida.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Deus pode trabalhar através de mim enquanto ainda está trabalhando em mim."
+
+</p>
+
+<br>
+
+<p>
+
+Suas capacidades podem servir.
+
+</p>
+
+<p>
+
+Suas experiências podem servir.</p>
+
+<p>
+
+Até suas limitações podem ensinar você a depender mais de Deus e compreender melhor a dor de outras pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+E agora começa a última etapa desta jornada.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Você foi feito para uma missão.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Nos próximos dias, o foco será descobrir como aquilo que Deus está fazendo em você pode alcançar pessoas além de você.
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 35 concluído! Agora começa o Propósito nº 5: você foi feito para uma missão!
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia34") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia35","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo =
+document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia35");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia35",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia35check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia35check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia35")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
