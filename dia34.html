@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 34</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:85%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 34 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 34</h1>
+
+<p>Vivendo para servir</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 34 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Servir não é apenas uma questão de fazer coisas para outras pessoas. Antes de aparecer nas nossas atitudes, o verdadeiro serviço começa dentro da nossa mente e do nosso coração.
+
+</p>
+
+<br>
+
+<p>
+
+Naturalmente, somos inclinados a perceber primeiro nossas próprias necessidades, nossos desejos, nossos planos e aquilo que esperamos receber das pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Mas Jesus nos apresenta uma maneira diferente de viver.
+
+</p>
+
+<br>
+
+<p>
+
+Ele nos ensina a olhar ao redor, perceber as necessidades das pessoas e perguntar como podemos ajudar.
+
+</p>
+
+<br>
+
+<p>
+
+Isso não significa ignorar nossas próprias necessidades ou viver tentando agradar todo mundo. Significa desenvolver um coração menos centrado em si mesmo e mais atento às oportunidades de amar.
+
+</p>
+
+<div class="destaque">
+
+<strong>Uma vida de serviço começa quando deixo de enxergar as pessoas apenas pelo que podem fazer por mim e começo a perceber o que posso fazer por elas.</strong>
+
+</div>
+
+</div>
+
+
+<!-- MENTALIDADE -->
+
+<div class="card">
+
+<h2>🧠 O serviço começa na maneira de pensar</h2>
+
+<p>
+
+Duas pessoas podem realizar exatamente a mesma tarefa, mas com motivações completamente diferentes.
+
+</p>
+
+<br>
+
+<p>
+
+Uma pode servir esperando reconhecimento, recompensa ou aprovação.
+
+</p>
+
+<br>
+
+<p>
+
+Outra pode realizar a mesma tarefa simplesmente porque percebeu uma necessidade e decidiu ajudar.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, desenvolver uma mentalidade de servo é tão importante quanto descobrir nossos dons.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>👀 Perceber</h3>
+
+<p>
+
+Treinar meus olhos para perceber as necessidades das pessoas ao meu redor.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤍 Pensar no outro</h3>
+
+<p>
+
+Não considerar apenas meus próprios interesses, mas também aquilo que pode beneficiar outras pessoas.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>👐 Estar disponível</h3>
+
+<p>
+
+Estar disposto a ajudar quando surgir uma oportunidade real de servir.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🙏 Servir a Deus</h3>
+
+<p>
+
+Reconhecer que servir pessoas também pode ser uma maneira prática de demonstrar meu amor por Deus.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- EXPECTATIVAS -->
+
+<div class="card">
+
+<h2>⚖️ O que tenho esperado das pessoas?</h2>
+
+<p>
+
+Muitos conflitos e frustrações nascem das expectativas que criamos.
+
+</p>
+
+<br>
+
+<p>
+
+Esperamos que alguém perceba nossas necessidades.
+
+</p>
+
+<br>
+
+<p>
+
+Esperamos receber atenção.
+
+</p>
+
+<br>
+
+<p>
+
+Esperamos agradecimento.
+
+</p>
+
+<br>
+
+<p>
+
+Esperamos que as pessoas façam por nós aquilo que gostaríamos.
+
+</p>
+
+<br>
+
+<p>
+
+E quando isso não acontece, podemos rapidamente nos sentir frustrados.
+
+</p>
+
+<br>
+
+<p>
+
+Uma mentalidade de servo não significa deixar de possuir expectativas legítimas em nossos relacionamentos. Mas nos convida a fazer uma pergunta diferente:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Em vez de pensar apenas no que estão fazendo por mim, tenho percebido o que posso fazer por alguém?"
+
+</p>
+
+<br>
+
+<p>
+
+Essa mudança de perspectiva pode transformar completamente nossos relacionamentos.
+
+</p>
+
+</div>
+
+
+<!-- JESUS -->
+
+<div class="card">
+
+<h2>✝️ A atitude de Cristo</h2>
+
+<p>
+
+O versículo de hoje nos oferece uma direção simples e profunda:
+
+</p>
+
+<br>
+
+<p>
+
+<strong>"Seja a atitude de vocês a mesma de Cristo Jesus."</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Jesus possuía autoridade, mas escolheu servir.
+
+</p>
+
+<br>
+
+<p>
+
+Ele percebia pessoas que os outros ignoravam. Conversava com quem era rejeitado. Demonstrava compaixão. Parava para ouvir. Ajudava quem precisava.
+
+</p>
+
+<br>
+
+<p>
+
+Isso significa que seguir Jesus não envolve apenas conhecer Seus ensinamentos.
+
+</p>
+
+<br>
+
+<p>
+
+Também envolve permitir que Sua maneira de tratar as pessoas transforme nossa maneira de viver.
+
+</p>
+
+<div class="destaque">
+
+<strong>Ser semelhante a Cristo também significa aprender a enxergar, amar e servir as pessoas como Ele fazia.</strong>
+
+</div>
+
+</div>
+
+
+<!-- AUTOFOCO -->
+
+<div class="card">
+
+<h2>🪞 Quando tudo gira ao meu redor</h2>
+
+<p>
+
+Uma mentalidade centrada em nós mesmos pode aparecer de maneiras discretas.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos entrar em um ambiente pensando apenas:
+
+</p>
+
+<br>
+
+<ul>
+
+<li>Quem vai falar comigo?</li>
+
+<li>Quem vai perceber minha presença?</li>
+
+<li>Quem vai me ajudar?</li>
+
+<li>Quem vai me agradecer?</li>
+
+<li>Quem está preocupado comigo?</li>
+
+</ul>
+
+<br>
+
+<p>
+
+Mas uma vida de serviço aprende a entrar nos mesmos ambientes com perguntas diferentes:
+
+</p>
+
+<br>
+
+<ul>
+
+<li>Quem parece estar sozinho?</li>
+
+<li>Quem pode precisar de ajuda?</li>
+
+<li>Existe alguma tarefa que posso fazer?</li>
+
+<li>Existe alguém que precisa ser ouvido?</li>
+
+<li>Como posso tornar este lugar um pouco melhor?</li>
+
+</ul>
+
+<div class="destaque">
+
+<strong>A mudança pode começar simplesmente aprendendo a fazer perguntas diferentes.</strong>
+
+</div>
+
+</div>
+
+
+<!-- PEQUENAS OPORTUNIDADES -->
+
+<div class="card">
+
+<h2>🌱 Oportunidades estão por toda parte</h2>
+
+<p>
+
+Nem sempre precisamos procurar muito longe para encontrar maneiras de servir.
+
+</p>
+
+<br>
+
+<p>
+
+As oportunidades aparecem em nossa própria rotina.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🏠 Em casa</h3>
+
+<p>
+
+Fazer uma tarefa antes que alguém precise pedir ou perceber quando uma pessoa está cansada.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>⛪ Na igreja</h3>
+
+<p>
+
+Perguntar onde existe necessidade em vez de esperar apenas uma atividade que combine perfeitamente conosco.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>💼 No trabalho ou estudo</h3>
+
+<p>
+
+Ajudar alguém com uma dificuldade, compartilhar conhecimento ou facilitar uma tarefa.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤝 Nos relacionamentos</h3>
+
+<p>
+
+Ouvir com atenção, oferecer apoio e estar presente quando alguém precisa.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Uma vida de serviço não precisa ser construída através de grandes gestos. Muitas vezes ela é formada por centenas de pequenas decisões.
+
+</p>
+
+</div>
+
+
+<!-- LIMITES -->
+
+<div class="card">
+
+<h2>🌿 Servir não significa dizer "sim" para tudo</h2>
+
+<p>
+
+Existe uma diferença importante entre possuir um coração de servo e tentar resolver todos os problemas de todas as pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Jesus servia, mas também se retirava para descansar, orar e estar a sós.
+
+</p>
+
+<br>
+
+<p>
+
+Também precisamos aprender a servir com sabedoria.
+
+</p>
+
+<br>
+
+<p>
+
+Ter um coração disponível não significa abandonar responsabilidades, ultrapassar nossos limites ou permitir que outras pessoas abusem da nossa disposição.
+
+</p>
+
+<br>
+
+<p>
+
+Servir de maneira saudável significa perceber onde realmente podemos contribuir e fazer isso com amor, responsabilidade e equilíbrio.
+
+</p>
+
+<div class="destaque">
+
+<strong>Servir não é tentar carregar o mundo inteiro. É estar disposto a fazer a minha parte quando Deus colocar uma oportunidade diante de mim.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Entrar em algum ambiente hoje procurando perceber quem pode precisar de ajuda.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Fazer algo útil antes que alguém precise me pedir.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Ouvir alguém com atenção sem transformar a conversa imediatamente em algo sobre mim.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Observar uma expectativa que tenho colocado sobre outras pessoas e refletir sobre ela.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Perguntar em oração: "Senhor, quem posso servir hoje?"
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Ser um verdadeiro servo começa na maneira de pensar: preciso aprender a olhar menos para minhas próprias vontades e mais para as necessidades das pessoas ao meu redor."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+A mudança começa quando paro de perguntar apenas "o que podem fazer por mim?" e também começo a perguntar "como posso ajudar?".
+
+</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Seja a atitude de vocês a mesma de Cristo Jesus."
+
+</strong>
+
+<br><br>
+
+<b>Filipenses 2:5</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+No meu dia a dia, tenho esperado mais que as pessoas façam algo por mim ou tenho procurado oportunidades para ajudá-las e servi-las com a mesma atitude de Cristo?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Pense nos seus relacionamentos mais próximos.
+
+</p>
+
+<br>
+
+<p>
+
+Sua família, seus amigos, sua igreja, seu trabalho ou seus estudos.
+
+</p>
+
+<br>
+
+<p>
+
+Quando você entra nesses ambientes, qual costuma ser seu primeiro pensamento?
+
+</p>
+
+<br>
+
+<p>
+
+Você percebe mais rapidamente aquilo que as pessoas deixaram de fazer por você ou aquilo que você poderia fazer por elas?
+
+</p>
+
+<br>
+
+<p>
+
+Talvez exista alguma frustração porque alguém não está oferecendo aquilo que você esperava.
+
+</p>
+
+<br>
+
+<p>
+
+Isso não significa que essa necessidade não seja legítima.
+
+</p>
+
+<br>
+
+<p>
+
+Mas hoje a reflexão convida você a olhar também para o outro lado:
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Existe alguma necessidade perto de mim que estou deixando de perceber porque estou concentrado demais no que espero receber?</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Depois escolha uma pessoa específica.
+
+</p>
+
+<br>
+
+<p>
+
+Pergunte:
+
+<strong>Existe algo simples que eu poderia fazer para tornar o dia dessa pessoa um pouco melhor?</strong>
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Talvez eu não possa fazer tudo por todos, mas posso fazer algo por alguém."
+
+</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Minha atitude de serviço</h2>
+
+<p>
+
+Escreva abaixo onde você percebe que costuma esperar mais das pessoas e qual mudança prática pode começar a fazer para desenvolver uma atitude mais parecida com a de Cristo.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Percebo que muitas vezes espero... Quero começar a mudar isso através de..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, quero aprender a ter uma atitude cada vez mais parecida com a de Cristo.
+
+<br><br>
+
+Muitas vezes percebo primeiro aquilo que desejo, aquilo que espero receber e aquilo que as pessoas poderiam fazer por mim.
+
+<br><br>
+
+Ajuda-me a levantar os olhos e perceber também as necessidades de quem está ao meu redor.
+
+<br><br>
+
+Ensina-me a ser atento, disponível, humilde e disposto a ajudar.
+
+<br><br>
+
+Livra-me de viver esperando reconhecimento, atenção ou recompensa por tudo aquilo que faço.
+
+<br><br>
+
+Mostra-me onde minhas expectativas estão tornando meu coração mais centrado em mim mesmo.
+
+<br><br>
+
+Ao mesmo tempo, dá-me sabedoria para servir com equilíbrio, reconhecendo meus limites e minhas responsabilidades.
+
+<br><br>
+
+Não quero tentar fazer tudo por todos, mas quero estar disponível para fazer aquilo que estiver ao meu alcance quando uma oportunidade aparecer.
+
+<br><br>
+
+Coloca em mim a mesma atitude de Cristo.
+
+<br><br>
+
+Que minhas palavras, minhas escolhas e minhas ações revelem um coração disposto a amar e servir.
+
+<br><br>
+
+Mostra-me hoje alguém que eu possa ajudar.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Uma vida de serviço começa quando meus olhos deixam de procurar apenas o que falta para mim e começam a perceber quem está precisando de mim."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao trigésimo quarto dia da jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Hoje você percebeu que ser servo não depende apenas dos seus dons ou das tarefas que realiza.
+
+</p>
+
+<br>
+
+<p>
+
+Tudo começa na maneira como você enxerga as pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Uma mentalidade centrada em si mesma pergunta:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"O que estão fazendo por mim?"
+
+</p>
+
+<br>
+
+<p>
+
+A mentalidade de Cristo aprende a perguntar:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Como posso amar e servir aqui?"
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa resolver todos os problemas.
+
+</p>
+
+<br>
+
+<p>
+
+Também não precisa dizer "sim" para tudo.
+
+</p>
+
+<br>
+
+<p>
+
+Mas pode começar a viver de olhos abertos.
+
+</p>
+
+<br>
+
+<p>
+
+Perceber.
+
+</p>
+
+<p>
+
+Ouvir.
+
+</p>
+
+<p>
+
+Ajudar.
+
+</p>
+
+<p>
+
+Servir.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Às vezes, a oportunidade de viver seu propósito está escondida em uma necessidade simples que alguém colocou bem diante de você.</strong>
+
+</p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 34 concluído! Você completou 85% da jornada!
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia33") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia34","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo =
+document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia34");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia34",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia34check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia34check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia34")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
