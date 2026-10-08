@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -27,7 +27,6 @@
 }
 
 * { box-sizing:border-box; }
-
 html { scroll-behavior:smooth; }
 
 body {
@@ -340,7 +339,7 @@ main { padding-bottom:65px; }
   position:relative;
   display:flex;
   flex-direction:column;
-  min-height:192px;
+  min-height:220px;
   padding:19px;
   overflow:hidden;
   color:var(--text);
@@ -383,7 +382,7 @@ main { padding-bottom:65px; }
   justify-content:space-between;
   align-items:center;
   gap:8px;
-  margin-bottom:23px;
+  margin-bottom:18px;
 }
 
 .day-number {
@@ -397,6 +396,7 @@ main { padding-bottom:65px; }
 .day-icon {
   display:grid;
   place-items:center;
+  flex-shrink:0;
   width:31px;
   height:31px;
   border:1px solid var(--border);
@@ -406,11 +406,18 @@ main { padding-bottom:65px; }
 }
 
 .day-card h3 {
-  margin:0 0 17px;
+  margin:0 0 9px;
   font-family:"Playfair Display",serif;
-  font-size:19px;
+  font-size:18px;
   font-weight:500;
-  line-height:1.35;
+  line-height:1.4;
+}
+
+.day-subtitle {
+  margin:0 0 18px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.65;
 }
 
 .day-status {
@@ -418,9 +425,9 @@ main { padding-bottom:65px; }
   align-items:center;
   gap:6px;
   margin-top:auto;
-  color:var(--muted);
   font-size:10px;
   font-weight:600;
+  color:var(--muted);
 }
 
 .available .day-status { color:var(--gold-light); }
@@ -523,15 +530,24 @@ main { padding-bottom:65px; }
   .section-heading { align-items:flex-start;flex-direction:column; }
   .availability-note { max-width:none; }
   .days-grid { grid-template-columns:repeat(2,minmax(0,1fr));gap:10px; }
-  .day-card { min-height:174px;padding:15px; }
-  .day-card-top { margin-bottom:18px; }
-  .day-card h3 { font-size:17px; }
+  .day-card { min-height:230px;padding:15px; }
+  .day-card-top { margin-bottom:15px; }
+  .day-card h3 { font-size:16px; }
+  .day-subtitle { font-size:10px; }
   .continue-panel { align-items:stretch;flex-direction:column;padding:23px; }
   .continue-button { width:100%; }
 }
 
+@media(max-width:360px) {
+  .days-grid { grid-template-columns:1fr; }
+  .day-card { min-height:190px; }
+}
+
 @media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after { scroll-behavior:auto!important;transition:none!important; }
+  *,*::before,*::after {
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
 }
 </style>
 </head>
@@ -634,47 +650,167 @@ Os demais dias ficam bloqueados na página principal.
 
 const paginasPublicadas = [];
 
-const titulos = [
-  "O poder da oração",
-  "Aprendendo a ouvir Deus",
-  "A importância do silêncio",
-  "Entregando suas preocupações",
-  "Confiando no tempo de Deus",
-  "A força da gratidão",
-  "Buscando a presença de Deus",
-  "O poder da Palavra",
-  "Arrependimento e transformação",
-  "Um coração humilde",
-  "Perdão que liberta",
-  "Vencendo a ansiedade",
-  "Descansando em Deus",
-  "Fé em meio às dificuldades",
-  "A armadura de Deus",
-  "O poder da intercessão",
-  "Orando pela família",
-  "Amando o próximo",
-  "Sabedoria nas decisões",
-  "Discernimento espiritual",
-  "Vencendo as tentações",
-  "A força da perseverança",
-  "Renovando a mente",
-  "Identidade em Cristo",
-  "Propósito e chamado",
-  "Servindo com amor",
-  "Generosidade e compaixão",
-  "Esperança em tempos difíceis",
-  "A alegria do Senhor",
-  "Liberdade para perdoar",
-  "Intimidade com Deus",
-  "Obediência e confiança",
-  "Silenciando as distrações",
-  "Orando com sinceridade",
-  "Crescendo em santidade",
-  "A importância da comunhão",
-  "Vivendo pela fé",
-  "Gratidão em todas as coisas",
-  "Uma vida guiada por Deus",
-  "Continuando a jornada"
+const dias = [
+  {
+    titulo: "Apenas fique aqui",
+    subtitulo: "Aprender a silenciar e entrar na presença de Deus"
+  },
+  {
+    titulo: "Antes de pedir, agradeça",
+    subtitulo: "Cultivar gratidão"
+  },
+  {
+    titulo: "Entregue suas preocupações",
+    subtitulo: "Colocar as ansiedades nas mãos de Deus"
+  },
+  {
+    titulo: "Fale com Deus de verdade",
+    subtitulo: "Abandonar orações automáticas e ser sincero"
+  },
+  {
+    titulo: "Ore por quem você ama",
+    subtitulo: "Interceder pela família e amigos"
+  },
+  {
+    titulo: "Quando o medo chegar",
+    subtitulo: "Entregar os medos a Deus"
+  },
+  {
+    titulo: "Aprenda a esperar",
+    subtitulo: "Confiar mesmo quando a resposta não vem"
+  },
+  {
+    titulo: "Peça sabedoria",
+    subtitulo: "Aprender a buscar direção antes de tomar decisões"
+  },
+  {
+    titulo: "Perdoe em oração",
+    subtitulo: "Levar mágoas e ressentimentos a Deus"
+  },
+  {
+    titulo: "Ore por quem te feriu",
+    subtitulo: "Transformar dor em intercessão"
+  },
+  {
+    titulo: "Seus sonhos nas mãos de Deus",
+    subtitulo: "Entregar planos e desejos"
+  },
+  {
+    titulo: "Quando você não souber o que fazer",
+    subtitulo: "Buscar direção"
+  },
+  {
+    titulo: "Ore pelo seu futuro",
+    subtitulo: "Confiar o amanhã a Deus"
+  },
+  {
+    titulo: "Quando Deus parecer distante",
+    subtitulo: "Permanecer mesmo sem sentir"
+  },
+  {
+    titulo: "Uma oração pela sua família",
+    subtitulo: "Intercessão mais profunda"
+  },
+  {
+    titulo: "Ore pelos seus amigos",
+    subtitulo: "Lembrar daqueles que caminham com você"
+  },
+  {
+    titulo: "Quando você estiver cansado",
+    subtitulo: "Encontrar descanso em Deus"
+  },
+  {
+    titulo: "Confesse e recomece",
+    subtitulo: "Arrependimento e graça"
+  },
+  {
+    titulo: "Peça um coração novo",
+    subtitulo: "Transformação interior"
+  },
+  {
+    titulo: "Ore pelo seu caráter",
+    subtitulo: "Pedir para se tornar uma pessoa melhor"
+  },
+  {
+    titulo: "O silêncio também é oração",
+    subtitulo: "Aprender a ouvir"
+  },
+  {
+    titulo: "Não tenha medo de perguntar",
+    subtitulo: "Levar dúvidas para Deus"
+  },
+  {
+    titulo: "Quando a resposta for “não”",
+    subtitulo: "Confiar mesmo sem entender"
+  },
+  {
+    titulo: "Quando a resposta demorar",
+    subtitulo: "Perseverar"
+  },
+  {
+    titulo: "Ore pelos seus inimigos",
+    subtitulo: "Amar além dos sentimentos"
+  },
+  {
+    titulo: "Agradeça pelo que passou",
+    subtitulo: "Reconhecer a fidelidade de Deus"
+  },
+  {
+    titulo: "Ore pelo que ainda virá",
+    subtitulo: "Esperança no futuro"
+  },
+  {
+    titulo: "Coloque seus planos no altar",
+    subtitulo: "Abrir mão do controle"
+  },
+  {
+    titulo: "Peça coragem",
+    subtitulo: "Enfrentar aquilo que você tem evitado"
+  },
+  {
+    titulo: "Ore por uma vida com propósito",
+    subtitulo: "Buscar significado"
+  },
+  {
+    titulo: "Seja grato pelo hoje",
+    subtitulo: "Parar de viver apenas pelo amanhã"
+  },
+  {
+    titulo: "Ore por quem está sofrendo",
+    subtitulo: "Intercessão por outras pessoas"
+  },
+  {
+    titulo: "Quando você se sentir sozinho",
+    subtitulo: "Lembrar que Deus está presente"
+  },
+  {
+    titulo: "Peça discernimento",
+    subtitulo: "Aprender a reconhecer caminhos"
+  },
+  {
+    titulo: "Ore pelos seus sonhos, mas entregue o resultado",
+    subtitulo: "Desejar sem controlar"
+  },
+  {
+    titulo: "Uma oração de confiança",
+    subtitulo: "Descansar no cuidado de Deus"
+  },
+  {
+    titulo: "Consagre sua vida",
+    subtitulo: "Colocar tudo diante de Deus"
+  },
+  {
+    titulo: "O que Deus está formando em você?",
+    subtitulo: "Perceber transformação"
+  },
+  {
+    titulo: "Continue mesmo depois dos 40 dias",
+    subtitulo: "Transformar propósito em hábito"
+  },
+  {
+    titulo: "Uma vida de oração",
+    subtitulo: "Encerrar a jornada e começar uma nova caminhada"
+  }
 ];
 
 const icones = [
@@ -714,34 +850,58 @@ function urlDia(numero) {
 }
 
 function criarCartao(numero) {
+  const dia = dias[numero - 1];
   const publicado = paginasPublicadas.includes(numero);
   const concluido = diaConcluido(numero);
   const cartao = document.createElement(publicado ? "a" : "div");
 
   cartao.className = "day-card " + (publicado ? "available" : "locked");
+
   if (concluido) cartao.classList.add("completed");
 
   if (publicado) {
     cartao.href = urlDia(numero);
-    cartao.setAttribute("aria-label", `Dia ${numero}: ${titulos[numero - 1]}`);
+    cartao.setAttribute("aria-label", `Dia ${numero}: ${dia.titulo}`);
   } else {
     cartao.setAttribute("aria-disabled", "true");
-    cartao.setAttribute("aria-label", `Dia ${numero}: ${titulos[numero - 1]}. Ainda não disponível.`);
+    cartao.setAttribute(
+      "aria-label",
+      `Dia ${numero}: ${dia.titulo}. Ainda não disponível.`
+    );
   }
 
   let status;
+
   if (concluido) status = "✓ Concluído";
   else if (publicado) status = "↗ Disponível para ler";
   else status = "▣ Em preparação";
 
-  cartao.innerHTML = `
-    <div class="day-card-top">
-      <span class="day-number">Dia ${String(numero).padStart(2, "0")}</span>
-      <span class="day-icon" aria-hidden="true">${concluido ? "✓" : publicado ? icones[numero - 1] : "⌑"}</span>
-    </div>
-    <h3>${titulos[numero - 1]}</h3>
-    <span class="day-status">${status}</span>
-  `;
+  const topo = document.createElement("div");
+  topo.className = "day-card-top";
+
+  const numeroElemento = document.createElement("span");
+  numeroElemento.className = "day-number";
+  numeroElemento.textContent = `Dia ${String(numero).padStart(2, "0")}`;
+
+  const icone = document.createElement("span");
+  icone.className = "day-icon";
+  icone.setAttribute("aria-hidden", "true");
+  icone.textContent = concluido ? "✓" : publicado ? icones[numero - 1] : "⌑";
+
+  topo.append(numeroElemento, icone);
+
+  const titulo = document.createElement("h3");
+  titulo.textContent = dia.titulo;
+
+  const subtitulo = document.createElement("p");
+  subtitulo.className = "day-subtitle";
+  subtitulo.textContent = dia.subtitulo;
+
+  const estado = document.createElement("span");
+  estado.className = "day-status";
+  estado.textContent = status;
+
+  cartao.append(topo, titulo, subtitulo, estado);
 
   return cartao;
 }
@@ -770,8 +930,14 @@ function atualizarProgresso() {
   document.getElementById("progressTrack").setAttribute("aria-valuenow", concluidos);
 
   let mensagem = "Sua jornada começa no tempo certo.";
-  if (concluidos > 0 && concluidos < 40) mensagem = "Continue firme, um dia de cada vez.";
-  if (concluidos === 40) mensagem = "Você concluiu os 40 dias desta jornada.";
+
+  if (concluidos > 0 && concluidos < 40) {
+    mensagem = "Continue firme, um dia de cada vez.";
+  }
+
+  if (concluidos === 40) {
+    mensagem = "Você concluiu os 40 dias desta jornada.";
+  }
 
   document.getElementById("progressMessage").textContent = mensagem;
 }
@@ -795,7 +961,8 @@ function configurarContinuar() {
     botao.removeAttribute("tabindex");
 
     titulo.textContent = "Continue sua caminhada";
-    descricao.textContent = `O Dia ${proximoDia} já está publicado. Reserve alguns minutos para estar na presença de Deus.`;
+    descricao.textContent =
+      `O Dia ${proximoDia} já está publicado. Reserve alguns minutos para estar na presença de Deus.`;
     textoBotao.textContent = `Ir para o Dia ${proximoDia}`;
     return;
   }
@@ -807,11 +974,13 @@ function configurarContinuar() {
 
   if (disponiveis.length === 0) {
     titulo.textContent = "Sua próxima oração espera por você";
-    descricao.textContent = "As páginas da jornada estão sendo preparadas. Assim que forem publicadas, você poderá acessá-las por aqui.";
+    descricao.textContent =
+      "As páginas da jornada estão sendo preparadas. Assim que forem publicadas, você poderá acessá-las por aqui.";
     textoBotao.textContent = "Novos dias em breve";
   } else {
     titulo.textContent = "Você chegou ao fim dos dias disponíveis";
-    descricao.textContent = "Continue acompanhando a jornada enquanto os próximos conteúdos são preparados.";
+    descricao.textContent =
+      "Continue acompanhando a jornada enquanto os próximos conteúdos são preparados.";
     textoBotao.textContent = "Mais dias em breve";
   }
 }
@@ -827,3 +996,4 @@ iniciarPagina();
 </script>
 </body>
 </html>
+```
