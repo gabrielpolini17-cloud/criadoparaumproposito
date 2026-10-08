@@ -1,234 +1,389 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b0d0c">
-<meta name="description" content="Uma jornada de 40 dias para aprofundar sua vida de oração e sua caminhada com Deus.">
+
 <title>40 Dias de Oração | Caminhos de Propósito</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-:root{color-scheme:dark;--bg:#0b0d0c;--panel:#121614;--panel2:#171c18;--text:#f5f2e9;--muted:#a5aaa1;--subtle:#717a70;--gold:#d3b477;--gold2:#f0d7a0;--green:#8da98a;--line:rgba(235,229,209,.12);--max:1120px;--radius:24px}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:30px}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;line-height:1.6}
-body:before,body:after{content:"";position:fixed;pointer-events:none;z-index:-1;border-radius:50%;filter:blur(90px);opacity:.5}
-body:before{width:540px;height:540px;left:-230px;top:-230px;background:rgba(102,137,92,.16)}
-body:after{width:650px;height:650px;right:-280px;top:35%;background:rgba(190,149,77,.09)}
-a{color:inherit}
-button{font:inherit}
-.topbar{position:relative;z-index:5;max-width:var(--max);margin:auto;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#d4d5cb;font-weight:600}
-.brand-mark{width:35px;height:35px;border:1px solid rgba(211,180,119,.48);border-radius:12px;display:grid;place-items:center;color:var(--gold);font-size:17px;background:rgba(211,180,119,.07)}
-.top-right{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:12px}
-.theme{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.035);color:var(--gold2);cursor:pointer;transition:.25s}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{--bg:#11110f;--surface:#171714;--surface-hover:#1c1b17;--text:#eeeae1;--muted:#aaa49a;--subtle:#77736c;--gold:#a58a61;--gold-soft:#c1a674;--line:#2b2923;--cream:#e7e0d4}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
+body::before{content:"";position:fixed;width:600px;height:600px;border-radius:50%;background:rgba(194,158,95,.055);filter:blur(100px);top:-250px;left:50%;transform:translateX(-50%);pointer-events:none;z-index:-1}
+header{width:100%;padding:24px 7%;display:flex;align-items:center;justify-content:space-between;position:absolute;top:0;left:0;z-index:10;background:transparent;color:var(--muted)}
+.brand{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.header-note{font-size:13px;color:var(--muted)}
+.header-note strong{color:var(--text);font-weight:500}
+.theme{border:1px solid var(--line);width:38px;height:38px;border-radius:50%;cursor:pointer;background:transparent;color:var(--cream);font-size:16px;transition:.3s}
 .theme:hover{border-color:var(--gold);transform:rotate(12deg)}
-.hero{max-width:var(--max);min-height:600px;margin:0 auto;padding:78px 28px 90px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;position:relative}
-.hero-copy{position:relative;z-index:2;animation:rise .8s both}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700;color:var(--gold);margin-bottom:25px}
-.eyebrow:before{content:"";height:1px;width:30px;background:var(--gold)}
-h1,h2,.day-title,.verse{font-family:'Playfair Display',serif;font-weight:400}
-h1{font-size:clamp(56px,7.6vw,98px);line-height:.99;letter-spacing:-2.8px;margin-bottom:27px}
-h1 em{font-style:normal;color:var(--gold2)}
-.hero-text{max-width:490px;color:var(--muted);font-size:16px;font-weight:300;line-height:1.9;margin-bottom:30px}
-.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:13px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;border-radius:999px;padding:14px 21px;font-size:12px;font-weight:700;letter-spacing:.2px;transition:transform .25s,background .25s,border-color .25s}
-.btn-primary{background:var(--gold2);color:#171811;border:1px solid var(--gold2);box-shadow:0 8px 35px rgba(211,180,119,.12)}
-.btn-primary:hover{transform:translateY(-3px);background:#f7e6bf}
-.btn-quiet{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.025)}
-.btn-quiet:hover{border-color:rgba(211,180,119,.5);transform:translateY(-3px)}
-.hero-note{margin-top:23px;font-size:11px;color:var(--subtle);letter-spacing:.4px}
-.hero-art{min-height:420px;position:relative;display:grid;place-items:center;animation:rise 1s .12s both}
-.orbit{position:absolute;width:min(36vw,390px);aspect-ratio:1;border:1px solid rgba(211,180,119,.2);border-radius:50%;animation:rotate 35s linear infinite}
-.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(211,180,119,.13);border-radius:50%;inset:25px}
-.orbit:after{inset:58px}
-.orbit-dot{position:absolute;width:8px;height:8px;background:var(--gold2);border-radius:50%;top:37px;left:65px;box-shadow:0 0 18px rgba(240,215,160,.8)}
-.art-card{position:relative;width:min(100%,340px);min-height:390px;border:1px solid rgba(255,255,255,.15);border-radius:180px 180px 28px 28px;overflow:hidden;background:linear-gradient(155deg,rgba(196,170,113,.23),rgba(20,31,23,.2) 42%,rgba(10,14,11,.96)),radial-gradient(ellipse at 50% 25%,#6e795e 0,#273b2b 36%,#101713 72%);box-shadow:0 35px 100px rgba(0,0,0,.35),inset 0 0 60px rgba(218,194,137,.06);display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:36px 24px}
-.art-card:before{content:"✦";position:absolute;top:82px;left:50%;transform:translateX(-50%);font-size:70px;color:rgba(239,218,167,.83);text-shadow:0 0 45px rgba(211,180,119,.45)}
-.art-card:after{content:"";position:absolute;left:50%;top:145px;transform:translateX(-50%);width:1px;height:100px;background:linear-gradient(transparent,rgba(240,215,160,.65),transparent)}
-.art-caption{position:relative;z-index:1}
-.art-caption span{display:block;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:10px}
-.art-caption strong{display:block;font-family:'Playfair Display',serif;font-weight:400;font-size:27px;line-height:1.2}
-.floating-tag{position:absolute;right:0;bottom:40px;background:rgba(19,24,20,.88);border:1px solid var(--line);border-radius:16px;padding:14px 17px;backdrop-filter:blur(14px);box-shadow:0 18px 45px rgba(0,0,0,.2)}
-.floating-tag small{display:block;color:var(--subtle);font-size:9px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px}
-.floating-tag strong{font-size:13px;font-weight:500;color:var(--gold2)}
-.section-wrap{max-width:var(--max);padding:0 28px 90px;margin:auto}
-.dashboard{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-bottom:72px}
-.panel{border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border-radius:var(--radius);padding:27px;box-shadow:0 22px 70px rgba(0,0,0,.12)}
-.panel-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:22px}
-.panel-kicker{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);font-weight:700}
-.panel h2{font-size:27px;line-height:1.2;margin-top:7px}
-.pill{border:1px solid rgba(211,180,119,.25);background:rgba(211,180,119,.08);border-radius:999px;padding:7px 10px;font-size:10px;color:var(--gold2);white-space:nowrap}
-.progress-info{display:flex;align-items:end;justify-content:space-between;gap:12px;color:var(--muted);font-size:12px}
-.progress-info strong{font-size:24px;font-family:'Playfair Display',serif;font-weight:400;color:var(--text)}
-.progress-track{height:7px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;margin:13px 0 21px}
-.progress-track span{display:block;width:0;height:100%;border-radius:99px;background:linear-gradient(90deg,#8c9c72,var(--gold2));box-shadow:0 0 20px rgba(211,180,119,.22);transition:width .7s cubic-bezier(.2,.7,.2,1)}
-.panel-foot{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
-.panel-foot p{font-size:11px;color:var(--subtle)}
-.panel-foot .btn{padding:12px 17px}
-.stat-panel{display:flex;flex-direction:column;justify-content:space-between;min-height:205px;background:radial-gradient(ellipse at 100% 0,rgba(211,180,119,.12),transparent 55%),linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.015))}
-.stat-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:13px;border:1px solid rgba(211,180,119,.25);background:rgba(211,180,119,.08);color:var(--gold2);font-size:17px}
-.stat-number{font-family:'Playfair Display',serif;font-size:46px;line-height:1;color:var(--gold2);margin:14px 0 4px}
-.stat-label{font-size:12px;color:var(--muted)}
-.section-heading{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:24px}
-.section-heading .eyebrow{margin-bottom:10px}
-.section-heading h2{font-size:clamp(34px,5vw,48px);line-height:1.1;letter-spacing:-.7px}
-.section-heading p{max-width:300px;font-size:12px;line-height:1.8;color:var(--subtle)}
-.days-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.day{min-width:0;position:relative;overflow:hidden;text-align:left;padding:19px 17px 17px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.018);color:var(--text);cursor:pointer;transition:transform .25s,border-color .25s,background .25s;min-height:174px;display:flex;flex-direction:column;align-items:stretch}
-.day:after{content:"";position:absolute;inset:auto -30px -50px auto;width:100px;height:100px;border-radius:50%;background:rgba(211,180,119,.04);filter:blur(15px);transition:.25s}
-.day:hover{transform:translateY(-4px);border-color:rgba(211,180,119,.4);background:rgba(255,255,255,.035)}
-.day-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:8px}
-.day-number{font-size:10px;letter-spacing:1.5px;color:var(--subtle);font-weight:700}
-.day-icon{font-size:13px;color:var(--gold);width:25px;height:25px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;background:rgba(255,255,255,.02)}
-.day-title{font-size:18px;line-height:1.28;display:block;margin-bottom:9px;overflow-wrap:anywhere}
-.day-subtitle{display:block;color:var(--subtle);font-size:10px;line-height:1.55;margin-top:auto;padding-top:5px}
-.day-status{font-size:9px;text-transform:uppercase;letter-spacing:1.1px;color:var(--subtle);margin-top:14px;display:flex;align-items:center;gap:6px}
-.day-status:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;flex:none}
-.day.current{border-color:rgba(211,180,119,.48);background:linear-gradient(145deg,rgba(211,180,119,.1),rgba(255,255,255,.02))}
-.day.current .day-status,.day.current .day-icon{color:var(--gold2)}
-.day.done{border-color:rgba(141,169,138,.35)}
-.day.done .day-status,.day.done .day-icon{color:var(--green)}
-.day.lock{opacity:.55;cursor:not-allowed}
-.day.lock:hover{transform:none;border-color:var(--line);background:rgba(255,255,255,.018)}
-.verse-section{margin-top:76px;position:relative;border:1px solid var(--line);border-radius:30px;overflow:hidden;text-align:center;padding:58px 30px;background:radial-gradient(ellipse at 50% 0,rgba(211,180,119,.1),transparent 60%),linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.008))}
-.verse-mark{font-family:'Playfair Display',serif;font-size:62px;color:var(--gold);line-height:.8;margin-bottom:25px;opacity:.85}
-.verse-kicker{font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--gold);margin-bottom:18px}
-.verse{font-size:clamp(25px,4.3vw,39px);line-height:1.45;max-width:780px;margin:0 auto 20px;color:#e9e4d8}
-.verse-ref{font-size:10px;letter-spacing:2.5px;color:var(--gold2)}
-.closing{max-width:670px;margin:58px auto 0;text-align:center}
-.closing h2{font-size:clamp(30px,4vw,43px);margin-bottom:13px}
-.closing p{color:var(--muted);font-size:13px;line-height:1.9;margin-bottom:22px}
-footer{max-width:var(--max);margin:auto;padding:28px 28px 40px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--subtle);font-size:10px;letter-spacing:.3px}
-footer strong{color:#c6c9bd;font-weight:500}
-body.light{color-scheme:light;--bg:#f3f0e7;--panel:#fffdf7;--panel2:#f8f5ec;--text:#262820;--muted:#656a5f;--subtle:#858a7d;--line:rgba(48,58,43,.15);--gold:#8c7042;--gold2:#72572d;--green:#557c58}
-body.light:before{opacity:.3}body.light:after{opacity:.18}body.light .brand{color:#454a3e}body.light .panel,body.light .day,body.light .verse-section{background-color:rgba(255,255,255,.5)}body.light .day:hover{background:rgba(255,255,255,.85)}body.light .verse{color:#35372e}body.light .art-card{filter:brightness(1.08)}body.light .floating-tag{background:rgba(250,248,240,.92)}body.light .art-caption strong{color:#fff}body.light .btn-quiet{color:var(--text)}body.light .progress-track{background:rgba(30,35,25,.1)}body.light footer strong{color:#454a3e}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes rotate{to{transform:rotate(360deg)}}
-@media(min-width:1200px){.hero{padding-top:70px}}
-@media(max-width:900px){.hero{grid-template-columns:1fr .8fr;gap:15px;min-height:560px}.art-card{min-height:340px;width:280px}.orbit{width:310px}.floating-tag{right:-5px;bottom:25px}.days-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.dashboard{grid-template-columns:1fr 1fr}}
-@media(max-width:650px){.topbar{padding:18px 20px}.brand{font-size:9px;letter-spacing:1.3px}.brand-mark{width:31px;height:31px}.top-right{gap:10px;font-size:10px}.theme{width:36px;height:36px}.hero{display:flex;flex-direction:column;align-items:stretch;padding:65px 22px 60px;gap:20px}.hero-copy{text-align:center}.hero-copy .eyebrow{justify-content:center;font-size:9px;letter-spacing:2px}.hero h1{font-size:clamp(56px,14vw,78px);letter-spacing:-2px}.hero-text{font-size:14px;margin-left:auto;margin-right:auto}.hero-actions{justify-content:center}.hero-note{font-size:10px}.hero-art{min-height:350px;margin-top:0}.art-card{width:250px;min-height:310px}.art-card:before{top:60px;font-size:58px}.art-card:after{top:120px;height:80px}.orbit{width:290px}.floating-tag{right:0;bottom:10px}.section-wrap{padding:0 18px 65px}.dashboard{grid-template-columns:1fr;gap:12px;margin-bottom:58px}.panel{padding:22px}.stat-panel{min-height:160px}.section-heading{display:block;margin-bottom:20px}.section-heading h2{font-size:38px}.section-heading p{margin-top:10px}.days-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.day{padding:15px 13px;min-height:165px;border-radius:15px}.day-title{font-size:17px}.day-subtitle{font-size:9px}.day-top{margin-bottom:14px}.verse-section{margin-top:55px;padding:43px 19px;border-radius:23px}.verse-mark{font-size:52px}.closing{margin-top:45px}.closing h2{font-size:33px}footer{margin:0 18px;padding:24px 0 32px;font-size:9px}}
-@media(max-width:360px){.days-grid{grid-template-columns:1fr}.day{min-height:140px}.top-right .header-note{display:none}.hero h1{font-size:53px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+.intro{min-height:82vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 25px 85px;position:relative}
+.intro-content{max-width:760px}
+.small-title{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:26px}
+h1{font-family:"Playfair Display",serif;font-weight:400;font-size:clamp(48px,8vw,88px);line-height:1.08;margin-bottom:26px;letter-spacing:-1.5px}
+.intro-text{max-width:510px;margin:auto;color:var(--muted);font-size:16px;line-height:1.9;font-weight:300}
+.scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--subtle);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.scroll-indicator::after{content:"";display:block;width:1px;height:30px;background:#5b574f;margin:10px auto 0}
+.container{width:100%;max-width:940px;margin:0 auto;padding:0 24px 90px}
+.card{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:34px 0;margin-bottom:32px;box-shadow:none;transition:.3s}
+.card h2{font-family:"Playfair Display",serif;font-weight:400;font-size:clamp(25px,4vw,34px);margin-bottom:24px;color:var(--text)}
+.card p{color:var(--muted);line-height:1.8}
+.journey-meta{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13px;color:var(--muted)}
+.journey-meta strong{color:var(--text);font-weight:500}
+.progress{background:#292720;height:4px;border-radius:20px;overflow:hidden;margin-top:18px;margin-bottom:25px}
+.progress span{display:block;height:100%;width:0%;background:var(--gold);transition:width .5s}
+.button{display:inline-block;padding:14px 28px;background:var(--cream);color:#171714;border:1px solid var(--cream);border-radius:40px;text-decoration:none;transition:.3s;font-size:13px;font-weight:500}
+.button:hover{transform:translateY(-2px);background:#fffaf0;border-color:#fffaf0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.day{min-width:0;padding:22px 4px 24px;border-radius:0;border:0;border-bottom:1px solid var(--line);background:transparent;transition:background .25s,opacity .25s;cursor:pointer;position:relative}
+.day:hover{background:rgba(255,255,255,.025);transform:none}
+.day h3{display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;color:var(--gold);margin-bottom:12px}
+.day h3 .day-number{font-size:11px;color:var(--subtle);font-variant-numeric:tabular-nums}
+.day p{font-family:"Playfair Display",serif;font-size:20px;line-height:1.4;color:var(--text)}
+.day .day-subtitle{display:block;margin-top:8px;font-family:"DM Sans",sans-serif;font-size:12px;line-height:1.6;color:var(--subtle);font-weight:300}
+.day.done h3{color:var(--gold-soft)}
+.day.current{background:rgba(165,138,97,.06)}
+.day.lock{opacity:.42;cursor:not-allowed}
+.day.lock h3{color:var(--subtle)}
+.day-status{display:inline-block;margin-top:12px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--subtle)}
+.verse-card{text-align:center;padding:55px 28px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:30px 0 0}
+.verse-card .eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.verse-card .verse{font-family:"Playfair Display",serif;font-size:clamp(24px,4vw,34px);line-height:1.55;color:#ddd8cf;max-width:650px;margin:0 auto 20px}
+.verse-card .reference{font-size:11px;letter-spacing:2px;color:var(--gold)}
+footer{text-align:center;padding:25px 20px 45px;color:var(--subtle);font-size:12px;letter-spacing:.3px}
+body.light{--bg:#f4f0e8;--surface:#fffdf8;--surface-hover:#f4efe5;--text:#25231e;--muted:#777166;--subtle:#938b7d;--gold:#8b7046;--gold-soft:#8b7046;--line:#ded7ca;--cream:#25231e}
+body.light .button{background:#25231e;color:#f4f0e8;border-color:#25231e}
+body.light .progress{background:#ded7ca}
+body.light .day.current{background:rgba(139,112,70,.07)}
+body.light .verse-card .verse{color:#353128}
+@media(max-width:650px){header{padding:20px;gap:12px}.brand{font-size:9px;letter-spacing:1.5px}.header-note{font-size:11px}.intro{min-height:76vh;padding:105px 20px 75px}h1{font-size:clamp(45px,13vw,66px);letter-spacing:-.8px}.intro-text{font-size:14px}.container{padding:0 20px 65px}.card{padding:28px 0}.grid{grid-template-columns:1fr}.day{padding:19px 4px}.day p{font-size:21px}.verse-card{padding:42px 12px 34px}}
 </style>
+
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="index.html" aria-label="Voltar ao Caminhos de Propósito"><span class="brand-mark">✦</span><span>Caminhos de Propósito</span></a>
-  <div class="top-right"><span class="header-note">UMA JORNADA DE <strong>40 DIAS</strong></span><button class="theme" onclick="tema()" aria-label="Alternar tema" title="Alternar tema">☼</button></div>
+
+<header>
+  <div class="brand">Caminhos de Propósito</div>
+  <div class="header-note"><strong>40</strong> dias de oração</div>
+  <button class="theme" onclick="tema()" aria-label="Alternar tema" title="Alternar tema">☼</button>
 </header>
 
-<main>
-<section class="hero">
-  <div class="hero-copy">
-    <div class="eyebrow">Uma jornada de fé · 40 dias</div>
-    <h1>Uma vida<br><em>de oração.</em></h1>
-    <p class="hero-text">Quarenta dias para desacelerar, abrir o coração e aprofundar sua caminhada com Deus. Um momento de cada vez. Uma conversa sincera de cada vez.</p>
-    <div class="hero-actions"><a href="#caminhada" class="btn btn-primary">Entrar na jornada <span aria-hidden="true">↗</span></a><a href="#dias" class="btn btn-quiet">Explorar os 40 dias</a></div>
-    <p class="hero-note">Sem pressa. Sem performance. Apenas presença.</p>
+<section class="intro">
+  <div class="intro-content">
+    <div class="small-title">Uma jornada de fé · 40 dias</div>
+    <h1>Uma vida<br>de oração.</h1>
+    <p class="intro-text">Quarenta dias para desacelerar, abrir o coração e aprofundar sua caminhada com Deus. Um dia de cada vez, sem pressa.</p>
   </div>
-  <div class="hero-art" aria-hidden="true"><div class="orbit"><span class="orbit-dot"></span></div><div class="art-card"><div class="art-caption"><span>Um encontro por dia</span><strong>Encontre espaço<br>para Deus.</strong></div></div><div class="floating-tag"><small>Sua intenção</small><strong>Presença antes da pressa</strong></div></div>
+  <div class="scroll-indicator">Sua jornada começa aqui</div>
 </section>
 
-<div class="section-wrap">
-  <section class="dashboard" id="caminhada">
-    <div class="panel">
-      <div class="panel-head"><div><div class="panel-kicker">Sua caminhada</div><h2>Continue de onde parou.</h2></div><span class="pill" id="progresso-pill">0% concluído</span></div>
-      <div class="progress-info"><span id="progresso-label">Sua jornada está começando</span><strong><span id="concluidos">0</span><small style="font:400 12px 'DM Sans',sans-serif;color:var(--subtle)"> / 40 dias</small></strong></div>
-      <div class="progress-track" role="progressbar" aria-label="Progresso dos 40 dias" aria-valuemin="0" aria-valuemax="40" aria-valuenow="0" id="progressbar"><span id="barra"></span></div>
-      <div class="panel-foot"><p id="mensagem-progresso">Pequenos momentos de oração também importam.</p><a id="continuar" href="dia1.html" class="btn btn-primary">Continuar jornada <span aria-hidden="true">→</span></a></div>
-    </div>
-    <div class="panel stat-panel"><div class="stat-icon">✧</div><div><div class="stat-number" id="dia-atual-numero">01</div><div class="stat-label" id="dia-atual-label">Seu próximo encontro começa aqui.</div></div></div>
-  </section>
+<div class="container">
 
-  <section id="dias">
-    <div class="section-heading"><div><div class="eyebrow">Um dia de cada vez</div><h2>Os 40 dias.</h2></div><p>Cada etapa traz um convite para conversar com Deus com mais sinceridade, gratidão e confiança.</p></div>
-    <div class="days-grid" id="lista-dias"></div>
-  </section>
 
-  <section class="verse-section"><div class="verse-mark">“</div><div class="verse-kicker">Para guardar no coração</div><p class="verse">“Todas as coisas foram criadas por meio dele e para ele.”</p><div class="verse-ref">COLOSSENSES 1:16</div></section>
-  <section class="closing"><div class="eyebrow" style="justify-content:center">O começo de algo profundo</div><h2>Deus não está pedindo pressa.</h2><p>Reserve um espaço no seu dia, fale com sinceridade e permita-se estar presente. A constância cresce com passos pequenos — e cada novo dia é uma oportunidade de recomeçar.</p><a href="#caminhada" class="btn btn-primary">Voltar à minha jornada ↑</a></section>
+<div class="card">
+
+<h2>Sua caminhada até aqui.</h2>
+
+<div class="journey-meta"><span>Dia atual</span><strong><b>1 de 40</b></strong></div>
+
+
+<div class="progress">
+
+<span id="barra"></span>
+
 </div>
-</main>
-<footer><span><strong>Caminhos de Propósito</strong> · Um passo de cada vez, na presença de Deus.</span><span>40 DIAS DE ORAÇÃO</span></footer>
+
+
+<a id="continuar" href="#" class="button">Continuar jornada&nbsp; →</a>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Os 40 dias.</h2>
+
+<br>
+
+<div class="grid" id="dias"></div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="verse-card"><div class="eyebrow">Para guardar no coração</div><p class="verse">“Todas as coisas foram criadas por meio dele e para ele.”</p><div class="reference">COLOSSENSES 1:16</div></div>
+
+</div>
+
+
+</div>
+
+
+
+<footer>
+
+Caminhos de Propósito · Um passo de cada vez, na presença de Deus.
+
+</footer>
+
+
 
 <script>
-const titulos = [
-  "",
-  "Apenas fique aqui — aprender a silenciar e entrar na presença de Deus",
-  "Antes de pedir, agradeça — cultivar gratidão",
-  "Entregue suas preocupações — colocar as ansiedades nas mãos de Deus",
-  "Fale com Deus de verdade — abandonar orações automáticas e ser sincero",
-  "Ore por quem você ama — interceder pela família e amigos",
-  "Quando o medo chegar — entregar os medos a Deus",
-  "Aprenda a esperar — confiar mesmo quando a resposta não vem",
-  "Peça sabedoria — aprender a buscar direção antes de tomar decisões",
-  "Perdoe em oração — levar mágoas e ressentimentos a Deus",
-  "Ore por quem te feriu — transformar dor em intercessão",
-  "Seus sonhos nas mãos de Deus — entregar planos e desejos",
-  "Quando você não souber o que fazer — buscar direção",
-  "Ore pelo seu futuro — confiar o amanhã a Deus",
-  "Quando Deus parecer distante — permanecer mesmo sem sentir",
-  "Uma oração pela sua família — intercessão mais profunda",
-  "Ore pelos seus amigos — lembrar daqueles que caminham com você",
-  "Quando você estiver cansado — encontrar descanso em Deus",
-  "Confesse e recomece — arrependimento e graça",
-  "Peça um coração novo — transformação interior",
-  "Ore pelo seu caráter — pedir para se tornar uma pessoa melhor",
-  "O silêncio também é oração — aprender a ouvir",
-  "Não tenha medo de perguntar — levar dúvidas para Deus",
-  "Quando a resposta for “não” — confiar mesmo sem entender",
-  "Quando a resposta demorar — perseverar",
-  "Ore pelos seus inimigos — amar além dos sentimentos",
-  "Agradeça pelo que passou — reconhecer a fidelidade de Deus",
-  "Ore pelo que ainda virá — esperança no futuro",
-  "Coloque seus planos no altar — abrir mão do controle",
-  "Peça coragem — enfrentar aquilo que você tem evitado",
-  "Ore por uma vida com propósito — buscar significado",
-  "Seja grato pelo hoje — parar de viver apenas pelo amanhã",
-  "Ore por quem está sofrendo — intercessão por outras pessoas",
-  "Quando você se sentir sozinho — lembrar que Deus está presente",
-  "Peça discernimento — aprender a reconhecer caminhos",
-  "Ore pelos seus sonhos, mas entregue o resultado — desejar sem controlar",
-  "Uma oração de confiança — descansar no cuidado de Deus",
-  "Consagre sua vida — colocar tudo diante de Deus",
-  "O que Deus está formando em você? — perceber transformação",
-  "Continue mesmo depois dos 40 dias — transformar propósito em hábito",
-  "Uma vida de oração — encerrar a jornada e começar uma nova caminhada"
-];
-const lista = document.getElementById('lista-dias');
-const concluido = n => localStorage.getItem(`dia${n}`) === 'concluido';
-function obterProgresso(){let total=0;for(let n=1;n<=40;n++)if(concluido(n))total++;return total;}
-function proximoDia(){for(let n=1;n<=40;n++)if(!concluido(n))return n;return 40;}
+
+
+const container = document.getElementById("dias");
+
+
+
+// ===============================
+// VERIFICA PROGRESSO
+// ===============================
+
+
+let diasConcluidos = 0;
+
+
+for(let i = 1; i <= 40; i++){
+
+    if(localStorage.getItem(`dia${i}`) === "concluido"){
+
+        diasConcluidos++;
+
+    }
+
+}
+
+
+
+// Barra de progresso
+
+document.getElementById("barra").style.width =
+(diasConcluidos / 40 * 100) + "%";
+
+
+
+
+// Descobre próximo dia
+
+let diaAtual = 1;
+
+
+for(let i = 1; i <= 40; i++){
+
+    if(localStorage.getItem(`dia${i}`) === "concluido"){
+
+        diaAtual = i + 1;
+
+    }
+
+}
+
+
+if(diaAtual > 40){
+
+    diaAtual = 40;
+
+}
+
+
+
+// Atualiza texto
+
+document.querySelector(".journey-meta b").innerHTML =
+`${diaAtual} de 40`;
+
+
+
+
+// Verifica se página existe
+
 function abrirDia(numero){
-  const url = `dia${numero}.html`;
-  fetch(url,{method:'HEAD'}).then(r=>{window.location.href=r.ok?url:'em-breve.html';}).catch(()=>{window.location.href='em-breve.html';});
+
+fetch(`dia${numero}.html`)
+
+.then(resposta => {
+
+
+    if(resposta.ok){
+
+        window.location.href = `dia${numero}.html`;
+
+    }
+
+    else{
+
+        window.location.href = "em-breve.html";
+
+    }
+
+
+})
+
+.catch(()=>{
+
+    window.location.href = "em-breve.html";
+
+});
+
+
 }
-function atualizarProgresso(){
-  const total=obterProgresso();const atual=proximoDia();const percentual=Math.round(total/40*100);
-  document.getElementById('concluidos').textContent=total;
-  document.getElementById('barra').style.width=percentual+'%';
-  document.getElementById('progressbar').setAttribute('aria-valuenow',total);
-  document.getElementById('progresso-pill').textContent=percentual+'% concluído';
-  document.getElementById('progresso-label').textContent=total===0?'Sua jornada está começando':total===40?'Jornada concluída!':`${total} ${total===1?'dia concluído':'dias concluídos'} — continue no seu ritmo`;
-  document.getElementById('mensagem-progresso').textContent=total===40?'Você completou os 40 dias. Que essa caminhada continue.':'Pequenos momentos de oração também importam.';
-  document.getElementById('dia-atual-numero').textContent=String(atual).padStart(2,'0');
-  document.getElementById('dia-atual-label').textContent=total===40?'Você concluiu esta jornada. Recomece sempre que quiser.':`Seu próximo encontro é o dia ${atual}.`;
-  document.getElementById('continuar').onclick=e=>{e.preventDefault();abrirDia(atual);};
+
+
+
+
+// Botão continuar
+
+document.getElementById("continuar").onclick = function(e){
+
+e.preventDefault();
+
+abrirDia(diaAtual);
+
+};
+
+
+
+
+// Títulos
+
+
+const titulos = [
+    "",
+    "Apenas fique aqui — aprender a silenciar e entrar na presença de Deus",
+    "Antes de pedir, agradeça — cultivar gratidão",
+    "Entregue suas preocupações — colocar as ansiedades nas mãos de Deus",
+    "Fale com Deus de verdade — abandonar orações automáticas e ser sincero",
+    "Ore por quem você ama — interceder pela família e amigos",
+    "Quando o medo chegar — entregar os medos a Deus",
+    "Aprenda a esperar — confiar mesmo quando a resposta não vem",
+    "Peça sabedoria — aprender a buscar direção antes de tomar decisões",
+    "Perdoe em oração — levar mágoas e ressentimentos a Deus",
+    "Ore por quem te feriu — transformar dor em intercessão",
+    "Seus sonhos nas mãos de Deus — entregar planos e desejos",
+    "Quando você não souber o que fazer — buscar direção",
+    "Ore pelo seu futuro — confiar o amanhã a Deus",
+    "Quando Deus parecer distante — permanecer mesmo sem sentir",
+    "Uma oração pela sua família — intercessão mais profunda",
+    "Ore pelos seus amigos — lembrar daqueles que caminham com você",
+    "Quando você estiver cansado — encontrar descanso em Deus",
+    "Confesse e recomece — arrependimento e graça",
+    "Peça um coração novo — transformação interior",
+    "Ore pelo seu caráter — pedir para se tornar uma pessoa melhor",
+    "O silêncio também é oração — aprender a ouvir",
+    "Não tenha medo de perguntar — levar dúvidas para Deus",
+    "Quando a resposta for “não” — confiar mesmo sem entender",
+    "Quando a resposta demorar — perseverar",
+    "Ore pelos seus inimigos — amar além dos sentimentos",
+    "Agradeça pelo que passou — reconhecer a fidelidade de Deus",
+    "Ore pelo que ainda virá — esperança no futuro",
+    "Coloque seus planos no altar — abrir mão do controle",
+    "Peça coragem — enfrentar aquilo que você tem evitado",
+    "Ore por uma vida com propósito — buscar significado",
+    "Seja grato pelo hoje — parar de viver apenas pelo amanhã",
+    "Ore por quem está sofrendo — intercessão por outras pessoas",
+    "Quando você se sentir sozinho — lembrar que Deus está presente",
+    "Peça discernimento — aprender a reconhecer caminhos",
+    "Ore pelos seus sonhos, mas entregue o resultado — desejar sem controlar",
+    "Uma oração de confiança — descansar no cuidado de Deus",
+    "Consagre sua vida — colocar tudo diante de Deus",
+    "O que Deus está formando em você? — perceber transformação",
+    "Continue mesmo depois dos 40 dias — transformar propósito em hábito",
+    "Uma vida de oração — encerrar a jornada e começar uma nova caminhada"
+];
+
+
+
+
+
+// Cria capítulos
+
+for(let i = 1; i <= 40; i++){
+
+
+let status = "lock";
+let emoji = "🔒";
+
+
+
+let liberado = 
+(
+i === 1 ||
+localStorage.getItem(`dia${i-1}`) === "concluido"
+);
+
+
+
+let concluido =
+localStorage.getItem(`dia${i}`) === "concluido";
+
+
+
+
+
+if(concluido){
+
+status = "done";
+emoji = "✅";
+
 }
-for(let i=1;i<=40;i++){
-  const partes=titulos[i].split(' — ');const principal=partes[0];const subtitulo=partes.slice(1).join(' — ');
-  const done=concluido(i);const liberado=i===1||concluido(i-1);const status=done?'done':liberado?'current':'lock';
-  const rotulo=done?'Concluído':liberado?'Disponível agora':'Bloqueado';const simbolo=done?'✓':liberado?'↗':'⌑';
-  const artigo=document.createElement('button');artigo.type='button';artigo.className=`day ${status}`;artigo.innerHTML=`<span class="day-top"><span class="day-number">DIA ${String(i).padStart(2,'0')}</span><span class="day-icon" aria-hidden="true">${simbolo}</span></span><span class="day-title">${principal}</span><span class="day-subtitle">${subtitulo||'Um momento para estar na presença de Deus.'}</span><span class="day-status">${rotulo}</span>`;
-  if(liberado||done){artigo.addEventListener('click',()=>abrirDia(i));}else{artigo.disabled=true;artigo.setAttribute('aria-label',`Dia ${i} bloqueado. Conclua o dia anterior para liberar.`);}
-  lista.appendChild(artigo);
+
+
+else if(liberado){
+
+status = "current";
+emoji = "📖";
+
 }
-function tema(){document.body.classList.toggle('light');const claro=document.body.classList.contains('light');localStorage.setItem('tema-oracao',claro?'light':'dark');document.querySelector('.theme').textContent=claro?'☾':'☼';}
-if(localStorage.getItem('tema-oracao')==='light'){document.body.classList.add('light');document.querySelector('.theme').textContent='☾';}
-atualizarProgresso();
+
+
+
+
+const partesTitulo = titulos[i].split(" — ");
+const tituloPrincipal = partesTitulo[0] || titulos[i];
+const subtitulo = partesTitulo.slice(1).join(" — ");
+const situacao = concluido ? "Concluído" : (liberado ? "Disponível agora" : "Continue sua jornada para liberar");
+
+container.innerHTML += `
+<div class="day ${status}" ${liberado || concluido ? `onclick="abrirDia(${i})"` : `aria-disabled="true"`}>
+  <h3><span class="day-number">${String(i).padStart(2,"0")}</span> · Dia ${i}</h3>
+  <p>${tituloPrincipal}<span class="day-subtitle">${subtitulo}</span></p>
+  <span class="day-status">${situacao}</span>
+</div>`;
+
+
+}
+
+
+
+
+
+
+// Alternar entre tema escuro e claro
+function tema(){
+  document.body.classList.toggle("light");
+  const claro = document.body.classList.contains("light");
+  localStorage.setItem("tema", claro ? "light" : "dark");
+  document.querySelector(".theme").textContent = claro ? "☾" : "☼";
+}
+
+// Mantém a preferência visual salva
+if(localStorage.getItem("tema") === "light"){
+  document.body.classList.add("light");
+  document.querySelector(".theme").textContent = "☾";
+}
+
 </script>
+
+
 </body>
+
 </html>
