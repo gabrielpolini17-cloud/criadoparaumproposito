@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>40 Dias de Oração | Caminhos de Propósito</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{--bg:#11110f;--surface:#171714;--surface-hover:#1c1b17;--text:#eeeae1;--muted:#aaa49a;--subtle:#77736c;--gold:#a58a61;--gold-soft:#c1a674;--line:#2b2923;--cream:#e7e0d4}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
+body::before{content:"";position:fixed;width:600px;height:600px;border-radius:50%;background:rgba(194,158,95,.055);filter:blur(100px);top:-250px;left:50%;transform:translateX(-50%);pointer-events:none;z-index:-1}
+header{width:100%;padding:24px 7%;display:flex;align-items:center;justify-content:space-between;position:absolute;top:0;left:0;z-index:10;background:transparent;color:var(--muted)}
+.brand{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.header-note{font-size:13px;color:var(--muted)}
+.header-note strong{color:var(--text);font-weight:500}
+.theme{border:1px solid var(--line);width:38px;height:38px;border-radius:50%;cursor:pointer;background:transparent;color:var(--cream);font-size:16px;transition:.3s}
+.theme:hover{border-color:var(--gold);transform:rotate(12deg)}
+.intro{min-height:82vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 25px 85px;position:relative}
+.intro-content{max-width:760px}
+.small-title{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:26px}
+h1{font-family:"Playfair Display",serif;font-weight:400;font-size:clamp(48px,8vw,88px);line-height:1.08;margin-bottom:26px;letter-spacing:-1.5px}
+.intro-text{max-width:510px;margin:auto;color:var(--muted);font-size:16px;line-height:1.9;font-weight:300}
+.scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--subtle);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.scroll-indicator::after{content:"";display:block;width:1px;height:30px;background:#5b574f;margin:10px auto 0}
+.container{width:100%;max-width:940px;margin:0 auto;padding:0 24px 90px}
+.card{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:34px 0;margin-bottom:32px;box-shadow:none;transition:.3s}
+.card h2{font-family:"Playfair Display",serif;font-weight:400;font-size:clamp(25px,4vw,34px);margin-bottom:24px;color:var(--text)}
+.card p{color:var(--muted);line-height:1.8}
+.journey-meta{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13px;color:var(--muted)}
+.journey-meta strong{color:var(--text);font-weight:500}
+.progress{background:#292720;height:4px;border-radius:20px;overflow:hidden;margin-top:18px;margin-bottom:25px}
+.progress span{display:block;height:100%;width:0%;background:var(--gold);transition:width .5s}
+.button{display:inline-block;padding:14px 28px;background:var(--cream);color:#171714;border:1px solid var(--cream);border-radius:40px;text-decoration:none;transition:.3s;font-size:13px;font-weight:500}
+.button:hover{transform:translateY(-2px);background:#fffaf0;border-color:#fffaf0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.day{min-width:0;padding:22px 4px 24px;border-radius:0;border:0;border-bottom:1px solid var(--line);background:transparent;transition:background .25s,opacity .25s;cursor:pointer;position:relative}
+.day:hover{background:rgba(255,255,255,.025);transform:none}
+.day h3{display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;color:var(--gold);margin-bottom:12px}
+.day h3 .day-number{font-size:11px;color:var(--subtle);font-variant-numeric:tabular-nums}
+.day p{font-family:"Playfair Display",serif;font-size:20px;line-height:1.4;color:var(--text)}
+.day .day-subtitle{display:block;margin-top:8px;font-family:"DM Sans",sans-serif;font-size:12px;line-height:1.6;color:var(--subtle);font-weight:300}
+.day.done h3{color:var(--gold-soft)}
+.day.current{background:rgba(165,138,97,.06)}
+.day.lock{opacity:.42;cursor:not-allowed}
+.day.lock h3{color:var(--subtle)}
+.day-status{display:inline-block;margin-top:12px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--subtle)}
+.verse-card{text-align:center;padding:55px 28px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:30px 0 0}
+.verse-card .eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.verse-card .verse{font-family:"Playfair Display",serif;font-size:clamp(24px,4vw,34px);line-height:1.55;color:#ddd8cf;max-width:650px;margin:0 auto 20px}
+.verse-card .reference{font-size:11px;letter-spacing:2px;color:var(--gold)}
+footer{text-align:center;padding:25px 20px 45px;color:var(--subtle);font-size:12px;letter-spacing:.3px}
+body.light{--bg:#f4f0e8;--surface:#fffdf8;--surface-hover:#f4efe5;--text:#25231e;--muted:#777166;--subtle:#938b7d;--gold:#8b7046;--gold-soft:#8b7046;--line:#ded7ca;--cream:#25231e}
+body.light .button{background:#25231e;color:#f4f0e8;border-color:#25231e}
+body.light .progress{background:#ded7ca}
+body.light .day.current{background:rgba(139,112,70,.07)}
+body.light .verse-card .verse{color:#353128}
+@media(max-width:650px){header{padding:20px;gap:12px}.brand{font-size:9px;letter-spacing:1.5px}.header-note{font-size:11px}.intro{min-height:76vh;padding:105px 20px 75px}h1{font-size:clamp(45px,13vw,66px);letter-spacing:-.8px}.intro-text{font-size:14px}.container{padding:0 20px 65px}.card{padding:28px 0}.grid{grid-template-columns:1fr}.day{padding:19px 4px}.day p{font-size:21px}.verse-card{padding:42px 12px 34px}}
+</style>
+
+</head>
+<body>
+
+<header>
+  <div class="brand">Caminhos de Propósito</div>
+  <div class="header-note"><strong>40</strong> dias de oração</div>
+  <button class="theme" onclick="tema()" aria-label="Alternar tema" title="Alternar tema">☼</button>
+</header>
+
+<section class="intro">
+  <div class="intro-content">
+    <div class="small-title">Uma jornada de fé · 40 dias</div>
+    <h1>Uma vida<br>de oração.</h1>
+    <p class="intro-text">Quarenta dias para desacelerar, abrir o coração e aprofundar sua caminhada com Deus. Um dia de cada vez, sem pressa.</p>
+  </div>
+  <div class="scroll-indicator">Sua jornada começa aqui</div>
+</section>
+
+<div class="container">
+
+
+<div class="card">
+
+<h2>Sua caminhada até aqui.</h2>
+
+<div class="journey-meta"><span>Dia atual</span><strong><b>1 de 40</b></strong></div>
+
+
+<div class="progress">
+
+<span id="barra"></span>
+
+</div>
+
+
+<a id="continuar" href="#" class="button">Continuar jornada&nbsp; →</a>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Os 40 dias.</h2>
+
+<br>
+
+<div class="grid" id="dias"></div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="verse-card"><div class="eyebrow">Para guardar no coração</div><p class="verse">“Todas as coisas foram criadas por meio dele e para ele.”</p><div class="reference">COLOSSENSES 1:16</div></div>
+
+</div>
+
+
+</div>
+
+
+
+<footer>
+
+Caminhos de Propósito · Um passo de cada vez, na presença de Deus.
+
+</footer>
+
+
+
+<script>
+
+
+const container = document.getElementById("dias");
+
+
+
+// ===============================
+// VERIFICA PROGRESSO
+// ===============================
+
+
+let diasConcluidos = 0;
+
+
+for(let i = 1; i <= 40; i++){
+
+    if(localStorage.getItem(`dia${i}`) === "concluido"){
+
+        diasConcluidos++;
+
+    }
+
+}
+
+
+
+// Barra de progresso
+
+document.getElementById("barra").style.width =
+(diasConcluidos / 40 * 100) + "%";
+
+
+
+
+// Descobre próximo dia
+
+let diaAtual = 1;
+
+
+for(let i = 1; i <= 40; i++){
+
+    if(localStorage.getItem(`dia${i}`) === "concluido"){
+
+        diaAtual = i + 1;
+
+    }
+
+}
+
+
+if(diaAtual > 40){
+
+    diaAtual = 40;
+
+}
+
+
+
+// Atualiza texto
+
+document.querySelector(".journey-meta b").innerHTML =
+`${diaAtual} de 40`;
+
+
+
+
+// Verifica se página existe
+
+function abrirDia(numero){
+
+fetch(`dia${numero}.html`)
+
+.then(resposta => {
+
+
+    if(resposta.ok){
+
+        window.location.href = `dia${numero}.html`;
+
+    }
+
+    else{
+
+        window.location.href = "em-breve.html";
+
+    }
+
+
+})
+
+.catch(()=>{
+
+    window.location.href = "em-breve.html";
+
+});
+
+
+}
+
+
+
+
+// Botão continuar
+
+document.getElementById("continuar").onclick = function(e){
+
+e.preventDefault();
+
+abrirDia(diaAtual);
+
+};
+
+
+
+
+// Títulos
+
+
+const titulos = [
+    "",
+    "Apenas fique aqui — aprender a silenciar e entrar na presença de Deus",
+    "Antes de pedir, agradeça — cultivar gratidão",
+    "Entregue suas preocupações — colocar as ansiedades nas mãos de Deus",
+    "Fale com Deus de verdade — abandonar orações automáticas e ser sincero",
+    "Ore por quem você ama — interceder pela família e amigos",
+    "Quando o medo chegar — entregar os medos a Deus",
+    "Aprenda a esperar — confiar mesmo quando a resposta não vem",
+    "Peça sabedoria — aprender a buscar direção antes de tomar decisões",
+    "Perdoe em oração — levar mágoas e ressentimentos a Deus",
+    "Ore por quem te feriu — transformar dor em intercessão",
+    "Seus sonhos nas mãos de Deus — entregar planos e desejos",
+    "Quando você não souber o que fazer — buscar direção",
+    "Ore pelo seu futuro — confiar o amanhã a Deus",
+    "Quando Deus parecer distante — permanecer mesmo sem sentir",
+    "Uma oração pela sua família — intercessão mais profunda",
+    "Ore pelos seus amigos — lembrar daqueles que caminham com você",
+    "Quando você estiver cansado — encontrar descanso em Deus",
+    "Confesse e recomece — arrependimento e graça",
+    "Peça um coração novo — transformação interior",
+    "Ore pelo seu caráter — pedir para se tornar uma pessoa melhor",
+    "O silêncio também é oração — aprender a ouvir",
+    "Não tenha medo de perguntar — levar dúvidas para Deus",
+    "Quando a resposta for “não” — confiar mesmo sem entender",
+    "Quando a resposta demorar — perseverar",
+    "Ore pelos seus inimigos — amar além dos sentimentos",
+    "Agradeça pelo que passou — reconhecer a fidelidade de Deus",
+    "Ore pelo que ainda virá — esperança no futuro",
+    "Coloque seus planos no altar — abrir mão do controle",
+    "Peça coragem — enfrentar aquilo que você tem evitado",
+    "Ore por uma vida com propósito — buscar significado",
+    "Seja grato pelo hoje — parar de viver apenas pelo amanhã",
+    "Ore por quem está sofrendo — intercessão por outras pessoas",
+    "Quando você se sentir sozinho — lembrar que Deus está presente",
+    "Peça discernimento — aprender a reconhecer caminhos",
+    "Ore pelos seus sonhos, mas entregue o resultado — desejar sem controlar",
+    "Uma oração de confiança — descansar no cuidado de Deus",
+    "Consagre sua vida — colocar tudo diante de Deus",
+    "O que Deus está formando em você? — perceber transformação",
+    "Continue mesmo depois dos 40 dias — transformar propósito em hábito",
+    "Uma vida de oração — encerrar a jornada e começar uma nova caminhada"
+];
+
+
+
+
+
+// Cria capítulos
+
+for(let i = 1; i <= 40; i++){
+
+
+let status = "lock";
+let emoji = "🔒";
+
+
+
+let liberado = 
+(
+i === 1 ||
+localStorage.getItem(`dia${i-1}`) === "concluido"
+);
+
+
+
+let concluido =
+localStorage.getItem(`dia${i}`) === "concluido";
+
+
+
+
+
+if(concluido){
+
+status = "done";
+emoji = "✅";
+
+}
+
+
+else if(liberado){
+
+status = "current";
+emoji = "📖";
+
+}
+
+
+
+
+const partesTitulo = titulos[i].split(" — ");
+const tituloPrincipal = partesTitulo[0] || titulos[i];
+const subtitulo = partesTitulo.slice(1).join(" — ");
+const situacao = concluido ? "Concluído" : (liberado ? "Disponível agora" : "Continue sua jornada para liberar");
+
+container.innerHTML += `
+<div class="day ${status}" ${liberado || concluido ? `onclick="abrirDia(${i})"` : `aria-disabled="true"`}>
+  <h3><span class="day-number">${String(i).padStart(2,"0")}</span> · Dia ${i}</h3>
+  <p>${tituloPrincipal}<span class="day-subtitle">${subtitulo}</span></p>
+  <span class="day-status">${situacao}</span>
+</div>`;
+
+
+}
+
+
+
+
+
+
+// Alternar entre tema escuro e claro
+function tema(){
+  document.body.classList.toggle("light");
+  const claro = document.body.classList.contains("light");
+  localStorage.setItem("tema", claro ? "light" : "dark");
+  document.querySelector(".theme").textContent = claro ? "☾" : "☼";
+}
+
+// Mantém a preferência visual salva
+if(localStorage.getItem("tema") === "light"){
+  document.body.classList.add("light");
+  document.querySelector(".theme").textContent = "☾";
+}
+
+</script>
+
+
+</body>
+
+</html>
