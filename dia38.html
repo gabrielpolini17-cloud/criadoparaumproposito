@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 38</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:95%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 38 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 38</h1>
+
+<p>Vivendo uma fé autêntica</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 38 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Uma fé autêntica não permanece apenas dentro de nós.
+
+</p>
+
+<br>
+
+<p>
+
+Ela começa no relacionamento com Deus, transforma nossa maneira de pensar e, aos poucos, passa a influenciar nossas escolhas, nossos relacionamentos e a forma como enxergamos as pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Quando compreendemos que também fomos feitos para uma missão, percebemos que nossa caminhada com Cristo possui uma dimensão que vai além da nossa própria vida.
+
+</p>
+
+<br>
+
+<p>
+
+Existe uma mensagem que recebemos e que pode alcançar outras pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Existe um amor que experimentamos e que pode ser demonstrado.
+
+</p>
+
+<br>
+
+<p>
+
+Existe esperança que pode ser compartilhada.
+
+</p>
+
+<div class="destaque">
+
+<strong>Uma fé verdadeira não termina em mim. Ela começa a transbordar através da maneira como vivo e da disposição que tenho para alcançar outras pessoas.</strong>
+
+</div>
+
+</div>
+
+
+<!-- AUTENTICIDADE -->
+
+<div class="card">
+
+<h2>🌿 Uma fé que aparece na vida</h2>
+
+<p>
+
+Ser autêntico na fé não significa aparentar perfeição.
+
+</p>
+
+<br>
+
+<p>
+
+Significa buscar coerência entre aquilo que acreditamos e aquilo que vivemos.
+
+</p>
+
+<br>
+
+<p>
+
+Nossas atitudes podem confirmar aquilo que nossas palavras dizem.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🤍 Amor</h3>
+
+<p>
+
+Tratar pessoas com dignidade, paciência e compaixão, inclusive quando não pensam como nós.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🧭 Integridade</h3>
+
+<p>
+
+Escolher aquilo que é correto também quando seria mais fácil agir de outra maneira.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🙏 Dependência</h3>
+
+<p>
+
+Reconhecer que ainda estamos crescendo e precisamos continuamente de Deus.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌎 Missão</h3>
+
+<p>
+
+Permitir que nossa fé também produza preocupação com pessoas que ainda não conhecem a esperança de Cristo.
+
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Uma fé autêntica pode ser percebida não porque nunca falhamos, mas porque nossa vida demonstra uma direção.
+
+</p>
+
+</div>
+
+
+<!-- FÉ E MISSÃO -->
+
+<div class="card">
+
+<h2>🌍 Minha fé também possui uma missão</h2>
+
+<p>
+
+Durante muito tempo podemos enxergar a fé apenas como algo relacionado à nossa própria relação com Deus.</p>
+
+<br>
+
+<p>
+
+Oramos.</p>
+
+<p>
+
+Lemos a Bíblia.</p>
+
+<p>
+
+Participamos da igreja.</p>
+
+<p>
+
+Buscamos crescer.</p>
+
+<br>
+
+<p>
+
+Tudo isso é importante.</p>
+
+<br>
+
+<p>
+
+Mas a fé cristã também nos convida a olhar para fora.</p>
+
+<br>
+
+<p>
+
+Existem pessoas que talvez nunca entrem espontaneamente em uma igreja.</p>
+
+<br>
+
+<p>
+
+Talvez nunca abram uma Bíblia sozinhas.</p>
+
+<br>
+
+<p>
+
+Talvez nunca procurem alguém para perguntar sobre Cristo.</p>
+
+<br>
+
+<p>
+
+Mas elas convivem conosco.</p>
+
+<br>
+
+<p>
+
+Observam nossas escolhas.</p>
+
+<br>
+
+<p>
+
+Conversam conosco.</p>
+
+<br>
+
+<p>
+
+Conhecem nossa história.</p>
+
+<div class="destaque">
+
+<strong>Talvez Deus queira usar minha presença na vida de alguém como uma ponte para que essa pessoa conheça Seu amor.</strong>
+
+</div>
+
+</div>
+
+
+<!-- SALMOS 67 -->
+
+<div class="card">
+
+<h2>📖 Para que outros também conheçam</h2>
+
+<p>
+
+O Salmo 67 apresenta uma ideia muito bonita.</p>
+
+<br>
+
+<p>
+
+O desejo pela direção e pela bênção de Deus não termina apenas no benefício de quem as recebe.</p>
+
+<br>
+
+<p>
+
+Existe um propósito maior:</p>
+
+<br>
+
+<p class="frase">
+
+"Assim, todas as nações conhecerão a sua salvação."</p>
+
+<br>
+
+<p>
+
+Aquilo que Deus faz em nós também pode produzir frutos além de nós.</p>
+
+<br>
+
+<p>
+
+Se Deus nos ensina algo, podemos compartilhar.</p>
+
+<br>
+
+<p>
+
+Se nos consola, podemos consolar.</p>
+
+<br>
+
+<p>
+
+Se nos dá esperança, podemos levar esperança.</p>
+
+<br>
+
+<p>
+
+Se transforma nossa maneira de viver, nossa própria vida pode se tornar um testemunho.</p>
+
+</div>
+
+
+<!-- MISSÃO NÃO É IMPROVISO -->
+
+<div class="card">
+
+<h2>🧭 Missão também exige preparação</h2>
+
+<p>
+
+Estar disponível para uma missão não significa simplesmente esperar que algo aconteça.</p>
+
+<br>
+
+<p>
+
+Podemos nos preparar.</p>
+
+<br>
+
+<p>
+
+Talvez Deus abra uma oportunidade no próximo ano.</p>
+
+<br>
+
+<p>
+
+Pode ser uma ação missionária da igreja.</p>
+
+<br>
+
+<p>
+
+Uma viagem.</p>
+
+<br>
+
+<p>
+
+Um projeto social.</p>
+
+<br>
+
+<p>
+
+Um trabalho de evangelismo.</p>
+
+<br>
+
+<p>
+
+Uma atividade em outra cidade.</p>
+
+<br>
+
+<p>
+
+Ou até uma missão muito próxima, realizada no lugar onde você já vive.</p>
+
+<br>
+
+<p>
+
+A pergunta é:</p>
+
+<br>
+
+<p class="frase">
+
+"Se Deus abrir uma porta, estarei preparado para dizer sim?"</p>
+
+</div>
+
+
+<!-- COMO SE PREPARAR -->
+
+<div class="card">
+
+<h2>🎒 Como começar a me preparar?</h2>
+
+<p>
+
+Você não precisa saber hoje exatamente onde Deus irá usar sua vida.</p>
+
+<br>
+
+<p>
+
+Mas pode começar a desenvolver disponibilidade.</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🙏 Ore</h3>
+
+<p>
+
+Peça a Deus para ampliar sua visão e mostrar onde existem pessoas que precisam conhecer Sua esperança.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>📖 Conheça melhor sua fé</h3>
+
+<p>
+
+Continue estudando a Palavra para compreender melhor aquilo que acredita e deseja compartilhar.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🗣️ Aprenda a comunicar</h3>
+
+<p>
+
+Pratique explicar seu testemunho e aquilo que Cristo significa para você com simplicidade.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤝 Comece servindo</h3>
+
+<p>
+
+Não espere uma viagem missionária para começar. Desenvolva um coração missionário servindo pessoas que já estão próximas.</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+A preparação para uma grande oportunidade começa muitas vezes através da fidelidade nas pequenas oportunidades.</p>
+
+</div>
+
+
+<!-- PREPARAÇÃO PRÁTICA -->
+
+<div class="card">
+
+<h2>🛠️ Transformando intenção em preparação</h2>
+
+<p>
+
+Se você deseja estar disponível para participar de uma missão no próximo ano, algumas decisões práticas podem começar agora.</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Conversar com líderes da igreja e descobrir quais projetos missionários existem.</li>
+
+<li>🌿 Acompanhar ações de evangelismo ou serviço realizadas pela comunidade.</li>
+
+<li>🌿 Separar tempo regularmente para orar por missões e por pessoas que ainda não conhecem Cristo.</li>
+
+<li>🌿 Aprender a explicar sua fé de maneira clara e respeitosa.</li>
+
+<li>🌿 Desenvolver habilidades que possam ser úteis em projetos missionários.</li>
+
+<li>🌿 Começar a organizar tempo e recursos caso surja uma oportunidade futura.</li>
+
+</ul>
+
+<div class="destaque">
+
+<strong>Disponibilidade espiritual também pode envolver preparação prática.</strong>
+
+</div>
+
+</div>
+
+
+<!-- NÃO PRECISA IR LONGE -->
+
+<div class="card">
+
+<h2>🏠 A missão pode começar muito perto</h2>
+
+<p>
+
+É importante lembrar que uma missão não começa apenas quando entramos em um avião.</p>
+
+<br>
+
+<p>
+
+Podemos desenvolver uma mentalidade missionária dentro da própria rotina.</p>
+
+<br>
+
+<p>
+
+Talvez exista alguém na família que precisa de esperança.</p>
+
+<br>
+
+<p>
+
+Um amigo que enfrenta uma fase difícil.</p>
+
+<br>
+
+<p>
+
+Uma pessoa da igreja que precisa de apoio.</p>
+
+<br>
+
+<p>
+
+Um vizinho que se sente sozinho.</p>
+
+<br>
+
+<p>
+
+Um colega que começou a fazer perguntas sobre Deus.</p>
+
+<br>
+
+<p>
+
+Essas também são oportunidades.</p>
+
+<br>
+
+<p class="frase">
+
+"Antes de me enviar para longe, Deus pode querer me ensinar a enxergar quem está perto."</p>
+
+</div>
+
+
+<!-- DISPONIBILIDADE -->
+
+<div class="card">
+
+<h2>👐 Uma oração perigosa: "Estou disponível"</h2>
+
+<p>
+
+Uma das orações mais simples que podemos fazer é também uma das mais profundas.</p>
+
+<br>
+
+<p class="frase">
+
+"Senhor, estou disponível."</p>
+
+<br>
+
+<p>
+
+Essa oração não exige que saibamos exatamente o que acontecerá.</p>
+
+<br>
+
+<p>
+
+Significa apenas colocar nossos planos diante de Deus.</p>
+
+<br>
+
+<p>
+
+Talvez Ele confirme algo que já existe em nosso coração.</p>
+
+<br>
+
+<p>
+
+Talvez abra uma oportunidade inesperada.</p>
+
+<br>
+
+<p>
+
+Talvez comece simplesmente mudando nossa maneira de enxergar as pessoas.</p>
+
+<br>
+
+<p>
+
+Disponibilidade não é possuir todas as respostas.</p>
+
+<br>
+
+<p>
+
+É estar disposto a responder quando Deus mostrar o próximo passo.</p>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque os passos que você deseja começar a praticar:</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Orar regularmente para que Deus mostre onde posso participar de Sua missão.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Pesquisar ou perguntar na minha igreja quais ações missionárias e evangelísticas existem.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Continuar estudando a Bíblia para compreender e explicar melhor minha fé.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Começar a servir pessoas próximas em vez de esperar apenas por uma grande oportunidade futura.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Separar um período para pensar em como posso me preparar durante os próximos meses para uma possível missão.</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"A missão de compartilhar o amor e a mensagem de Cristo também faz parte da minha caminhada; sou chamado a viver uma fé que alcance outras pessoas."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Minha fé não foi feita apenas para transformar minha própria vida. Deus também pode usá-la para levar esperança às pessoas ao meu redor.</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Assim saberemos por onde ele quer que nós andemos. Assim, todas as nações conhecerão a sua salvação."
+
+</strong>
+
+<br><br>
+
+<b>Salmos 67:2</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Que passos práticos posso começar a dar hoje para me preparar e estar disponível para participar de uma missão no próximo ano?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Imagine que daqui a alguns meses apareça uma oportunidade missionária.</p>
+
+<br>
+
+<p>
+
+Você estaria preparado para considerar essa possibilidade?</p>
+
+<br>
+
+<p>
+
+Talvez hoje existam obstáculos que precisam começar a ser trabalhados.</p>
+
+<br>
+
+<p>
+
+Pode ser medo.</p>
+
+<br>
+
+<p>
+
+Falta de conhecimento.</p>
+
+<br>
+
+<p>
+
+Falta de organização.</p>
+
+<br>
+
+<p>
+
+Dificuldade de falar sobre sua fé.</p>
+
+<br>
+
+<p>
+
+Ou simplesmente nunca ter pensado seriamente sobre participar de algo assim.</p>
+
+<br>
+
+<p>
+
+Pergunte:</p>
+
+<br>
+
+<p>
+
+<strong>Qual é o primeiro passo que posso dar sem precisar saber todo o caminho?</strong></p>
+
+<br>
+
+<p>
+
+Talvez seja conversar com alguém.</p>
+
+<br>
+
+<p>
+
+Talvez seja começar a estudar.</p>
+
+<br>
+
+<p>
+
+Talvez seja participar de uma pequena ação local.</p>
+
+<br>
+
+<p>
+
+Talvez seja organizar seus recursos.</p>
+
+<br>
+
+<p>
+
+Ou talvez seja simplesmente começar a orar:</p>
+
+<br>
+
+<p class="frase">
+
+"Senhor, se quiseres me enviar, prepara meu coração para dizer sim."</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Meu plano de preparação</h2>
+
+<p>
+
+Escreva abaixo quais passos você pode começar a dar nos próximos meses para estar mais preparado e disponível para participar de uma missão.</p>
+
+<textarea
+id="reflexao"
+placeholder="Para me preparar melhor, quero começar a... Um passo que posso dar ainda este mês é..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- PROPÓSITO -->
+
+<div class="card">
+
+<h2>🎯 Propósito nº 5</h2>
+
+<p class="frase">
+
+Você foi feito para uma missão.</p>
+
+<br>
+
+<p>
+
+Ser missionário não começa necessariamente quando viajamos.</p>
+
+<br>
+
+<p>
+
+Começa quando desenvolvemos um coração preocupado com pessoas que ainda precisam conhecer o amor e a esperança de Cristo.</p>
+
+<br>
+
+<p>
+
+Você pode começar onde está.</p>
+
+<br>
+
+<p>
+
+E ao mesmo tempo pode permanecer aberto para onde Deus ainda poderá enviar você.</p>
+
+<div class="destaque">
+
+<strong>Não preciso saber hoje onde Deus poderá me enviar amanhã. Preciso apenas estar disposto a me preparar para obedecer quando Ele mostrar o caminho.</strong>
+
+</div>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado porque minha caminhada contigo possui um propósito maior do que apenas minha própria vida.
+
+<br><br>
+
+Obrigado porque Tua graça, Teu amor e Tua salvação também podem alcançar outras pessoas através daquilo que fazes em mim.
+
+<br><br>
+
+Quero viver uma fé verdadeira.
+
+<br><br>
+
+Uma fé que apareça em minhas escolhas, em minhas atitudes e na maneira como trato as pessoas.
+
+<br><br>
+
+Abre meus olhos para enxergar aqueles que precisam de esperança.
+
+<br><br>
+
+Mostra-me também como posso começar a me preparar para aquilo que ainda tens para minha vida.
+
+<br><br>
+
+Se houver uma missão em que desejas me usar, prepara meu coração.
+
+<br><br>
+
+Ajuda-me a crescer no conhecimento da Tua Palavra.
+
+<br><br>
+
+Ensina-me a falar sobre Cristo com simplicidade, coragem, amor e respeito.
+
+<br><br>
+
+Dá-me disposição para servir perto antes de desejar servir longe.
+
+<br><br>
+
+Mostra-me oportunidades dentro da minha própria igreja e comunidade.
+
+<br><br>
+
+Ajuda-me a organizar meu tempo, minhas prioridades e meus recursos para estar disponível quando uma porta se abrir.
+
+<br><br>
+
+Não quero viver apenas perguntando quais são os meus planos.
+
+<br><br>
+
+Quero também perguntar quais são os Teus.
+
+<br><br>
+
+Por isso hoje Te digo:
+
+<br><br>
+
+Senhor, estou disponível.
+
+<br><br>
+
+Guia meus passos e usa minha vida para que outras pessoas também conheçam Tua salvação.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Uma fé autêntica não apenas transforma meus passos; ela me torna disponível para que Deus use esses passos para alcançar outras pessoas."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao trigésimo oitavo dia da jornada.</p>
+
+<br>
+
+<p>
+
+Você completou <strong>95% dos 40 dias.</strong></p>
+
+<br>
+
+<p>
+
+Agora faltam apenas dois.</p>
+
+<br>
+
+<p>
+
+Hoje você refletiu sobre uma fé que não permanece parada.</p>
+
+<br>
+
+<p>
+
+Uma fé que cresce.</p>
+
+<br>
+
+<p>
+
+Uma fé que serve.</p>
+
+<br>
+
+<p>
+
+Uma fé que compartilha esperança.</p>
+
+<br>
+
+<p>
+
+Uma fé que se torna disponível para a missão de Deus.</p>
+
+<br>
+
+<p class="frase">
+
+"Não preciso esperar o próximo ano para começar a me preparar. Posso começar hoje."</p>
+
+<br>
+
+<p>
+
+Talvez sua missão futura seja longe.</p>
+
+<br>
+
+<p>
+
+Talvez seja perto.</p>
+
+<br>
+
+<p>
+
+Talvez envolva uma viagem.</p>
+
+<br>
+
+<p>
+
+Talvez comece com alguém sentado ao seu lado.</p>
+
+<br>
+
+<p>
+
+Você ainda não precisa saber.</p>
+
+<br>
+
+<p>
+
+Mas pode começar a preparar o coração.</p>
+
+<br>
+
+<p>
+
+Ore.</p>
+
+<p>
+
+Aprenda.</p>
+
+<p>
+
+Sirva.</p>
+
+<p>
+
+Observe.</p>
+
+<p>
+
+Prepare-se.</p>
+
+<br>
+
+<p>
+
+E permaneça disponível.</p>
+
+<br>
+
+<p>
+
+<strong>Quando Deus mostrar o próximo passo, que seu coração já esteja preparado para responder: "Senhor, eis-me aqui."</strong></p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 38 concluído! Faltam apenas 2 dias para completar toda a jornada!
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia37") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia38","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo =
+document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia38");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia38",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia38check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia38check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia38")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,2194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 39</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:97.5%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 39 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 39</h1>
+
+<p>Uma vida em equilíbrio</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 39 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Ao longo desta jornada, você conheceu diferentes dimensões do propósito de Deus para sua vida.
+
+</p>
+
+<br>
+
+<p>
+
+Você refletiu sobre viver para agradar a Deus, fazer parte de Sua família, crescer para se tornar semelhante a Cristo, usar aquilo que recebeu para servir e compartilhar Sua esperança com outras pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Mas existe um desafio importante:
+
+<strong>não permitir que uma dessas áreas ocupe todo o espaço enquanto as outras são esquecidas.</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Podemos nos dedicar muito ao serviço e esquecer nossa comunhão com Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos estudar e crescer espiritualmente, mas nos afastar das pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos participar de muitas atividades na igreja, mas negligenciar nosso caráter, nossa família ou nosso descanso.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, viver com propósito também exige equilíbrio.
+
+</p>
+
+<div class="destaque">
+
+<strong>Equilíbrio não significa dar exatamente a mesma quantidade de tempo para tudo, mas não permitir que uma parte importante daquilo que Deus me confiou seja abandonada.</strong>
+
+</div>
+
+</div>
+
+
+<!-- OS CINCO PROPÓSITOS -->
+
+<div class="card">
+
+<h2>🧭 Os cinco propósitos da jornada</h2>
+
+<p>
+
+Chegando quase ao final dos 40 dias, vale a pena olhar novamente para os cinco propósitos que acompanharam esta caminhada.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🙏 1. Adoração</h3>
+
+<p>
+
+Fui criado para viver para Deus, conhecê-Lo, amá-Lo e fazer da minha vida uma resposta de adoração.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤝 2. Comunhão</h3>
+
+<p>
+
+Fui criado para fazer parte da família de Deus e construir relacionamentos de amor, cuidado e pertencimento.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌱 3. Crescimento</h3>
+
+<p>
+
+Fui criado para amadurecer e permitir que meu caráter seja cada vez mais parecido com o de Cristo.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>👐 4. Serviço</h3>
+
+<p>
+
+Fui moldado para usar meus dons, experiências e capacidades para servir a Deus e às pessoas.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌍 5. Missão</h3>
+
+<p>
+
+Fui enviado para compartilhar a esperança de Cristo e permitir que minha vida alcance outras pessoas.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>⚖️ O equilíbrio</h3>
+
+<p>
+
+Minha caminhada se torna mais saudável quando esses propósitos continuam presentes juntos ao longo da vida.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DESEQUILÍBRIO -->
+
+<div class="card">
+
+<h2>⚖️ Quando uma área ocupa tudo</h2>
+
+<p>
+
+É natural existir momentos em que determinada área exige mais atenção.
+
+</p>
+
+<br>
+
+<p>
+
+Mas o problema surge quando isso se transforma em um padrão permanente.
+
+</p>
+
+<br>
+
+<p>
+
+Podemos perceber alguns desequilíbrios assim:
+
+</p>
+
+<br>
+
+<ul>
+
+<li>🌿 Servir tanto que não sobra tempo para estar com Deus.</li>
+
+<li>🌿 Buscar tanto conhecimento que quase nunca colocamos nada em prática.</li>
+
+<li>🌿 Estar envolvido em muitas atividades, mas sem relacionamentos profundos.</li>
+
+<li>🌿 Cuidar de todos e esquecer completamente nossos próprios limites.</li>
+
+<li>🌿 Falar sobre missão, mas negligenciar as pessoas mais próximas.</li>
+
+<li>🌿 Valorizar apenas a experiência espiritual e abandonar responsabilidades do cotidiano.</li>
+
+</ul>
+
+<div class="destaque">
+
+<strong>Nem sempre o problema é fazer algo errado. Às vezes é fazer algo bom de maneira tão desproporcional que outras partes importantes começam a desaparecer.</strong>
+
+</div>
+
+</div>
+
+
+<!-- RESPONSABILIDADE -->
+
+<div class="card">
+
+<h2>🧠 Viver com senso de responsabilidade</h2>
+
+<p>
+
+O versículo de hoje nos convida a viver com consciência.
+
+</p>
+
+<br>
+
+<p>
+
+Isso significa não caminhar pela vida apenas reagindo ao que acontece.</p>
+
+<br>
+
+<p>
+
+Podemos observar nossas escolhas.</p>
+
+<br>
+
+<p>
+
+Avaliar nossas prioridades.</p>
+
+<br>
+
+<p>
+
+Perceber onde estamos investindo nosso tempo.</p>
+
+<br>
+
+<p>
+
+E perguntar se nossa rotina combina com aquilo que dizemos ser importante.</p>
+
+<br>
+
+<p class="frase">
+
+"Minha agenda também revela minhas prioridades."</p>
+
+<br>
+
+<p>
+
+Não precisamos controlar cada minuto da vida.</p>
+
+<br>
+
+<p>
+
+Mas podemos aprender a viver de maneira intencional.</p>
+
+</div>
+
+
+<!-- CINCO PERGUNTAS -->
+
+<div class="card">
+
+<h2>🔎 Uma revisão simples da minha caminhada</h2>
+
+<p>
+
+De tempos em tempos, algumas perguntas podem nos ajudar a perceber se alguma área está ficando esquecida.</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🙏 Minha relação com Deus</h3>
+
+<p>
+
+Tenho separado tempo para oração, Palavra, gratidão e comunhão com Deus?</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤝 Meus relacionamentos</h3>
+
+<p>
+
+Tenho cultivado comunhão ou estou tentando viver minha fé completamente sozinho?</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌱 Meu crescimento</h3>
+
+<p>
+
+Existe alguma área do meu caráter em que estou permitindo que Deus continue me transformando?</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>👐 Meu serviço</h3>
+
+<p>
+
+Estou usando aquilo que Deus colocou em minhas mãos para beneficiar outras pessoas?</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌍 Minha missão</h3>
+
+<p>
+
+Tenho lembrado que existem pessoas que também precisam conhecer a esperança de Cristo?</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>⚖️ Meu equilíbrio</h3>
+
+<p>
+
+Existe alguma dessas áreas que praticamente desapareceu da minha rotina?</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- RITMO -->
+
+<div class="card">
+
+<h2>🕰️ Equilíbrio é construído através de ritmo</h2>
+
+<p>
+
+Talvez você não consiga dedicar atenção a todos os cinco propósitos todos os dias da mesma maneira.</p>
+
+<br>
+
+<p>
+
+E isso não é necessário.</p>
+
+<br>
+
+<p>
+
+Equilíbrio pode ser pensado ao longo das semanas e dos meses.</p>
+
+<br>
+
+<p>
+
+Você pode criar pequenos ritmos.</p>
+
+<br>
+
+<ul>
+
+<li>📖 Um momento frequente para oração e Palavra.</li>
+
+<li>🤝 Participação regular na comunhão da igreja.</li>
+
+<li>🌱 Um compromisso contínuo com aprendizado e transformação.</li>
+
+<li>👐 Uma forma concreta de servir.</li>
+
+<li>🌍 Pessoas específicas pelas quais você ora e com quem deseja compartilhar sua esperança.</li>
+
+</ul>
+
+<br>
+
+<p>
+
+O objetivo não é transformar a fé em uma lista pesada de obrigações.</p>
+
+<br>
+
+<p>
+
+É criar espaço para que aquilo que você aprendeu durante esses 40 dias continue fazendo parte da vida real.</p>
+
+<div class="destaque">
+
+<strong>O que não encontra espaço na rotina corre o risco de permanecer apenas como uma boa intenção.</strong>
+
+</div>
+
+</div>
+
+
+<!-- LIMITES -->
+
+<div class="card">
+
+<h2>🌿 Equilíbrio também inclui limites</h2>
+
+<p>
+
+Uma vida guiada por Deus não significa estar ocupado o tempo inteiro.</p>
+
+<br>
+
+<p>
+
+Descanso também possui valor.</p>
+
+<br>
+
+<p>
+
+Relacionamentos precisam de presença.</p>
+
+<br>
+
+<p>
+
+Nosso corpo possui limites.</p>
+
+<br>
+
+<p>
+
+Nossa mente precisa de momentos de pausa.</p>
+
+<br>
+
+<p>
+
+Não devemos confundir cansaço constante com fidelidade.</p>
+
+<br>
+
+<p>
+
+Às vezes dizer "não" para uma atividade é justamente o que permite continuar dizendo "sim" para aquilo que realmente foi confiado a nós.</p>
+
+<br>
+
+<p class="frase">
+
+"Não preciso fazer tudo para viver com propósito. Preciso aprender a fazer com sabedoria aquilo que Deus colocou diante de mim."</p>
+
+</div>
+
+
+<!-- REAVALIAR -->
+
+<div class="card">
+
+<h2>🔄 O equilíbrio precisa ser revisto</h2>
+
+<p>
+
+A vida muda.</p>
+
+<br>
+
+<p>
+
+Nossas responsabilidades mudam.</p>
+
+<br>
+
+<p>
+
+Nossa rotina muda.</p>
+
+<br>
+
+<p>
+
+Por isso, equilíbrio não é algo que resolvemos uma única vez.</p>
+
+<br>
+
+<p>
+
+Precisamos revisar nossas prioridades periodicamente.</p>
+
+<br>
+
+<p>
+
+Talvez uma área esteja saudável hoje e precise de mais atenção daqui a alguns meses.</p>
+
+<br>
+
+<p>
+
+Talvez uma nova responsabilidade exija reorganizar a rotina.</p>
+
+<br>
+
+<p>
+
+Isso faz parte da caminhada.</p>
+
+<div class="destaque">
+
+<strong>Equilíbrio não é permanecer parado. É aprender continuamente a reorganizar a vida ao redor daquilo que realmente importa.</strong>
+
+</div>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja começar a praticar:</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Separar um momento nesta semana para avaliar como estão os cinco propósitos na minha vida.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Identificar qual propósito tenho vivido bem e qual tenho negligenciado mais.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Criar pelo menos um pequeno hábito para fortalecer a área que está mais esquecida.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Revisar minha rotina e perceber se alguma atividade está ocupando espaço demais.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Pedir a Deus sabedoria para organizar meu tempo e minhas prioridades de maneira saudável.</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Uma vida guiada por Deus também exige equilíbrio, para que eu não negligencie nenhuma das áreas que fazem parte do propósito que Ele tem para mim."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Não se trata de fazer tudo ao mesmo tempo. Trata-se de viver de maneira consciente para que aquilo que realmente importa continue encontrando espaço na minha caminhada.</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Portanto, vivam com o devido senso de responsabilidade, não como homens que não conhecem o significado da vida, mas como aqueles que o conhecem."
+
+</strong>
+
+<br><br>
+
+<b>Efésios 5:15</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Que atitudes práticas posso começar a tomar para manter os cinco propósitos de Deus presentes e equilibrados na minha caminhada?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Olhe novamente para os cinco propósitos.</p>
+
+<br>
+
+<p>
+
+<strong>Adoração. Comunhão. Crescimento. Serviço. Missão.</strong></p>
+
+<br>
+
+<p>
+
+Qual deles está mais presente na sua vida hoje?</p>
+
+<br>
+
+<p>
+
+E qual tem recebido menos atenção?</p>
+
+<br>
+
+<p>
+
+Talvez você esteja crescendo muito em conhecimento, mas precise fortalecer relacionamentos.</p>
+
+<br>
+
+<p>
+
+Talvez sirva bastante, mas esteja deixando sua vida com Deus em segundo plano.</p>
+
+<br>
+
+<p>
+
+Talvez tenha boa comunhão, mas quase nunca pense em missão.</p>
+
+<br>
+
+<p>
+
+Não tente mudar tudo de uma única vez.</p>
+
+<br>
+
+<p>
+
+Pergunte:</p>
+
+<br>
+
+<p>
+
+<strong>Qual pequena mudança poderia tornar minha caminhada mais equilibrada já nesta semana?</strong></p>
+
+<br>
+
+<p>
+
+Pode ser separar alguns minutos para oração.</p>
+
+<br>
+
+<p>
+
+Participar mais da comunidade.</p>
+
+<br>
+
+<p>
+
+Retomar um estudo.</p>
+
+<br>
+
+<p>
+
+Servir em alguma necessidade.</p>
+
+<br>
+
+<p>
+
+Ou começar a orar por alguém que ainda não conhece Cristo.</p>
+
+<br>
+
+<p class="frase">
+
+"Equilíbrio começa quando transformo prioridades em pequenas decisões concretas."</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Meu mapa de equilíbrio</h2>
+
+<p>
+
+Escreva abaixo como você avalia os cinco propósitos na sua vida hoje. Identifique a área mais forte, a mais esquecida e uma atitude prática para buscar mais equilíbrio.</p>
+
+<textarea
+id="reflexao"
+placeholder="Hoje percebo que tenho vivido mais... A área que preciso fortalecer é... Nesta semana quero começar..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- PREPARAÇÃO PARA O ÚLTIMO DIA -->
+
+<div class="card">
+
+<h2>🌅 Amanhã: o último dia</h2>
+
+<p>
+
+Você chegou ao penúltimo dia desta caminhada.</p>
+
+<br>
+
+<p>
+
+Durante 39 dias, você refletiu sobre diferentes aspectos de uma vida guiada pelo propósito de Deus.</p>
+
+<br>
+
+<p>
+
+Amanhã não será apenas o encerramento de uma sequência de capítulos.</p>
+
+<br>
+
+<p>
+
+Será uma oportunidade de reunir aquilo que foi aprendido e pensar:</p>
+
+<br>
+
+<p class="frase">
+
+"Como quero viver daqui para frente?"</p>
+
+<br>
+
+<p>
+
+Os 40 dias terminam.</p>
+
+<br>
+
+<p>
+
+Mas uma vida com propósito não termina no Dia 40.</p>
+
+<br>
+
+<p>
+
+Na verdade, talvez seja exatamente ali que uma nova etapa começa.</p>
+
+<div class="destaque">
+
+<strong>A meta desta jornada nunca foi apenas chegar ao último dia. É permitir que aquilo que você aprendeu continue acompanhando os próximos anos da sua vida.</strong>
+
+</div>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado por tudo aquilo que tens me ensinado durante esta caminhada.
+
+<br><br>
+
+Quero viver de maneira consciente e responsável diante da vida que me deste.
+
+<br><br>
+
+Ajuda-me a não permitir que uma única área ocupe tudo enquanto outras partes importantes da minha caminhada são esquecidas.
+
+<br><br>
+
+Quero Te amar e cultivar minha comunhão contigo.
+
+<br><br>
+
+Quero fazer parte da Tua família e construir relacionamentos verdadeiros.
+
+<br><br>
+
+Quero continuar crescendo e permitindo que meu caráter seja transformado.
+
+<br><br>
+
+Quero usar aquilo que me deste para servir.
+
+<br><br>
+
+E quero permanecer disponível para a missão de compartilhar a esperança de Cristo.
+
+<br><br>
+
+Dá-me sabedoria para organizar meu tempo.
+
+<br><br>
+
+Ensina-me a reconhecer meus limites.
+
+<br><br>
+
+Mostra-me quando preciso dizer sim e também quando preciso dizer não.
+
+<br><br>
+
+Ajuda-me a não viver apenas reagindo à rotina, mas a escolher minhas prioridades de acordo com aquilo que realmente importa.
+
+<br><br>
+
+Quando alguma área começar a ser negligenciada, chama minha atenção.
+
+<br><br>
+
+Que minha vida seja equilibrada, saudável e dirigida por Ti.
+
+<br><br>
+
+E enquanto me aproximo do último dia desta jornada, prepara meu coração para não enxergar o fim dos 40 dias como um ponto final.
+
+<br><br>
+
+Que seja apenas o começo de uma vida cada vez mais consciente do propósito que tens para mim.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Viver com propósito não é fazer tudo; é aprender a dar espaço, no tempo certo, para tudo aquilo que Deus considera importante."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao trigésimo nono dia da jornada.</p>
+
+<br>
+
+<p>
+
+Você completou <strong>97,5% dos 40 dias.</strong></p>
+
+<br>
+
+<p>
+
+Agora falta apenas um.</p>
+
+<br>
+
+<p>
+
+Hoje você olhou novamente para toda a caminhada.</p>
+
+<br>
+
+<p>
+
+Adorar.</p>
+
+<p>
+
+Pertencer.</p>
+
+<p>
+
+Crescer.</p>
+
+<p>
+
+Servir.</p>
+
+<p>
+
+Cumprir sua missão.</p>
+
+<br>
+
+<p>
+
+Nenhum desses propósitos foi feito para existir completamente separado dos outros.</p>
+
+<br>
+
+<p>
+
+Juntos, eles ajudam a construir uma vida mais consciente daquilo para o qual Deus nos chamou.</p>
+
+<br>
+
+<p class="frase">
+
+"Meu desafio não é apenas conhecer meus propósitos, mas continuar vivendo todos eles."</p>
+
+<br>
+
+<p>
+
+Não busque perfeição.</p>
+
+<br>
+
+<p>
+
+Busque direção.</p>
+
+<br>
+
+<p>
+
+Observe sua caminhada.</p>
+
+<br>
+
+<p>
+
+Faça ajustes quando necessário.</p>
+
+<br>
+
+<p>
+
+Continue crescendo.</p>
+
+<br>
+
+<p>
+
+E amanhã, no último dia, você terá a oportunidade de transformar tudo aquilo que percorreu durante esta jornada em uma decisão para o futuro.</p>
+
+<br>
+
+<p>
+
+<strong>O Dia 40 encerra a jornada. Mas o propósito continua.</strong></p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 39 concluído! Falta apenas 1 dia para completar toda a jornada!
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia38") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia39","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo =
+document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia39");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia39",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia39check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia39check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia39")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

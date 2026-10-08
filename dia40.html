@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 40</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f6f3ec;
+    color:#38463a;
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    position:relative;
+    overflow:hidden;
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+    bottom:-1px;
+    left:0;
+
+    width:100%;
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    animation:aparecer 1s ease;
+}
+
+.badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+}
+
+header p{
+    font-size:23px;
+    margin-top:12px;
+    opacity:.95;
+}
+
+.hero-final{
+    margin-top:12px;
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    opacity:.8;
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+    padding:0 20px;
+
+    position:relative;
+    z-index:5;
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+    font-weight:600;
+
+    color:#4f6f52;
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress-fill{
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+}
+
+.progress-percent{
+    color:#4f6f52;
+    font-size:14px;
+    font-weight:700;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+}
+
+h2{
+    color:#4f6f52;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+h3{
+    color:#4f6f52;
+    margin-bottom:12px;
+    margin-top:8px;
+}
+
+p{
+    margin-bottom:3px;
+}
+
+ul{
+    padding-left:22px;
+}
+
+li{
+    margin-bottom:14px;
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+}
+
+.destaque strong{
+    color:#36563b;
+}
+
+/* =========================
+   DESTAQUE FINAL
+========================= */
+
+.destaque-final{
+
+    background:
+    linear-gradient(
+        135deg,
+        #e9f3ea,
+        #f9fcf8
+    );
+
+    border:1px solid #cbdccb;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    margin-top:25px;
+
+    text-align:center;
+}
+
+.destaque-final strong{
+    color:#36563b;
+    font-size:20px;
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+}
+
+/* =========================
+   FRASE
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+}
+
+.mini-card h3{
+    font-size:18px;
+    margin-bottom:8px;
+    margin-top:0;
+}
+
+/* =========================
+   CINCO PROPÓSITOS
+========================= */
+
+.proposito-card{
+
+    padding:25px;
+
+    background:linear-gradient(
+        135deg,
+        #f8faf8,
+        #eef6ef
+    );
+
+    border-radius:18px;
+
+    border:1px solid #dfe9df;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.proposito-card:hover{
+    transform:translateY(-4px);
+}
+
+.proposito-numero{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 12px;
+
+    border-radius:50%;
+
+    background:#4f6f52;
+    color:white;
+
+    font-weight:700;
+}
+
+.proposito-card h3{
+    margin:0 0 8px;
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.check-item{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+}
+
+.check-item:hover{
+    border-color:#b9cbb9;
+}
+
+.check-item input{
+
+    width:20px;
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+}
+
+/* =========================
+   APÊNDICE
+========================= */
+
+.appendix-header{
+
+    text-align:center;
+
+    padding-bottom:8px;
+}
+
+.appendix-header span{
+
+    display:inline-block;
+
+    background:#eef6ef;
+
+    color:#4f6f52;
+
+    font-size:13px;
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    padding:7px 16px;
+
+    border-radius:30px;
+
+    margin-bottom:13px;
+}
+
+.questao-grupo{
+
+    margin-top:28px;
+
+    padding-top:26px;
+
+    border-top:1px solid #e5ebe5;
+}
+
+.questao-grupo:first-of-type{
+    border-top:none;
+    padding-top:10px;
+}
+
+.questao-grupo h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:23px;
+
+    color:#4f6f52;
+
+    margin-bottom:16px;
+}
+
+.questao-grupo ul{
+    padding-left:22px;
+}
+
+.questao-grupo li{
+    padding-left:4px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+}
+
+button:active{
+    transform:scale(.97);
+}
+
+.btn-secundario{
+
+    background:white;
+
+    color:#4f6f52;
+
+    border:2px solid #4f6f52;
+
+    margin-left:8px;
+}
+
+.btn-secundario:hover{
+    color:white;
+}
+
+/* =========================
+   VERSÍCULO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.versiculo:hover{
+    transform:scale(1.01);
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:190px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+}
+
+/* =========================
+   CONCLUSÃO DA JORNADA
+========================= */
+
+.final-jornada{
+
+    background:
+    linear-gradient(
+        145deg,
+        #ffffff,
+        #f3f8f3
+    );
+
+    border:1px solid #d8e6d9;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.final-jornada::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:200px;
+    height:200px;
+
+    background:#eef6ef;
+
+    border-radius:50%;
+
+    top:-110px;
+    right:-100px;
+
+    opacity:.8;
+}
+
+.final-icon{
+
+    width:90px;
+    height:90px;
+
+    margin:0 auto 22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#eef6ef;
+
+    border-radius:50%;
+
+    font-size:42px;
+
+    position:relative;
+    z-index:2;
+}
+
+.final-jornada h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:38px;
+}
+
+#mensagem{
+
+    display:none;
+
+    margin-top:25px;
+
+    padding:22px;
+
+    background:#e7f3e8;
+
+    border:1px solid #c7ddc9;
+
+    border-radius:16px;
+
+    font-weight:600;
+
+    color:#2d6e42;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+}
+
+#acoes-finais{
+    display:none;
+    margin-top:12px;
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes subir{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+        min-height:390px;
+    }
+
+    header h1{
+        font-size:45px;
+    }
+
+    header p{
+        font-size:18px;
+    }
+
+    .badge{
+        font-size:13px;
+        padding:9px 17px;
+    }
+
+    .card{
+        padding:26px 22px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    .frase{
+        font-size:21px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .progress-card{
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+    }
+
+    .progress-info{
+        text-align:center;
+    }
+
+    .progress-percent{
+        text-align:center;
+    }
+
+    .final-jornada h2{
+        font-size:30px;
+    }
+
+    .btn-secundario{
+        margin-left:0;
+        display:block;
+        margin-right:auto;
+        margin-left:auto;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+🌿 DIA 40 • ÚLTIMO DIA
+</div>
+
+<h1>📖 Dia 40</h1>
+
+<p>Vivendo o propósito de Deus</p>
+
+<div class="hero-final">
+40 dias • uma jornada • um novo começo
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     PROGRESSO
+========================= -->
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+Jornada • 40 de 40
+</div>
+
+<div class="progress-bar">
+<div class="progress-fill"></div>
+</div>
+
+<div class="progress-percent">
+100%
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =========================
+     REFLEXÃO
+========================= -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Você chegou ao último dia desta jornada.
+
+</p>
+
+<br>
+
+<p>
+
+Durante 40 dias, o objetivo nunca foi apenas acumular conhecimento, terminar capítulos ou marcar páginas como concluídas.
+
+</p>
+
+<br>
+
+<p>
+
+A verdadeira pergunta sempre foi maior:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Como tudo isso pode transformar a maneira como eu vivo?"
+
+</p>
+
+<br>
+
+<p>
+
+Conhecer o propósito de Deus é importante.
+
+</p>
+
+<br>
+
+<p>
+
+Mas o propósito só começa realmente a ganhar forma quando deixa de ser apenas uma ideia e passa a influenciar nossas escolhas.
+
+</p>
+
+<br>
+
+<p>
+
+Todos os dias recebemos novas oportunidades de decidir quem estará no centro da nossa vida, quais valores irão dirigir nossas atitudes e que tipo de pessoa desejamos nos tornar.
+
+</p>
+
+<br>
+
+<p>
+
+Viver com propósito não significa possuir todas as respostas.
+
+</p>
+
+<br>
+
+<p>
+
+Significa conhecer a direção.
+
+</p>
+
+<div class="destaque">
+
+<strong>Os 40 dias podem terminar hoje. A decisão de viver para os propósitos de Deus precisa continuar amanhã.</strong>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     NÃO É SOBRE CHEGAR
+========================= -->
+
+<div class="card">
+
+<h2>🌅 O fim da jornada não é o fim do caminho</h2>
+
+<p>
+
+Existe algo especial em chegar ao último dia.
+
+</p>
+
+<br>
+
+<p>
+
+Você pode olhar para trás e perceber quantos assuntos foram abordados, quantas perguntas foram feitas e quantas áreas da vida foram colocadas diante de Deus.
+
+</p>
+
+<br>
+
+<p>
+
+Mas seria possível chegar ao Dia 40 e, depois de algum tempo, simplesmente voltar a viver da mesma maneira de antes.
+
+</p>
+
+<br>
+
+<p>
+
+Por isso, o desafio final não é completar a jornada.
+
+</p>
+
+<br>
+
+<p>
+
+É continuar vivendo aquilo que foi aprendido.
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa lembrar de cada frase.
+
+</p>
+
+<br>
+
+<p>
+
+Não precisa executar cada aplicação perfeitamente.
+
+</p>
+
+<br>
+
+<p>
+
+Mas pode guardar uma convicção:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Minha vida não existe por acaso. Quero vivê-la diante de Deus e para os propósitos d'Ele."
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     OS CINCO PROPÓSITOS
+========================= -->
+
+<div class="card">
+
+<h2>🧭 Os cinco propósitos</h2>
+
+<p>
+
+Tudo o que foi estudado durante esta jornada pode ser organizado em cinco grandes direções para sua caminhada.
+
+</p>
+
+<div class="grid">
+
+<div class="proposito-card">
+
+<div class="proposito-numero">1</div>
+
+<h3>🙏 Adoração</h3>
+
+<p>
+
+Você foi criado para agradar a Deus e construir com Ele um relacionamento verdadeiro.
+
+</p>
+
+</div>
+
+<div class="proposito-card">
+
+<div class="proposito-numero">2</div>
+
+<h3>🤝 Comunhão</h3>
+
+<p>
+
+Você foi criado para fazer parte da família de Deus e caminhar junto com outras pessoas.
+
+</p>
+
+</div>
+
+<div class="proposito-card">
+
+<div class="proposito-numero">3</div>
+
+<h3>🌱 Crescimento</h3>
+
+<p>
+
+Você foi criado para se tornar cada vez mais semelhante a Cristo.
+
+</p>
+
+</div>
+
+<div class="proposito-card">
+
+<div class="proposito-numero">4</div>
+
+<h3>👐 Serviço</h3>
+
+<p>
+
+Você foi moldado para usar aquilo que recebeu para servir a Deus e às pessoas.
+
+</p>
+
+</div>
+
+<div class="proposito-card">
+
+<div class="proposito-numero">5</div>
+
+<h3>🌍 Missão</h3>
+
+<p>
+
+Você foi criado para compartilhar a esperança de Cristo e alcançar outras vidas.
+
+</p>
+
+</div>
+
+<div class="proposito-card">
+
+<div class="proposito-numero">∞</div>
+
+<h3>❤️ Uma vida inteira</h3>
+
+<p>
+
+Esses propósitos não pertencem apenas aos 40 dias. Eles podem acompanhar toda a sua caminhada.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     DAVI
+========================= -->
+
+<div class="card">
+
+<h2>👑 Servindo ao propósito de Deus em sua geração</h2>
+
+<p>
+
+O versículo escolhido para encerrar esta jornada fala sobre Davi.
+
+</p>
+
+<br>
+
+<p>
+
+A frase é curta, mas carrega uma ideia enorme:
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Pois Davi serviu aos propósitos de Deus em sua geração."
+
+</p>
+
+<br>
+
+<p>
+
+Davi viveu em um período específico.
+
+</p>
+
+<br>
+
+<p>
+
+Teve oportunidades próprias de sua época.
+
+</p>
+
+<br>
+
+<p>
+
+Enfrentou desafios, erros, vitórias e responsabilidades que pertenciam à história dele.
+
+</p>
+
+<br>
+
+<p>
+
+Você também vive em uma geração específica.
+
+</p>
+
+<br>
+
+<p>
+
+Existem pessoas que somente você conhecerá.
+
+</p>
+
+<br>
+
+<p>
+
+Ambientes pelos quais somente você passará.
+
+</p>
+
+<br>
+
+<p>
+
+Experiências que formarão sua história.
+
+</p>
+
+<br>
+
+<p>
+
+Dons que foram colocados em suas mãos.
+
+</p>
+
+<br>
+
+<p>
+
+E oportunidades que talvez nunca se repitam exatamente da mesma forma.
+
+</p>
+
+<div class="destaque">
+
+<strong>A pergunta não é se você viverá a vida de outra pessoa. É o que fará com a vida, o tempo e as oportunidades que Deus colocou nas suas mãos.</strong>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     TEMA
+========================= -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Viver com propósito é reconhecer que minha vida pertence a Deus e escolher, todos os dias, caminhar de acordo com aquilo para o qual Ele me criou."
+
+</p>
+
+<br>
+
+<p style="text-align:center;">
+
+Propósito não é apenas uma descoberta. É uma decisão renovada ao longo da caminhada.
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     VERSÍCULO
+========================= -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Pois Davi serviu aos propósitos de Deus em sua geração."
+
+</strong>
+
+<br><br>
+
+<b>Atos 13:36</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+Clique no versículo para destacá-lo.
+</p>
+
+</div>
+
+
+<!-- =========================
+     PERGUNTA
+========================= -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Quando vou separar um momento para refletir e registrar minhas respostas às cinco grandes questões da vida? Como posso colocar no papel o propósito que desejo viver daqui para frente?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Não deixe essa pergunta apenas para depois</h3>
+
+<p>
+
+Talvez seja tentador terminar o Dia 40, marcar a jornada como concluída e seguir para outra coisa.
+
+</p>
+
+<br>
+
+<p>
+
+Mas este pode ser um dos momentos mais importantes de todos os 40 dias.
+
+</p>
+
+<br>
+
+<p>
+
+Separe algum tempo.
+
+</p>
+
+<br>
+
+<p>
+
+Pegue um caderno, um documento no celular ou utilize o espaço disponível nesta página.
+
+</p>
+
+<br>
+
+<p>
+
+Tente responder às cinco grandes perguntas:
+
+</p>
+
+<br>
+
+<ul>
+
+<li><strong>Para quem quero viver?</strong></li>
+
+<li><strong>Com quem quero caminhar?</strong></li>
+
+<li><strong>Quem desejo me tornar?</strong></li>
+
+<li><strong>Como posso servir?</strong></li>
+
+<li><strong>Que mensagem quero levar às pessoas?</strong></li>
+
+</ul>
+
+<br>
+
+<p>
+
+Não existe obrigação de encontrar uma resposta perfeita hoje.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez suas respostas se tornem mais claras ao longo dos próximos anos.
+
+</p>
+
+<br>
+
+<p>
+
+O importante é começar a transformar convicções em direção.
+
+</p>
+
+<div class="destaque">
+
+<strong>Um propósito escrito não controla seu futuro. Ele ajuda você a lembrar o tipo de vida que decidiu buscar.</strong>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     DECLARAÇÃO PESSOAL
+========================= -->
+
+<div class="card">
+
+<h2>📝 Minha declaração de propósito</h2>
+
+<p>
+
+Use este espaço para registrar aquilo que você deseja levar desta jornada para sua vida.
+
+</p>
+
+<br>
+
+<p>
+
+Você pode escrever sobre sua relação com Deus, seus relacionamentos, seu crescimento, seu serviço, sua missão e as escolhas que deseja fazer daqui para frente.
+
+</p>
+
+<textarea
+id="reflexao"
+placeholder="Quero viver minha vida reconhecendo que ela pertence a Deus. Quero cultivar... Quero me tornar... Quero servir... Quero compartilhar..."
+></textarea>
+
+<div class="salvo" id="salvo">
+✓ Sua declaração de propósito foi salva neste dispositivo.
+</div>
+
+<button onclick="salvarReflexao()">
+💾 Salvar minha declaração
+</button>
+
+</div>
+
+
+<!-- =========================
+     COMPROMISSOS
+========================= -->
+
+<div class="card">
+
+<h2>✅ O que quero levar comigo</h2>
+
+<p>
+
+Marque os compromissos que você deseja continuar lembrando depois desta jornada:
+
+</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Quero continuar cultivando diariamente meu relacionamento com Deus.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Quero construir comunhão e relacionamentos mais sinceros com a família de Deus.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Quero permitir que Deus continue transformando meu caráter para que eu me torne mais semelhante a Cristo.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Quero descobrir, desenvolver e usar meus dons para servir às pessoas.
+
+</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Quero permanecer disponível para compartilhar a esperança de Cristo e cumprir minha missão.
+
+</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 compromissos escolhidos
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     APÊNDICE
+========================= -->
+
+<div class="card">
+
+<div class="appendix-header">
+
+<span>📖 Apêndice 1</span>
+
+<h2>Questões para reflexão e debate</h2>
+
+<p>
+
+Estas perguntas foram preparadas para ajudar você a aprofundar tudo o que viveu durante esta jornada. Elas podem ser utilizadas individualmente, em grupos pequenos, estudos bíblicos, reuniões ou encontros da igreja.
+
+</p>
+
+</div>
+
+
+<!-- GRUPO 1 -->
+
+<div class="questao-grupo">
+
+<h3>🌿 Afinal de contas, por que estou aqui?</h3>
+
+<ul>
+
+<li>
+O que mudou na maneira como você enxerga sua própria vida depois de compreender que o propósito começa em Deus, e não em nós mesmos?
+</li>
+
+<li>
+O que você acredita que dirige a vida da maioria das pessoas atualmente? E o que tem dirigido a sua?
+</li>
+
+<li>
+Se tivesse que representar sua vida por meio de uma imagem ou metáfora, qual escolheria? Uma caminhada, uma corrida, uma construção ou outra coisa?
+</li>
+
+<li>
+Se realmente compreendermos que nossa vida aqui também é uma preparação para a eternidade, o que deveria mudar em nossas escolhas?
+</li>
+
+<li>
+Quais coisas deste mundo podem ocupar um espaço tão grande em nossa vida que acabam nos afastando dos propósitos de Deus?
+</li>
+
+<li>
+Existe algo ao qual você está excessivamente apegado e que pode estar dificultando sua caminhada com Deus?
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- GRUPO 2 -->
+
+<div class="questao-grupo">
+
+<h3>🙏 Você foi planejado para agradar a Deus</h3>
+
+<ul>
+
+<li>
+Qual é a diferença entre enxergar a adoração apenas como algo que fazemos na igreja e compreender que toda a nossa vida pode agradar a Deus?
+</li>
+
+<li>
+Em que aspectos nossa amizade com Deus se parece com nossos relacionamentos com outras pessoas? E em que aspectos ela é diferente?
+</li>
+
+<li>
+O que você aprendeu durante algum período em que Deus parecia distante ou em silêncio?
+</li>
+
+<li>
+Para você, é mais natural adorar a Deus sozinho ou junto com outras pessoas? Em quais momentos você percebe maior proximidade com Ele?
+</li>
+
+<li>
+Como podemos ser sinceros com Deus quando estamos frustrados, decepcionados ou com raiva?
+</li>
+
+<li>
+O que ainda desperta medo ou insegurança quando você pensa em entregar completamente sua vida a Cristo?
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- GRUPO 3 -->
+
+<div class="questao-grupo">
+
+<h3>🤝 Você foi criado para fazer parte da família de Deus</h3>
+
+<ul>
+
+<li>
+O que significa, na prática, assumir um verdadeiro compromisso com outros cristãos?
+</li>
+
+<li>
+Quais atitudes ou dificuldades podem nos impedir de amar, cuidar e nos aproximar de outros irmãos na fé?
+</li>
+
+<li>
+O que poderia ajudá-lo a conversar com mais sinceridade sobre suas necessidades, dificuldades, medos e esperanças?
+</li>
+
+<li>
+Por que algumas pessoas têm dificuldade em se envolver verdadeiramente com uma igreja? Como poderíamos acolhê-las?
+</li>
+
+<li>
+O que podemos fazer para preservar a união, o respeito e o amor dentro da igreja?
+</li>
+
+<li>
+Existe algum relacionamento em sua vida que precisa de perdão, reconciliação ou restauração? Como você pode começar a agir?
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- GRUPO 4 -->
+
+<div class="questao-grupo">
+
+<h3>🌱 Você foi criado para se tornar semelhante a Cristo</h3>
+
+<ul>
+
+<li>
+O que significa realmente desenvolver um caráter cada vez mais semelhante ao de Cristo?
+</li>
+
+<li>
+Quais mudanças você já consegue perceber em sua maneira de pensar, agir ou se relacionar desde que começou a caminhar com Deus?
+</li>
+
+<li>
+Pensando no próximo ano, em quais aspectos você gostaria de estar mais parecido com Cristo? Que atitude pode começar a tomar hoje?
+</li>
+
+<li>
+Em qual área do seu crescimento espiritual você precisa aprender a respeitar o processo e ter mais paciência?
+</li>
+
+<li>
+De que maneira Deus já utilizou dificuldades, perdas ou problemas para produzir crescimento em sua vida?
+</li>
+
+<li>
+Em quais situações você fica mais vulnerável às tentações? Que atitudes práticas podem ajudá-lo a permanecer firme?
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- GRUPO 5 -->
+
+<div class="questao-grupo">
+
+<h3>👐 Você foi moldado para servir a Deus</h3>
+
+<ul>
+
+<li>
+Qual é a diferença entre simplesmente realizar tarefas na igreja e compreender que Deus pode usar aquilo que colocou em você para servir às pessoas?
+</li>
+
+<li>
+O que você realmente gosta de fazer e que poderia ser usado para ajudar ou abençoar outras pessoas?
+</li>
+
+<li>
+Existe alguma experiência difícil que você viveu que poderia ajudá-lo a compreender e apoiar alguém enfrentando algo semelhante?
+</li>
+
+<li>
+De que maneira a comparação com outras pessoas pode fazer você desprezar ou deixar de desenvolver os próprios dons?
+</li>
+
+<li>
+Em quais momentos de fraqueza você já percebeu Deus agindo através da sua vida?
+</li>
+
+<li>
+Como podemos ajudar outras pessoas a descobrir seus dons e encontrar maneiras de servir dentro e fora da igreja?
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- GRUPO 6 -->
+
+<div class="questao-grupo">
+
+<h3>🌍 Você foi criado para uma missão</h3>
+
+<ul>
+
+<li>
+O que normalmente vem à sua mente quando você pensa em evangelização? Quais medos ou inseguranças podem dificultar compartilhar sua fé?
+</li>
+
+<li>
+Que experiências da sua caminhada com Deus poderiam fazer parte da mensagem que você tem para compartilhar com outras pessoas?
+</li>
+
+<li>
+Pense em alguém que ainda não conhece a Cristo ou está distante d'Ele. Como você pode começar a orar por essa pessoa e demonstrar o amor de Deus por ela?
+</li>
+
+<li>
+O que você e outras pessoas podem fazer juntos para participar da Grande Comissão?
+</li>
+
+<li>
+<strong>
+De que maneira completar esta jornada pelo site <em>Criado para um Propósito</em> mudou ou reorganizou a maneira como você enxerga o propósito da sua vida? Quais reflexões mais marcaram você durante esses 40 dias?
+</strong>
+</li>
+
+<li>
+<strong>
+Quem Deus coloca em sua mente para que você compartilhe esta jornada, o site ou alguma das mensagens que aprendeu durante esses 40 dias?
+</strong>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     E AGORA
+========================= -->
+
+<div class="card">
+
+<h2>🌱 E agora?</h2>
+
+<p class="frase">
+
+"O Dia 40 encerra a jornada, mas não encerra o propósito."
+
+</p>
+
+<br>
+
+<p>
+
+Tudo o que foi aprendido durante esses dias começa a ganhar ainda mais sentido quando sai da reflexão e passa a fazer parte da vida.
+
+</p>
+
+<br>
+
+<div class="destaque">
+
+<p><strong>🙏 Você foi criado para agradar a Deus.</strong></p>
+
+<br>
+
+<p><strong>🤝 Você foi criado para fazer parte da família de Deus.</strong></p>
+
+<br>
+
+<p><strong>🌱 Você foi criado para se tornar semelhante a Cristo.</strong></p>
+
+<br>
+
+<p><strong>👐 Você foi moldado para servir a Deus.</strong></p>
+
+<br>
+
+<p><strong>🌍 Você foi criado para uma missão.</strong></p>
+
+</div>
+
+<br>
+
+<p>
+
+Talvez algumas dessas áreas estejam fortes em sua vida.
+
+</p>
+
+<br>
+
+<p>
+
+Outras ainda precisarão crescer.
+
+</p>
+
+<br>
+
+<p>
+
+Isso faz parte da caminhada.
+
+</p>
+
+<br>
+
+<p>
+
+Você não precisa sair do Dia 40 como alguém que finalmente possui tudo resolvido.
+
+</p>
+
+<br>
+
+<p>
+
+Pode sair como alguém que sabe em qual direção deseja continuar caminhando.
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     PRÓXIMOS PASSOS
+========================= -->
+
+<div class="card">
+
+<h2>🛤️ Daqui para frente</h2>
+
+<p>
+
+Algumas atitudes simples podem ajudar a impedir que esta jornada se torne apenas uma lembrança.
+
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>📖 Continue aprendendo</h3>
+
+<p>
+
+Mantenha a Palavra de Deus presente em sua caminhada e continue aprofundando aquilo que começou nesses 40 dias.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🙏 Continue conversando com Deus</h3>
+
+<p>
+
+Não transforme oração em uma atividade da jornada. Faça dela parte da vida.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤝 Caminhe acompanhado</h3>
+
+<p>
+
+Compartilhe sua caminhada com pessoas que possam encorajar, aconselhar e crescer junto com você.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>👐 Continue servindo</h3>
+
+<p>
+
+Procure oportunidades simples de colocar seus dons e sua disponibilidade a serviço das pessoas.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌍 Continue olhando para fora</h3>
+
+<p>
+
+Não esqueça das pessoas que ainda precisam conhecer a esperança que você encontrou em Cristo.
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🔄 Revise seus propósitos</h3>
+
+<p>
+
+De tempos em tempos, releia sua declaração e perceba onde precisa ajustar novamente sua caminhada.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     ORAÇÃO
+========================= -->
+
+<div class="card">
+
+<h2>🙏 Oração final da jornada</h2>
+
+<blockquote>
+
+Senhor, obrigado por me acompanhar durante esta jornada.
+
+<br><br>
+
+Obrigado por cada reflexão, cada pergunta, cada aprendizado e cada momento em que fui levado a olhar novamente para minha vida.
+
+<br><br>
+
+Hoje reconheço que minha existência não começa nem termina em mim.
+
+<br><br>
+
+Minha vida pertence a Ti.
+
+<br><br>
+
+Quero viver para Te conhecer, Te amar e Te agradar.
+
+<br><br>
+
+Quero caminhar junto com a Tua família e aprender a construir relacionamentos de amor, comunhão, perdão e cuidado.
+
+<br><br>
+
+Quero permitir que continues transformando meu caráter para que minha maneira de pensar, agir e amar se pareça cada vez mais com Cristo.
+
+<br><br>
+
+Quero colocar em Tuas mãos meus dons, minhas capacidades, minhas experiências e até minhas limitações, para que tudo isso possa ser usado para servir.
+
+<br><br>
+
+E quero permanecer disponível para a missão que colocaste diante de mim.
+
+<br><br>
+
+Usa minha história.
+
+<br><br>
+
+Usa minhas palavras.
+
+<br><br>
+
+Usa minhas escolhas.
+
+<br><br>
+
+Usa meus relacionamentos.
+
+<br><br>
+
+Usa meu tempo.
+
+<br><br>
+
+Usa aquilo que colocaste em minhas mãos.
+
+<br><br>
+
+Dá-me sabedoria para viver com equilíbrio.
+
+<br><br>
+
+Quando eu me perder em outras prioridades, lembra-me novamente daquilo que realmente importa.
+
+<br><br>
+
+Quando eu sentir medo, ensina-me a confiar.
+
+<br><br>
+
+Quando eu falhar, ensina-me a voltar.
+
+<br><br>
+
+Quando eu crescer, mantém meu coração humilde.
+
+<br><br>
+
+Quando eu não souber o próximo passo, guia-me.
+
+<br><br>
+
+Assim como Davi serviu aos Teus propósitos em sua geração, eu também desejo viver minha geração de uma maneira que Te honre.
+
+<br><br>
+
+Os 40 dias terminam aqui.
+
+<br><br>
+
+Mas quero continuar caminhando contigo amanhã, depois de amanhã e durante toda a vida que me deres.
+
+<br><br>
+
+Que meu propósito nunca seja apenas uma frase escrita.
+
+<br><br>
+
+Que ele se torne uma vida vivida diante de Ti.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- =========================
+     FRASE FINAL
+========================= -->
+
+<div class="card">
+
+<h2>⭐ Frase final</h2>
+
+<p class="frase">
+
+"Não quero apenas saber para que fui criado. Quero usar a vida que recebi para viver aquilo para o qual Deus me criou."
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<div class="card final-jornada">
+
+<div class="final-icon">
+🌿
+</div>
+
+<h2>Você chegou ao Dia 40</h2>
+
+<p>
+
+Foram quarenta dias de reflexão sobre Deus, relacionamentos, caráter, serviço, missão e propósito.
+
+</p>
+
+<br>
+
+<p>
+
+Mas este momento não é apenas sobre olhar para trás.
+
+</p>
+
+<br>
+
+<p>
+
+É sobre olhar para frente.
+
+</p>
+
+<br>
+
+<p class="frase">
+
+"Que tipo de vida quero construir a partir daqui?"
+
+</p>
+
+<br>
+
+<p>
+
+Haverá dias em que você se sentirá muito consciente do propósito.
+
+</p>
+
+<br>
+
+<p>
+
+Em outros, a rotina poderá fazer você esquecer.
+
+</p>
+
+<br>
+
+<p>
+
+Quando isso acontecer, volte.
+
+</p>
+
+<br>
+
+<p>
+
+Lembre-se de quem está no centro.
+
+</p>
+
+<br>
+
+<p>
+
+Lembre-se de quem você deseja se tornar.
+
+</p>
+
+<br>
+
+<p>
+
+Lembre-se das pessoas que Deus colocou ao seu redor.
+
+</p>
+
+<br>
+
+<p>
+
+Lembre-se dos dons que recebeu.
+
+</p>
+
+<br>
+
+<p>
+
+Lembre-se da missão.
+
+</p>
+
+<div class="destaque-final">
+
+<strong>
+Os 40 dias chegaram ao fim.<br>
+Agora começa a parte mais importante:<br>
+viver o propósito.
+</strong>
+
+</div>
+
+<br>
+
+<button id="btn-concluir" onclick="concluir()">
+🏁 Concluir os 40 dias
+</button>
+
+<div id="mensagem">
+
+🎉 Jornada concluída! Você completou os 40 dias. Que tudo o que foi aprendido aqui continue sendo vivido muito além desta página.
+
+</div>
+
+<div id="acoes-finais">
+
+<button class="btn-secundario" onclick="window.location.href='index.html'">
+← Voltar para a jornada
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Criado para um Propósito • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia39") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO DA JORNADA
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia40","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    document.getElementById("acoes-finais").style.display="block";
+
+    const botao =
+    document.getElementById("btn-concluir");
+
+    botao.textContent="✓ Jornada concluída";
+
+    botao.disabled=true;
+
+    botao.style.opacity=".75";
+
+    botao.style.cursor="default";
+
+    document.getElementById("mensagem").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+/* =========================
+   DECLARAÇÃO SALVA
+========================= */
+
+const campo =
+document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia40");
+
+if(reflexaoSalva){
+
+    campo.value=reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia40",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia40check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 compromissos escolhidos";
+
+}
+
+
+/* =========================
+   RECUPERAR CHECKLIST
+========================= */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia40check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ FOI CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia40")==="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+    document.getElementById(
+        "acoes-finais"
+    ).style.display="block";
+
+    const botao =
+    document.getElementById("btn-concluir");
+
+    botao.textContent="✓ Jornada concluída";
+
+    botao.disabled=true;
+
+    botao.style.opacity=".75";
+
+    botao.style.cursor="default";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

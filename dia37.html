@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Criado para um propósito • Dia 37</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+    min-height:430px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.58)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:0;
+
+    width:100%;
+
+    height:120px;
+
+    background:linear-gradient(
+        transparent,
+        #f6f3ec
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:aparecer 1s ease;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 22px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    background:rgba(40,50,44,.55);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+    margin-bottom:22px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:62px;
+
+    line-height:1.1;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+
+}
+
+header p{
+
+    font-size:23px;
+
+    margin-top:12px;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-area{
+
+    max-width:900px;
+
+    margin:-35px auto 35px;
+
+    padding:0 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.09);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.progress-info{
+
+    min-width:130px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4f6f52;
+
+}
+
+.progress-bar{
+
+    flex:1;
+
+    height:9px;
+
+    background:#e6ece6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:92.5%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f6f52,
+        #789477
+    );
+
+    border-radius:20px;
+
+    transition:width .8s ease;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px 20px 60px;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background:white;
+
+    padding:38px;
+
+    border-radius:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    border:1px solid rgba(79,111,82,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:subir .7s ease both;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.10);
+
+}
+
+h2{
+
+    color:#4f6f52;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    margin-bottom:3px;
+
+}
+
+ul{
+
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:14px;
+
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque{
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ef,
+        #f8fbf7
+    );
+
+    border-left:6px solid #4f6f52;
+
+    padding:24px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+}
+
+.destaque strong{
+
+    color:#36563b;
+
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+blockquote{
+
+    background:#eef6ef;
+
+    padding:25px;
+
+    border-left:6px solid #4f6f52;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    position:relative;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    top:-25px;
+
+    left:12px;
+
+    font-size:70px;
+
+    color:#9bb29d;
+
+    opacity:.35;
+
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.frase{
+
+    font-size:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.mini-card{
+
+    padding:22px;
+
+    background:#f7faf7;
+
+    border:1px solid #e2ebe2;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.mini-card:hover{
+
+    transform:translateY(-4px);
+
+    background:#eef6ef;
+
+}
+
+.mini-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+/* =========================
+   CHECKLIST
+========================= */
+
+.checklist{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    background:#f8faf8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid transparent;
+
+}
+
+.check-item:hover{
+
+    border-color:#b9cbb9;
+
+}
+
+.check-item input{
+
+    width:20px;
+
+    height:20px;
+
+    accent-color:#4f6f52;
+
+    cursor:pointer;
+
+}
+
+.check-item.checked{
+
+    background:#eef6ef;
+
+    text-decoration:line-through;
+
+    opacity:.75;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button{
+
+    margin-top:18px;
+
+    padding:15px 32px;
+
+    background:#4f6f52;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#3d5c41;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =========================
+   VERSÍCULO INTERATIVO
+========================= */
+
+.versiculo{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.versiculo:hover{
+
+    transform:scale(1.01);
+
+}
+
+.versiculo-hint{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+/* =========================
+   CAMPO DE REFLEXÃO
+========================= */
+
+textarea{
+
+    width:100%;
+
+    min-height:150px;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #e0e7e0;
+
+    resize:vertical;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 4px rgba(79,111,82,.08);
+
+}
+
+.salvo{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#4f6f52;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#eef6ef;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    color:#2d7a46;
+
+    font-size:17px;
+
+    animation:aparecer .5s ease;
+
+}
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topo{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:20;
+
+    font-size:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    opacity:.65;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        min-height:390px;
+
+    }
+
+    header h1{
+
+        font-size:45px;
+
+    }
+
+    header p{
+
+        font-size:18px;
+
+    }
+
+    .badge{
+
+        font-size:13px;
+
+        padding:9px 17px;
+
+    }
+
+    .card{
+
+        padding:26px 22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:21px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .progress-card{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+    .progress-info{
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero-content">
+
+<div class="badge">
+
+🌿 DIA 37 • 40 DIAS
+
+</div>
+
+<h1>📖 Dia 37</h1>
+
+<p>Compartilhando a esperança em Cristo</p>
+
+</div>
+
+</header>
+
+
+<div class="progress-area">
+
+<div class="progress-card">
+
+<div class="progress-info">
+
+Jornada • 37 de 40
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- REFLEXÃO -->
+
+<div class="card">
+
+<h2>✨ Reflexão do dia</h2>
+
+<p>
+
+Toda pessoa possui uma história.
+
+</p>
+
+<br>
+
+<p>
+
+Há momentos de alegria, perdas, decisões, erros, recomeços, aprendizados e experiências que ajudaram a formar quem somos hoje.
+
+</p>
+
+<br>
+
+<p>
+
+Quando Deus entra nessa história, ela passa a carregar também marcas da Sua graça.
+
+</p>
+
+<br>
+
+<p>
+
+Talvez sua caminhada não possua acontecimentos extraordinários aos olhos das pessoas.
+
+</p>
+
+<br>
+
+<p>
+
+Mesmo assim, aquilo que Deus tem feito em você pode se tornar uma fonte de esperança para alguém.
+
+</p>
+
+<br>
+
+<p>
+
+Compartilhar nossa fé não significa apenas explicar verdades. Também significa contar, com sinceridade, como essas verdades encontraram espaço em nossa própria vida.</p>
+
+<div class="destaque">
+
+<strong>Seu testemunho é a história de como a graça de Deus encontrou você e continua transformando sua caminhada.</strong>
+
+</div>
+
+</div>
+
+
+<!-- SUA HISTÓRIA -->
+
+<div class="card">
+
+<h2>📖 Sua história tem valor</h2>
+
+<p>
+
+Às vezes pensamos que somente testemunhos dramáticos podem tocar outras pessoas.</p>
+
+<br>
+
+<p>
+
+Talvez alguém tenha passado por uma transformação muito visível, enquanto sua caminhada parece simples.</p>
+
+<br>
+
+<p>
+
+Mas o poder de um testemunho não está em quanto ele impressiona.</p>
+
+<br>
+
+<p>
+
+Está em apontar para aquilo que Deus fez.</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>🌱 Crescimento</h3>
+
+<p>
+
+Talvez Deus tenha mudado aos poucos sua maneira de pensar e viver.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🕊️ Paz</h3>
+
+<p>
+
+Talvez você tenha aprendido a confiar em Deus durante períodos de medo ou incerteza.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤍 Perdão</h3>
+
+<p>
+
+Talvez você tenha experimentado a graça de Deus depois de erros dos quais se arrependia.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🌤️ Esperança</h3>
+
+<p>
+
+Talvez sua fé tenha sustentado você durante alguma situação em que não sabia como continuar.</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Tudo isso pode fazer parte da sua história com Deus.</p>
+
+</div>
+
+
+<!-- TESTEMUNHO -->
+
+<div class="card">
+
+<h2>🗣️ O testemunho não é sobre parecer perfeito</h2>
+
+<p>
+
+Quando compartilhamos nossa história, não precisamos construir a imagem de que todos os nossos problemas desapareceram.</p>
+
+<br>
+
+<p>
+
+Na verdade, uma história sincera pode ser muito mais poderosa.</p>
+
+<br>
+
+<p>
+
+Você pode dizer:</p>
+
+<br>
+
+<p>
+
+"Ainda estou aprendendo."</p>
+
+<p>
+
+"Ainda existem áreas em que preciso crescer."</p>
+
+<p>
+
+"Nem tudo está resolvido."</p>
+
+<br>
+
+<p>
+
+E ao mesmo tempo testemunhar:</p>
+
+<br>
+
+<p>
+
+"Mas Deus tem me sustentado."</p>
+
+<p>
+
+"Ele mudou minha maneira de enxergar isso."</p>
+
+<p>
+
+"Hoje existe esperança onde antes eu não conseguia enxergar."</p>
+
+<div class="destaque">
+
+<strong>Meu testemunho não precisa mostrar que minha vida ficou perfeita. Precisa mostrar quem está caminhando comigo enquanto ela continua sendo transformada.</strong>
+
+</div>
+
+</div>
+
+
+<!-- COMO CONTAR -->
+
+<div class="card">
+
+<h2>🧩 Organizando seu testemunho</h2>
+
+<p>
+
+Se alguém perguntasse hoje por que você acredita em Cristo, o que você diria?</p>
+
+<br>
+
+<p>
+
+Uma maneira simples de organizar sua resposta é pensar em quatro partes.</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>1️⃣ Minha história</h3>
+
+<p>
+
+Como era minha vida, minha maneira de pensar ou minha relação com Deus antes.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>2️⃣ Meu encontro com Cristo</h3>
+
+<p>
+
+Como comecei a compreender quem Jesus é e o que Sua graça significa para mim.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>3️⃣ O que mudou</h3>
+
+<p>
+
+Quais transformações começaram a acontecer em minhas escolhas, pensamentos e prioridades.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>4️⃣ Onde estou hoje</h3>
+
+<p>
+
+Como Deus continua trabalhando em mim, mesmo enquanto ainda tenho desafios e áreas de crescimento.</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+
+Você não precisa contar toda a sua vida em uma única conversa.</p>
+
+<br>
+
+<p>
+
+Às vezes uma parte da sua história será exatamente aquilo que outra pessoa precisa ouvir.</p>
+
+</div>
+
+
+<!-- ESPERANÇA -->
+
+<div class="card">
+
+<h2>🌤️ Compartilhe esperança, não apenas problemas</h2>
+
+<p>
+
+Uma experiência difícil pode criar conexão.</p>
+
+<br>
+
+<p>
+
+Mas o objetivo do testemunho não é apenas falar sobre aquilo que aconteceu conosco.</p>
+
+<br>
+
+<p>
+
+É mostrar onde encontramos esperança.</p>
+
+<br>
+
+<p>
+
+Talvez você diga:</p>
+
+<br>
+
+<p>
+
+"Eu também já passei por algo parecido."</p>
+
+<br>
+
+<p>
+
+Isso cria identificação.</p>
+
+<br>
+
+<p>
+
+Mas então pode acrescentar:</p>
+
+<br>
+
+<p>
+
+"Foi nesse período que aprendi algo sobre Deus que mudou minha maneira de enfrentar aquilo."</p>
+
+<br>
+
+<p>
+
+Assim, sua história deixa de apontar apenas para sua dor e começa a apontar para Cristo.</p>
+
+<p class="frase">
+
+"Minha história pode criar identificação; Cristo é quem oferece esperança."</p>
+
+</div>
+
+
+<!-- EDUCAÇÃO E RESPEITO -->
+
+<div class="card">
+
+<h2>🤝 Compartilhar com educação e respeito</h2>
+
+<p>
+
+O versículo de hoje apresenta um equilíbrio muito importante.</p>
+
+<br>
+
+<p>
+
+Devemos estar preparados para explicar nossa esperança.</p>
+
+<br>
+
+<p>
+
+Mas também devemos fazer isso com respeito.</p>
+
+<br>
+
+<p>
+
+Isso significa que compartilhar a fé não é vencer discussões.</p>
+
+<br>
+
+<p>
+
+Não é humilhar quem pensa diferente.</p>
+
+<br>
+
+<p>
+
+Não é pressionar alguém até que concorde conosco.</p>
+
+<br>
+
+<p>
+
+Também não é falar sem ouvir.</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<h3>👂 Escute</h3>
+
+<p>
+
+Demonstre interesse verdadeiro pela história e pelas perguntas da outra pessoa.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>💬 Converse</h3>
+
+<p>
+
+Compartilhe aquilo que acredita de maneira clara e natural.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🤍 Respeite</h3>
+
+<p>
+
+Reconheça que cada pessoa possui liberdade para pensar e decidir.</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>🙏 Confie em Deus</h3>
+
+<p>
+
+Você pode apresentar a mensagem, mas não controla aquilo que acontecerá no coração da pessoa.</p>
+
+</div>
+
+</div>
+
+<div class="destaque">
+
+<strong>Uma conversa sobre Cristo deve demonstrar o mesmo amor de Cristo.</strong>
+
+</div>
+
+</div>
+
+
+<!-- OPORTUNIDADES -->
+
+<div class="card">
+
+<h2>👀 Reconhecendo oportunidades</h2>
+
+<p>
+
+Nem sempre precisamos iniciar uma conversa dizendo imediatamente que queremos falar sobre fé.</p>
+
+<br>
+
+<p>
+
+Muitas oportunidades surgem naturalmente.</p>
+
+<br>
+
+<p>
+
+Uma pessoa pode compartilhar uma dificuldade.</p>
+
+<br>
+
+<p>
+
+Perguntar como você encontrou forças em determinado momento.</p>
+
+<br>
+
+<p>
+
+Questionar por que você frequenta uma igreja.</p>
+
+<br>
+
+<p>
+
+Perguntar por que você acredita em Deus.</p>
+
+<br>
+
+<p>
+
+Ou demonstrar curiosidade sobre uma mudança que percebeu em sua vida.</p>
+
+<br>
+
+<p>
+
+Esses momentos podem abrir portas.</p>
+
+<p class="frase">
+
+"Estar preparado também significa estar atento."</p>
+
+</div>
+
+
+<!-- QUEM PODE SER ALCANÇADO -->
+
+<div class="card">
+
+<h2>👤 Quem pode precisar ouvir sua história?</h2>
+
+<p>
+
+Pense nas pessoas ao seu redor.</p>
+
+<br>
+
+<p>
+
+Talvez exista alguém enfrentando algo que você também já enfrentou.</p>
+
+<br>
+
+<p>
+
+Alguém vivendo um medo que você conhece.</p>
+
+<br>
+
+<p>
+
+Alguém se sentindo sem direção.</p>
+
+<br>
+
+<p>
+
+Alguém carregando culpa.</p>
+
+<br>
+
+<p>
+
+Alguém que perdeu a esperança.</p>
+
+<br>
+
+<p>
+
+Talvez sua experiência não permita resolver o problema dessa pessoa.</p>
+
+<br>
+
+<p>
+
+Mas pode permitir que você diga:</p>
+
+<br>
+
+<p class="frase">
+
+"Eu consigo entender um pouco do que você está sentindo. Posso contar o que me ajudou?"</p>
+
+<br>
+
+<p>
+
+Às vezes uma conversa sincera começa exatamente assim.</p>
+
+</div>
+
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h2>✅ Prática de hoje</h2>
+
+<p>
+
+Marque as atitudes que você deseja praticar hoje:</p>
+
+<div class="checklist">
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Escrever em poucas frases uma parte da minha história com Deus.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Identificar uma experiência difícil através da qual Deus me ensinou algo importante.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Pensar em uma pessoa que poderia ser encorajada pelo meu testemunho.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Orar para reconhecer uma oportunidade natural de compartilhar minha esperança.</label>
+
+<label class="check-item">
+
+<input type="checkbox" onchange="marcarItem(this)">
+
+Praticar falar sobre minha fé de maneira simples, sincera, respeitosa e sem pressão.</label>
+
+</div>
+
+<p id="check-status" style="text-align:center;margin-top:18px;font-weight:600;color:#4f6f52;">
+
+0 de 5 atitudes escolhidas
+
+</p>
+
+</div>
+
+
+<!-- TEMA -->
+
+<div class="card">
+
+<h2>💬 Tema para reflexão</h2>
+
+<p class="frase">
+
+"Deus pode usar minha história, minhas experiências e aquilo que fez em minha vida para levar esperança e mostrar Seu amor a outras pessoas."
+
+</p>
+
+<br>
+
+<p style="text-align:center">
+
+Minha história não precisa ser extraordinária para ser útil. Precisa apenas apontar com sinceridade para a graça de Deus.</p>
+
+</div>
+
+
+<!-- VERSÍCULO -->
+
+<div class="card">
+
+<h2>📖 Versículo para memorizar</h2>
+
+<blockquote class="versiculo" onclick="destacarVersiculo()">
+
+<strong>
+
+"Estejam sempre prontos para responder a qualquer pessoa que pedir que expliquem a esperança que vocês têm. Porém, façam isso com educação e respeito."
+
+</strong>
+
+<br><br>
+
+<b>1 Pedro 3:15</b>
+
+</blockquote>
+
+<p class="versiculo-hint">
+
+Clique no versículo para destacá-lo.
+
+</p>
+
+</div>
+
+
+<!-- PERGUNTA -->
+
+<div class="card">
+
+<h2>🤔 Pergunta para meditar</h2>
+
+<blockquote>
+
+Ao olhar para tudo o que já vivi e para o que Deus tem feito em minha vida, quem poderia ser alcançado ou encorajado pelo meu testemunho? Com quem posso compartilhar essa esperança?
+
+</blockquote>
+
+<br>
+
+<h3>💭 Pare e reflita</h3>
+
+<p>
+
+Olhe para sua própria história.</p>
+
+<br>
+
+<p>
+
+Quais foram os momentos em que você mais percebeu a presença, a graça ou o cuidado de Deus?</p>
+
+<br>
+
+<p>
+
+Que dificuldade ensinou algo que hoje faz parte da sua fé?</p>
+
+<br>
+
+<p>
+
+Existe alguma mudança em você que dificilmente teria acontecido sem sua caminhada com Cristo?</p>
+
+<br>
+
+<p>
+
+Agora pense nas pessoas que conhece.</p>
+
+<br>
+
+<p>
+
+<strong>Quem está passando por algo semelhante ao que você já viveu?</strong></p>
+
+<br>
+
+<p>
+
+Talvez você não precise começar com uma longa explicação.</p>
+
+<br>
+
+<p>
+
+Pode simplesmente estar disponível.</p>
+
+<br>
+
+<p>
+
+Ouvir.</p>
+
+<br>
+
+<p>
+
+Demonstrar interesse.</p>
+
+<br>
+
+<p>
+
+E quando surgir o momento certo, dizer:</p>
+
+<br>
+
+<p class="frase">
+
+"Existe algo que Deus fez na minha vida que talvez possa trazer esperança para você também."</p>
+
+</div>
+
+
+<!-- DIÁRIO -->
+
+<div class="card">
+
+<h2>📝 Minha história de esperança</h2>
+
+<p>
+
+Escreva abaixo uma experiência em que Deus sustentou, ensinou, transformou ou direcionou você. Depois pense em quem poderia ser encorajado por essa história.</p>
+
+<textarea
+id="reflexao"
+placeholder="Uma experiência em que percebi Deus agindo foi... O que aprendi foi... Talvez eu possa compartilhar isso com..."
+></textarea>
+
+<div class="salvo" id="salvo">
+
+✓ Sua reflexão foi salva neste dispositivo.
+
+</div>
+
+<button onclick="salvarReflexao()">
+
+💾 Salvar minha reflexão
+
+</button>
+
+</div>
+
+
+<!-- PROPÓSITO -->
+
+<div class="card">
+
+<h2>🎯 Propósito nº 5</h2>
+
+<p class="frase">
+
+Você foi feito para uma missão.</p>
+
+<br>
+
+<p>
+
+Parte dessa missão é contar aquilo que Deus fez.</p>
+
+<br>
+
+<p>
+
+Você não precisa apresentar uma versão perfeita de si mesmo.</p>
+
+<br>
+
+<p>
+
+Pode compartilhar uma história verdadeira.</p>
+
+<br>
+
+<p>
+
+Uma história que reconhece dificuldades, erros, aprendizados e transformação.</p>
+
+<br>
+
+<p>
+
+Talvez sua história seja justamente a ponte que permita que alguém considere Cristo de uma maneira que nunca considerou antes.</p>
+
+<div class="destaque">
+
+<strong>Deus pode usar aquilo que você viveu para alcançar alguém que você ainda nem imagina.</strong>
+
+</div>
+
+</div>
+
+
+<!-- ORAÇÃO -->
+
+<div class="card">
+
+<h2>🙏 Oração</h2>
+
+<blockquote>
+
+Senhor, obrigado por toda a história que tens construído comigo.
+
+<br><br>
+
+Obrigado pelos momentos de alegria, pelos aprendizados e também pelas situações difíceis em que pude descobrir mais sobre Tua graça.
+
+<br><br>
+
+Ajuda-me a enxergar minha história não apenas como algo que aconteceu comigo, mas também como algo que pode ser usado para encorajar outras pessoas.
+
+<br><br>
+
+Dá-me sabedoria para saber quando falar e humildade para saber ouvir.
+
+<br><br>
+
+Livra-me da necessidade de impressionar as pessoas.
+
+<br><br>
+
+Quero compartilhar aquilo que tens feito em minha vida com sinceridade.
+
+<br><br>
+
+Ensina-me a falar sobre minha esperança com educação, respeito e amor.
+
+<br><br>
+
+Que eu nunca transforme uma conversa sobre Ti em uma disputa.
+
+<br><br>
+
+Ajuda-me a enxergar as pessoas como vidas que precisam ser amadas e não como argumentos que preciso vencer.
+
+<br><br>
+
+Coloca em meu caminho alguém que possa ser encorajado por aquilo que aprendi contigo.
+
+<br><br>
+
+Quando surgir essa oportunidade, dá-me coragem para compartilhar.
+
+<br><br>
+
+Que minha história não aponte para mim, mas para Cristo.
+
+<br><br>
+
+E que através das minhas palavras alguém possa descobrir que também existe esperança para sua própria história.
+
+<br><br>
+
+Amém.
+
+</blockquote>
+
+</div>
+
+
+<!-- FRASE -->
+
+<div class="card">
+
+<h2>⭐ Frase do dia</h2>
+
+<p class="frase">
+
+"Meu testemunho não é uma história sobre como me tornei perfeito; é uma história sobre como a graça de Deus continua me transformando."
+
+</p>
+
+</div>
+
+
+<!-- CONCLUSÃO -->
+
+<div class="card" style="text-align:center;">
+
+<h2>🌿 Conclusão</h2>
+
+<p>
+
+Parabéns por chegar ao trigésimo sétimo dia da jornada.</p>
+
+<br>
+
+<p>
+
+Você já completou <strong>92,5% dos 40 dias.</strong></p>
+
+<br>
+
+<p>
+
+Hoje você foi convidado a olhar para sua história de uma maneira diferente.</p>
+
+<br>
+
+<p>
+
+Não apenas como uma sequência de acontecimentos.</p>
+
+<br>
+
+<p>
+
+Mas como uma história na qual Deus também tem trabalhado.</p>
+
+<br>
+
+<p>
+
+Talvez você tenha passado por situações que não escolheria viver novamente.</p>
+
+<br>
+
+<p>
+
+Mas algumas delas produziram aprendizados, maturidade, compaixão ou dependência de Deus.</p>
+
+<br>
+
+<p>
+
+E aquilo que você aprendeu pode um dia se transformar em esperança para alguém.</p>
+
+<br>
+
+<p class="frase">
+
+"Talvez alguém precise ouvir exatamente aquilo que Deus me ensinou."</p>
+
+<br>
+
+<p>
+
+Não esconda sua história por achar que ela é simples demais.</p>
+
+<br>
+
+<p>
+
+Não tente torná-la mais impressionante do que realmente é.</p>
+
+<br>
+
+<p>
+
+Conte com sinceridade.</p>
+
+<br>
+
+<p>
+
+Compartilhe com respeito.</p>
+
+<br>
+
+<p>
+
+E permita que Cristo seja o centro.</p>
+
+<br>
+
+<p>
+
+<strong>Uma história comum nas mãos de Deus pode se tornar uma mensagem extraordinária de esperança.</strong></p>
+
+
+<button onclick="concluir()">
+
+✔ Marcar como concluído
+
+</button>
+
+
+<div id="mensagem">
+
+🎉 Dia 37 concluído! Faltam apenas 3 dias para completar a jornada!
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
+</footer>
+
+
+<button id="topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   BLOQUEIO DE ACESSO
+========================= */
+
+if(localStorage.getItem("dia36") !== "concluido"){
+
+    window.location.href="index.html";
+
+}
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia37","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   REFLEXÃO SALVA
+========================= */
+
+const campo =
+document.getElementById("reflexao");
+
+const reflexaoSalva =
+localStorage.getItem("reflexaoDia37");
+
+if(reflexaoSalva){
+
+    campo.value = reflexaoSalva;
+
+}
+
+
+function salvarReflexao(){
+
+    localStorage.setItem(
+        "reflexaoDia37",
+        campo.value
+    );
+
+    const aviso =
+    document.getElementById("salvo");
+
+    aviso.style.opacity="1";
+
+    setTimeout(()=>{
+
+        aviso.style.opacity="0";
+
+    },2500);
+
+}
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+function marcarItem(checkbox){
+
+    const item =
+    checkbox.closest(".check-item");
+
+    if(checkbox.checked){
+
+        item.classList.add("checked");
+
+    }else{
+
+        item.classList.remove("checked");
+
+    }
+
+    atualizarChecklist();
+
+}
+
+
+function atualizarChecklist(){
+
+    const checks =
+    document.querySelectorAll(
+        '.check-item input'
+    );
+
+    let total=0;
+
+    checks.forEach((check,index)=>{
+
+        if(check.checked){
+
+            total++;
+
+        }
+
+        localStorage.setItem(
+            "dia37check"+index,
+            check.checked
+        );
+
+    });
+
+    document.getElementById(
+        "check-status"
+    ).textContent =
+    total+" de 5 atitudes escolhidas";
+
+}
+
+
+/* Recuperar checklist */
+
+document
+.querySelectorAll('.check-item input')
+.forEach((check,index)=>{
+
+    const salvo =
+    localStorage.getItem(
+        "dia37check"+index
+    );
+
+    if(salvo==="true"){
+
+        check.checked=true;
+
+        check
+        .closest(".check-item")
+        .classList.add("checked");
+
+    }
+
+});
+
+atualizarChecklist();
+
+
+/* =========================
+   DESTAQUE DO VERSÍCULO
+========================= */
+
+function destacarVersiculo(){
+
+    const versiculo =
+    document.querySelector(".versiculo");
+
+    versiculo.style.background="#dfeee0";
+
+    versiculo.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        versiculo.style.background="#eef6ef";
+
+        versiculo.style.transform="scale(1)";
+
+    },1200);
+
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    const topo =
+    document.getElementById("topo");
+
+    if(window.scrollY>500){
+
+        topo.style.display="flex";
+
+    }else{
+
+        topo.style.display="none";
+
+    }
+
+});
+
+
+/* =========================
+   SE JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia37")=="concluido"){
+
+    document.getElementById(
+        "mensagem"
+    ).style.display="block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
