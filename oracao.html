@@ -14,238 +14,463 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+
 :root{
---bg:#11110f;
---surface:#191815;
---surface-hover:#211f1a;
---text:#eeeae1;
---muted:#aaa49a;
---subtle:#77736c;
---gold:#a58a61;
---gold-soft:#c1a674;
---line:#302d26;
---cream:#e7e0d4;
---green:#9eb99b;
+  --bg:#11110f;
+  --surface:#191815;
+  --surface-hover:#211f1a;
+  --text:#eeeae1;
+  --muted:#aaa49a;
+  --subtle:#77736c;
+  --gold:#a58a61;
+  --gold-soft:#c1a674;
+  --line:#302d26;
+  --cream:#e7e0d4;
+  --green:#9eb99b;
 }
+
 body{
-font-family:"Inter",sans-serif;
-background:var(--bg);
-color:var(--text);
-min-height:100vh;
-overflow-x:hidden;
-transition:background .3s,color .3s
+  font-family:"Inter",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+  transition:background .3s,color .3s;
 }
+
 body::before{
-content:"";
-position:fixed;
-width:600px;height:600px;
-border-radius:50%;
-background:rgba(194,158,95,.055);
-filter:blur(100px);
-top:-250px;left:50%;
-transform:translateX(-50%);
-pointer-events:none;z-index:-1
+  content:"";
+  position:fixed;
+  width:600px;
+  height:600px;
+  border-radius:50%;
+  background:rgba(194,158,95,.055);
+  filter:blur(100px);
+  top:-250px;
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
+  z-index:0;
 }
+
+header,.intro,.container,footer{
+  position:relative;
+  z-index:1;
+}
+
 header{
-width:100%;padding:24px 7%;
-display:flex;align-items:center;justify-content:space-between;
-gap:18px;position:absolute;top:0;left:0;z-index:10;
-background:transparent
+  width:100%;
+  padding:24px 7%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:10;
 }
+
 .brand{
-font-size:11px;letter-spacing:2.2px;text-transform:uppercase;
-color:var(--muted);white-space:nowrap
+  font-size:11px;
+  letter-spacing:2.2px;
+  text-transform:uppercase;
+  color:var(--muted);
+  white-space:nowrap;
 }
-.header-note{font-size:12px;color:var(--muted)}
-.header-note strong{color:var(--text);font-weight:500}
+
+.header-note{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.header-note strong{
+  color:var(--text);
+  font-weight:500;
+}
+
 .theme{
-border:1px solid var(--line);width:40px;height:40px;flex-shrink:0;
-border-radius:50%;cursor:pointer;background:var(--surface);
-color:var(--cream);font-size:17px;transition:.3s
+  border:1px solid var(--line);
+  width:40px;
+  height:40px;
+  flex-shrink:0;
+  border-radius:50%;
+  cursor:pointer;
+  background:var(--surface);
+  color:var(--cream);
+  font-size:17px;
+  transition:.3s;
 }
-.theme:hover{border-color:var(--gold);transform:rotate(12deg)}
+
+.theme:hover{
+  border-color:var(--gold);
+  transform:rotate(12deg);
+}
+
 .intro{
-min-height:83vh;display:flex;align-items:center;justify-content:center;
-text-align:center;padding:120px 25px 90px;position:relative
+  min-height:83vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:120px 25px 90px;
+  position:relative;
 }
+
 .intro-content{max-width:760px}
+
 .small-title{
-font-size:10px;letter-spacing:4px;text-transform:uppercase;
-color:var(--gold);margin-bottom:28px
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:28px;
 }
+
 h1{
-font-family:"Playfair Display",serif;font-weight:400;
-font-size:clamp(50px,8vw,92px);line-height:1.06;
-margin-bottom:28px;letter-spacing:-1.8px
+  font-family:"Playfair Display",serif;
+  font-weight:400;
+  font-size:clamp(50px,8vw,92px);
+  line-height:1.06;
+  margin-bottom:28px;
+  letter-spacing:-1.8px;
 }
+
 .intro-text{
-max-width:520px;margin:auto;color:var(--muted);
-font-size:15px;line-height:1.95;font-weight:300
+  max-width:520px;
+  margin:auto;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.95;
+  font-weight:300;
 }
+
 .intro-ornament{
-width:48px;height:1px;background:var(--gold);
-margin:30px auto 0;opacity:.7
+  width:48px;
+  height:1px;
+  background:var(--gold);
+  margin:30px auto 0;
+  opacity:.7;
 }
+
 .scroll-indicator{
-position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
-color:var(--subtle);font-size:9px;letter-spacing:2.5px;
-text-transform:uppercase;white-space:nowrap
+  position:absolute;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  color:var(--subtle);
+  font-size:9px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  white-space:nowrap;
 }
+
 .scroll-indicator::after{
-content:"";display:block;width:1px;height:28px;
-background:var(--gold);opacity:.6;margin:12px auto 0
+  content:"";
+  display:block;
+  width:1px;
+  height:28px;
+  background:var(--gold);
+  opacity:.6;
+  margin:12px auto 0;
 }
-.container{width:100%;max-width:1000px;margin:0 auto;padding:0 30px 80px}
+
+.container{
+  width:100%;
+  max-width:1000px;
+  margin:0 auto;
+  padding:0 30px 80px;
+}
+
 .card{
-background:transparent;border:0;border-top:1px solid var(--line);
-border-radius:0;padding:38px 0;margin-bottom:24px
+  background:transparent;
+  border:0;
+  border-top:1px solid var(--line);
+  padding:38px 0;
+  margin-bottom:24px;
 }
+
 .section-kicker{
-color:var(--gold);font-size:9px;letter-spacing:3px;
-text-transform:uppercase;margin-bottom:14px
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:14px;
 }
+
 .card h2{
-font-family:"Playfair Display",serif;font-weight:400;
-font-size:clamp(27px,4vw,36px);margin-bottom:12px;color:var(--text)
+  font-family:"Playfair Display",serif;
+  font-weight:400;
+  font-size:clamp(27px,4vw,36px);
+  margin-bottom:12px;
+  color:var(--text);
 }
+
 .section-description{
-color:var(--muted);font-size:13px;line-height:1.8;margin-bottom:28px
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+  margin-bottom:28px;
 }
+
 .journey-meta{
-display:flex;align-items:center;justify-content:space-between;
-gap:12px;font-size:12px;color:var(--muted)
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  font-size:12px;
+  color:var(--muted);
 }
-.journey-meta strong{color:var(--text);font-weight:500}
+
+.journey-meta strong{
+  color:var(--text);
+  font-weight:500;
+}
+
 .progress{
-background:#292720;height:4px;border-radius:20px;
-overflow:hidden;margin-top:18px;margin-bottom:14px
+  background:#292720;
+  height:4px;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:18px;
+  margin-bottom:14px;
 }
+
 .progress span{
-display:block;height:100%;width:0%;background:var(--gold);
-transition:width .5s
+  display:block;
+  height:100%;
+  width:0%;
+  background:var(--gold);
+  transition:width .5s;
 }
+
 .progress-caption{
-display:flex;justify-content:space-between;gap:10px;
-font-size:10px;color:var(--subtle);margin-bottom:26px
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:10px;
+  color:var(--subtle);
+  margin-bottom:26px;
 }
+
 .button{
-display:inline-flex;align-items:center;justify-content:center;gap:12px;
-padding:14px 24px;background:var(--cream);color:#171714;
-border:1px solid var(--cream);border-radius:40px;text-decoration:none;
-transition:.25s;font-size:12px;font-weight:600;cursor:pointer
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:14px 24px;
+  background:var(--cream);
+  color:#171714;
+  border:1px solid var(--cream);
+  border-radius:40px;
+  text-decoration:none;
+  transition:.25s;
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
 }
-.button:hover{transform:translateY(-2px);background:#fffaf0}
-.button:focus-visible,.theme:focus-visible,.day:focus-visible{
-outline:2px solid var(--gold-soft);outline-offset:4px
+
+.button:hover{
+  transform:translateY(-2px);
+  background:#fffaf0;
 }
-.button-secondary{
-background:transparent;color:var(--text);border-color:var(--line)
+
+.button:focus-visible,
+.theme:focus-visible,
+.day:focus-visible{
+  outline:2px solid var(--gold-soft);
+  outline-offset:4px;
 }
-.button-secondary:hover{background:var(--surface);border-color:var(--gold)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 36px;
+}
+
 .day{
-min-width:0;padding:24px 12px 25px 4px;
-border:0;border-bottom:1px solid var(--line);
-background:transparent;transition:background .25s;
-position:relative
+  min-width:0;
+  padding:24px 12px 25px 4px;
+  border:0;
+  border-bottom:1px solid var(--line);
+  background:transparent;
+  transition:background .25s;
+  position:relative;
 }
+
 .day.clickable{cursor:pointer}
-.day.clickable:hover{background:rgba(255,255,255,.025)}
+
+.day.clickable:hover{
+  background:rgba(255,255,255,.025);
+}
+
 .day h3{
-display:flex;align-items:center;gap:9px;font-size:10px;
-letter-spacing:1.7px;text-transform:uppercase;font-weight:500;
-color:var(--gold);margin-bottom:14px
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:10px;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--gold);
+  margin-bottom:14px;
 }
+
 .day-number{
-font-size:11px;color:var(--subtle);font-variant-numeric:tabular-nums
+  font-size:11px;
+  color:var(--subtle);
+  font-variant-numeric:tabular-nums;
 }
+
 .day p{
-font-family:"Playfair Display",serif;font-size:20px;
-line-height:1.45;color:var(--text)
+  font-family:"Playfair Display",serif;
+  font-size:20px;
+  line-height:1.45;
+  color:var(--text);
 }
+
 .day .day-subtitle{
-display:block;margin-top:8px;font-family:"Inter",sans-serif;
-font-size:11px;line-height:1.8;color:var(--subtle);font-weight:300
+  display:block;
+  margin-top:8px;
+  font-family:"Inter",sans-serif;
+  font-size:11px;
+  line-height:1.8;
+  color:var(--subtle);
+  font-weight:300;
 }
-.day.current{background:rgba(165,138,97,.055)}
-.day.current h3{color:var(--gold-soft)}
+
+.day.current{
+  background:rgba(165,138,97,.055);
+}
+
 .day.done h3{color:var(--green)}
 .day.done .day-status{color:var(--green)}
-.day.lock{opacity:.48}
+
 .day-status{
-display:inline-flex;align-items:center;gap:7px;
-margin-top:15px;font-size:9px;letter-spacing:1.1px;
-text-transform:uppercase;color:var(--subtle);line-height:1.5
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-top:15px;
+  font-size:9px;
+  letter-spacing:1.1px;
+  text-transform:uppercase;
+  color:var(--subtle);
+  line-height:1.5;
 }
+
 .status-dot{
-width:6px;height:6px;border-radius:50%;
-background:var(--subtle);flex-shrink:0
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--subtle);
+  flex-shrink:0;
 }
+
 .current .status-dot{background:var(--gold)}
 .done .status-dot{background:var(--green)}
-.empty-state{
-padding:28px 0;color:var(--muted);font-size:13px;line-height:1.9
-}
+
 .verse-card{
-text-align:center;padding:55px 25px 45px;
-border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-margin:15px 0 0
+  text-align:center;
+  padding:55px 25px 45px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  margin:15px 0 0;
 }
+
 .verse-card .eyebrow{
-font-size:9px;letter-spacing:3px;text-transform:uppercase;
-color:var(--gold);margin-bottom:24px
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:24px;
 }
+
 .verse-card .verse{
-font-family:"Playfair Display",serif;
-font-size:clamp(25px,4vw,36px);line-height:1.5;
-color:#ddd8cf;max-width:680px;margin:0 auto 22px
+  font-family:"Playfair Display",serif;
+  font-size:clamp(25px,4vw,36px);
+  line-height:1.5;
+  color:#ddd8cf;
+  max-width:680px;
+  margin:0 auto 22px;
 }
+
 .verse-card .reference{
-font-size:10px;letter-spacing:2px;color:var(--gold)
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--gold);
 }
+
 .verse-note{
-font-size:11px;color:var(--subtle);margin-top:24px;line-height:1.8
+  font-size:11px;
+  color:var(--subtle);
+  margin-top:24px;
+  line-height:1.8;
 }
+
 footer{
-text-align:center;padding:25px 20px 45px;
-color:var(--subtle);font-size:10px;letter-spacing:.5px;line-height:2
+  text-align:center;
+  padding:25px 20px 45px;
+  color:var(--subtle);
+  font-size:10px;
+  letter-spacing:.5px;
+  line-height:2;
 }
+
 body.light{
---bg:#f4f0e8;--surface:#fffdf8;--surface-hover:#f4efe5;
---text:#25231e;--muted:#777166;--subtle:#938b7d;
---gold:#8b7046;--gold-soft:#8b7046;--line:#ded7ca;
---cream:#25231e;--green:#567b53
+  --bg:#f4f0e8;
+  --surface:#fffdf8;
+  --surface-hover:#f4efe5;
+  --text:#25231e;
+  --muted:#777166;
+  --subtle:#938b7d;
+  --gold:#8b7046;
+  --gold-soft:#8b7046;
+  --line:#ded7ca;
+  --cream:#25231e;
+  --green:#567b53;
 }
-body.light .button{background:#25231e;color:#f4f0e8;border-color:#25231e}
-body.light .button-secondary{background:transparent;color:var(--text);border-color:var(--line)}
+
+body.light .button{
+  background:#25231e;
+  color:#f4f0e8;
+  border-color:#25231e;
+}
+
 body.light .progress{background:#ded7ca}
-body.light .day.current{background:rgba(139,112,70,.07)}
+
+body.light .day.current{
+  background:rgba(139,112,70,.07);
+}
+
 body.light .verse-card .verse{color:#353128}
 body.light .theme{color:var(--text)}
+
 @media(max-width:650px){
-header{padding:20px;gap:10px}
-.brand{font-size:9px;letter-spacing:1.2px}
-.header-note{font-size:10px}
-.theme{width:36px;height:36px}
-.intro{min-height:77vh;padding:110px 22px 80px}
-h1{font-size:clamp(47px,13vw,68px);letter-spacing:-1px}
-.intro-text{font-size:13px}
-.container{padding:0 21px 60px}
-.card{padding:30px 0}
-.grid{grid-template-columns:1fr}
-.day{padding:21px 5px}
-.day p{font-size:21px}
-.verse-card{padding:43px 10px 35px}
-.button{padding:14px 21px}
+  header{padding:20px;gap:10px}
+  .brand{font-size:9px;letter-spacing:1.2px}
+  .header-note{font-size:10px}
+  .theme{width:36px;height:36px}
+  .intro{min-height:77vh;padding:110px 22px 80px}
+  h1{font-size:clamp(47px,13vw,68px);letter-spacing:-1px}
+  .intro-text{font-size:13px}
+  .container{padding:0 21px 60px}
+  .card{padding:30px 0}
+  .grid{grid-template-columns:1fr}
+  .day{padding:21px 5px}
+  .day p{font-size:21px}
+  .verse-card{padding:43px 10px 35px}
+  .button{padding:14px 21px}
 }
+
 @media(prefers-reduced-motion:reduce){
-html{scroll-behavior:auto}
-*,*::before,*::after{transition:none!important}
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
 }
 </style>
 </head>
 
 <body>
+
 <header>
   <div class="brand">Caminhos de Propósito</div>
   <div class="header-note"><strong>40</strong> dias de oração</div>
@@ -263,6 +488,7 @@ html{scroll-behavior:auto}
 </section>
 
 <main class="container">
+
   <section class="card" aria-labelledby="journeyTitle">
     <div class="section-kicker">Sua caminhada</div>
     <h2 id="journeyTitle">Um dia de cada vez.</h2>
@@ -288,9 +514,8 @@ html{scroll-behavior:auto}
   <section class="card" aria-labelledby="daysTitle">
     <div class="section-kicker">O seu caminho</div>
     <h2 id="daysTitle">Os 40 dias.</h2>
-    <p class="section-description">Cada etapa tem seu tempo. Conclua a leitura e a oração do dia para abrir a próxima etapa.</p>
+    <p class="section-description">Explore as etapas da jornada. Os dias sem uma página publicada direcionarão para a página de novidades.</p>
     <div class="grid" id="dias"></div>
-    <p id="journeyComplete" class="empty-state" hidden>Você concluiu os 40 dias. Que essa jornada seja o começo de uma vida de oração constante.</p>
   </section>
 
   <section class="card">
@@ -301,6 +526,7 @@ html{scroll-behavior:auto}
       <p class="verse-note">Que cada dia seja uma oportunidade de se aproximar de Deus com sinceridade.</p>
     </div>
   </section>
+
 </main>
 
 <footer>
@@ -311,32 +537,36 @@ html{scroll-behavior:auto}
 "use strict";
 
 const container = document.getElementById("dias");
-const STORAGE_PREFIX = "dia";
 const RESET_KEY = "caminhos_oracao_progresso_v2";
 
-// Remove os registros antigos incorretos uma única vez.
-// Não apaga o progresso novamente nas próximas visitas.
+// Limpa os registros antigos incorretos uma única vez.
 if (!localStorage.getItem(RESET_KEY)) {
   for (let i = 1; i <= 40; i++) {
-    localStorage.removeItem(`${STORAGE_PREFIX}${i}`);
+    localStorage.removeItem(`dia${i}`);
   }
+
   localStorage.setItem(RESET_KEY, "true");
 }
 
-// Tema escuro por padrão, respeitando a preferência salva pelo usuário.
+// Tema escuro por padrão; mantém o tema escolhido pelo usuário.
 function aplicarTema() {
-  const temaSalvo = localStorage.getItem("tema");
-  const claro = temaSalvo === "light";
+  const claro = localStorage.getItem("tema") === "light";
 
   document.body.classList.toggle("light", claro);
-  document.getElementById("themeButton").textContent = claro ? "☾" : "☼";
+
+  document.getElementById("themeButton").textContent =
+    claro ? "☾" : "☼";
 }
 
 function tema() {
   const vaiFicarClaro = !document.body.classList.contains("light");
 
   document.body.classList.toggle("light", vaiFicarClaro);
-  localStorage.setItem("tema", vaiFicarClaro ? "light" : "dark");
+
+  localStorage.setItem(
+    "tema",
+    vaiFicarClaro ? "light" : "dark"
+  );
 
   document.getElementById("themeButton").textContent =
     vaiFicarClaro ? "☾" : "☼";
@@ -389,26 +619,30 @@ const titulos = [
   "Uma vida de oração — encerrar a jornada e começar uma nova caminhada"
 ];
 
+// Um dia só conta como concluído quando a respectiva página
+// registrar explicitamente "concluido" no localStorage.
 function diaConcluido(numero) {
-  return localStorage.getItem(`${STORAGE_PREFIX}${numero}`) === "concluido";
+  return localStorage.getItem(`dia${numero}`) === "concluido";
 }
 
-function primeiroDiaPendente() {
-  for (let i = 1; i <= 40; i++) {
-    if (!diaConcluido(i)) return i;
-  }
-  return 40;
-}
-
+// Todos os 40 dias ficam acessíveis, mesmo antes da publicação.
 function abrirDia(numero) {
-  if (!Number.isInteger(numero) || numero < 1 || numero > 40) return;
-
-  // Não permite abrir dias futuros sem concluir o anterior.
-  if (numero > 1 && !diaConcluido(numero - 1) && !diaConcluido(numero)) {
+  if (!Number.isInteger(numero) || numero < 1 || numero > 40) {
     return;
   }
 
-  window.location.href = `dia${numero}.html`;
+  // Se o arquivo existir, abre-o. Caso contrário, abre em-breve.html.
+  fetch(`dia${numero}.html`)
+    .then(resposta => {
+      if (resposta.ok) {
+        window.location.href = `dia${numero}.html`;
+      } else {
+        window.location.href = "em-breve.html";
+      }
+    })
+    .catch(() => {
+      window.location.href = "em-breve.html";
+    });
 }
 
 function atualizarJornada() {
@@ -418,74 +652,89 @@ function atualizarJornada() {
     if (diaConcluido(i)) totalConcluidos++;
   }
 
+  const porcentagem = Math.round(totalConcluidos / 40 * 100);
   const tudoConcluido = totalConcluidos === 40;
-  const diaAtual = primeiroDiaPendente();
-  const porcentagem = Math.round((totalConcluidos / 40) * 100);
 
   document.getElementById("progressCount").textContent =
     `${totalConcluidos} de 40`;
 
-  document.getElementById("barra").style.width = `${porcentagem}%`;
+  document.getElementById("barra").style.width =
+    `${porcentagem}%`;
 
   document.getElementById("progressBar").setAttribute(
-    "aria-valuenow", String(totalConcluidos)
+    "aria-valuenow",
+    String(totalConcluidos)
   );
 
   document.getElementById("progressPercent").textContent =
     `${porcentagem}% concluído`;
 
   document.getElementById("remainingDays").textContent =
-    tudoConcluido ? "Jornada completa" :
-    `${40 - totalConcluidos} ${40 - totalConcluidos === 1 ? "dia restante" : "dias pela frente"}`;
+    tudoConcluido
+      ? "Jornada completa"
+      : `${40 - totalConcluidos} ${40 - totalConcluidos === 1 ? "dia restante" : "dias pela frente"}`;
 
-  const continuar = document.getElementById("continuar");
-  continuar.href = `dia${diaAtual}.html`;
-  continuar.innerHTML = tudoConcluido
+  // Continua pelo primeiro dia ainda não concluído.
+  let proximoDia = 1;
+
+  while (proximoDia <= 40 && diaConcluido(proximoDia)) {
+    proximoDia++;
+  }
+
+  if (proximoDia > 40) proximoDia = 40;
+
+  const botaoContinuar = document.getElementById("continuar");
+
+  botaoContinuar.href = `dia${proximoDia}.html`;
+
+  botaoContinuar.innerHTML = tudoConcluido
     ? 'Revisitar o último dia <span aria-hidden="true">→</span>'
     : `${totalConcluidos === 0 ? "Começar" : "Continuar"} jornada <span aria-hidden="true">→</span>`;
 
-  continuar.onclick = function(event) {
+  botaoContinuar.onclick = function(event) {
     event.preventDefault();
-    abrirDia(diaAtual);
+    abrirDia(proximoDia);
   };
 
+  // Reconstrói a lista sem bloquear nenhum dia.
   container.innerHTML = "";
 
   for (let i = 1; i <= 40; i++) {
     const concluido = diaConcluido(i);
-    const liberado = i === 1 || diaConcluido(i - 1);
-    const atual = !concluido && liberado;
 
     const partes = titulos[i].split(" — ");
     const titulo = partes[0];
     const subtitulo = partes.slice(1).join(" — ");
 
     const cartao = document.createElement("div");
-    cartao.className = "day" +
-      (concluido ? " done" : atual ? " current" : " lock");
 
-    if (liberado) {
-      cartao.classList.add("clickable");
-      cartao.tabIndex = 0;
-      cartao.setAttribute("role", "link");
-      cartao.setAttribute("aria-label", `Abrir dia ${i}: ${titulo}`);
+    cartao.className = concluido
+      ? "day done clickable"
+      : "day current clickable";
 
-      cartao.addEventListener("click", () => abrirDia(i));
-      cartao.addEventListener("keydown", event => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          abrirDia(i);
-        }
-      });
-    } else {
-      cartao.setAttribute("aria-disabled", "true");
-    }
+    cartao.tabIndex = 0;
+    cartao.setAttribute("role", "link");
+    cartao.setAttribute("aria-label", `Abrir dia ${i}: ${titulo}`);
+
+    cartao.addEventListener("click", () => abrirDia(i));
+
+    cartao.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        abrirDia(i);
+      }
+    });
 
     const cabecalho = document.createElement("h3");
     const numero = document.createElement("span");
+
     numero.className = "day-number";
     numero.textContent = String(i).padStart(2, "0");
-    cabecalho.append(numero, document.createTextNode(` · Dia ${i}`));
+
+    cabecalho.append(
+      numero,
+      document.createTextNode(` · Dia ${i}`)
+    );
 
     const nome = document.createElement("p");
     nome.textContent = titulo;
@@ -493,6 +742,7 @@ function atualizarJornada() {
     const descricao = document.createElement("span");
     descricao.className = "day-subtitle";
     descricao.textContent = subtitulo;
+
     nome.appendChild(descricao);
 
     const estado = document.createElement("span");
@@ -502,25 +752,23 @@ function atualizarJornada() {
     ponto.className = "status-dot";
     ponto.setAttribute("aria-hidden", "true");
 
-    const textoEstado = concluido
-      ? "Concluído"
-      : atual
-        ? "Disponível agora"
-        : "Conclua o dia anterior para liberar";
+    estado.append(
+      ponto,
+      document.createTextNode(concluido ? "Concluído" : "Disponível")
+    );
 
-    estado.append(ponto, document.createTextNode(textoEstado));
     cartao.append(cabecalho, nome, estado);
     container.appendChild(cartao);
   }
-
-  document.getElementById("journeyComplete").hidden = !tudoConcluido;
 }
 
-// Atualiza a tela ao carregar e quando o usuário retorna à página.
 atualizarJornada();
+
+// Atualiza o progresso quando o usuário retorna à página.
 window.addEventListener("pageshow", atualizarJornada);
 window.addEventListener("focus", atualizarJornada);
 window.addEventListener("storage", atualizarJornada);
 </script>
+
 </body>
 </html>
