@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>40 Dias de Oração — Dia 1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #11110f;
+            color: #eeeae1;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           FUNDO
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: rgba(194, 158, 95, 0.05);
+            filter: blur(100px);
+            top: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* =========================
+           TOPO
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 24px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .brand {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #aaa49a;
+        }
+
+        .day-counter {
+            font-size: 13px;
+            color: #aaa49a;
+        }
+
+        .day-counter strong {
+            color: #eeeae1;
+            font-weight: 500;
+        }
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 25px 70px;
+            position: relative;
+        }
+
+        .intro-content {
+            max-width: 700px;
+        }
+
+        .small-title {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #a58a61;
+            margin-bottom: 28px;
+        }
+
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-weight: 400;
+            font-size: clamp(50px, 9vw, 95px);
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .intro-text {
+            max-width: 500px;
+            margin: auto;
+            color: #aaa49a;
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #77736c;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .scroll-indicator::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 35px;
+            background: #5b574f;
+            margin: 10px auto 0;
+        }
+
+        /* =========================
+           CONTEÚDO
+        ========================= */
+
+        main {
+            max-width: 780px;
+            margin: auto;
+            padding: 0 22px 100px;
+        }
+
+        .block {
+            margin-bottom: 100px;
+        }
+
+        .label {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8d887f;
+            margin-bottom: 18px;
+        }
+
+        /* =========================
+           TEXTO
+        ========================= */
+
+        .reflection-text {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(27px, 5vw, 42px);
+            line-height: 1.45;
+            font-weight: 400;
+            color: #e7e2d8;
+        }
+
+        .reflection-text span {
+            color: #a58a61;
+        }
+
+        /* =========================
+           VERSÍCULO
+        ========================= */
+
+        .verse-block {
+            text-align: center;
+            padding: 80px 25px;
+            border-top: 1px solid #282722;
+            border-bottom: 1px solid #282722;
+        }
+
+        .verse {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(24px, 4vw, 34px);
+            line-height: 1.6;
+            color: #ddd8cf;
+        }
+
+        .reference {
+            margin-top: 25px;
+            color: #a58a61;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           TIMER
+        ========================= */
+
+        .prayer-area {
+            text-align: center;
+        }
+
+        .prayer-area h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .prayer-description {
+            color: #8f8a82;
+            max-width: 470px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .timer-container {
+            margin: 55px auto;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            border: 1px solid #38362f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .timer-container::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border-radius: 50%;
+            border: 1px solid #24231f;
+        }
+
+        #timer {
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            color: #ddd7ca;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timer-button {
+            background: transparent;
+            border: 1px solid #5a554c;
+            color: #ddd7ca;
+            padding: 14px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .timer-button:hover {
+            background: #e8e1d5;
+            color: #11110f;
+            border-color: #e8e1d5;
+        }
+
+        /* =========================
+           PRIVACIDADE
+        ========================= */
+
+        .privacy {
+            background: #171714;
+            border: 1px solid #292823;
+            border-radius: 18px;
+            padding: 28px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .privacy-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #25231e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #c1a674;
+        }
+
+        .privacy h3 {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 7px;
+        }
+
+        .privacy p {
+            color: #858179;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PERGUNTA
+        ========================= */
+
+        .question {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(28px, 5vw, 40px);
+            line-height: 1.45;
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 220px;
+            resize: vertical;
+            background: #171714;
+            border: 1px solid #302e28;
+            border-radius: 16px;
+            padding: 22px;
+            color: #e5dfd3;
+            font-family: "DM Sans", sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        textarea::placeholder {
+            color: #5d5a53;
+        }
+
+        textarea:focus {
+            border-color: #70634f;
+            background: #191916;
+        }
+
+        .temporary-note {
+            margin-top: 12px;
+            font-size: 11px;
+            color: #66635c;
+        }
+
+        /* =========================
+           BOTÃO ENTREGA
+        ========================= */
+
+        .delivery {
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .delivery-icon {
+            font-size: 30px;
+            margin-bottom: 25px;
+            color: #b39a6d;
+        }
+
+        .delivery h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .delivery p {
+            color: #858179;
+            max-width: 450px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+
+        .deliver-button {
+            border: none;
+            background: #e7e0d4;
+            color: #171714;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .deliver-button:hover {
+            transform: translateY(-2px);
+            background: #fffaf0;
+        }
+
+        /* =========================
+           RESULTADO
+        ========================= */
+
+        .delivered {
+            display: none;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        .delivered.active {
+            display: block;
+        }
+
+        .delivered-symbol {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .delivered h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 40px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .delivered p {
+            color: #858179;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        .finish {
+            text-align: center;
+            border-top: 1px solid #282722;
+            padding-top: 60px;
+        }
+
+        .finish p {
+            color: #77736c;
+            margin-bottom: 25px;
+        }
+
+        .finish-button {
+            border: 1px solid #49463e;
+            background: transparent;
+            color: #d9d3c7;
+            padding: 14px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .finish-button:hover {
+            background: #e7e0d4;
+            color: #171714;
+        }
+
+        /* =========================
+           TOAST
+        ========================= */
+
+        .toast {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%) translateY(30px);
+            background: #e7e0d4;
+            color: #171714;
+            padding: 14px 22px;
+            border-radius: 50px;
+            font-size: 13px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.4s;
+            z-index: 100;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* =========================
+           ANIMAÇÕES
+        ========================= */
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px;
+            }
+
+            .brand {
+                font-size: 10px;
+            }
+
+            .intro {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            main {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .block {
+                margin-bottom: 75px;
+            }
+
+            .timer-container {
+                width: 190px;
+                height: 190px;
+            }
+
+            #timer {
+                font-size: 42px;
+            }
+
+            .privacy {
+                padding: 22px;
+            }
+
+            .delivery {
+                padding: 50px 10px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="brand">
+        40 Dias de Oração
+    </div>
+
+    <div class="day-counter">
+        <strong>01</strong> / 40
+    </div>
+
+</header>
+
+
+<!-- =========================
+     ABERTURA
+========================= -->
+
+<section class="intro">
+
+    <div class="intro-content">
+
+        <div class="small-title">
+            Dia 01
+        </div>
+
+        <h1>
+            Apenas<br>
+            fique aqui.
+        </h1>
+
+        <p class="intro-text">
+            Antes de pedir qualquer coisa,
+            antes de tentar encontrar respostas,
+            simplesmente pare.
+        </p>
+
+    </div>
+
+    <div class="scroll-indicator">
+        continue
+    </div>
+
+</section>
+
+
+<main>
+
+
+    <!-- =========================
+         REFLEXÃO
+    ========================= -->
+
+    <section class="block">
+
+        <div class="label">
+            Antes de começar
+        </div>
+
+        <div class="reflection-text">
+
+            Você não precisa encontrar
+            as palavras perfeitas.
+            <span>Deus não está esperando
+            uma oração perfeita.</span>
+
+        </div>
+
+        <br>
+
+        <div class="reflection-text">
+
+            Ele está esperando
+            apenas que você
+            se aproxime.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         VERSÍCULO
+    ========================= -->
+
+    <section class="block verse-block">
+
+        <div class="verse">
+
+            “Aquietai-vos e sabei que eu sou Deus.”
+
+        </div>
+
+        <div class="reference">
+            SALMOS 46:10
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MOMENTO DE SILÊNCIO
+    ========================= -->
+
+    <section class="block prayer-area">
+
+        <div class="label">
+            Primeiro momento
+        </div>
+
+        <h2>
+            Fique em silêncio.
+        </h2>
+
+        <p class="prayer-description">
+
+            Coloque o celular de lado.
+            Respire devagar.
+            Não peça nada.
+            Não tente resolver nada.
+
+            Apenas permaneça alguns minutos
+            consciente da presença de Deus.
+
+        </p>
+
+
+        <div class="timer-container">
+
+            <div id="timer">
+                02:00
+            </div>
+
+        </div>
+
+
+        <button
+            class="timer-button"
+            id="timerButton">
+
+            Começar
+
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         PRIVACIDADE
+    ========================= -->
+
+    <section class="block">
+
+        <div class="privacy">
+
+            <div class="privacy-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <h3>
+                    Este é um espaço somente seu.
+                </h3>
+
+                <p>
+
+                    O que você escrever aqui não é enviado
+                    para nenhum banco de dados e não fica
+                    salvo no site.
+
+                    Suas respostas existem apenas enquanto
+                    esta página estiver aberta.
+
+                    Ninguém está lendo o que você escreveu.
+
+                    Este espaço é entre você e Deus.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PERGUNTA
+    ========================= -->
+
+    <section class="block">
+
+        <div class="label">
+            Agora, seja sincero
+        </div>
+
+        <div class="question">
+
+            O que está no seu coração
+            hoje?
+
+        </div>
+
+
+        <textarea
+            id="answer"
+            placeholder="Escreva aqui o que você gostaria de dizer a Deus..."
+        ></textarea>
+
+
+        <div class="temporary-note">
+
+            🔒 Sua resposta não será salva.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ENTREGA
+    ========================= -->
+
+    <section class="block delivery">
+
+        <div class="delivery-icon">
+            ✦
+        </div>
+
+        <h2>
+            Entregue.
+        </h2>
+
+        <p>
+
+            Depois de escrever, leia novamente
+            aquilo que colocou aqui.
+
+            Quando estiver pronto, entregue
+            tudo isso a Deus.
+
+        </p>
+
+
+        <button
+            class="deliver-button"
+            id="deliverButton">
+
+            Entregar a Deus
+
+        </button>
+
+
+        <div
+            class="delivered"
+            id="delivered">
+
+            <div class="delivered-symbol">
+                🕊
+            </div>
+
+            <h2>
+                Agora, deixe ir.
+            </h2>
+
+            <p>
+
+                Você não precisa carregar tudo sozinho.
+
+                <br>
+
+                Confie.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL
+    ========================= -->
+
+    <section class="finish">
+
+        <p>
+            Você chegou ao fim do primeiro dia.
+        </p>
+
+        <button
+            class="finish-button"
+            id="finishButton">
+
+            Concluir Dia 1
+
+        </button>
+
+    </section>
+
+
+</main>
+
+
+<div
+    class="toast"
+    id="toast">
+
+    Dia 1 concluído.
+
+</div>
+
+
+<script>
+
+
+    /* =========================
+       TIMER
+    ========================= */
+
+    let seconds = 120;
+    let timerInterval = null;
+    let timerRunning = false;
+
+    const timerDisplay =
+        document.getElementById("timer");
+
+    const timerButton =
+        document.getElementById("timerButton");
+
+
+    function updateTimer() {
+
+        const minutes =
+            Math.floor(seconds / 60);
+
+        const remainingSeconds =
+            seconds % 60;
+
+        timerDisplay.textContent =
+            String(minutes).padStart(2, "0")
+            + ":" +
+            String(remainingSeconds).padStart(2, "0");
+
+    }
+
+
+    timerButton.addEventListener("click", function () {
+
+        if (timerRunning) {
+
+            clearInterval(timerInterval);
+
+            timerRunning = false;
+
+            timerButton.textContent =
+                "Continuar";
+
+            return;
+
+        }
+
+
+        timerRunning = true;
+
+        timerButton.textContent =
+            "Pausar";
+
+
+        timerInterval = setInterval(function () {
+
+            if (seconds > 0) {
+
+                seconds--;
+
+                updateTimer();
+
+            } else {
+
+                clearInterval(timerInterval);
+
+                timerRunning = false;
+
+                timerButton.textContent =
+                    "Momento concluído";
+
+                timerButton.disabled = true;
+
+            }
+
+        }, 1000);
+
+    });
+
+
+    /* =========================
+       ENTREGAR A DEUS
+    ========================= */
+
+    const answer =
+        document.getElementById("answer");
+
+    const deliverButton =
+        document.getElementById("deliverButton");
+
+    const delivered =
+        document.getElementById("delivered");
+
+
+    deliverButton.addEventListener("click", function () {
+
+        /*
+            IMPORTANTE:
+
+            A resposta NÃO é salva.
+            Não usamos:
+            - localStorage
+            - sessionStorage
+            - cookies
+            - banco de dados
+            - servidor
+
+            O texto simplesmente é apagado
+            da memória da página.
+        */
+
+
+        answer.value = "";
+
+        answer.disabled = true;
+
+        deliverButton.style.display = "none";
+
+        delivered.classList.add("active");
+
+    });
+
+
+    /* =========================
+       CONCLUIR
+    ========================= */
+
+    const finishButton =
+        document.getElementById("finishButton");
+
+    const toast =
+        document.getElementById("toast");
+
+
+    finishButton.addEventListener("click", function () {
+
+        toast.classList.add("show");
+
+        finishButton.textContent =
+            "Dia 1 concluído ✓";
+
+
+        setTimeout(function () {
+
+            toast.classList.remove("show");
+
+        }, 2500);
+
+    });
+
+
+</script>
+
+</body>
+</html>
