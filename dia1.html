@@ -396,35 +396,72 @@ Parabéns por concluir o primeiro dia da jornada. Que essas verdades permaneçam
 
 
 <script>
-const mensagem = document.getElementById("mensagem");
-const botao = document.querySelector("button");
+/* =========================
+   CONFIGURAÇÃO DO DIA
+========================= */
 
-// Chave exclusiva da jornada "Criado para um Propósito"
 const CHAVE_PROGRESSO = "proposito_dia1";
 
-// Verifica se o dia já foi concluído anteriormente
-if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
-    mensagem.style.display = "block";
-    botao.innerHTML = "✅ Dia concluído";
-    botao.disabled = true;
-    botao.style.opacity = ".7";
-    botao.style.cursor = "default";
+/* =========================
+   ELEMENTOS DA CONCLUSÃO
+========================= */
+
+const mensagem = document.getElementById("mensagem");
+const botao = document.querySelector(
+    '.card button[onclick="concluir()"]'
+);
+
+/* =========================
+   ATUALIZAR A INTERFACE
+========================= */
+
+function atualizarEstadoConclusao() {
+    const concluido =
+        localStorage.getItem(CHAVE_PROGRESSO) === "concluido";
+
+    if (concluido) {
+        mensagem.style.display = "block";
+        botao.textContent = "✅ Dia concluído";
+        botao.disabled = true;
+        botao.style.opacity = ".7";
+        botao.style.cursor = "default";
+    } else {
+        mensagem.style.display = "none";
+        botao.textContent = "✔ Marcar como concluído";
+        botao.disabled = false;
+        botao.style.opacity = "";
+        botao.style.cursor = "";
+    }
 }
 
+/* =========================
+   CONCLUIR O DIA
+========================= */
+
 function concluir() {
+    // Evita executar a conclusão mais de uma vez.
+    if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
+        atualizarEstadoConclusao();
+        return;
+    }
+
+    // Registra o dia na jornada correta.
     localStorage.setItem(CHAVE_PROGRESSO, "concluido");
 
-    mensagem.style.display = "block";
-    botao.innerHTML = "✅ Dia concluído";
-    botao.disabled = true;
-    botao.style.opacity = ".7";
-    botao.style.cursor = "default";
+    // Atualiza a interface.
+    atualizarEstadoConclusao();
 
-    // Aguarda 1,5 segundos e volta para a página inicial
-    setTimeout(() => {
+    // Retorna à página inicial após 1,5 segundo.
+    setTimeout(function () {
         window.location.href = "home.html";
     }, 1500);
 }
+
+/* =========================
+   INICIALIZAÇÃO
+========================= */
+
+atualizarEstadoConclusao();
 </script>
 
 </body>
