@@ -1695,287 +1695,38 @@ Feito para crescer, refletir e caminhar.
 
 
 <script>
+const mensagem = document.getElementById("mensagem");
+const botao = document.querySelector("button");
 
-/* =========================
-   PROTEÇÃO DA JORNADA
-========================= */
+// Chave exclusiva da jornada "Criado para um Propósito"
+const CHAVE_PROGRESSO = "proposito_dia1";
 
-if(localStorage.getItem("dia7") !== "concluido"){
-
-    window.location.href="index.html";
-
+// Verifica se o dia já foi concluído anteriormente
+if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
+    mensagem.style.display = "block";
+    botao.innerHTML = "✅ Dia concluído";
+    botao.disabled = true;
+    botao.style.opacity = ".7";
+    botao.style.cursor = "default";
 }
 
-
-/* =========================
-   BARRA DE PROGRESSO
-========================= */
-
-window.addEventListener("scroll", function(){
-
-    const altura =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
-    const progresso =
-        (window.scrollY / altura) * 100;
-
-    document.getElementById("progressBar").style.width =
-        progresso + "%";
-
-});
-
-
-/* =========================
-   ANIMAÇÃO DOS CARDS
-========================= */
-
-const cards = document.querySelectorAll(".card");
-
-const observer = new IntersectionObserver(
-
-    entries => {
-
-        entries.forEach(entry => {
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add("visible");
-
-            }
-
-        });
-
-    },
-
-    {
-        threshold:.12
-    }
-
-);
-
-cards.forEach(card => observer.observe(card));
-
-
-/* =========================
-   CHECKLIST
-========================= */
-
-const tasks = document.querySelectorAll(".task");
-
-function atualizarChecklist(){
-
-    let concluidos = 0;
-
-    tasks.forEach((task,index)=>{
-
-        const item = task.closest(".check-item");
-
-        if(task.checked){
-
-            concluidos++;
-
-            item.classList.add("completed");
-
-            localStorage.setItem(
-                "dia8_tarefa_" + index,
-                "concluida"
-            );
-
-        }else{
-
-            item.classList.remove("completed");
-
-            localStorage.removeItem(
-                "dia8_tarefa_" + index
-            );
-
-        }
-
-    });
-
-    document.getElementById("counter").textContent =
-        concluidos + " de 5 concluídos";
-
-}
-
-tasks.forEach((task,index)=>{
-
-    if(
-        localStorage.getItem(
-            "dia8_tarefa_" + index
-        ) === "concluida"
-    ){
-
-        task.checked = true;
-
-    }
-
-    task.addEventListener(
-        "change",
-        atualizarChecklist
-    );
-
-});
-
-atualizarChecklist();
-
-
-/* =========================
-   PAUSA COM DEUS
-========================= */
-
-let pausaEmAndamento = false;
-
-function iniciarPausa(){
-
-    if(pausaEmAndamento) return;
-
-    pausaEmAndamento = true;
-
-    const circle =
-        document.getElementById("pauseCircle");
-
-    const text =
-        document.getElementById("pauseText");
-
-    circle.classList.add("active");
-
-    text.textContent =
-        "Respire lentamente... fique em silêncio por alguns segundos.";
-
-    setTimeout(()=>{
-
-        text.textContent =
-            "Agora agradeça a Deus por este momento.";
-
-    },4000);
-
-    setTimeout(()=>{
-
-        text.innerHTML =
-            "<strong>Deus está presente. Continue sua jornada com o coração atento.</strong>";
-
-        circle.classList.remove("active");
-
-        pausaEmAndamento = false;
-
-    },8000);
-
-}
-
-
-/* =========================
-   COPIAR VERSÍCULO
-========================= */
-
-function copiarVersiculo(){
-
-    const texto =
-        '“Pois o Senhor está contente com o seu povo.” — Salmos 149:4';
-
-    navigator.clipboard.writeText(texto)
-    .then(()=>{
-
-        alert("📖 Versículo copiado!");
-
-    })
-    .catch(()=>{
-
-        alert("Não foi possível copiar automaticamente.");
-
-    });
-
-}
-
-
-/* =========================
-   REFLEXÃO AUTOMÁTICA
-========================= */
-
-const reflexao =
-    document.getElementById("reflexao");
-
-const saved =
-    document.getElementById("saved");
-
-reflexao.value =
-    localStorage.getItem("dia8_reflexao") || "";
-
-reflexao.addEventListener("input",function(){
-
-    localStorage.setItem(
-        "dia8_reflexao",
-        reflexao.value
-    );
-
-    saved.textContent =
-        "✓ Reflexão salva automaticamente.";
-
-});
-
-
-/* =========================
-   MENSAGEM ESPECIAL
-========================= */
-
-function mostrarMensagem(){
-
-    const mensagem =
-        document.getElementById("specialMessage");
+function concluir() {
+    localStorage.setItem(CHAVE_PROGRESSO, "concluido");
 
     mensagem.style.display = "block";
+    botao.innerHTML = "✅ Dia concluído";
+    botao.disabled = true;
+    botao.style.opacity = ".7";
+    botao.style.cursor = "default";
 
+    // Aguarda 1,5 segundos e volta para a página inicial
+    setTimeout(() => {
+        window.location.href = "home.html";
+    }, 1500);
 }
-
-
-/* =========================
-   CONCLUIR
-========================= */
-
-function concluir(){
-
-    localStorage.setItem(
-        "dia8",
-        "concluido"
-    );
-
-    document.getElementById(
-        "mensagem"
-    ).style.display = "block";
-
-    window.scrollTo({
-
-        top:document.body.scrollHeight,
-
-        behavior:"smooth"
-
-    });
-
-    setTimeout(()=>{
-
-        window.location.href="index.html";
-
-    },2500);
-
-}
-
-
-/* =========================
-   CASO JÁ TENHA CONCLUÍDO
-========================= */
-
-if(
-    localStorage.getItem("dia8") === "concluido"
-){
-
-    document.getElementById(
-        "mensagem"
-    ).style.display = "block";
-
-}
-
 </script>
+
+
 
 
 </body>
