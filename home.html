@@ -1,621 +1,474 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Criado para um Propósito</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-font-family:Inter,sans-serif;
-background:#F6F4EE;
-color:#2F3A2F;
-transition:.4s;
+body {
+    font-family: Inter, sans-serif;
+    background: #F6F4EE;
+    color: #2F3A2F;
+    transition: .4s;
 }
 
-body.dark{
-background:#1b1f1d;
-color:white;
+body.dark {
+    background: #1b1f1d;
+    color: white;
 }
 
-header{
-
-height:330px;
-
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-text-align:center;
-color:white;
-position:relative;
-
+header {
+    height: 330px;
+    background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
 }
 
-
-header h1{
-
-font-family:"Playfair Display";
-font-size:50px;
-margin-bottom:15px;
-
+header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+    margin-bottom: 15px;
 }
 
-
-header p{
-
-font-size:20px;
-opacity:.9;
-
+header p {
+    font-size: 20px;
+    opacity: .9;
 }
 
-
-.theme{
-
-position:absolute;
-right:25px;
-top:25px;
-
-border:none;
-font-size:25px;
-
-background:white;
-
-width:55px;
-height:55px;
-
-border-radius:50%;
-cursor:pointer;
-
-transition:.3s;
-
+.theme {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    border: none;
+    font-size: 25px;
+    background: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
 }
 
-
-.theme:hover{
-
-transform:rotate(20deg) scale(1.1);
-
+.theme:hover {
+    transform: rotate(20deg) scale(1.1);
 }
 
-
-.container{
-
-width:90%;
-max-width:1200px;
-margin:auto;
-margin-top:-70px;
-
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: -70px;
 }
 
-
-.card{
-
-background:white;
-padding:30px;
-
-border-radius:18px;
-
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-margin-bottom:30px;
-
-transition:.4s;
-
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+    margin-bottom: 30px;
+    transition: .4s;
 }
 
-
-body.dark .card{
-
-background:#2a2f2d;
-
+body.dark .card {
+    background: #2a2f2d;
 }
 
-
-.progress{
-
-background:#ddd;
-height:18px;
-border-radius:20px;
-overflow:hidden;
-
-margin-top:15px;
-
+.progress {
+    background: #ddd;
+    height: 18px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 15px;
 }
 
-
-.progress span{
-
-display:block;
-height:100%;
-width:0%;
-
-background:#4F6F52;
-
-transition:.5s;
-
+.progress span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #4F6F52;
+    transition: .5s;
 }
 
-
-.button{
-
-display:inline-block;
-margin-top:25px;
-
-padding:14px 30px;
-
-background:#4F6F52;
-color:white;
-
-border-radius:40px;
-
-text-decoration:none;
-transition:.3s;
-
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: #4F6F52;
+    color: white;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: .3s;
 }
 
-
-.button:hover{
-
-transform:translateY(-3px);
-
+.button:hover {
+    transform: translateY(-3px);
 }
 
-
-.grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
-gap:20px;
-
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-
-.day{
-
-padding:20px;
-
-border-radius:15px;
-
-background:#f2f2f2;
-
-transition:.3s;
-
-cursor:pointer;
-
+.day {
+    padding: 20px;
+    border-radius: 15px;
+    background: #f2f2f2;
+    transition: .3s;
+    cursor: pointer;
 }
 
-
-.day:hover{
-
-transform:translateY(-5px);
-
+.day:hover {
+    transform: translateY(-5px);
 }
 
-
-body.dark .day{
-
-background:#3b423f;
-
+body.dark .day {
+    background: #3b423f;
 }
 
-
-.done{
-
-border-left:6px solid #2ecc71;
-
+.done {
+    border-left: 6px solid #2ecc71;
 }
 
-
-.current{
-
-border-left:6px solid orange;
-
+.current {
+    border-left: 6px solid orange;
 }
 
-
-.lock{
-
-opacity:.5;
-
+.lock {
+    opacity: .5;
+    cursor: not-allowed;
 }
 
-
-footer{
-
-text-align:center;
-padding:40px;
-opacity:.6;
-
+footer {
+    text-align: center;
+    padding: 40px;
+    opacity: .6;
 }
 
+@media(max-width:700px) {
+    header h1 {
+        font-size: 35px;
+    }
 
-@media(max-width:700px){
+    header p {
+        font-size: 16px;
+        padding: 0 15px;
+    }
 
-header h1{
-font-size:35px;
+    .container {
+        width: 92%;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .theme {
+        width: 45px;
+        height: 45px;
+        right: 15px;
+        top: 15px;
+    }
 }
-
-}
-
-
 </style>
-
 </head>
+
 <body>
 
 <header>
+    <button class="theme" onclick="tema()" aria-label="Alternar tema">🌙</button>
 
-<button class="theme" onclick="tema()">🌙</button>
-
-<div>
-
-<h1>🌿 Criado para um Propósito</h1>
-
-<p>Você foi criado por Deus e para Deus.</p>
-
-</div>
-
+    <div>
+        <h1>🌿 Criado para um Propósito</h1>
+        <p>Você foi criado por Deus e para Deus.</p>
+    </div>
 </header>
-
 
 <div class="container">
 
+    <div class="card">
+        <h2>📅 Seu progresso</h2>
+        <br>
 
-<div class="card">
+        <p>Dia atual: <b id="diaAtualTexto">1 de 40</b></p>
 
-<h2>📅 Seu progresso</h2>
+        <div class="progress">
+            <span id="barra"></span>
+        </div>
 
-<br>
+        <p id="progressoTexto" style="margin-top:10px;font-size:13px;opacity:.75;">
+            0 de 40 dias concluídos
+        </p>
 
-<p>Dia atual: <b>1 de 40</b></p>
+        <a id="continuar" href="#" class="button">
+            ▶ Continuar leitura
+        </a>
+    </div>
 
-
-<div class="progress">
-
-<span id="barra"></span>
-
-</div>
-
-
-<a id="continuar" href="#" class="button">
-
-▶ Continuar leitura
-
-</a>
-
-
-</div>
-
-
-
-<div class="card">
-
-<h2>📖 Capítulos</h2>
-
-<br>
-
-<div class="grid" id="dias"></div>
+    <div class="card">
+        <h2>📖 Capítulos</h2>
+        <br>
+        <div class="grid" id="dias"></div>
+    </div>
 
 </div>
-
-
-
-
-
-
-
-</div>
-
-
 
 <footer>
-
-Feito com ❤️ para registrar sua jornada com Deus.
-
+    Feito com ❤️ para registrar sua jornada com Deus.
 </footer>
 
-
-
 <script>
+/*
+ * CRIADO PARA UM PROPÓSITO
+ *
+ * O progresso desta jornada utiliza a chave exclusiva:
+ * proposito_dia1, proposito_dia2, ..., proposito_dia40.
+ *
+ * A página 40 Dias de Oração deve utilizar:
+ * oracao_dia1, oracao_dia2, ..., oracao_dia40.
+ *
+ * Assim, as jornadas não compartilham o progresso.
+ */
 
-
+const PREFIXO_PROGRESSO = "proposito_dia";
 const container = document.getElementById("dias");
 
-
-
-// ===============================
-// VERIFICA PROGRESSO
-// ===============================
-
-
-let diasConcluidos = 0;
-
-
-for(let i = 1; i <= 40; i++){
-
-    if(localStorage.getItem(`dia${i}`) === "concluido"){
-
-        diasConcluidos++;
-
+function diaConcluido(numero) {
+    try {
+        return localStorage.getItem(`${PREFIXO_PROGRESSO}${numero}`) === "concluido";
+    } catch (erro) {
+        return false;
     }
-
 }
 
-
-
-// Barra de progresso
-
-document.getElementById("barra").style.width =
-(diasConcluidos / 40 * 100) + "%";
-
-
-
-
-// Descobre próximo dia
-
-let diaAtual = 1;
-
-
-for(let i = 1; i <= 40; i++){
-
-    if(localStorage.getItem(`dia${i}`) === "concluido"){
-
-        diaAtual = i + 1;
-
+function salvarTema(valor) {
+    try {
+        localStorage.setItem("tema", valor);
+    } catch (erro) {
+        // O tema continua funcionando mesmo sem armazenamento.
     }
-
 }
 
-
-if(diaAtual > 40){
-
-    diaAtual = 40;
-
+function obterTema() {
+    try {
+        return localStorage.getItem("tema") || "light";
+    } catch (erro) {
+        return "light";
+    }
 }
 
-
-
-// Atualiza texto
-
-document.querySelector(".card p b").innerHTML =
-`${diaAtual} de 40`;
-
-
-
-
-// Verifica se página existe
-
-function abrirDia(numero){
-
-fetch(`dia${numero}.html`)
-
-.then(resposta => {
-
-
-    if(resposta.ok){
-
-        window.location.href = `dia${numero}.html`;
-
-    }
-
-    else{
-
-        window.location.href = "em-breve.html";
-
-    }
-
-
-})
-
-.catch(()=>{
-
-    window.location.href = "em-breve.html";
-
-});
-
-
-}
-
-
-
-
-// Botão continuar
-
-document.getElementById("continuar").onclick = function(e){
-
-e.preventDefault();
-
-abrirDia(diaAtual);
-
-};
-
-
-
-
-// Títulos
+// Títulos dos 40 dias
 
 const titulos = [
-
-"",
-"Deus é o começo de tudo",
-"Você foi criado com propósito",
-"O que tem guiado seus passos?",
-"Chamados para a eternidade",
-"Olhando a vida pela perspectiva de Deus",
-"Uma jornada passageira",
-"O verdadeiro sentido da existência",
-"Criados para agradar ao Senhor",
-"O que agrada a Deus?",
-"O verdadeiro significado da adoração",
-"Vivendo uma amizade com Deus",
-"Fortalecendo sua comunhão com Deus",
-"Uma vida de adoração",
-"Quando Deus parece em silêncio",
-"Chamados para fazer parte da família de Deus",
-"O que tem valor eterno",
-"Encontrando seu lugar",
-"Vivendo em comunhão",
-"Construindo relacionamentos saudáveis",
-"Reconstruindo a comunhão",
-"Cuidando da igreja de Cristo",
-"Refletindo o caráter de Cristo",
-"Crescendo na fé",
-"Transformados pela Palavra",
-"Aprendendo nas dificuldades",
-"Vencendo as tentações",
-"Firmes diante da tentação",
-"O crescimento acontece aos poucos",
-"Abraçando o chamado de Deus",
-"Preparados para servir",
-"Descobrindo os dons que Deus lhe deu",
-"Colocando seus dons em prática",
-"O coração de um servo",
-"Vivendo para servir",
-"A força que vem da fraqueza",
-"Enviados para uma missão",
-"Compartilhando a esperança em Cristo",
-"Vivendo uma fé autêntica",
-"Uma vida em equilíbrio",
-"Vivendo o propósito de Deus"
-
+    "",
+    "Deus é o começo de tudo",
+    "Você foi criado com propósito",
+    "O que tem guiado seus passos?",
+    "Chamados para a eternidade",
+    "Olhando a vida pela perspectiva de Deus",
+    "Uma jornada passageira",
+    "O verdadeiro sentido da existência",
+    "Criados para agradar ao Senhor",
+    "O que agrada a Deus?",
+    "O verdadeiro significado da adoração",
+    "Vivendo uma amizade com Deus",
+    "Fortalecendo sua comunhão com Deus",
+    "Uma vida de adoração",
+    "Quando Deus parece em silêncio",
+    "Chamados para fazer parte da família de Deus",
+    "O que tem valor eterno",
+    "Encontrando seu lugar",
+    "Vivendo em comunhão",
+    "Construindo relacionamentos saudáveis",
+    "Reconstruindo a comunhão",
+    "Cuidando da igreja de Cristo",
+    "Refletindo o caráter de Cristo",
+    "Crescendo na fé",
+    "Transformados pela Palavra",
+    "Aprendendo nas dificuldades",
+    "Vencendo as tentações",
+    "Firmes diante da tentação",
+    "O crescimento acontece aos poucos",
+    "Abraçando o chamado de Deus",
+    "Preparados para servir",
+    "Descobrindo os dons que Deus lhe deu",
+    "Colocando seus dons em prática",
+    "O coração de um servo",
+    "Vivendo para servir",
+    "A força que vem da fraqueza",
+    "Enviados para uma missão",
+    "Compartilhando a esperança em Cristo",
+    "Vivendo uma fé autêntica",
+    "Uma vida em equilíbrio",
+    "Vivendo o propósito de Deus"
 ];
 
+// Abre um dia e verifica se o arquivo existe.
 
+function abrirDia(numero) {
+    const url = `dia${numero}.html`;
 
-
-
-// Cria capítulos
-
-for(let i = 1; i <= 40; i++){
-
-
-let status = "lock";
-let emoji = "🔒";
-
-
-
-let liberado = 
-(
-i === 1 ||
-localStorage.getItem(`dia${i-1}`) === "concluido"
-);
-
-
-
-let concluido =
-localStorage.getItem(`dia${i}`) === "concluido";
-
-
-
-
-
-if(concluido){
-
-status = "done";
-emoji = "✅";
-
+    fetch(url)
+        .then(resposta => {
+            if (resposta.ok) {
+                window.location.href = url;
+            } else {
+                window.location.href = "em-breve.html";
+            }
+        })
+        .catch(() => {
+            window.location.href = "em-breve.html";
+        });
 }
 
+// Calcula o próximo dia a partir do progresso desta jornada.
 
-else if(liberado){
+function obterDiaAtual() {
+    for (let i = 1; i <= 40; i++) {
+        if (!diaConcluido(i)) {
+            return i;
+        }
+    }
 
-status = "current";
-emoji = "📖";
-
+    // Todos os dias foram concluídos.
+    return 40;
 }
 
+// Atualiza a barra e os indicadores de progresso.
 
+function atualizarProgresso() {
+    let diasConcluidos = 0;
 
+    for (let i = 1; i <= 40; i++) {
+        if (diaConcluido(i)) {
+            diasConcluidos++;
+        }
+    }
 
-container.innerHTML += `
+    const percentual = (diasConcluidos / 40) * 100;
+    const diaAtual = obterDiaAtual();
 
+    document.getElementById("barra").style.width = `${percentual}%`;
 
-<div class="day ${status}"
+    document.getElementById("diaAtualTexto").textContent =
+        `${diaAtual} de 40`;
 
-onclick="${liberado || concluido ? `abrirDia(${i})` : ''}">
+    document.getElementById("progressoTexto").textContent =
+        `${diasConcluidos} de 40 dias concluídos (${Math.round(percentual)}%)`;
 
-
-<h3>${emoji} Dia ${i}</h3>
-
-
-<br>
-
-
-<p>${titulos[i]}</p>
-
-
-</div>
-
-
-`;
-
-
+    document.getElementById("continuar").onclick = function(evento) {
+        evento.preventDefault();
+        abrirDia(diaAtual);
+    };
 }
 
+// Cria os cartões dos capítulos.
 
+function renderizarDias() {
+    container.innerHTML = "";
 
+    for (let i = 1; i <= 40; i++) {
+        const concluido = diaConcluido(i);
+        const liberado = i === 1 || diaConcluido(i - 1);
 
+        let status = "lock";
+        let emoji = "🔒";
 
+        if (concluido) {
+            status = "done";
+            emoji = "✅";
+        } else if (liberado) {
+            status = "current";
+            emoji = "📖";
+        }
 
-// Tema escuro
+        const cartao = document.createElement("div");
+        cartao.className = `day ${status}`;
 
-function tema(){
+        const titulo = document.createElement("h3");
+        titulo.textContent = `${emoji} Dia ${i}`;
 
+        const espaco = document.createElement("br");
 
-document.body.classList.toggle("dark");
+        const descricao = document.createElement("p");
+        descricao.textContent = titulos[i];
 
+        cartao.append(titulo, espaco, descricao);
 
+        if (liberado || concluido) {
+            cartao.tabIndex = 0;
+            cartao.setAttribute("role", "link");
+            cartao.addEventListener("click", () => abrirDia(i));
 
-if(document.body.classList.contains("dark")){
+            cartao.addEventListener("keydown", evento => {
+                if (evento.key === "Enter" || evento.key === " ") {
+                    evento.preventDefault();
+                    abrirDia(i);
+                }
+            });
+        } else {
+            cartao.setAttribute("aria-disabled", "true");
+        }
 
-localStorage.setItem("tema","dark");
-
+        container.appendChild(cartao);
+    }
 }
 
-else{
+// Alterna o tema claro/escuro.
 
-localStorage.setItem("tema","light");
+function tema() {
+    document.body.classList.toggle("dark");
 
+    salvarTema(
+        document.body.classList.contains("dark") ? "dark" : "light"
+    );
 }
 
+// Restaura o tema salvo.
 
+function aplicarTemaSalvo() {
+    document.body.classList.toggle("dark", obterTema() === "dark");
 }
 
+// Inicializa a página.
 
-
-
-
-// Mantém tema salvo
-
-if(localStorage.getItem("tema") === "dark"){
-
-document.body.classList.add("dark");
-
+function iniciarPagina() {
+    aplicarTemaSalvo();
+    renderizarDias();
+    atualizarProgresso();
 }
 
+// Atualiza os dados quando o usuário volta para esta página.
 
+window.addEventListener("pageshow", () => {
+    renderizarDias();
+    atualizarProgresso();
+});
+
+iniciarPagina();
 </script>
 
-
 </body>
-
 </html>
