@@ -30,9 +30,7 @@
             overflow-x: hidden;
         }
 
-        /* =========================
-           FUNDO
-        ========================= */
+        /* FUNDO */
 
         body::before {
             content: "";
@@ -49,9 +47,7 @@
             z-index: -1;
         }
 
-        /* =========================
-           TOPO
-        ========================= */
+        /* TOPO */
 
         header {
             width: 100%;
@@ -82,9 +78,7 @@
             font-weight: 500;
         }
 
-        /* =========================
-           INTRO
-        ========================= */
+        /* INTRO */
 
         .intro {
             min-height: 100vh;
@@ -145,9 +139,7 @@
             margin: 10px auto 0;
         }
 
-        /* =========================
-           CONTEÚDO
-        ========================= */
+        /* CONTEÚDO */
 
         main {
             max-width: 780px;
@@ -167,9 +159,7 @@
             margin-bottom: 18px;
         }
 
-        /* =========================
-           TEXTO
-        ========================= */
+        /* REFLEXÃO */
 
         .reflection-text {
             font-family: "Playfair Display", serif;
@@ -183,9 +173,7 @@
             color: #a58a61;
         }
 
-        /* =========================
-           VERSÍCULO
-        ========================= */
+        /* VERSÍCULO */
 
         .verse-block {
             text-align: center;
@@ -208,9 +196,7 @@
             letter-spacing: 2px;
         }
 
-        /* =========================
-           TIMER
-        ========================= */
+        /* TIMER */
 
         .prayer-area {
             text-align: center;
@@ -282,9 +268,7 @@
             cursor: default;
         }
 
-        /* =========================
-           PRIVACIDADE
-        ========================= */
+        /* PRIVACIDADE */
 
         .privacy {
             background: #171714;
@@ -320,9 +304,7 @@
             line-height: 1.7;
         }
 
-        /* =========================
-           PERGUNTA
-        ========================= */
+        /* PERGUNTA */
 
         .question {
             font-family: "Playfair Display", serif;
@@ -362,9 +344,7 @@
             color: #66635c;
         }
 
-        /* =========================
-           BOTÃO ENTREGA
-        ========================= */
+        /* ENTREGA */
 
         .delivery {
             text-align: center;
@@ -408,9 +388,7 @@
             background: #fffaf0;
         }
 
-        /* =========================
-           RESULTADO
-        ========================= */
+        /* RESULTADO */
 
         .delivered {
             display: none;
@@ -439,9 +417,7 @@
             line-height: 1.8;
         }
 
-        /* =========================
-           FINAL
-        ========================= */
+        /* FINAL */
 
         .finish {
             text-align: center;
@@ -476,9 +452,7 @@
             cursor: default;
         }
 
-        /* =========================
-           TOAST
-        ========================= */
+        /* TOAST */
 
         .toast {
             position: fixed;
@@ -504,9 +478,7 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        /* =========================
-           ANIMAÇÕES
-        ========================= */
+        /* ANIMAÇÕES */
 
         @keyframes fadeIn {
             from {
@@ -520,9 +492,7 @@
             }
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
+        /* MOBILE */
 
         @media (max-width: 600px) {
             header {
@@ -579,9 +549,7 @@
     </div>
 </header>
 
-<!-- =========================
-     ABERTURA
-========================= -->
+<!-- ABERTURA -->
 
 <section class="intro">
     <div class="intro-content">
@@ -608,9 +576,7 @@
 
 <main>
 
-    <!-- =========================
-         REFLEXÃO
-    ========================= -->
+    <!-- REFLEXÃO -->
 
     <section class="block">
         <div class="label">
@@ -633,9 +599,7 @@
         </div>
     </section>
 
-    <!-- =========================
-         VERSÍCULO
-    ========================= -->
+    <!-- VERSÍCULO -->
 
     <section class="block verse-block">
         <div class="verse">
@@ -647,9 +611,7 @@
         </div>
     </section>
 
-    <!-- =========================
-         MOMENTO DE SILÊNCIO
-    ========================= -->
+    <!-- MOMENTO DE SILÊNCIO -->
 
     <section class="block prayer-area">
         <div class="label">
@@ -671,9 +633,7 @@
         </p>
 
         <div class="timer-container">
-            <div id="timer">
-                02:00
-            </div>
+            <div id="timer">02:00</div>
         </div>
 
         <button
@@ -684,9 +644,7 @@
         </button>
     </section>
 
-    <!-- =========================
-         PRIVACIDADE
-    ========================= -->
+    <!-- PRIVACIDADE -->
 
     <section class="block">
         <div class="privacy">
@@ -715,9 +673,7 @@
         </div>
     </section>
 
-    <!-- =========================
-         PERGUNTA
-    ========================= -->
+    <!-- PERGUNTA -->
 
     <section class="block">
         <div class="label">
@@ -732,17 +688,14 @@
         <textarea
             id="answer"
             placeholder="Escreva aqui o que você gostaria de dizer a Deus..."
-            aria-label="Escreva o que está no seu coração">
-        </textarea>
+            aria-label="Escreva o que está no seu coração"></textarea>
 
         <div class="temporary-note">
             🔒 Sua resposta não será salva.
         </div>
     </section>
 
-    <!-- =========================
-         ENTREGA
-    ========================= -->
+    <!-- ENTREGA -->
 
     <section class="block delivery">
         <div class="delivery-icon">
@@ -768,10 +721,7 @@
             Entregar a Deus
         </button>
 
-        <div
-            class="delivered"
-            id="delivered">
-
+        <div class="delivered" id="delivered">
             <div class="delivered-symbol">
                 🕊
             </div>
@@ -788,9 +738,7 @@
         </div>
     </section>
 
-    <!-- =========================
-         FINAL
-    ========================= -->
+    <!-- FINAL -->
 
     <section class="finish">
         <p>
@@ -807,11 +755,7 @@
 
 </main>
 
-<div
-    class="toast"
-    id="toast"
-    role="status"
-    aria-live="polite">
+<div class="toast" id="toast" role="status" aria-live="polite">
     Dia 1 concluído.
 </div>
 
@@ -861,7 +805,6 @@
             if (seconds <= 0) {
                 clearInterval(timerInterval);
                 timerRunning = false;
-
                 timerButton.textContent = "Momento concluído";
                 timerButton.disabled = true;
             }
@@ -877,12 +820,6 @@
     const delivered = document.getElementById("delivered");
 
     deliverButton.addEventListener("click", function () {
-        /*
-         * A resposta não é salva em armazenamento local,
-         * cookies ou banco de dados pelo código desta página.
-         * Ela é apagada quando a pessoa confirma a entrega.
-         */
-
         answer.value = "";
         answer.disabled = true;
 
@@ -891,27 +828,34 @@
     });
 
     /* =========================
-       CONCLUIR DIA 1
+       CONCLUIR DIA 1 E VOLTAR
+       PARA ORACAO.HTML
     ========================= */
 
     const finishButton = document.getElementById("finishButton");
     const toast = document.getElementById("toast");
 
     finishButton.addEventListener("click", function () {
+        if (finishButton.disabled) {
+            return;
+        }
+
+        finishButton.disabled = true;
+        finishButton.textContent = "Dia 1 concluído ✓";
+
         /*
-         * Usa uma chave exclusiva para o projeto
-         * 40 Dias de Oração.
-         *
-         * A página oracao.html precisa consultar
-         * localStorage.getItem("oracao_dia1")
-         * para atualizar o progresso corretamente.
+         * Salva o progresso com a chave exclusiva
+         * da jornada de 40 Dias de Oração.
          */
 
         try {
             localStorage.setItem("oracao_dia1", "concluido");
         } catch (error) {
+            finishButton.disabled = false;
+            finishButton.textContent = "Concluir Dia 1";
+
             toast.textContent =
-                "Não foi possível salvar o progresso neste navegador.";
+                "Não foi possível salvar o progresso. Verifique as configurações do navegador.";
             toast.classList.add("show");
             return;
         }
@@ -919,11 +863,15 @@
         toast.textContent = "Dia 1 concluído! Voltando...";
         toast.classList.add("show");
 
-        finishButton.textContent = "Dia 1 concluído ✓";
-        finishButton.disabled = true;
+        /*
+         * Constrói o endereço de oracao.html
+         * a partir da pasta atual deste arquivo.
+         */
+
+        const paginaInicial = new URL("oracao.html", window.location.href);
 
         setTimeout(function () {
-            window.location.href = "oracao.html";
+            window.location.replace(paginaInicial.href);
         }, 1200);
     });
 </script>
