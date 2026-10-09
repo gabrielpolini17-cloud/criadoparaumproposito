@@ -1538,220 +1538,38 @@ Antes de seguir para o próximo dia, pense em uma única área da sua vida que v
 
 
 <script>
+const mensagem = document.getElementById("mensagem");
+const botao = document.querySelector("button");
 
-/* =========================
-   BLOQUEIO DE ACESSO
-========================= */
+// Chave exclusiva da jornada "Criado para um Propósito"
+const CHAVE_PROGRESSO = "proposito_dia10";
 
-if(localStorage.getItem("dia9") !== "concluido"){
-
-    window.location.href="index.html";
-
+// Verifica se o dia já foi concluído anteriormente
+if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
+    mensagem.style.display = "block";
+    botao.innerHTML = "✅ Dia concluído";
+    botao.disabled = true;
+    botao.style.opacity = ".7";
+    botao.style.cursor = "default";
 }
 
+function concluir() {
+    localStorage.setItem(CHAVE_PROGRESSO, "concluido");
 
-/* =========================
-   CONCLUSÃO
-========================= */
+    mensagem.style.display = "block";
+    botao.innerHTML = "✅ Dia concluído";
+    botao.disabled = true;
+    botao.style.opacity = ".7";
+    botao.style.cursor = "default";
 
-function concluir(){
-
-    localStorage.setItem("dia10","concluido");
-
-    document.getElementById("mensagem").style.display="block";
-
-    window.scrollTo({
-        top:document.body.scrollHeight,
-        behavior:"smooth"
-    });
-
-    setTimeout(()=>{
-
-        window.location.href="index.html";
-
-    },1800);
-
+    // Aguarda 1,5 segundos e volta para a página inicial
+    setTimeout(() => {
+        window.location.href = "home.html";
+    }, 1500);
 }
-
-
-/* =========================
-   REFLEXÃO SALVA
-========================= */
-
-const campo = document.getElementById("reflexao");
-
-const reflexaoSalva =
-localStorage.getItem("reflexaoDia10");
-
-if(reflexaoSalva){
-
-    campo.value = reflexaoSalva;
-
-}
-
-
-function salvarReflexao(){
-
-    localStorage.setItem(
-        "reflexaoDia10",
-        campo.value
-    );
-
-    const aviso =
-    document.getElementById("salvo");
-
-    aviso.style.opacity="1";
-
-    setTimeout(()=>{
-
-        aviso.style.opacity="0";
-
-    },2500);
-
-}
-
-
-/* =========================
-   CHECKLIST
-========================= */
-
-function marcarItem(checkbox){
-
-    const item =
-    checkbox.closest(".check-item");
-
-    if(checkbox.checked){
-
-        item.classList.add("checked");
-
-    }else{
-
-        item.classList.remove("checked");
-
-    }
-
-    atualizarChecklist();
-
-}
-
-
-function atualizarChecklist(){
-
-    const checks =
-    document.querySelectorAll(
-        '.check-item input'
-    );
-
-    let total=0;
-
-    checks.forEach((check,index)=>{
-
-        if(check.checked){
-
-            total++;
-
-        }
-
-        localStorage.setItem(
-            "dia10check"+index,
-            check.checked
-        );
-
-    });
-
-    document.getElementById(
-        "check-status"
-    ).textContent =
-    total+" de 5 atitudes escolhidas";
-
-}
-
-
-/* Recuperar checklist */
-
-document
-.querySelectorAll('.check-item input')
-.forEach((check,index)=>{
-
-    const salvo =
-    localStorage.getItem(
-        "dia10check"+index
-    );
-
-    if(salvo==="true"){
-
-        check.checked=true;
-
-        check
-        .closest(".check-item")
-        .classList.add("checked");
-
-    }
-
-});
-
-atualizarChecklist();
-
-
-/* =========================
-   DESTAQUE DO VERSÍCULO
-========================= */
-
-function destacarVersiculo(){
-
-    const versiculo =
-    document.querySelector(".versiculo");
-
-    versiculo.style.background="#dfeee0";
-
-    versiculo.style.transform="scale(1.02)";
-
-    setTimeout(()=>{
-
-        versiculo.style.background="#eef6ef";
-
-        versiculo.style.transform="scale(1)";
-
-    },1200);
-
-}
-
-
-/* =========================
-   BOTÃO VOLTAR AO TOPO
-========================= */
-
-window.addEventListener("scroll",()=>{
-
-    const topo =
-    document.getElementById("topo");
-
-    if(window.scrollY>500){
-
-        topo.style.display="flex";
-
-    }else{
-
-        topo.style.display="none";
-
-    }
-
-});
-
-
-/* =========================
-   SE JÁ CONCLUÍDO
-========================= */
-
-if(localStorage.getItem("dia10")=="concluido"){
-
-    document.getElementById(
-        "mensagem"
-    ).style.display="block";
-
-}
-
 </script>
+
+
 
 
 </body>
