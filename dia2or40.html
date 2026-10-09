@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>40 Dias de Oração — Dia 2</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #11110f;
+            color: #eeeae1;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            border-radius: 50%;
+            background: rgba(184, 145, 82, 0.05);
+            filter: blur(110px);
+            top: -300px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 24px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .brand {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #aaa49a;
+        }
+
+        .day-counter {
+            font-size: 13px;
+            color: #aaa49a;
+        }
+
+        .day-counter strong {
+            color: #eeeae1;
+            font-weight: 500;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 25px 70px;
+            position: relative;
+        }
+
+        .intro-content {
+            max-width: 750px;
+        }
+
+        .small-title {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #a58a61;
+            margin-bottom: 28px;
+        }
+
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-weight: 400;
+            font-size: clamp(50px, 9vw, 92px);
+            line-height: 1.05;
+            margin-bottom: 30px;
+        }
+
+        .intro-text {
+            max-width: 530px;
+            margin: auto;
+            color: #aaa49a;
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #77736c;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .scroll-indicator::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 35px;
+            background: #5b574f;
+            margin: 10px auto 0;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 780px;
+            margin: auto;
+            padding: 0 22px 100px;
+        }
+
+        .block {
+            margin-bottom: 100px;
+        }
+
+        .label {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8d887f;
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           TEXTO
+        ========================= */
+
+        .reflection-text {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(27px, 5vw, 42px);
+            line-height: 1.45;
+            font-weight: 400;
+            color: #e7e2d8;
+        }
+
+        .reflection-text span {
+            color: #a58a61;
+        }
+
+
+        /* =========================
+           VERSÍCULO
+        ========================= */
+
+        .verse-block {
+            text-align: center;
+            padding: 80px 25px;
+            border-top: 1px solid #282722;
+            border-bottom: 1px solid #282722;
+        }
+
+        .verse {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(24px, 4vw, 34px);
+            line-height: 1.6;
+            color: #ddd8cf;
+        }
+
+        .reference {
+            margin-top: 25px;
+            color: #a58a61;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           GRATIDÃO
+        ========================= */
+
+        .gratitude-intro {
+            text-align: center;
+        }
+
+        .gratitude-intro h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .gratitude-intro p {
+            max-width: 500px;
+            margin: auto;
+            color: #858179;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .gratitude-list {
+            margin-top: 50px;
+            display: grid;
+            gap: 15px;
+        }
+
+        .gratitude-card {
+            border: 1px solid #302e28;
+            background: #171714;
+            border-radius: 17px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .gratitude-card.active {
+            border-color: #756447;
+        }
+
+        .number {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            color: #a58a61;
+            margin-bottom: 12px;
+        }
+
+        .gratitude-card textarea {
+            width: 100%;
+            min-height: 90px;
+            background: transparent;
+            border: none;
+            outline: none;
+            resize: none;
+            color: #e5dfd3;
+            font-family: "DM Sans", sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .gratitude-card textarea::placeholder {
+            color: #5d5a53;
+        }
+
+
+        /* =========================
+           CONTADOR
+        ========================= */
+
+        .gratitude-counter {
+            text-align: center;
+            margin-top: 30px;
+            color: #69665f;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .gratitude-counter strong {
+            color: #b39a6d;
+        }
+
+
+        /* =========================
+           PRIVACIDADE
+        ========================= */
+
+        .privacy {
+            background: #171714;
+            border: 1px solid #292823;
+            border-radius: 18px;
+            padding: 28px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .privacy-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #25231e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #c1a674;
+        }
+
+        .privacy h3 {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 7px;
+        }
+
+        .privacy p {
+            color: #858179;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           ORAÇÃO
+        ========================= */
+
+        .prayer {
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .prayer-symbol {
+            font-size: 30px;
+            color: #b39a6d;
+            margin-bottom: 25px;
+        }
+
+        .prayer h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 40px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .prayer p {
+            max-width: 520px;
+            margin: auto;
+            color: #858179;
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           BOTÃO
+        ========================= */
+
+        .primary-button {
+            margin-top: 35px;
+            border: none;
+            background: #e7e0d4;
+            color: #171714;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-2px);
+            background: #fffaf0;
+        }
+
+
+        /* =========================
+           RESULTADO
+        ========================= */
+
+        .result {
+            display: none;
+            margin-top: 45px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .result.active {
+            display: block;
+        }
+
+        .result-symbol {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .result h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .result p {
+            color: #858179;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        .finish {
+            text-align: center;
+            border-top: 1px solid #282722;
+            padding-top: 60px;
+        }
+
+        .finish p {
+            color: #77736c;
+            margin-bottom: 25px;
+        }
+
+        .finish-button {
+            border: 1px solid #49463e;
+            background: transparent;
+            color: #d9d3c7;
+            padding: 14px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .finish-button:hover {
+            background: #e7e0d4;
+            color: #171714;
+        }
+
+
+        /* =========================
+           TOAST
+        ========================= */
+
+        .toast {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%) translateY(30px);
+            background: #e7e0d4;
+            color: #171714;
+            padding: 14px 22px;
+            border-radius: 50px;
+            font-size: 13px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.4s;
+            z-index: 100;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+
+        /* =========================
+           ANIMAÇÃO
+        ========================= */
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px;
+            }
+
+            .brand {
+                font-size: 10px;
+            }
+
+            .intro {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            main {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .block {
+                margin-bottom: 75px;
+            }
+
+            .privacy {
+                padding: 22px;
+            }
+
+            .prayer {
+                padding: 50px 10px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="brand">
+        40 Dias de Oração
+    </div>
+
+    <div class="day-counter">
+        <strong>02</strong> / 40
+    </div>
+
+</header>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+    <div class="intro-content">
+
+        <div class="small-title">
+            Dia 02
+        </div>
+
+        <h1>
+            Antes de pedir,<br>
+            agradeça.
+        </h1>
+
+        <p class="intro-text">
+
+            Hoje você não vai começar sua oração
+            com aquilo que está faltando.
+
+            Vai começar lembrando
+            de tudo aquilo que já recebeu.
+
+        </p>
+
+    </div>
+
+    <div class="scroll-indicator">
+        continue
+    </div>
+
+</section>
+
+
+<main>
+
+
+    <!-- =========================
+         REFLEXÃO
+    ========================= -->
+
+    <section class="block">
+
+        <div class="label">
+            Uma mudança de perspectiva
+        </div>
+
+        <div class="reflection-text">
+
+            É fácil perceber aquilo
+            que ainda não temos.
+
+            <span>
+                Difícil é parar para perceber
+                tudo aquilo que já temos.
+            </span>
+
+        </div>
+
+        <br>
+
+        <div class="reflection-text">
+
+            Hoje, antes de apresentar
+            seus pedidos a Deus,
+            olhe ao redor.
+
+            Talvez existam bênçãos
+            que você já deixou de perceber.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         VERSÍCULO
+    ========================= -->
+
+    <section class="block verse-block">
+
+        <div class="verse">
+
+            “Deem graças em todas as circunstâncias,
+            pois esta é a vontade de Deus
+            para vocês em Cristo Jesus.”
+
+        </div>
+
+        <div class="reference">
+            1 TESSALONICENSES 5:18
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         3 GRATIDÕES
+    ========================= -->
+
+    <section class="block gratitude-intro">
+
+        <div class="label">
+            Seu exercício de hoje
+        </div>
+
+        <h2>
+            Encontre três motivos.
+        </h2>
+
+        <p>
+
+            Não precisa ser algo grandioso.
+
+            Pode ser uma pessoa,
+            uma conversa, uma oportunidade,
+            um lugar, um momento,
+            ou simplesmente o fato de estar aqui hoje.
+
+        </p>
+
+
+        <div class="gratitude-list">
+
+
+            <div class="gratitude-card">
+
+                <div class="number">
+                    01
+                </div>
+
+                <textarea
+                    class="gratitude"
+                    placeholder="Hoje eu agradeço a Deus por..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="gratitude-card">
+
+                <div class="number">
+                    02
+                </div>
+
+                <textarea
+                    class="gratitude"
+                    placeholder="Outra coisa pela qual sou grato..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="gratitude-card">
+
+                <div class="number">
+                    03
+                </div>
+
+                <textarea
+                    class="gratitude"
+                    placeholder="E também agradeço por..."
+                ></textarea>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="gratitude-counter">
+
+            <strong id="gratitudeCount">0</strong>
+            de 3 preenchidos
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRIVACIDADE
+    ========================= -->
+
+    <section class="block">
+
+        <div class="privacy">
+
+            <div class="privacy-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <h3>
+                    O que você escreve permanece seu.
+                </h3>
+
+                <p>
+
+                    Este site não possui banco de dados
+                    para armazenar suas respostas.
+
+                    O que você escrever aqui não é enviado
+                    para nós e não fica salvo no site.
+
+                    As respostas existem somente enquanto
+                    esta página estiver aberta.
+
+                    Ninguém está lendo.
+
+                    Este momento é entre você e Deus.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ORAÇÃO
+    ========================= -->
+
+    <section class="block prayer">
+
+        <div class="prayer-symbol">
+            ✦
+        </div>
+
+        <h2>
+            Agora, agradeça.
+        </h2>
+
+        <p>
+
+            Feche os olhos por alguns segundos.
+
+            Lembre-se das três coisas que escreveu.
+
+            E agora converse com Deus.
+
+            Não peça nada.
+
+            Apenas agradeça.
+
+        </p>
+
+
+        <button
+            class="primary-button"
+            id="prayButton">
+
+            Estou pronto para agradecer
+
+        </button>
+
+
+        <div
+            class="result"
+            id="result">
+
+            <div class="result-symbol">
+                🕊
+            </div>
+
+            <h3>
+                Obrigado, Deus.
+            </h3>
+
+            <p>
+
+                Talvez algumas coisas ainda estejam
+                fora do lugar.
+
+                Mas hoje você escolheu olhar
+                primeiro para aquilo que Deus
+                já colocou em suas mãos.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL
+    ========================= -->
+
+    <section class="finish">
+
+        <p>
+            Mais um dia vivido na presença de Deus.
+        </p>
+
+        <button
+            class="finish-button"
+            id="finishButton">
+
+            Concluir Dia 2
+
+        </button>
+
+    </section>
+
+
+</main>
+
+
+<div
+    class="toast"
+    id="toast">
+
+    Dia 2 concluído.
+
+</div>
+
+
+<script>
+
+
+    /* =========================
+       CAMPOS DE GRATIDÃO
+    ========================= */
+
+    const gratitudeFields =
+        document.querySelectorAll(".gratitude");
+
+    const gratitudeCards =
+        document.querySelectorAll(".gratitude-card");
+
+    const gratitudeCount =
+        document.getElementById("gratitudeCount");
+
+
+    function updateGratitudeCount() {
+
+        let count = 0;
+
+        gratitudeFields.forEach(function(field, index) {
+
+            if (field.value.trim().length > 0) {
+
+                count++;
+
+                gratitudeCards[index]
+                    .classList.add("active");
+
+            } else {
+
+                gratitudeCards[index]
+                    .classList.remove("active");
+
+            }
+
+        });
+
+        gratitudeCount.textContent = count;
+
+    }
+
+
+    gratitudeFields.forEach(function(field) {
+
+        field.addEventListener(
+            "input",
+            updateGratitudeCount
+        );
+
+    });
+
+
+    /* =========================
+       BOTÃO DE ORAÇÃO
+    ========================= */
+
+    const prayButton =
+        document.getElementById("prayButton");
+
+    const result =
+        document.getElementById("result");
+
+
+    prayButton.addEventListener("click", function() {
+
+        let filled = 0;
+
+        gratitudeFields.forEach(function(field) {
+
+            if (field.value.trim().length > 0) {
+                filled++;
+            }
+
+        });
+
+
+        if (filled < 3) {
+
+            alert(
+                "Antes de continuar, encontre três motivos para agradecer."
+            );
+
+            return;
+
+        }
+
+
+        /*
+            IMPORTANTE:
+
+            As respostas não são salvas.
+
+            Não usamos:
+            - localStorage
+            - sessionStorage
+            - cookies
+            - banco de dados
+            - API
+            - servidor
+
+            Os textos permanecem somente
+            na memória desta página.
+        */
+
+
+        result.classList.add("active");
+
+        prayButton.style.display = "none";
+
+        result.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    });
+
+
+    /* =========================
+       CONCLUIR DIA
+    ========================= */
+
+    const finishButton =
+        document.getElementById("finishButton");
+
+    const toast =
+        document.getElementById("toast");
+
+
+    finishButton.addEventListener("click", function() {
+
+        toast.classList.add("show");
+
+        finishButton.textContent =
+            "Dia 2 concluído ✓";
+
+
+        setTimeout(function() {
+
+            toast.classList.remove("show");
+
+        }, 2500);
+
+    });
+
+
+</script>
+
+</body>
+</html>
