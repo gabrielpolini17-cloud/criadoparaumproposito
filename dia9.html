@@ -1385,38 +1385,113 @@ Que a partir de hoje você possa carregar menos o peso de tentar controlar tudo 
 
 
 <script>
-const mensagem = document.getElementById("mensagem");
-const botao = document.querySelector("button");
 
-// Chave exclusiva da jornada "Criado para um Propósito"
-const CHAVE_PROGRESSO = "proposito_dia9";
+/* =========================
+   VERIFICAÇÃO DO DIA ANTERIOR
+========================= */
 
-// Verifica se o dia já foi concluído anteriormente
-if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
-    mensagem.style.display = "block";
-    botao.innerHTML = "✅ Dia concluído";
-    botao.disabled = true;
-    botao.style.opacity = ".7";
-    botao.style.cursor = "default";
+if(localStorage.getItem("dia8") !== "concluido"){
+
+    window.location.href="index.html";
+
 }
 
-function concluir() {
-    localStorage.setItem(CHAVE_PROGRESSO, "concluido");
 
-    mensagem.style.display = "block";
-    botao.innerHTML = "✅ Dia concluído";
-    botao.disabled = true;
-    botao.style.opacity = ".7";
-    botao.style.cursor = "default";
+/* =========================
+   SELEÇÃO INTERATIVA
+========================= */
 
-    // Aguarda 1,5 segundos e volta para a página inicial
-    setTimeout(() => {
-        window.location.href = "home.html";
-    }, 1500);
+function selecionar(elemento, texto){
+
+    document.querySelectorAll(".option").forEach(function(botao){
+
+        botao.classList.remove("selected");
+
+    });
+
+    elemento.classList.add("selected");
+
+    document.getElementById("resposta").style.display="block";
+
 }
+
+
+/* =========================
+   ANOTAÇÃO
+========================= */
+
+const anotacao = document.getElementById("anotacao");
+
+anotacao.value = localStorage.getItem("reflexaoDia9") || "";
+
+anotacao.addEventListener("input", function(){
+
+    localStorage.setItem(
+        "reflexaoDia9",
+        anotacao.value
+    );
+
+});
+
+
+/* =========================
+   CHECKLIST
+========================= */
+
+const checks = document.querySelectorAll(".check-item");
+
+checks.forEach(function(check, index){
+
+    check.checked =
+        localStorage.getItem("dia9Check" + index) === "true";
+
+    check.addEventListener("change", function(){
+
+        localStorage.setItem(
+            "dia9Check" + index,
+            check.checked
+        );
+
+    });
+
+});
+
+
+/* =========================
+   CONCLUIR
+========================= */
+
+function concluir(){
+
+    localStorage.setItem("dia9","concluido");
+
+    document.getElementById("mensagem").style.display="block";
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+    setTimeout(function(){
+
+        window.location.href="index.html";
+
+    },1800);
+
+}
+
+
+/* =========================
+   JÁ CONCLUÍDO
+========================= */
+
+if(localStorage.getItem("dia9") === "concluido"){
+
+    document.getElementById("mensagem").style.display="block";
+
+}
+
 </script>
-
-
 
 
 </body>

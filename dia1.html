@@ -1,204 +1,857 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Criado para um propósito • Dia 1</title>
+<title>Uma Vida com Propósitos • Dia 1</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
 
-font-family:'Inter',sans-serif;
-background:#f6f3ec;
-color:#38463a;
-line-height:1.8;
+    font-family:'Inter',sans-serif;
+
+    background:#f6f3ec;
+
+    color:#38463a;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
 
 }
 
-header{
 
-height:340px;
+/* =========================
+   BARRA DE PROGRESSO
+========================= */
 
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+.progress-container{
 
-background-size:cover;
-background-position:center;
+    position:fixed;
 
-display:flex;
-justify-content:center;
-align-items:center;
+    top:0;
+    left:0;
 
-text-align:center;
-color:white;
+    width:100%;
 
-padding:20px;
+    height:4px;
 
-}
+    background:rgba(255,255,255,.15);
 
-header h1{
-
-font-family:"Playfair Display";
-font-size:55px;
-margin-bottom:10px;
+    z-index:9999;
 
 }
 
-header p{
+.progress-bar{
 
-font-size:22px;
-opacity:.95;
+    height:100%;
+
+    width:0%;
+
+    background:#d9ead7;
+
+    transition:width.15s ease;
 
 }
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:325px;
+
+    position:relative;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            rgba(10,25,17,.35),
+            rgba(10,25,17,.55) 55%,
+            rgba(246,243,236,1) 100%
+        ),
+
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:35px 20px 90px;
+
+}
+
+
+/* =========================
+   HERO CONTEÚDO
+========================= */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:heroEntrada 1s ease;
+
+}
+
+@keyframes heroEntrada{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   BADGE DIA
+========================= */
+
+.day-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 20px;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    background:rgba(25,35,29,.58);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+    border-radius:40px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    margin-bottom:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+}
+
+
+/* =========================
+   TÍTULO HERO
+========================= */
+
+.hero h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:58px;
+
+    line-height:1.1;
+
+    margin-bottom:10px;
+
+    text-shadow:0 4px 20px rgba(0,0,0,.4);
+
+}
+
+.hero-subtitle{
+
+    font-size:21px;
+
+    font-weight:400;
+
+    text-shadow:0 2px 10px rgba(0,0,0,.5);
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
 
-max-width:900px;
-margin:auto;
-padding:45px 20px;
+    max-width:920px;
+
+    margin:-35px auto 0;
+
+    padding:0 20px 60px;
+
+    position:relative;
+
+    z-index:5;
 
 }
+
+
+/* =========================
+   CARDS
+========================= */
 
 .card{
 
-background:white;
-padding:35px;
-border-radius:20px;
-margin-bottom:30px;
+    background:rgba(255,255,255,.97);
 
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+    padding:38px;
 
-animation:fade .6s;
+    border-radius:24px;
+
+    margin-bottom:28px;
+
+    box-shadow:
+
+        0 12px 35px rgba(0,0,0,.07),
+
+        0 2px 8px rgba(0,0,0,.03);
+
+    border:1px solid rgba(79,111,82,.08);
+
+    animation:cardEntrada .7s ease both;
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 18px 45px rgba(0,0,0,.10),
+
+        0 3px 10px rgba(0,0,0,.04);
 
 }
 
-@keyframes fade{
+@keyframes cardEntrada{
 
-from{
+    from{
 
-opacity:0;
-transform:translateY(20px);
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
 
 }
 
-to{
 
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
+/* =========================
+   TÍTULOS
+========================= */
 
 h2{
 
-color:#4f6f52;
-margin-bottom:20px;
-font-size:28px;
+    color:#4f6f52;
+
+    margin-bottom:22px;
+
+    font-size:28px;
+
+    line-height:1.3;
 
 }
 
+h3{
+
+    color:#4f6f52;
+
+    margin-bottom:12px;
+
+}
+
+
+/* =========================
+   LISTAS
+========================= */
+
 ul{
 
-padding-left:22px;
+    padding-left:0;
+
+    list-style:none;
 
 }
 
 li{
 
-margin-bottom:14px;
+    margin-bottom:15px;
+
+    padding:14px 16px;
+
+    background:#f7faf6;
+
+    border-radius:12px;
+
+    border-left:3px solid #7b9b7e;
+
+    transition:.25s ease;
 
 }
+
+li:hover{
+
+    transform:translateX(5px);
+
+    background:#eef6ef;
+
+}
+
+
+/* =========================
+   BLOCKQUOTE
+========================= */
 
 blockquote{
 
-background:#eef6ef;
+    background:
 
-padding:20px;
+        linear-gradient(
+            135deg,
+            #eef6ef,
+            #f7faf5
+        );
 
-border-left:6px solid #4f6f52;
+    padding:25px 26px;
 
-border-radius:10px;
+    border-left:5px solid #4f6f52;
 
-font-style:italic;
+    border-radius:15px;
 
-margin-top:20px;
+    font-style:italic;
+
+    margin-top:20px;
+
+    box-shadow:inset 0 0 20px rgba(79,111,82,.03);
 
 }
+
+
+/* =========================
+   FRASES
+========================= */
 
 .frase{
 
-font-size:24px;
-text-align:center;
-font-style:italic;
-color:#4f6f52;
-font-weight:600;
+    font-family:"Playfair Display",serif;
+
+    font-size:27px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#4f6f52;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+    padding:10px;
 
 }
 
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.highlight{
+
+    padding:22px;
+
+    border-radius:16px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f0f7f0,
+            #e8f1e8
+        );
+
+    text-align:center;
+
+    margin:25px 0;
+
+    border:1px solid rgba(79,111,82,.12);
+
+}
+
+.highlight strong{
+
+    color:#3f6043;
+
+    font-size:19px;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
 button{
 
-margin-top:15px;
+    margin-top:22px;
 
-padding:16px 40px;
+    padding:16px 32px;
 
-background:#4f6f52;
-color:white;
+    background:#4f6f52;
 
-border:none;
+    color:white;
 
-border-radius:40px;
+    border:none;
 
-font-size:17px;
+    border-radius:40px;
 
-cursor:pointer;
+    font-size:16px;
 
-transition:.3s;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+
+        transform .25s ease,
+
+        box-shadow .25s ease,
+
+        background .25s ease;
+
+    box-shadow:0 8px 20px rgba(79,111,82,.25);
 
 }
 
 button:hover{
 
-transform:translateY(-3px);
+    transform:translateY(-3px);
+
+    background:#3f6043;
+
+    box-shadow:0 12px 28px rgba(79,111,82,.32);
 
 }
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+button:disabled{
+
+    opacity:.65;
+
+    cursor:default;
+
+    transform:none;
+
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
 
 #mensagem{
 
-display:none;
+    display:none;
 
-margin-top:20px;
+    margin-top:20px;
 
-font-weight:bold;
+    font-weight:600;
 
-color:#2d7a46;
+    color:#2d7a46;
 
-font-size:18px;
+    font-size:17px;
+
+    animation:aparecer .5s ease;
 
 }
 
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   CHECKLIST INTERATIVO
+========================= */
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+.check-item input{
+
+    display:none;
+
+}
+
+.check{
+
+    width:22px;
+
+    height:22px;
+
+    min-width:22px;
+
+    border:2px solid #7b9b7e;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.25s ease;
+
+}
+
+.check-item input:checked + .check{
+
+    background:#4f6f52;
+
+    border-color:#4f6f52;
+
+}
+
+.check-item input:checked + .check::after{
+
+    content:"✓";
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
+
+.check-item input:checked ~ span:last-child{
+
+    text-decoration:line-through;
+
+    opacity:.6;
+
+}
+
+
+/* =========================
+   CARD INTERATIVO
+========================= */
+
+.reflexao-box{
+
+    background:#fafbf8;
+
+    border:1px solid #e1e9df;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    margin-top:20px;
+
+}
+
+.reflexao-box label{
+
+    display:block;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    color:#4f6f52;
+
+}
+
+.reflexao-box textarea{
+
+    width:100%;
+
+    min-height:120px;
+
+    resize:vertical;
+
+    border:1px solid #d9e1d8;
+
+    border-radius:14px;
+
+    padding:15px;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:15px;
+
+    color:#38463a;
+
+    outline:none;
+
+    transition:.25s ease;
+
+    background:white;
+
+}
+
+.reflexao-box textarea:focus{
+
+    border-color:#4f6f52;
+
+    box-shadow:0 0 0 3px rgba(79,111,82,.10);
+
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+.counter{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    opacity:.55;
+
+}
+
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topBtn{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:46px;
+
+    height:46px;
+
+    padding:0;
+
+    border-radius:50%;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:20px;
+
+    z-index:1000;
+
+    margin:0;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
 
-padding:40px;
+    padding:45px 20px;
 
-text-align:center;
+    text-align:center;
 
-opacity:.6;
+    opacity:.6;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .hero{
+
+        min-height:320px;
+
+        padding-bottom:85px;
+
+    }
+
+    .hero h1{
+
+        font-size:43px;
+
+    }
+
+    .hero-subtitle{
+
+        font-size:18px;
+
+    }
+
+    .day-badge{
+
+        font-size:13px;
+
+        padding:9px 16px;
+
+    }
+
+    .container{
+
+        padding:0 14px 45px;
+
+    }
+
+    .card{
+
+        padding:25px 20px;
+
+        border-radius:19px;
+
+        margin-bottom:20px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .frase{
+
+        font-size:22px;
+
+    }
+
+    li{
+
+        padding:12px 13px;
+
+    }
+
+}
+
+
+/* =========================
+   REDUÇÃO DE MOVIMENTO
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
 
 }
 
@@ -206,263 +859,596 @@ opacity:.6;
 
 </head>
 
+
 <body>
 
-<header>
 
-<div>
+<!-- BARRA DE PROGRESSO -->
 
-<h1>📖 Dia 1</h1>
+<div class="progress-container">
 
-<p>Deus é o começo de tudo</p>
+    <div class="progress-bar" id="progressBar"></div>
 
 </div>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="day-badge">
+
+            🌿 DIA 1 • 40 DIAS
+
+        </div>
+
+        <h1>📖 Dia 1</h1>
+
+        <p class="hero-subtitle">
+
+            A questão não sou eu
+
+        </p>
+
+    </div>
 
 </header>
 
-<div class="container">
+
+<main class="container">
+
+
+<!-- =========================
+     RESUMO
+========================= -->
 
 <div class="card">
 
-<h2>✨ Reflexão do dia</h2>
+    <h2>✨ Resumo do capítulo</h2>
 
-<ul>
+    <ul>
 
-<li>A vida começa com Deus, não comigo.</li>
+        <li>
+            A vida começa com Deus, não comigo.
+        </li>
 
-<li>Fui criado <strong>por Deus</strong> e <strong>para Deus</strong>.</li>
+        <li>
+            Fui criado <strong>por Deus</strong> e <strong>para Deus</strong>.
+        </li>
 
-<li>Meu propósito não é buscar apenas felicidade, sucesso ou realização pessoal, mas glorificar a Deus em tudo.</li>
+        <li>
+            Meu propósito não é buscar apenas felicidade, sucesso ou realização pessoal, mas glorificar a Deus em tudo.
+        </li>
 
-<li>Quando coloco Deus no centro da minha vida, encontro verdadeiro sentido para viver.</li>
+        <li>
+            Quando coloco Deus no centro da minha vida, encontro verdadeiro sentido para viver.
+        </li>
 
-<li>Quanto mais conheço o Criador, mais compreendo quem eu sou e por que existo.</li>
+        <li>
+            Quanto mais conheço o Criador, mais compreendo quem eu sou e por que existo.
+        </li>
 
-</ul>
+    </ul>
 
 </div>
+
+
+<!-- =========================
+     O QUE APRENDI
+========================= -->
 
 <div class="card">
 
-<h2>📝 O que aprendi</h2>
+    <h2>📝 O que aprendi</h2>
 
-<ul>
+    <ul>
 
-<li>🤍 Minha vida não gira em torno dos meus desejos.</li>
+        <li>
+            🤍 Minha vida não gira em torno dos meus desejos.
+        </li>
 
-<li>🤍 Deus tem um propósito maior do que aquilo que consigo enxergar.</li>
+        <li>
+            🤍 Deus tem um propósito maior do que aquilo que consigo enxergar.
+        </li>
 
-<li>🤍 Buscar somente meus próprios interesses nunca será suficiente para preencher meu coração.</li>
+        <li>
+            🤍 Buscar somente meus próprios interesses nunca será suficiente para preencher meu coração.
+        </li>
 
-<li>🤍 A verdadeira satisfação está em viver segundo a vontade de Deus.</li>
+        <li>
+            🤍 A verdadeira satisfação está em viver segundo a vontade de Deus.
+        </li>
 
-<li>🤍 Minha identidade vem de quem Deus diz que eu sou, e não da opinião das pessoas ou das circunstâncias.</li>
+        <li>
+            🤍 Minha identidade vem de quem Deus diz que eu sou, e não da opinião das pessoas ou das circunstâncias.
+        </li>
 
-</ul>
+    </ul>
 
 </div>
+
+
+<!-- =========================
+     APLICAÇÕES
+========================= -->
 
 <div class="card">
 
-<h2>🌱 Aplicações para minha vida</h2>
+    <h2>🌱 Aplicações para minha vida</h2>
 
-<ul>
+    <p style="margin-bottom:20px;">
 
-<li>Antes de tomar decisões, perguntar: <strong>"Isso glorifica a Deus?"</strong></li>
+        Algumas atitudes simples podem me ajudar a colocar essa verdade em prática:
 
-<li>Buscar conhecer mais a Deus através da oração e da leitura da Bíblia.</li>
+    </p>
 
-<li>Lembrar diariamente que minha vida pertence ao Senhor.</li>
+    <ul>
 
-<li>Confiar que Deus conhece o propósito para cada etapa da minha caminhada.</li>
+        <li class="check-item">
 
-</ul>
+            <label class="check-item">
+
+                <input type="checkbox">
+
+                <span class="check"></span>
+
+                <span>
+
+                    Antes de tomar decisões, perguntar:
+                    <strong>"Isso glorifica a Deus?"</strong>
+
+                </span>
+
+            </label>
+
+        </li>
+
+        <li class="check-item">
+
+            <label class="check-item">
+
+                <input type="checkbox">
+
+                <span class="check"></span>
+
+                <span>
+
+                    Buscar conhecer mais a Deus através da oração e da leitura da Bíblia.
+
+                </span>
+
+            </label>
+
+        </li>
+
+        <li class="check-item">
+
+            <label class="check-item">
+
+                <input type="checkbox">
+
+                <span class="check"></span>
+
+                <span>
+
+                    Lembrar diariamente que minha vida pertence ao Senhor.
+
+                </span>
+
+            </label>
+
+        </li>
+
+        <li class="check-item">
+
+            <label class="check-item">
+
+                <input type="checkbox">
+
+                <span class="check"></span>
+
+                <span>
+
+                    Confiar que Deus conhece o propósito para cada etapa da minha caminhada.
+
+                </span>
+
+            </label>
+
+        </li>
+
+    </ul>
 
 </div>
+
+
+<!-- =========================
+     TEMA
+========================= -->
 
 <div class="card">
 
-<h2>💬 Tema para reflexão</h2>
+    <h2>💬 Tema para reflexão</h2>
 
-<p class="frase">
+    <p class="frase">
 
-"Deus é o começo de tudo"
+        "A questão não sou eu."
 
-</p>
+    </p>
 
-<br>
+    <div class="highlight">
 
-<p style="text-align:center;font-size:18px;">
+        <strong>
 
-Minha vida encontra significado quando Cristo ocupa o centro do meu coração.
+            Minha vida encontra significado quando Cristo ocupa o centro do meu coração.
 
-</p>
+        </strong>
+
+    </div>
 
 </div>
+
+
+<!-- =========================
+     VERSÍCULO
+========================= -->
 
 <div class="card">
 
-<h2>📖 Versículo para memorizar</h2>
+    <h2>📖 Versículo para memorizar</h2>
 
-<blockquote>
+    <blockquote>
 
-<strong>"Todas as coisas foram criadas nele e nele encontram propósito."</strong>
+        <strong>
 
-<br><br>
+            "Todas as coisas foram criadas nele e nele encontram propósito."
 
-<b>Colossenses 1:16</b>
+        </strong>
 
-</blockquote>
+        <br><br>
+
+        <b>Colossenses 1:16</b>
+
+    </blockquote>
 
 </div>
+
+
+<!-- =========================
+     PERGUNTA
+========================= -->
 
 <div class="card">
 
-<h2>🤔 Pergunta para meditar</h2>
+    <h2>🤔 Pergunta para meditar</h2>
 
-<blockquote>
+    <blockquote>
 
-Tenho colocado Deus no centro das minhas escolhas e planos, ou tenho vivido buscando apenas aquilo que eu desejo? Como posso lembrar diariamente que minha vida pertence a Ele?
+        Apesar de todos os argumentos ao meu redor, como posso lembrar-me de que a vida é, na verdade, viver para Deus, e não para mim mesmo?
 
-</blockquote>
+    </blockquote>
 
-<br>
+    <div class="reflexao-box">
 
-<h3>💭 Reflexão</h3>
+        <label>
 
-<p>
+            ✍️ Minha reflexão
 
-Posso lembrar disso buscando a Deus todos os dias, lendo Sua Palavra, orando antes das minhas decisões e perguntando constantemente se minhas atitudes glorificam a Ele. Quando mantenho meus olhos em Cristo, lembro que meu propósito não é satisfazer meus próprios desejos, mas viver para cumprir a vontade do Senhor.
+        </label>
 
-</p>
+        <textarea
+            id="reflexao"
+            placeholder="Escreva aqui o que Deus colocou em seu coração..."
+        ></textarea>
+
+        <div class="counter">
+
+            <span id="contador">0</span> caracteres
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <h3>💭 Reflexão</h3>
+
+    <p>
+
+        Posso lembrar disso buscando a Deus todos os dias, lendo Sua Palavra, orando antes das minhas decisões e perguntando constantemente se minhas atitudes glorificam a Ele.
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Quando mantenho meus olhos em Cristo, lembro que meu propósito não é satisfazer meus próprios desejos, mas viver para cumprir a vontade do Senhor.
+
+    </p>
 
 </div>
+
+
+<!-- =========================
+     ORAÇÃO
+========================= -->
 
 <div class="card">
 
-<h2>🙏 Oração</h2>
+    <h2>🙏 Oração</h2>
 
-<blockquote>
+    <blockquote>
 
-Senhor, obrigado porque fui criado por Ti e para Ti. Ajuda-me a não colocar meus desejos acima da Tua vontade. Ensina-me a viver com o coração voltado para o Teu propósito e a lembrar, todos os dias, que a minha vida existe para glorificar o Teu nome. Que eu encontre minha identidade em Ti e caminhe segundo a Tua vontade. Amém.
+        Senhor, obrigado porque fui criado por Ti e para Ti.
 
-</blockquote>
+        <br><br>
+
+        Ajuda-me a não colocar meus desejos acima da Tua vontade.
+
+        Ensina-me a viver com o coração voltado para o Teu propósito e a lembrar, todos os dias, que a minha vida existe para glorificar o Teu nome.
+
+        <br><br>
+
+        Que eu encontre minha identidade em Ti e caminhe segundo a Tua vontade.
+
+        <br><br>
+
+        Amém.
+
+    </blockquote>
 
 </div>
+
+
+<!-- =========================
+     FRASE
+========================= -->
 
 <div class="card">
 
-<h2>⭐ Frase do dia</h2>
+    <h2>⭐ Frase do dia</h2>
 
-<p class="frase">
+    <p class="frase">
 
-"Quanto mais Deus ocupa o centro da minha vida, mais claro se torna o propósito da minha existência."
+        "Quanto mais Deus ocupa o centro da minha vida, mais claro se torna o propósito da minha existência."
 
-</p>
+    </p>
 
 </div>
+
+
+<!-- =========================
+     CONCLUSÃO
+========================= -->
 
 <div class="card" style="text-align:center;">
 
-<h2>✅ Conclusão</h2>
+    <h2>✅ Conclusão</h2>
 
-<p>
+    <p>
 
-Parabéns por concluir o primeiro dia da jornada. Que essas verdades permaneçam no seu coração e produzam frutos em sua caminhada com Deus.
+        Parabéns por concluir o primeiro dia da jornada.
 
-</p>
+    </p>
 
-<button onclick="concluir()">
+    <br>
 
-✔ Marcar como concluído
+    <p>
+
+        Que essas verdades permaneçam no seu coração e produzam frutos em sua caminhada com Deus.
+
+    </p>
+
+    <div class="highlight">
+
+        <strong>
+
+            🌿 Minha vida não começa comigo. Ela começa em Deus.
+
+        </strong>
+
+    </div>
+
+    <button onclick="concluir()" id="botaoConcluir">
+
+        ✔ Marcar como concluído
+
+    </button>
+
+    <div id="mensagem">
+
+        🎉 Dia 1 concluído! Continue firme nessa jornada.
+
+    </div>
+
+</div>
+
+
+</main>
+
+
+<!-- =========================
+     BOTÃO VOLTAR AO TOPO
+========================= -->
+
+<button id="topBtn" onclick="voltarTopo()">
+
+    ↑
 
 </button>
 
-<div id="mensagem">
-
-🎉 Dia 1 concluído! Continue firme nessa jornada.
-
-</div>
-
-</div>
-
-</div>
 
 <footer>
 
-🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+    🌿 Uma Vida com Propósitos • 40 Dias de Transformação
 
 </footer>
 
 
 <script>
-/* =========================
-   CONFIGURAÇÃO DO DIA
-========================= */
-
-const CHAVE_PROGRESSO = "proposito_dia1";
 
 /* =========================
-   ELEMENTOS DA CONCLUSÃO
+   PROGRESSO DA PÁGINA
 ========================= */
 
-const mensagem = document.getElementById("mensagem");
-const botao = document.querySelector(
-    '.card button[onclick="concluir()"]'
-);
+window.addEventListener("scroll", function(){
 
-/* =========================
-   ATUALIZAR A INTERFACE
-========================= */
+    const scrollTop =
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
 
-function atualizarEstadoConclusao() {
-    const concluido =
-        localStorage.getItem(CHAVE_PROGRESSO) === "concluido";
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
 
-    if (concluido) {
-        mensagem.style.display = "block";
-        botao.textContent = "✅ Dia concluído";
-        botao.disabled = true;
-        botao.style.opacity = ".7";
-        botao.style.cursor = "default";
-    } else {
-        mensagem.style.display = "none";
-        botao.textContent = "✔ Marcar como concluído";
-        botao.disabled = false;
-        botao.style.opacity = "";
-        botao.style.cursor = "";
-    }
-}
+    const progresso =
+        (scrollTop / scrollHeight) * 100;
 
-/* =========================
-   CONCLUIR O DIA
-========================= */
+    document.getElementById("progressBar").style.width =
+        progresso + "%";
 
-function concluir() {
-    // Evita executar a conclusão mais de uma vez.
-    if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
-        atualizarEstadoConclusao();
-        return;
+
+    /* BOTÃO TOPO */
+
+    const topBtn = document.getElementById("topBtn");
+
+    if(scrollTop > 500){
+
+        topBtn.style.display = "flex";
+
+    }else{
+
+        topBtn.style.display = "none";
+
     }
 
-    // Registra o dia na jornada correta.
-    localStorage.setItem(CHAVE_PROGRESSO, "concluido");
+});
 
-    // Atualiza a interface.
-    atualizarEstadoConclusao();
-
-    // Retorna à página inicial após 1,5 segundo.
-    setTimeout(function () {
-        window.location.href = "home.html";
-    }, 1500);
-}
 
 /* =========================
-   INICIALIZAÇÃO
+   VOLTAR AO TOPO
 ========================= */
 
-atualizarEstadoConclusao();
+function voltarTopo(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* =========================
+   REFLEXÃO
+========================= */
+
+const reflexao = document.getElementById("reflexao");
+
+const contador = document.getElementById("contador");
+
+
+/* Recupera a reflexão salva */
+
+const reflexaoSalva =
+    localStorage.getItem("reflexaoDia1");
+
+
+if(reflexaoSalva){
+
+    reflexao.value = reflexaoSalva;
+
+    contador.textContent =
+        reflexaoSalva.length;
+
+}
+
+
+/* Salva automaticamente */
+
+reflexao.addEventListener("input", function(){
+
+    localStorage.setItem(
+        "reflexaoDia1",
+        reflexao.value
+    );
+
+    contador.textContent =
+        reflexao.value.length;
+
+});
+
+
+/* =========================
+   CONCLUSÃO
+========================= */
+
+const mensagem =
+    document.getElementById("mensagem");
+
+const botao =
+    document.getElementById("botaoConcluir");
+
+
+/* Se já estiver concluído */
+
+if(localStorage.getItem("dia1") === "concluido"){
+
+    mensagem.style.display = "block";
+
+    botao.innerHTML =
+        "✅ Dia concluído";
+
+    botao.disabled = true;
+
+    botao.style.opacity = ".7";
+
+    botao.style.cursor = "default";
+
+}
+
+
+/* Concluir */
+
+function concluir(){
+
+    localStorage.setItem(
+        "dia1",
+        "concluido"
+    );
+
+    mensagem.style.display = "block";
+
+    botao.innerHTML =
+        "✅ Dia concluído";
+
+    botao.disabled = true;
+
+    botao.style.opacity = ".7";
+
+    botao.style.cursor = "default";
+
+
+    setTimeout(() => {
+
+        window.location.href =
+            "index.html";
+
+    },1500);
+
+}
+
 </script>
 
+
 </body>
+
 </html>

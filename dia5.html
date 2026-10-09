@@ -18,199 +18,168 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
+
 font-family:'Inter',sans-serif;
 background:#f6f3ec;
 color:#38463a;
 line-height:1.8;
+
 }
 
 header{
-min-height:340px;
+
+height:340px;
+
 background:
 linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
 url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+
 background-size:cover;
 background-position:center;
+
 display:flex;
 justify-content:center;
 align-items:center;
+
 text-align:center;
 color:white;
-padding:20px;
+
 }
 
 header h1{
-font-family:"Playfair Display",serif;
+
+font-family:"Playfair Display";
 font-size:55px;
-margin-bottom:10px;
+
 }
 
 header p{
+
 font-size:22px;
+
 }
 
+
 .container{
+
 max-width:900px;
 margin:auto;
 padding:45px 20px;
+
 }
+
 
 .card{
+
 background:white;
 padding:35px;
+
 border-radius:20px;
+
 margin-bottom:30px;
+
 box-shadow:0 10px 30px rgba(0,0,0,.08);
-animation:fade .6s ease both;
+
 }
 
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
 
 h2{
+
 color:#4f6f52;
 margin-bottom:20px;
 font-size:28px;
+
 }
+
 
 ul{
+
 padding-left:22px;
+
 }
+
 
 li{
+
 margin-bottom:14px;
+
 }
+
 
 blockquote{
+
 background:#eef6ef;
+
 padding:20px;
+
 border-left:6px solid #4f6f52;
+
 border-radius:10px;
+
 font-style:italic;
-margin-top:20px;
+
 }
+
 
 .frase{
+
 font-size:24px;
+
 text-align:center;
+
 font-style:italic;
+
 color:#4f6f52;
+
 font-weight:600;
+
 }
+
 
 button{
+
 margin-top:15px;
+
 padding:16px 40px;
+
 background:#4f6f52;
+
 color:white;
+
 border:none;
+
 border-radius:40px;
+
 font-size:17px;
+
 cursor:pointer;
-transition:transform .3s,background .3s;
+
 }
 
-button:hover:not(:disabled){
-transform:translateY(-3px);
-background:#3e5c42;
-}
-
-button:focus-visible{
-outline:3px solid #8da991;
-outline-offset:4px;
-}
-
-button:disabled{
-opacity:.7;
-cursor:default;
-}
 
 #mensagem{
+
 display:none;
+
 margin-top:20px;
+
 font-weight:bold;
+
 color:#2d7a46;
+
 font-size:18px;
+
 }
 
+
 footer{
+
 padding:40px;
+
 text-align:center;
+
 opacity:.6;
-}
-
-@media(max-width:600px){
-
-header{
-min-height:280px;
-}
-
-header h1{
-font-size:40px;
-}
-
-header p{
-font-size:18px;
-}
-
-.container{
-padding:30px 15px;
-}
-
-.card{
-padding:25px 20px;
-border-radius:16px;
-}
-
-h2{
-font-size:24px;
-}
-
-.frase{
-font-size:21px;
-}
-
-blockquote{
-padding:16px;
-}
-
-button{
-max-width:100%;
-padding:14px 25px;
-}
-
-footer{
-padding:30px 20px;
-}
-
-}
-
-@media(prefers-reduced-motion:reduce){
-
-html{
-scroll-behavior:auto;
-}
-
-.card{
-animation:none;
-}
-
-button{
-transition:none;
-}
 
 }
 
@@ -218,7 +187,9 @@ transition:none;
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -232,42 +203,56 @@ transition:none;
 
 </header>
 
+
 <div class="container">
+
 
 <div class="card">
 
 <h2>✨ Reflexão do dia</h2>
 
 <p>
+
 Nem sempre conseguimos entender por que determinadas coisas acontecem em nossa vida. Existem momentos de alegria, momentos de espera, situações inesperadas e até experiências que gostaríamos de evitar.
+
 </p>
 
 <br>
 
 <p>
+
 Quando olhamos apenas pela nossa perspectiva, podemos enxergar algumas situações como perda, atraso ou dificuldade. Mas Deus enxerga nossa história de uma maneira muito maior. Aquilo que hoje parece apenas um acontecimento pode estar formando nosso caráter, ensinando algo ou preparando nosso coração para aquilo que virá.
+
 </p>
 
 <br>
 
 <p>
+
 Por isso, viver com propósito também significa aprender a perguntar: <strong>"O que Deus quer me ensinar através disso?"</strong>
+
 </p>
 
 </div>
+
+
 
 <div class="card">
 
 <h2>👀 Uma nova perspectiva</h2>
 
 <p>
+
 Nossa maneira de enxergar a vida influencia diretamente a maneira como reagimos a ela. Duas pessoas podem passar por situações parecidas e sair delas com aprendizados completamente diferentes.
+
 </p>
 
 <br>
 
 <p>
+
 Quando começamos a enxergar nossa história pela perspectiva de Deus, algumas situações ganham um novo significado:
+
 </p>
 
 <br>
@@ -288,18 +273,24 @@ Quando começamos a enxergar nossa história pela perspectiva de Deus, algumas s
 
 </div>
 
+
+
 <div class="card">
 
 <h2>🌱 Fidelidade nas pequenas coisas</h2>
 
 <p>
+
 É fácil imaginar que só grandes acontecimentos têm importância. Podemos pensar que servir a Deus significa realizar algo extraordinário ou fazer algo que será visto por muitas pessoas.
+
 </p>
 
 <br>
 
 <p>
+
 Mas Deus também observa aquilo que fazemos quando ninguém está olhando. A maneira como tratamos alguém, cumprimos uma responsabilidade, usamos nosso tempo, cuidamos de um talento ou reagimos diante de uma dificuldade também faz parte da nossa caminhada.
+
 </p>
 
 <br>
@@ -321,48 +312,66 @@ Mas Deus também observa aquilo que fazemos quando ninguém está olhando. A man
 <br>
 
 <p>
+
 Grandes propósitos muitas vezes são construídos através de pequenas atitudes repetidas todos os dias.
+
 </p>
 
 </div>
+
+
 
 <div class="card">
 
 <h2>👐 O que Deus colocou em suas mãos?</h2>
 
 <p>
+
 Cada pessoa recebeu algo que pode cuidar, desenvolver e colocar a serviço de Deus. Pode ser um talento, uma habilidade, uma responsabilidade, um relacionamento ou uma oportunidade.
+
 </p>
 
 <br>
 
 <p>
+
 Talvez você esteja esperando receber algo maior, enquanto Deus está observando como você está cuidando daquilo que já colocou em suas mãos.
+
 </p>
 
 <br>
 
 <p>
+
 Antes de perguntar <strong>"O que mais Deus pode me dar?"</strong>, talvez seja importante perguntar: <strong>"Estou sendo fiel com aquilo que já recebi?"</strong>
+
 </p>
 
 </div>
+
+
 
 <div class="card">
 
 <h2>💬 Tema para reflexão</h2>
 
 <p class="frase">
+
 "Cada momento da vida pode nos ensinar algo e revelar como temos cuidado daquilo que Deus colocou em nossas mãos."
+
 </p>
 
 <br>
 
 <p style="text-align:center">
+
 Quando aprendemos a enxergar nossa vida pela perspectiva de Deus, até as pequenas experiências podem ganhar significado.
+
 </p>
 
 </div>
+
+
 
 <div class="card">
 
@@ -371,7 +380,9 @@ Quando aprendemos a enxergar nossa vida pela perspectiva de Deus, até as pequen
 <blockquote>
 
 <strong>
+
 "Quem é fiel nas coisas pequenas também será nas grandes."
+
 </strong>
 
 <br><br>
@@ -382,12 +393,16 @@ Quando aprendemos a enxergar nossa vida pela perspectiva de Deus, até as pequen
 
 </div>
 
+
+
 <div class="card">
 
 <h2>🤔 Pergunta para meditar</h2>
 
 <blockquote>
+
 Que situações recentes podem ter sido oportunidades para eu demonstrar minha fé, responsabilidade e confiança em Deus? E quais pessoas, talentos ou responsabilidades Ele colocou sob meus cuidados?
+
 </blockquote>
 
 <br>
@@ -395,28 +410,38 @@ Que situações recentes podem ter sido oportunidades para eu demonstrar minha f
 <h3>💭 Reflexão</h3>
 
 <p>
+
 Talvez algumas situações recentes tenham parecido pequenas demais para ter algum significado. Uma conversa, uma responsabilidade, uma oportunidade de ajudar alguém, uma dificuldade ou até mesmo um momento em que você precisou escolher entre fazer o certo ou fazer o mais fácil.
+
 </p>
 
 <br>
 
 <p>
+
 Pare por alguns minutos e pense nas últimas semanas. O que aconteceu que pode ter sido uma oportunidade de demonstrar sua fé? Como você reagiu? O que poderia ter feito diferente?
+
 </p>
 
 <br>
 
 <p>
+
 Depois, olhe para aquilo que Deus já colocou sob seus cuidados. Pessoas, talentos, tempo, trabalho, estudos, família, amizades e oportunidades são responsabilidades que podem ser cuidadas com fidelidade.
+
 </p>
 
 <br>
 
 <p>
+
 <strong>Talvez o propósito de Deus para o próximo passo da sua vida comece justamente na maneira como você cuida daquilo que já está em suas mãos hoje.</strong>
+
 </p>
 
 </div>
+
+
 
 <div class="card">
 
@@ -442,126 +467,112 @@ Amém.
 
 </div>
 
+
+
 <div class="card">
 
 <h2>⭐ Frase do dia</h2>
 
 <p class="frase">
+
 "Deus pode usar pequenas atitudes de fidelidade para construir grandes propósitos."
+
 </p>
 
 </div>
+
+
 
 <div class="card" style="text-align:center;">
 
 <h2>✅ Conclusão</h2>
 
 <p>
+
 Parabéns por concluir o quinto dia da jornada.
+
 </p>
 
 <br>
 
 <p>
+
 Hoje você refletiu sobre a importância de olhar para a vida através da perspectiva de Deus e reconhecer que até os momentos mais simples podem carregar ensinamentos e oportunidades.
+
 </p>
 
 <br>
 
 <p>
+
 Que você aprenda a ser fiel naquilo que Deus já colocou em suas mãos e confie que cada pequeno passo pode fazer parte de algo muito maior.
+
 </p>
 
-<button type="button" id="botaoConcluir" onclick="concluir()">
+
+<button onclick="concluir()">
+
 ✔ Marcar como concluído
+
 </button>
 
-<div id="mensagem" role="status" aria-live="polite">
-🎉 Dia 5 concluído! Continue firme nessa jornada.
-</div>
+
+<div id="mensagem">
+
+🎉 Dia 5 concluído! Voltando para a página inicial...
 
 </div>
 
+
 </div>
+
+
+</div>
+
+
 
 <footer>
+
 🌿 Uma Vida com Propósitos • 40 Dias de Transformação
+
 </footer>
+
+
 
 <script>
 
-/* =========================
-   CONFIGURAÇÃO DO DIA
-========================= */
+if(localStorage.getItem("dia4") !== "concluido"){
 
-const CHAVE_PROGRESSO = "proposito_dia5";
-
-/* =========================
-   ELEMENTOS DA CONCLUSÃO
-========================= */
-
-const mensagem = document.getElementById("mensagem");
-const botao = document.getElementById("botaoConcluir");
-
-/* =========================
-   ATUALIZAR A INTERFACE
-========================= */
-
-function atualizarEstadoConclusao() {
-
-    const concluido =
-        localStorage.getItem(CHAVE_PROGRESSO) === "concluido";
-
-    if (concluido) {
-
-        mensagem.style.display = "block";
-        botao.textContent = "✅ Dia concluído";
-        botao.disabled = true;
-
-    } else {
-
-        mensagem.style.display = "none";
-        botao.textContent = "✔ Marcar como concluído";
-        botao.disabled = false;
-
-    }
+    window.location.href="index.html";
 
 }
 
-/* =========================
-   CONCLUIR O DIA
-========================= */
 
-function concluir() {
+function concluir(){
 
-    // Evita registrar novamente um dia já concluído.
-    if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
-        atualizarEstadoConclusao();
-        return;
-    }
+localStorage.setItem("dia5","concluido");
 
-    // Salva o progresso exclusivo da jornada principal.
-    localStorage.setItem(CHAVE_PROGRESSO, "concluido");
+document.getElementById("mensagem").style.display="block";
 
-    // Atualiza a mensagem e o botão.
-    atualizarEstadoConclusao();
 
-    // Retorna à página inicial após 1,5 segundo.
-    setTimeout(function () {
-        window.location.href = "home.html";
-    }, 1500);
+setTimeout(()=>{
+
+window.location.href="index.html";
+
+},1500);
 
 }
 
-/* =========================
-   INICIALIZAÇÃO
-========================= */
 
-atualizarEstadoConclusao();
+if(localStorage.getItem("dia5")=="concluido"){
+
+document.getElementById("mensagem").style.display="block";
+
+}
 
 </script>
+
 
 </body>
 
 </html>
-
