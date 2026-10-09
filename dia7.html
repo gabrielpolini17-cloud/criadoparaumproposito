@@ -1983,350 +1983,38 @@ fortalecer sua fé e aprender a viver com propósito.
 
 
 <script>
+const mensagem = document.getElementById("mensagem");
+const botao = document.querySelector("button");
 
+// Chave exclusiva da jornada "Criado para um Propósito"
+const CHAVE_PROGRESSO = "proposito_dia7";
 
-/* =========================
-   PROTEÇÃO DA JORNADA
-========================= */
-
-if(localStorage.getItem("dia6") !== "concluido"){
-
-    window.location.href="index.html";
-
+// Verifica se o dia já foi concluído anteriormente
+if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
+    mensagem.style.display = "block";
+    botao.innerHTML = "✅ Dia concluído";
+    botao.disabled = true;
+    botao.style.opacity = ".7";
+    botao.style.cursor = "default";
 }
 
+function concluir() {
+    localStorage.setItem(CHAVE_PROGRESSO, "concluido");
 
-/* =========================
-   BARRA DE PROGRESSO
-========================= */
+    mensagem.style.display = "block";
+    botao.innerHTML = "✅ Dia concluído";
+    botao.disabled = true;
+    botao.style.opacity = ".7";
+    botao.style.cursor = "default";
 
-window.addEventListener("scroll",()=>{
-
-    const altura =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-    const progresso =
-        (window.scrollY / altura) * 100;
-
-    document.getElementById("progressBar").style.width =
-        progresso + "%";
-
-});
-
-
-/* =========================
-   ANIMAÇÃO DOS CARDS
-========================= */
-
-const observer =
-    new IntersectionObserver((entries)=>{
-
-        entries.forEach(entry=>{
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add("visible");
-
-            }
-
-        });
-
-    },{
-        threshold:.12
-    });
-
-
-document.querySelectorAll(".reveal")
-    .forEach(el=>observer.observe(el));
-
-
-/* =========================
-   PAUSA INTERATIVA
-========================= */
-
-let pausaEtapa = 0;
-
-const pausas = [
-
-    {
-        titulo:"Respire fundo...",
-        texto:"Você não precisa resolver sua vida agora. Apenas reconheça que Deus está presente."
-    },
-
-    {
-        titulo:"Olhe ao seu redor...",
-        texto:"Pense em uma coisa pela qual você pode agradecer a Deus neste exato momento."
-    },
-
-    {
-        titulo:"Agora pense...",
-        texto:"Existe alguma área da sua vida em que você precisa parar de viver no automático?"
-    },
-
-    {
-        titulo:"Por fim...",
-        texto:"Diga em silêncio: Deus, este momento também pertence a Ti."
-    },
-
-    {
-        titulo:"Continue sua jornada 🌿",
-        texto:"Leve essa consciência para o restante do seu dia."
-    }
-
-];
-
-
-function iniciarPausa(){
-
-    pausaEtapa = 0;
-
-    document.getElementById("pauseExperience")
-        .classList.add("active");
-
-    atualizarPausa();
-
+    // Aguarda 1,5 segundos e volta para a página inicial
+    setTimeout(() => {
+        window.location.href = "home.html";
+    }, 1500);
 }
-
-
-function proximaPausa(){
-
-    pausaEtapa++;
-
-    if(pausaEtapa >= pausas.length){
-
-        document.getElementById("pauseQuestion")
-            .innerText="🌿 Pausa concluída";
-
-        document.getElementById("pauseText")
-            .innerText=
-            "Agora continue sua jornada levando consigo esta pequena lembrança: Deus está presente até nos momentos mais simples.";
-
-        return;
-
-    }
-
-    atualizarPausa();
-
-}
-
-
-function atualizarPausa(){
-
-    document.getElementById("pauseQuestion")
-        .innerText=pausas[pausaEtapa].titulo;
-
-    document.getElementById("pauseText")
-        .innerText=pausas[pausaEtapa].texto;
-
-}
-
-
-/* =========================
-   DESAFIO
-========================= */
-
-function marcarDesafio(checkbox){
-
-    const item =
-        checkbox.closest(".challenge-item");
-
-    if(checkbox.checked){
-
-        item.classList.add("completed");
-
-    }else{
-
-        item.classList.remove("completed");
-
-    }
-
-    salvarDesafios();
-
-}
-
-
-function salvarDesafios(){
-
-    const estados =
-        [...document.querySelectorAll(".challenge-item input")]
-        .map(input=>input.checked);
-
-    localStorage.setItem(
-        "dia7Desafios",
-        JSON.stringify(estados)
-    );
-
-}
-
-
-function carregarDesafios(){
-
-    const dados =
-        localStorage.getItem("dia7Desafios");
-
-    if(!dados) return;
-
-    const estados = JSON.parse(dados);
-
-    const inputs =
-        document.querySelectorAll(".challenge-item input");
-
-    inputs.forEach((input,index)=>{
-
-        if(estados[index]){
-
-            input.checked=true;
-
-            input.closest(".challenge-item")
-                .classList.add("completed");
-
-        }
-
-    });
-
-}
-
-carregarDesafios();
-
-
-/* =========================
-   REFLEXÃO
-========================= */
-
-function salvarReflexao(){
-
-    const texto =
-        document.getElementById("reflexao").value;
-
-    localStorage.setItem(
-        "dia7Reflexao",
-        texto
-    );
-
-    const saved =
-        document.getElementById("saved");
-
-    saved.classList.add("show");
-
-    clearTimeout(window.salvarTimer);
-
-    window.salvarTimer =
-        setTimeout(()=>{
-
-            saved.classList.remove("show");
-
-        },1800);
-
-}
-
-
-const reflexaoSalva =
-    localStorage.getItem("dia7Reflexao");
-
-if(reflexaoSalva){
-
-    document.getElementById("reflexao")
-        .value=reflexaoSalva;
-
-}
-
-
-/* =========================
-   VERSÍCULO
-========================= */
-
-function mostrarVersiculo(){
-
-    document.getElementById("verseContent")
-        .classList.add("show");
-
-}
-
-
-/* =========================
-   CONCLUSÃO
-========================= */
-
-function concluir(){
-
-    localStorage.setItem(
-        "dia7",
-        "concluido"
-    );
-
-    document.getElementById("mensagem")
-        .style.display="block";
-
-    criarConfetes();
-
-    window.scrollTo({
-        top:document.body.scrollHeight,
-        behavior:"smooth"
-    });
-
-    setTimeout(()=>{
-
-        window.location.href="index.html";
-
-    },3000);
-
-}
-
-
-/* =========================
-   CONFETES
-========================= */
-
-function criarConfetes(){
-
-    const quantidade=70;
-
-    for(let i=0;i<quantidade;i++){
-
-        const confete =
-            document.createElement("div");
-
-        confete.classList.add("confete");
-
-        confete.style.left =
-            Math.random()*100+"%";
-
-        confete.style.animationDelay =
-            Math.random()*0.8+"s";
-
-        confete.style.transform =
-            `rotate(${Math.random()*360}deg)`;
-
-        confete.style.background =
-            ["#4f6f52","#789479","#d8c79c","#eef6ef"]
-            [Math.floor(Math.random()*4)];
-
-        document.body.appendChild(confete);
-
-        setTimeout(()=>{
-
-            confete.remove();
-
-        },3500);
-
-    }
-
-}
-
-
-/* =========================
-   ESTADO CONCLUÍDO
-========================= */
-
-if(localStorage.getItem("dia7")=="concluido"){
-
-    document.getElementById("mensagem")
-        .style.display="block";
-
-}
-
 </script>
+
+
 
 
 </body>
