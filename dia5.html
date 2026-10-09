@@ -540,37 +540,38 @@ Que você aprenda a ser fiel naquilo que Deus já colocou em suas mãos e confie
 
 
 <script>
+const mensagem = document.getElementById("mensagem");
+const botao = document.querySelector("button");
 
-if(localStorage.getItem("dia4") !== "concluido"){
+// Chave exclusiva da jornada "Criado para um Propósito"
+const CHAVE_PROGRESSO = "proposito_dia5";
 
-    window.location.href="index.html";
-
+// Verifica se o dia já foi concluído anteriormente
+if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
+    mensagem.style.display = "block";
+    botao.innerHTML = "✅ Dia concluído";
+    botao.disabled = true;
+    botao.style.opacity = ".7";
+    botao.style.cursor = "default";
 }
 
+function concluir() {
+    localStorage.setItem(CHAVE_PROGRESSO, "concluido");
 
-function concluir(){
+    mensagem.style.display = "block";
+    botao.innerHTML = "✅ Dia concluído";
+    botao.disabled = true;
+    botao.style.opacity = ".7";
+    botao.style.cursor = "default";
 
-localStorage.setItem("dia5","concluido");
-
-document.getElementById("mensagem").style.display="block";
-
-
-setTimeout(()=>{
-
-window.location.href="index.html";
-
-},1500);
-
+    // Aguarda 1,5 segundos e volta para a página inicial
+    setTimeout(() => {
+        window.location.href = "home.html";
+    }, 1500);
 }
-
-
-if(localStorage.getItem("dia5")=="concluido"){
-
-document.getElementById("mensagem").style.display="block";
-
-}
-
 </script>
+
+
 
 
 </body>
