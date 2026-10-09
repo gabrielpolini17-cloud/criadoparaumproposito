@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -277,6 +277,11 @@
             border-color: #e8e1d5;
         }
 
+        .timer-button:disabled {
+            opacity: 0.55;
+            cursor: default;
+        }
+
         /* =========================
            PRIVACIDADE
         ========================= */
@@ -466,6 +471,11 @@
             color: #171714;
         }
 
+        .finish-button:disabled {
+            opacity: 0.65;
+            cursor: default;
+        }
+
         /* =========================
            TOAST
         ========================= */
@@ -484,6 +494,9 @@
             pointer-events: none;
             transition: 0.4s;
             z-index: 100;
+            width: max-content;
+            max-width: calc(100% - 32px);
+            text-align: center;
         }
 
         .toast.show {
@@ -496,7 +509,6 @@
         ========================= */
 
         @keyframes fadeIn {
-
             from {
                 opacity: 0;
                 transform: translateY(15px);
@@ -506,7 +518,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-
         }
 
         /* =========================
@@ -514,7 +525,6 @@
         ========================= */
 
         @media (max-width: 600px) {
-
             header {
                 padding: 20px;
             }
@@ -553,18 +563,13 @@
             .delivery {
                 padding: 50px 10px;
             }
-
         }
-
     </style>
 </head>
 
-
 <body>
 
-
 <header>
-
     <div class="brand">
         40 Dias de Oração
     </div>
@@ -572,18 +577,14 @@
     <div class="day-counter">
         <strong>01</strong> / 40
     </div>
-
 </header>
-
 
 <!-- =========================
      ABERTURA
 ========================= -->
 
 <section class="intro">
-
     <div class="intro-content">
-
         <div class="small-title">
             Dia 01
         </div>
@@ -598,76 +599,59 @@
             antes de tentar encontrar respostas,
             simplesmente pare.
         </p>
-
     </div>
 
     <div class="scroll-indicator">
         continue
     </div>
-
 </section>
 
-
 <main>
-
 
     <!-- =========================
          REFLEXÃO
     ========================= -->
 
     <section class="block">
-
         <div class="label">
             Antes de começar
         </div>
 
         <div class="reflection-text">
-
             Você não precisa encontrar
             as palavras perfeitas.
             <span>Deus não está esperando
             uma oração perfeita.</span>
-
         </div>
 
         <br>
 
         <div class="reflection-text">
-
             Ele está esperando
             apenas que você
             se aproxime.
-
         </div>
-
     </section>
-
 
     <!-- =========================
          VERSÍCULO
     ========================= -->
 
     <section class="block verse-block">
-
         <div class="verse">
-
             “Aquietai-vos e sabei que eu sou Deus.”
-
         </div>
 
         <div class="reference">
             SALMOS 46:10
         </div>
-
     </section>
-
 
     <!-- =========================
          MOMENTO DE SILÊNCIO
     ========================= -->
 
     <section class="block prayer-area">
-
         <div class="label">
             Primeiro momento
         </div>
@@ -677,7 +661,6 @@
         </h2>
 
         <p class="prayer-description">
-
             Coloque o celular de lado.
             Respire devagar.
             Não peça nada.
@@ -685,50 +668,38 @@
 
             Apenas permaneça alguns minutos
             consciente da presença de Deus.
-
         </p>
 
-
         <div class="timer-container">
-
             <div id="timer">
                 02:00
             </div>
-
         </div>
-
 
         <button
             class="timer-button"
-            id="timerButton">
-
+            id="timerButton"
+            type="button">
             Começar
-
         </button>
-
     </section>
-
 
     <!-- =========================
          PRIVACIDADE
     ========================= -->
 
     <section class="block">
-
         <div class="privacy">
-
             <div class="privacy-icon">
                 🔒
             </div>
 
             <div>
-
                 <h3>
                     Este é um espaço somente seu.
                 </h3>
 
                 <p>
-
                     O que você escrever aqui não é enviado
                     para nenhum banco de dados e não fica
                     salvo no site.
@@ -739,55 +710,41 @@
                     Ninguém está lendo o que você escreveu.
 
                     Este espaço é entre você e Deus.
-
                 </p>
-
             </div>
-
         </div>
-
     </section>
-
 
     <!-- =========================
          PERGUNTA
     ========================= -->
 
     <section class="block">
-
         <div class="label">
             Agora, seja sincero
         </div>
 
         <div class="question">
-
             O que está no seu coração
             hoje?
-
         </div>
-
 
         <textarea
             id="answer"
             placeholder="Escreva aqui o que você gostaria de dizer a Deus..."
-        ></textarea>
-
+            aria-label="Escreva o que está no seu coração">
+        </textarea>
 
         <div class="temporary-note">
-
             🔒 Sua resposta não será salva.
-
         </div>
-
     </section>
-
 
     <!-- =========================
          ENTREGA
     ========================= -->
 
     <section class="block delivery">
-
         <div class="delivery-icon">
             ✦
         </div>
@@ -797,24 +754,19 @@
         </h2>
 
         <p>
-
             Depois de escrever, leia novamente
             aquilo que colocou aqui.
 
             Quando estiver pronto, entregue
             tudo isso a Deus.
-
         </p>
-
 
         <button
             class="deliver-button"
-            id="deliverButton">
-
+            id="deliverButton"
+            type="button">
             Entregar a Deus
-
         </button>
-
 
         <div
             class="delivered"
@@ -829,56 +781,41 @@
             </h2>
 
             <p>
-
                 Você não precisa carregar tudo sozinho.
-
                 <br>
-
                 Confie.
-
             </p>
-
         </div>
-
     </section>
-
 
     <!-- =========================
          FINAL
     ========================= -->
 
     <section class="finish">
-
         <p>
             Você chegou ao fim do primeiro dia.
         </p>
 
         <button
             class="finish-button"
-            id="finishButton">
-
+            id="finishButton"
+            type="button">
             Concluir Dia 1
-
         </button>
-
     </section>
-
 
 </main>
 
-
 <div
     class="toast"
-    id="toast">
-
+    id="toast"
+    role="status"
+    aria-live="polite">
     Dia 1 concluído.
-
 </div>
 
-
 <script>
-
-
     /* =========================
        TIMER
     ========================= */
@@ -887,148 +824,108 @@
     let timerInterval = null;
     let timerRunning = false;
 
-    const timerDisplay =
-        document.getElementById("timer");
-
-    const timerButton =
-        document.getElementById("timerButton");
-
+    const timerDisplay = document.getElementById("timer");
+    const timerButton = document.getElementById("timerButton");
 
     function updateTimer() {
-
-        const minutes =
-            Math.floor(seconds / 60);
-
-        const remainingSeconds =
-            seconds % 60;
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
 
         timerDisplay.textContent =
-            String(minutes).padStart(2, "0")
-            + ":" +
+            String(minutes).padStart(2, "0") +
+            ":" +
             String(remainingSeconds).padStart(2, "0");
-
     }
 
-
     timerButton.addEventListener("click", function () {
-
         if (timerRunning) {
-
             clearInterval(timerInterval);
-
             timerRunning = false;
-
-            timerButton.textContent =
-                "Continuar";
-
+            timerButton.textContent = "Continuar";
             return;
-
         }
 
+        if (seconds <= 0) {
+            return;
+        }
 
         timerRunning = true;
-
-        timerButton.textContent =
-            "Pausar";
-
+        timerButton.textContent = "Pausar";
 
         timerInterval = setInterval(function () {
-
             if (seconds > 0) {
-
                 seconds--;
-
                 updateTimer();
-
-            } else {
-
-                clearInterval(timerInterval);
-
-                timerRunning = false;
-
-                timerButton.textContent =
-                    "Momento concluído";
-
-                timerButton.disabled = true;
-
             }
 
+            if (seconds <= 0) {
+                clearInterval(timerInterval);
+                timerRunning = false;
+
+                timerButton.textContent = "Momento concluído";
+                timerButton.disabled = true;
+            }
         }, 1000);
-
     });
-
 
     /* =========================
        ENTREGAR A DEUS
     ========================= */
 
-    const answer =
-        document.getElementById("answer");
-
-    const deliverButton =
-        document.getElementById("deliverButton");
-
-    const delivered =
-        document.getElementById("delivered");
-
+    const answer = document.getElementById("answer");
+    const deliverButton = document.getElementById("deliverButton");
+    const delivered = document.getElementById("delivered");
 
     deliverButton.addEventListener("click", function () {
-
         /*
-            IMPORTANTE:
-
-            A resposta NÃO é salva.
-            Não usamos:
-            - localStorage
-            - sessionStorage
-            - cookies
-            - banco de dados
-            - servidor
-
-            O texto simplesmente é apagado
-            da memória da página.
-        */
-
+         * A resposta não é salva em armazenamento local,
+         * cookies ou banco de dados pelo código desta página.
+         * Ela é apagada quando a pessoa confirma a entrega.
+         */
 
         answer.value = "";
-
         answer.disabled = true;
 
         deliverButton.style.display = "none";
-
         delivered.classList.add("active");
-
     });
-
 
     /* =========================
-       CONCLUIR
+       CONCLUIR DIA 1
     ========================= */
 
-    const finishButton =
-        document.getElementById("finishButton");
-
-    const toast =
-        document.getElementById("toast");
-
+    const finishButton = document.getElementById("finishButton");
+    const toast = document.getElementById("toast");
 
     finishButton.addEventListener("click", function () {
+        /*
+         * Usa uma chave exclusiva para o projeto
+         * 40 Dias de Oração.
+         *
+         * A página oracao.html precisa consultar
+         * localStorage.getItem("oracao_dia1")
+         * para atualizar o progresso corretamente.
+         */
 
+        try {
+            localStorage.setItem("oracao_dia1", "concluido");
+        } catch (error) {
+            toast.textContent =
+                "Não foi possível salvar o progresso neste navegador.";
+            toast.classList.add("show");
+            return;
+        }
+
+        toast.textContent = "Dia 1 concluído! Voltando...";
         toast.classList.add("show");
 
-        finishButton.textContent =
-            "Dia 1 concluído ✓";
-
+        finishButton.textContent = "Dia 1 concluído ✓";
+        finishButton.disabled = true;
 
         setTimeout(function () {
-
-            toast.classList.remove("show");
-
-        }, 2500);
-
+            window.location.href = "oracao.html";
+        }, 1200);
     });
-
-
 </script>
 
 </body>
