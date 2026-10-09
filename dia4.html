@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -18,168 +19,173 @@ padding:0;
 box-sizing:border-box;
 }
 
-body{
+html{
+scroll-behavior:smooth;
+}
 
+body{
 font-family:'Inter',sans-serif;
 background:#f6f3ec;
 color:#38463a;
 line-height:1.8;
-
 }
 
 header{
-
 height:340px;
-
 background:
 linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
 url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
-
 background-size:cover;
 background-position:center;
-
 display:flex;
 justify-content:center;
 align-items:center;
-
 text-align:center;
 color:white;
-
+padding:20px;
 }
 
 header h1{
-
-font-family:"Playfair Display";
+font-family:"Playfair Display",serif;
 font-size:55px;
-
+margin-bottom:10px;
 }
 
 header p{
-
 font-size:22px;
-
 }
 
-
 .container{
-
 max-width:900px;
 margin:auto;
 padding:45px 20px;
-
 }
-
 
 .card{
-
 background:white;
 padding:35px;
-
 border-radius:20px;
-
 margin-bottom:30px;
-
 box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+animation:fade .6s;
 }
 
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
 h2{
-
 color:#4f6f52;
 margin-bottom:20px;
 font-size:28px;
-
 }
-
 
 ul{
-
 padding-left:22px;
-
 }
-
 
 li{
-
 margin-bottom:14px;
-
 }
-
 
 blockquote{
-
 background:#eef6ef;
-
 padding:20px;
-
 border-left:6px solid #4f6f52;
-
 border-radius:10px;
-
 font-style:italic;
-
+margin-top:20px;
 }
-
 
 .frase{
-
 font-size:24px;
-
 text-align:center;
-
 font-style:italic;
-
 color:#4f6f52;
-
 font-weight:600;
-
 }
-
 
 button{
-
 margin-top:15px;
-
 padding:16px 40px;
-
 background:#4f6f52;
-
 color:white;
-
 border:none;
-
 border-radius:40px;
-
 font-size:17px;
-
 cursor:pointer;
-
+transition:.3s;
 }
 
+button:hover:not(:disabled){
+transform:translateY(-3px);
+}
+
+button:disabled{
+opacity:.7;
+cursor:default;
+}
 
 #mensagem{
-
 display:none;
-
 margin-top:20px;
-
 font-weight:bold;
-
 color:#2d7a46;
-
 font-size:18px;
-
 }
 
+footer{
+padding:40px;
+text-align:center;
+opacity:.6;
+}
+
+@media(max-width:600px){
+
+header{
+height:280px;
+}
+
+header h1{
+font-size:40px;
+}
+
+header p{
+font-size:18px;
+}
+
+.container{
+padding:30px 15px;
+}
+
+.card{
+padding:25px 20px;
+border-radius:16px;
+}
+
+h2{
+font-size:24px;
+}
+
+.frase{
+font-size:21px;
+}
+
+button{
+max-width:100%;
+padding:14px 25px;
+}
 
 footer{
-
-padding:40px;
-
-text-align:center;
-
-opacity:.6;
+padding:30px 20px;
+}
 
 }
 
@@ -187,9 +193,7 @@ opacity:.6;
 
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -203,56 +207,42 @@ opacity:.6;
 
 </header>
 
-
 <div class="container">
-
 
 <div class="card">
 
 <h2>✨ Reflexão do dia</h2>
 
 <p>
-
 É fácil viver como se esta vida fosse tudo o que existe. Nossa rotina, nossos planos, nossos problemas, nossos sonhos e aquilo que desejamos conquistar podem ocupar tanto espaço que acabamos esquecendo que existe algo além do que podemos enxergar.
-
 </p>
 
 <br>
 
 <p>
-
 Nossa passagem por este mundo é apenas uma parte da história. Deus nos criou para algo que vai muito além dos anos que passamos aqui. A eternidade nos lembra que nossa existência não termina quando esta vida chega ao fim.
-
 </p>
 
 <br>
 
 <p>
-
 Quando entendemos isso, começamos a olhar para nossas escolhas de uma maneira diferente. Aquilo que parece tão importante hoje pode perder seu valor quando comparado com aquilo que permanece para sempre.
-
 </p>
 
 </div>
-
-
 
 <div class="card">
 
 <h2>🌅 Além desta vida</h2>
 
 <p>
-
 Muitas vezes concentramos nossa atenção apenas no que podemos ver e experimentar agora. Queremos conquistar, possuir, construir uma carreira, ser reconhecidos e aproveitar cada momento.
-
 </p>
 
 <br>
 
 <p>
-
 Não há nada de errado em cuidar da nossa vida presente. O problema acontece quando esquecemos que ela não é o destino final.
-
 </p>
 
 <br>
@@ -273,16 +263,12 @@ Não há nada de errado em cuidar da nossa vida presente. O problema acontece qu
 
 </div>
 
-
-
 <div class="card">
 
 <h2>🕊️ O que realmente importa?</h2>
 
 <p>
-
 Quando pensamos na eternidade, algumas prioridades começam a mudar.
-
 </p>
 
 <br>
@@ -304,36 +290,26 @@ Quando pensamos na eternidade, algumas prioridades começam a mudar.
 <br>
 
 <p>
-
 A eternidade muda a maneira como enxergamos o presente. Em vez de viver apenas para aquilo que podemos ganhar hoje, aprendemos a investir naquilo que possui valor eterno.
-
 </p>
 
 </div>
-
-
 
 <div class="card">
 
 <h2>💬 Tema para reflexão</h2>
 
 <p class="frase">
-
 "Nossa história não termina no que podemos ver."
-
 </p>
 
 <br>
 
 <p style="text-align:center">
-
 Existe muito mais além daquilo que nossos olhos conseguem enxergar. A vida presente é importante, mas ela não é tudo o que Deus preparou.
-
 </p>
 
 </div>
-
-
 
 <div class="card">
 
@@ -342,9 +318,7 @@ Existe muito mais além daquilo que nossos olhos conseguem enxergar. A vida pres
 <blockquote>
 
 <strong>
-
 "Este mundo está desaparecendo juntamente com tudo o que ele deseja. Mas se você fizer a vontade de Deus, viverá para sempre."
-
 </strong>
 
 <br><br>
@@ -355,16 +329,12 @@ Existe muito mais além daquilo que nossos olhos conseguem enxergar. A vida pres
 
 </div>
 
-
-
 <div class="card">
 
 <h2>🤔 Pergunta para meditar</h2>
 
 <blockquote>
-
 Se minha vida não termina aqui, o que preciso deixar para trás e o que preciso começar a fazer hoje para viver de acordo com aquilo que realmente importa para a eternidade?
-
 </blockquote>
 
 <br>
@@ -372,38 +342,28 @@ Se minha vida não termina aqui, o que preciso deixar para trás e o que preciso
 <h3>💭 Reflexão</h3>
 
 <p>
-
 Pensar na eternidade pode mudar completamente a maneira como enxergamos nossa vida. Algumas coisas que hoje parecem enormes talvez não tenham a mesma importância quando pensamos no que realmente permanecerá.
-
 </p>
 
 <br>
 
 <p>
-
 Talvez seja necessário deixar para trás hábitos, preocupações, atitudes ou prioridades que estão ocupando um espaço que deveria pertencer a Deus.
-
 </p>
 
 <br>
 
 <p>
-
 Ao mesmo tempo, existem coisas que podemos começar hoje: buscar mais a Deus, amar melhor as pessoas, perdoar, servir, fazer o bem e viver de maneira que nossa vida reflita aquilo em que acreditamos.
-
 </p>
 
 <br>
 
 <p>
-
 <strong>A pergunta não é apenas o que vou fazer com a minha vida, mas o que estou fazendo hoje que realmente terá valor para a eternidade.</strong>
-
 </p>
 
 </div>
-
-
 
 <div class="card">
 
@@ -429,114 +389,133 @@ Amém.
 
 </div>
 
-
-
 <div class="card">
 
 <h2>⭐ Frase do dia</h2>
 
 <p class="frase">
-
 "Quando lembro da eternidade, aprendo a não gastar minha vida apenas com aquilo que termina."
-
 </p>
 
 </div>
-
-
 
 <div class="card" style="text-align:center;">
 
 <h2>✅ Conclusão</h2>
 
 <p>
-
 Parabéns por concluir o quarto dia da jornada.
-
 </p>
 
 <br>
 
 <p>
-
 Hoje você refletiu sobre uma verdade que pode mudar a maneira como enxerga toda a sua vida: <strong>esta vida não é tudo o que existe.</strong>
-
 </p>
 
 <br>
 
 <p>
-
 Que a lembrança da eternidade ajude você a colocar cada coisa em seu devido lugar e a viver hoje de acordo com aquilo que realmente importa.
-
 </p>
 
-
-<button onclick="concluir()">
-
+<button type="button" onclick="concluir()">
 ✔ Marcar como concluído
-
 </button>
 
-
-<div id="mensagem">
-
-🎉 Dia 4 concluído! Voltando para a página inicial...
+<div id="mensagem" role="status" aria-live="polite">
+🎉 Dia 4 concluído! Continue firme nessa jornada.
+</div>
 
 </div>
 
-
 </div>
-
-
-</div>
-
-
 
 <footer>
-
 🌿 Uma Vida com Propósitos • 40 Dias de Transformação
-
 </footer>
 
-
-
-
 <script>
-const mensagem = document.getElementById("mensagem");
-const botao = document.querySelector("button");
 
-// Chave exclusiva da jornada "Criado para um Propósito"
+/* =========================
+   CONFIGURAÇÃO DO DIA
+========================= */
+
 const CHAVE_PROGRESSO = "proposito_dia4";
 
-// Verifica se o dia já foi concluído anteriormente
-if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
-    mensagem.style.display = "block";
-    botao.innerHTML = "✅ Dia concluído";
-    botao.disabled = true;
-    botao.style.opacity = ".7";
-    botao.style.cursor = "default";
+/* =========================
+   ELEMENTOS DA CONCLUSÃO
+========================= */
+
+const mensagem = document.getElementById("mensagem");
+
+const botao = document.querySelector(
+    '.card button[onclick="concluir()"]'
+);
+
+/* =========================
+   ATUALIZAR A INTERFACE
+========================= */
+
+function atualizarEstadoConclusao() {
+
+    const concluido =
+        localStorage.getItem(CHAVE_PROGRESSO) === "concluido";
+
+    if (concluido) {
+
+        mensagem.style.display = "block";
+        botao.textContent = "✅ Dia concluído";
+        botao.disabled = true;
+        botao.style.opacity = ".7";
+        botao.style.cursor = "default";
+
+    } else {
+
+        mensagem.style.display = "none";
+        botao.textContent = "✔ Marcar como concluído";
+        botao.disabled = false;
+        botao.style.opacity = "";
+        botao.style.cursor = "";
+
+    }
+
 }
+
+/* =========================
+   CONCLUIR O DIA
+========================= */
 
 function concluir() {
+
+    // Impede registrar novamente um dia já concluído.
+    if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
+        atualizarEstadoConclusao();
+        return;
+    }
+
+    // Salva o progresso desta jornada.
     localStorage.setItem(CHAVE_PROGRESSO, "concluido");
 
-    mensagem.style.display = "block";
-    botao.innerHTML = "✅ Dia concluído";
-    botao.disabled = true;
-    botao.style.opacity = ".7";
-    botao.style.cursor = "default";
+    // Atualiza a mensagem e o botão.
+    atualizarEstadoConclusao();
 
-    // Aguarda 1,5 segundos e volta para a página inicial
-    setTimeout(() => {
+    // Volta à página inicial após 1,5 segundo.
+    setTimeout(function () {
         window.location.href = "home.html";
     }, 1500);
+
 }
+
+/* =========================
+   INICIALIZAÇÃO
+========================= */
+
+atualizarEstadoConclusao();
+
 </script>
-
-
-
 
 </body>
 
 </html>
+
