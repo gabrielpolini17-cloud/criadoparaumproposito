@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -58,11 +59,7 @@ body::before {
   height: 650px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(
-    ellipse,
-    rgba(165, 138, 97, .105),
-    transparent 68%
-  );
+  background: radial-gradient(ellipse, rgba(165, 138, 97, .105), transparent 68%);
   pointer-events: none;
 }
 
@@ -81,11 +78,7 @@ body.light {
 }
 
 body.light::before {
-  background: radial-gradient(
-    ellipse,
-    rgba(180, 145, 91, .13),
-    transparent 68%
-  );
+  background: radial-gradient(ellipse, rgba(180, 145, 91, .13), transparent 68%);
 }
 
 button,
@@ -127,7 +120,6 @@ button {
 }
 
 .brand-symbol {
-  position: relative;
   display: grid;
   place-items: center;
   width: 45px;
@@ -135,11 +127,7 @@ button {
   flex-shrink: 0;
   border: 1px solid var(--border);
   border-radius: 15px;
-  background: linear-gradient(
-    145deg,
-    rgba(165, 138, 97, .15),
-    rgba(165, 138, 97, .025)
-  );
+  background: linear-gradient(145deg, rgba(165, 138, 97, .15), rgba(165, 138, 97, .025));
   color: var(--gold-light);
   font-size: 23px;
   box-shadow: inset 0 0 20px rgba(165, 138, 97, .035);
@@ -197,11 +185,7 @@ button {
   border: 1px solid var(--border);
   border-radius: 30px;
   background:
-    linear-gradient(
-      140deg,
-      rgba(165, 138, 97, .085),
-      transparent 45%
-    ),
+    linear-gradient(140deg, rgba(165, 138, 97, .085), transparent 45%),
     var(--card);
   box-shadow: var(--shadow);
 }
@@ -221,9 +205,7 @@ button {
   left: -100px;
   width: 330px;
   height: 330px;
-  box-shadow:
-    0 0 0 25px rgba(165, 138, 97, .018),
-    0 0 0 50px rgba(165, 138, 97, .014);
+  box-shadow: 0 0 0 25px rgba(165, 138, 97, .018), 0 0 0 50px rgba(165, 138, 97, .014);
 }
 
 .hero::after {
@@ -231,9 +213,7 @@ button {
   bottom: -190px;
   width: 390px;
   height: 390px;
-  box-shadow:
-    0 0 0 25px rgba(165, 138, 97, .018),
-    0 0 0 50px rgba(165, 138, 97, .014);
+  box-shadow: 0 0 0 25px rgba(165, 138, 97, .018), 0 0 0 50px rgba(165, 138, 97, .014);
 }
 
 .eyebrow {
@@ -363,12 +343,7 @@ main {
   width: 0%;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    #806644,
-    var(--gold-light),
-    #d0b98d
-  );
+  background: linear-gradient(90deg, #806644, var(--gold-light), #d0b98d);
   box-shadow: 0 0 14px rgba(165, 138, 97, .16);
   transition: width .5s ease;
 }
@@ -450,11 +425,7 @@ main {
   border: 1px solid var(--border);
   border-radius: 19px;
   background: var(--card);
-  transition:
-    transform .23s ease,
-    border-color .23s ease,
-    background .23s ease,
-    opacity .23s ease;
+  transition: transform .23s ease, border-color .23s ease, background .23s ease, opacity .23s ease;
 }
 
 .day-card::before {
@@ -466,11 +437,7 @@ main {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(165, 138, 97, .065),
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(165, 138, 97, .065), transparent 70%);
   pointer-events: none;
 }
 
@@ -510,6 +477,10 @@ main {
   border-color: rgba(126, 160, 119, .35);
   color: var(--green);
   background: rgba(126, 160, 119, .07);
+}
+
+.day-card.completed .day-status {
+  color: var(--green);
 }
 
 .day-card-top {
@@ -590,13 +561,7 @@ main {
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background:
-    linear-gradient(
-      115deg,
-      rgba(165, 138, 97, .09),
-      transparent 70%
-    ),
-    var(--card);
+  background: linear-gradient(115deg, rgba(165, 138, 97, .09), transparent 70%), var(--card);
   box-shadow: var(--shadow);
 }
 
@@ -643,10 +608,7 @@ main {
   text-decoration: none;
   font-size: 11px;
   font-weight: 700;
-  transition:
-    transform .2s,
-    background .2s,
-    border-color .2s;
+  transition: transform .2s, background .2s, border-color .2s;
 }
 
 .continue-button:hover {
@@ -1053,182 +1015,58 @@ main {
 
 <script>
 /*
- * ADICIONE AQUI OS DIAS QUE JÁ POSSUEM PÁGINAS PUBLICADAS.
+ * DIAS PUBLICADOS
  *
- * Exemplo:
- * const paginasPublicadas = [1, 2, 3];
- *
- * Para cada dia publicado, deve existir um arquivo com o nome:
+ * Os arquivos seguem o padrão:
  * dia1or40.html
  * dia2or40.html
- * dia3or40.html
+ * ...
  *
- * Os números que não estiverem nesta lista permanecerão bloqueados.
+ * Adicione à lista somente os dias que já existem.
  */
-
 const paginasPublicadas = [1];
 
 const dias = [
-  {
-    titulo: "Apenas fique aqui",
-    subtitulo: "Aprender a silenciar e entrar na presença de Deus"
-  },
-  {
-    titulo: "Antes de pedir, agradeça",
-    subtitulo: "Cultivar gratidão"
-  },
-  {
-    titulo: "Entregue suas preocupações",
-    subtitulo: "Colocar as ansiedades nas mãos de Deus"
-  },
-  {
-    titulo: "Fale com Deus de verdade",
-    subtitulo: "Abandonar orações automáticas e ser sincero"
-  },
-  {
-    titulo: "Ore por quem você ama",
-    subtitulo: "Interceder pela família e amigos"
-  },
-  {
-    titulo: "Quando o medo chegar",
-    subtitulo: "Entregar os medos a Deus"
-  },
-  {
-    titulo: "Aprenda a esperar",
-    subtitulo: "Confiar mesmo quando a resposta não vem"
-  },
-  {
-    titulo: "Peça sabedoria",
-    subtitulo: "Aprender a buscar direção antes de tomar decisões"
-  },
-  {
-    titulo: "Perdoe em oração",
-    subtitulo: "Levar mágoas e ressentimentos a Deus"
-  },
-  {
-    titulo: "Ore por quem te feriu",
-    subtitulo: "Transformar dor em intercessão"
-  },
-  {
-    titulo: "Seus sonhos nas mãos de Deus",
-    subtitulo: "Entregar planos e desejos"
-  },
-  {
-    titulo: "Quando você não souber o que fazer",
-    subtitulo: "Buscar direção"
-  },
-  {
-    titulo: "Ore pelo seu futuro",
-    subtitulo: "Confiar o amanhã a Deus"
-  },
-  {
-    titulo: "Quando Deus parecer distante",
-    subtitulo: "Permanecer mesmo sem sentir"
-  },
-  {
-    titulo: "Uma oração pela sua família",
-    subtitulo: "Intercessão mais profunda"
-  },
-  {
-    titulo: "Ore pelos seus amigos",
-    subtitulo: "Lembrar daqueles que caminham com você"
-  },
-  {
-    titulo: "Quando você estiver cansado",
-    subtitulo: "Encontrar descanso em Deus"
-  },
-  {
-    titulo: "Confesse e recomece",
-    subtitulo: "Arrependimento e graça"
-  },
-  {
-    titulo: "Peça um coração novo",
-    subtitulo: "Transformação interior"
-  },
-  {
-    titulo: "Ore pelo seu caráter",
-    subtitulo: "Pedir para se tornar uma pessoa melhor"
-  },
-  {
-    titulo: "O silêncio também é oração",
-    subtitulo: "Aprender a ouvir"
-  },
-  {
-    titulo: "Não tenha medo de perguntar",
-    subtitulo: "Levar dúvidas para Deus"
-  },
-  {
-    titulo: "Quando a resposta for “não”",
-    subtitulo: "Confiar mesmo sem entender"
-  },
-  {
-    titulo: "Quando a resposta demorar",
-    subtitulo: "Perseverar"
-  },
-  {
-    titulo: "Ore pelos seus inimigos",
-    subtitulo: "Amar além dos sentimentos"
-  },
-  {
-    titulo: "Agradeça pelo que passou",
-    subtitulo: "Reconhecer a fidelidade de Deus"
-  },
-  {
-    titulo: "Ore pelo que ainda virá",
-    subtitulo: "Esperança no futuro"
-  },
-  {
-    titulo: "Coloque seus planos no altar",
-    subtitulo: "Abrir mão do controle"
-  },
-  {
-    titulo: "Peça coragem",
-    subtitulo: "Enfrentar aquilo que você tem evitado"
-  },
-  {
-    titulo: "Ore por uma vida com propósito",
-    subtitulo: "Buscar significado"
-  },
-  {
-    titulo: "Seja grato pelo hoje",
-    subtitulo: "Parar de viver apenas pelo amanhã"
-  },
-  {
-    titulo: "Ore por quem está sofrendo",
-    subtitulo: "Intercessão por outras pessoas"
-  },
-  {
-    titulo: "Quando você se sentir sozinho",
-    subtitulo: "Lembrar que Deus está presente"
-  },
-  {
-    titulo: "Peça discernimento",
-    subtitulo: "Aprender a reconhecer caminhos"
-  },
-  {
-    titulo: "Ore pelos seus sonhos, mas entregue o resultado",
-    subtitulo: "Desejar sem controlar"
-  },
-  {
-    titulo: "Uma oração de confiança",
-    subtitulo: "Descansar no cuidado de Deus"
-  },
-  {
-    titulo: "Consagre sua vida",
-    subtitulo: "Colocar tudo diante de Deus"
-  },
-  {
-    titulo: "O que Deus está formando em você?",
-    subtitulo: "Perceber transformação"
-  },
-  {
-    titulo: "Continue mesmo depois dos 40 dias",
-    subtitulo: "Transformar propósito em hábito"
-  },
-  {
-    titulo: "Uma vida de oração",
-    subtitulo: "Encerrar a jornada e começar uma nova caminhada"
-  }
+  { titulo: "Apenas fique aqui", subtitulo: "Aprender a silenciar e entrar na presença de Deus" },
+  { titulo: "Antes de pedir, agradeça", subtitulo: "Cultivar gratidão" },
+  { titulo: "Entregue suas preocupações", subtitulo: "Colocar as ansiedades nas mãos de Deus" },
+  { titulo: "Fale com Deus de verdade", subtitulo: "Abandonar orações automáticas e ser sincero" },
+  { titulo: "Ore por quem você ama", subtitulo: "Interceder pela família e amigos" },
+  { titulo: "Quando o medo chegar", subtitulo: "Entregar os medos a Deus" },
+  { titulo: "Aprenda a esperar", subtitulo: "Confiar mesmo quando a resposta não vem" },
+  { titulo: "Peça sabedoria", subtitulo: "Aprender a buscar direção antes de tomar decisões" },
+  { titulo: "Perdoe em oração", subtitulo: "Levar mágoas e ressentimentos a Deus" },
+  { titulo: "Ore por quem te feriu", subtitulo: "Transformar dor em intercessão" },
+  { titulo: "Seus sonhos nas mãos de Deus", subtitulo: "Entregar planos e desejos" },
+  { titulo: "Quando você não souber o que fazer", subtitulo: "Buscar direção" },
+  { titulo: "Ore pelo seu futuro", subtitulo: "Confiar o amanhã a Deus" },
+  { titulo: "Quando Deus parecer distante", subtitulo: "Permanecer mesmo sem sentir" },
+  { titulo: "Uma oração pela sua família", subtitulo: "Intercessão mais profunda" },
+  { titulo: "Ore pelos seus amigos", subtitulo: "Lembrar daqueles que caminham com você" },
+  { titulo: "Quando você estiver cansado", subtitulo: "Encontrar descanso em Deus" },
+  { titulo: "Confesse e recomece", subtitulo: "Arrependimento e graça" },
+  { titulo: "Peça um coração novo", subtitulo: "Transformação interior" },
+  { titulo: "Ore pelo seu caráter", subtitulo: "Pedir para se tornar uma pessoa melhor" },
+  { titulo: "O silêncio também é oração", subtitulo: "Aprender a ouvir" },
+  { titulo: "Não tenha medo de perguntar", subtitulo: "Levar dúvidas para Deus" },
+  { titulo: "Quando a resposta for “não”", subtitulo: "Confiar mesmo sem entender" },
+  { titulo: "Quando a resposta demorar", subtitulo: "Perseverar" },
+  { titulo: "Ore pelos seus inimigos", subtitulo: "Amar além dos sentimentos" },
+  { titulo: "Agradeça pelo que passou", subtitulo: "Reconhecer a fidelidade de Deus" },
+  { titulo: "Ore pelo que ainda virá", subtitulo: "Esperança no futuro" },
+  { titulo: "Coloque seus planos no altar", subtitulo: "Abrir mão do controle" },
+  { titulo: "Peça coragem", subtitulo: "Enfrentar aquilo que você tem evitado" },
+  { titulo: "Ore por uma vida com propósito", subtitulo: "Buscar significado" },
+  { titulo: "Seja grato pelo hoje", subtitulo: "Parar de viver apenas pelo amanhã" },
+  { titulo: "Ore por quem está sofrendo", subtitulo: "Intercessão por outras pessoas" },
+  { titulo: "Quando você se sentir sozinho", subtitulo: "Lembrar que Deus está presente" },
+  { titulo: "Peça discernimento", subtitulo: "Aprender a reconhecer caminhos" },
+  { titulo: "Ore pelos seus sonhos, mas entregue o resultado", subtitulo: "Desejar sem controlar" },
+  { titulo: "Uma oração de confiança", subtitulo: "Descansar no cuidado de Deus" },
+  { titulo: "Consagre sua vida", subtitulo: "Colocar tudo diante de Deus" },
+  { titulo: "O que Deus está formando em você?", subtitulo: "Perceber transformação" },
+  { titulo: "Continue mesmo depois dos 40 dias", subtitulo: "Transformar propósito em hábito" },
+  { titulo: "Uma vida de oração", subtitulo: "Encerrar a jornada e começar uma nova caminhada" }
 ];
 
 const icones = [
@@ -1237,6 +1075,13 @@ const icones = [
   "✦", "⌁", "✧", "♧", "✦", "♡", "◇", "☼", "✧", "♡",
   "☾", "◇", "⌁", "✧", "♧", "⌂", "✦", "♡", "◉", "✧"
 ];
+
+/*
+ * CHAVES EXCLUSIVAS DESTA JORNADA:
+ * oracao_dia1, oracao_dia2, ... oracao_dia40
+ *
+ * A chave "tema" abaixo é apenas a preferência visual.
+ */
 
 /* TEMA CLARO E ESCURO */
 
@@ -1282,15 +1127,14 @@ function aplicarTemaSalvo() {
   }
 
   document.body.classList.toggle("light", temaSalvo === "claro");
-
   atualizarIconeTema();
 }
 
-/* PROGRESSO DOS DIAS */
+/* PROGRESSO DOS DIAS — CHAVE EXCLUSIVA DA JORNADA DE ORAÇÃO */
 
 function diaConcluido(numero) {
   try {
-    return localStorage.getItem(`dia${numero}`) === "concluido";
+    return localStorage.getItem(`oracao_dia${numero}`) === "concluido";
   } catch (erro) {
     return false;
   }
@@ -1500,7 +1344,6 @@ function iniciarPagina() {
 
 /*
  * Atualiza os cartões e o progresso quando a página volta a ficar visível.
- * Isso ajuda a refletir a conclusão de um dia sem precisar editar o site.
  */
 
 window.addEventListener("pageshow", function() {
