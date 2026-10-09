@@ -394,49 +394,37 @@ Parabéns por concluir o primeiro dia da jornada. Que essas verdades permaneçam
 
 </footer>
 
-<script>
 
+<script>
 const mensagem = document.getElementById("mensagem");
 const botao = document.querySelector("button");
 
-// Se o dia já foi concluído anteriormente
-if(localStorage.getItem("dia1") === "concluido"){
+// Chave exclusiva da jornada "Criado para um Propósito"
+const CHAVE_PROGRESSO = "proposito_dia1";
 
+// Verifica se o dia já foi concluído anteriormente
+if (localStorage.getItem(CHAVE_PROGRESSO) === "concluido") {
     mensagem.style.display = "block";
-
     botao.innerHTML = "✅ Dia concluído";
-
     botao.disabled = true;
-
     botao.style.opacity = ".7";
-
     botao.style.cursor = "default";
-
 }
 
-function concluir(){
-
-    localStorage.setItem("dia1","concluido");
+function concluir() {
+    localStorage.setItem(CHAVE_PROGRESSO, "concluido");
 
     mensagem.style.display = "block";
-
     botao.innerHTML = "✅ Dia concluído";
-
     botao.disabled = true;
-
     botao.style.opacity = ".7";
-
     botao.style.cursor = "default";
 
     // Aguarda 1,5 segundos e volta para a página inicial
     setTimeout(() => {
-
-        window.location.href = "index.html";
-
+        window.location.href = "home.html";
     }, 1500);
-
 }
-
 </script>
 
 </body>
