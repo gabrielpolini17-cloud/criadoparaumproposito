@@ -1,474 +1,872 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Criado para um Propósito</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Criado para um Propósito — jornada de 40 dias</title>
+<meta name="description" content="Uma jornada de 40 dias para descobrir quem você é e entender o propósito de Deus para a sua vida. Acompanhe o seu progresso dia a dia.">
+<meta name="theme-color" content="#354f3b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🌿%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Caminhos de Propósito">
+<meta property="og:title" content="Criado para um Propósito — jornada de 40 dias">
+<meta property="og:description" content="Uma jornada de 40 dias para descobrir quem você é e entender o propósito de Deus para a sua vida.">
+<meta property="og:url" content="https://criadoparaumproposito.vercel.app/home.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- aplica o tema antes de desenhar a página (evita o "piscar" de claro para escuro) -->
+<script>
+(function () {
+    try {
+        var salvo = localStorage.getItem("tema");
+        var escuro = salvo ? salvo === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (escuro) { document.documentElement.classList.add("dark"); }
+    } catch (erro) { /* segue com o tema claro */ }
+})();
+</script>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+/* =========================================================
+   VARIÁVEIS (tema claro e escuro, mesma paleta do site)
+========================================================= */
+
+:root{
+    color-scheme:light;
+
+    --bg:#f5f3ed;
+    --text:#344238;
+    --muted:#5c645c;
+    --heading:#35483a;
+    --card:#ffffff;
+    --day:#f1f2ed;
+    --line:rgba(60,80,65,.14);
+    --track:#dfe3dc;
+    --fill:#4f6f52;
+    --accent:#4f6f52;
+    --accent-dark:#354f3b;
+    --accent-text:#405b45;
+    --focus:#b49a5d;
+    --done:#2e9e5b;
+    --current:#c9852a;
+    --shadow:0 10px 35px rgba(30,45,35,.07);
 }
 
-body {
-    font-family: Inter, sans-serif;
-    background: #F6F4EE;
-    color: #2F3A2F;
-    transition: .4s;
+html.dark{
+    color-scheme:dark;
+
+    --bg:#141916;
+    --text:#e8ede8;
+    --muted:#a9b4aa;
+    --heading:#dce8dc;
+    --card:#1e2521;
+    --day:#2a322d;
+    --line:rgba(255,255,255,.12);
+    --track:#3a443e;
+    --fill:#7fae84;
+    --accent-text:#a9cfae;
+    --shadow:0 10px 35px rgba(0,0,0,.35);
 }
 
-body.dark {
-    background: #1b1f1d;
-    color: white;
+
+/* =========================================================
+   BASE
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-header {
-    height: 330px;
+[hidden]{
+    display:none !important;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    transition:background .4s, color .4s;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:3px;
+}
+
+.sr-only{
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+    white-space:nowrap;
+}
+
+.skip-link{
+    position:absolute;
+    left:16px;
+    top:-60px;
+    z-index:100;
+    padding:10px 18px;
+    background:var(--accent-dark);
+    color:white;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    transition:top .2s;
+}
+
+.skip-link:focus{
+    top:16px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.hero{
+    position:relative;
+    min-height:350px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:96px 20px 110px;
+
     background:
-        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
+        linear-gradient(
+            rgba(14,27,18,.38),
+            rgba(14,27,18,.78)
+        ),
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=75");
+
+    background-size:cover;
+    background-position:center;
 }
 
-header h1 {
-    font-family: "Playfair Display", serif;
-    font-size: 50px;
-    margin-bottom: 15px;
+.hero::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:110px;
+    background:linear-gradient(transparent, var(--bg));
 }
 
-header p {
-    font-size: 20px;
-    opacity: .9;
+.hero-top{
+    position:absolute;
+    top:22px;
+    left:22px;
+    right:22px;
+    z-index:3;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
 }
 
-.theme {
-    position: absolute;
-    right: 25px;
-    top: 25px;
-    border: none;
-    font-size: 25px;
-    background: white;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: .3s;
+.voltar{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    border-radius:40px;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.38);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    color:white;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    transition:background .3s;
 }
 
-.theme:hover {
-    transform: rotate(20deg) scale(1.1);
+.voltar:hover{
+    background:rgba(255,255,255,.24);
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    margin-top: -70px;
+.theme{
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    background:white;
+    font-size:22px;
+    line-height:1;
+    cursor:pointer;
+    transition:transform .3s;
 }
 
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(0,0,0,.08);
-    margin-bottom: 30px;
-    transition: .4s;
+.theme:hover{
+    transform:rotate(20deg) scale(1.08);
 }
 
-body.dark .card {
-    background: #2a2f2d;
+.hero-text{
+    position:relative;
+    z-index:2;
+    max-width:760px;
 }
 
-.progress {
-    background: #ddd;
-    height: 18px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-top: 15px;
+.hero h1{
+    font-family:"DM Serif Display",serif;
+    font-weight:400;
+    font-size:56px;
+    line-height:1.08;
+    letter-spacing:-.8px;
+    margin-bottom:14px;
+    text-shadow:0 6px 30px rgba(0,0,0,.3);
 }
 
-.progress span {
-    display: block;
-    height: 100%;
-    width: 0%;
-    background: #4F6F52;
-    transition: .5s;
+.hero p{
+    font-size:20px;
+    font-weight:300;
+    opacity:.95;
 }
 
-.button {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 14px 30px;
-    background: #4F6F52;
-    color: white;
-    border-radius: 40px;
-    text-decoration: none;
-    transition: .3s;
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.container{
+    position:relative;
+    z-index:2;
+    width:90%;
+    max-width:1100px;
+    margin:-70px auto 0;
 }
 
-.button:hover {
-    transform: translateY(-3px);
+.card{
+    background:var(--card);
+    padding:32px;
+    border-radius:26px;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    margin-bottom:28px;
+    transition:background .4s;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+.card h2{
+    font-family:"DM Serif Display",serif;
+    font-weight:400;
+    font-size:30px;
+    line-height:1.2;
+    color:var(--heading);
+    margin-bottom:18px;
 }
 
-.day {
-    padding: 20px;
-    border-radius: 15px;
-    background: #f2f2f2;
-    transition: .3s;
-    cursor: pointer;
+.dia-atual{
+    font-size:16px;
 }
 
-.day:hover {
-    transform: translateY(-5px);
+.progress{
+    background:var(--track);
+    height:16px;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:14px;
 }
 
-body.dark .day {
-    background: #3b423f;
+.progress span{
+    display:block;
+    height:100%;
+    width:0%;
+    background:var(--fill);
+    border-radius:20px;
+    transition:width .5s;
 }
 
-.done {
-    border-left: 6px solid #2ecc71;
+.progresso-texto{
+    margin-top:10px;
+    font-size:14px;
+    color:var(--muted);
 }
 
-.current {
-    border-left: 6px solid orange;
+.dia-titulo{
+    margin-top:18px;
+    font-family:"DM Serif Display",serif;
+    font-size:22px;
+    line-height:1.3;
+    color:var(--heading);
 }
 
-.lock {
-    opacity: .5;
-    cursor: not-allowed;
+.nota{
+    margin-top:18px;
+    font-size:13px;
+    color:var(--muted);
 }
 
-footer {
-    text-align: center;
-    padding: 40px;
-    opacity: .6;
+.acoes{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:22px;
 }
 
-@media(max-width:700px) {
-    header h1 {
-        font-size: 35px;
+.button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:14px 28px;
+    border:1.5px solid transparent;
+    border-radius:40px;
+    background:var(--accent);
+    color:white;
+    font-family:inherit;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+    cursor:pointer;
+    transition:transform .3s, box-shadow .3s, background .3s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 26px rgba(53,79,59,.22);
+}
+
+.button.secundario{
+    background:transparent;
+    color:var(--accent-text);
+    border-color:var(--line);
+    box-shadow:none;
+}
+
+.button.secundario:hover{
+    background:var(--day);
+}
+
+.button.perigo{
+    background:#8a3b2f;
+}
+
+
+/* =========================================================
+   JORNADA CONCLUÍDA
+========================================================= */
+
+.concluida{
+    text-align:center;
+    background:linear-gradient(135deg, #354f3b, #668269);
+    color:white;
+    border-color:transparent;
+}
+
+.concluida h2{
+    color:white;
+}
+
+.concluida p{
+    max-width:560px;
+    margin:0 auto;
+}
+
+.concluida .acoes{
+    justify-content:center;
+}
+
+.concluida .button{
+    background:white;
+    color:#354f3b;
+}
+
+.concluida .button.secundario{
+    background:transparent;
+    color:white;
+    border-color:rgba(255,255,255,.5);
+}
+
+.concluida .button.secundario:hover{
+    background:rgba(255,255,255,.14);
+}
+
+
+/* =========================================================
+   CAPÍTULOS (SEMANAS)
+========================================================= */
+
+.semana{
+    border-top:1px solid var(--line);
+}
+
+.semana:first-child{
+    border-top:none;
+}
+
+.semana-resumo{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:18px 4px;
+    border-radius:12px;
+}
+
+.semana-resumo::-webkit-details-marker{
+    display:none;
+}
+
+.semana-resumo::after{
+    content:"";
+    flex:0 0 auto;
+    width:9px;
+    height:9px;
+    margin:0 6px 4px 2px;
+    border-right:2px solid var(--muted);
+    border-bottom:2px solid var(--muted);
+    transform:rotate(45deg);
+    transition:transform .3s;
+}
+
+.semana[open] > .semana-resumo::after{
+    transform:rotate(-135deg);
+    margin-bottom:-2px;
+}
+
+.semana-nome{
+    flex:1;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:4px 12px;
+}
+
+.semana-titulo{
+    font-family:"DM Serif Display",serif;
+    font-size:23px;
+    color:var(--heading);
+}
+
+.semana-dias,
+.semana-contagem{
+    font-size:13px;
+    color:var(--muted);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+    gap:16px;
+    padding:4px 0 24px;
+}
+
+.day{
+    display:block;
+    padding:18px 20px;
+    border-radius:18px;
+    border-left:6px solid transparent;
+    background:var(--day);
+    color:inherit;
+    text-decoration:none;
+    transition:transform .3s, background .4s;
+}
+
+a.day:hover{
+    transform:translateY(-4px);
+}
+
+.day-titulo{
+    font-size:16px;
+    font-weight:700;
+    color:var(--heading);
+    margin-bottom:6px;
+}
+
+.day-texto{
+    font-size:14px;
+    line-height:1.55;
+    color:var(--muted);
+}
+
+.day-aviso{
+    display:inline-block;
+    margin-top:10px;
+    padding:3px 10px;
+    border-radius:20px;
+    background:var(--line);
+    font-size:11px;
+    font-weight:600;
+    color:var(--muted);
+}
+
+.done{
+    border-left-color:var(--done);
+}
+
+.current{
+    border-left-color:var(--current);
+}
+
+.atual{
+    box-shadow:0 0 0 2px var(--current) inset;
+}
+
+.lock{
+    opacity:.62;
+    cursor:not-allowed;
+}
+
+
+/* =========================================================
+   CONFIRMAÇÃO (RECOMEÇAR)
+========================================================= */
+
+dialog{
+    margin:auto;
+    width:calc(100% - 40px);
+    max-width:440px;
+    padding:28px;
+    border:none;
+    border-radius:24px;
+    background:var(--card);
+    color:var(--text);
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+dialog::backdrop{
+    background:rgba(10,18,12,.55);
+}
+
+dialog h2{
+    font-family:"DM Serif Display",serif;
+    font-weight:400;
+    font-size:26px;
+    color:var(--heading);
+    margin-bottom:10px;
+}
+
+.dialogo-acoes{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:22px;
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+footer{
+    text-align:center;
+    padding:40px 20px 50px;
+    font-size:14px;
+    color:var(--muted);
+}
+
+footer a{
+    display:inline-block;
+    margin-top:8px;
+    color:var(--accent-text);
+    font-weight:600;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media(max-width:700px){
+
+    .hero{
+        min-height:320px;
+        padding:90px 20px 100px;
     }
 
-    header p {
-        font-size: 16px;
-        padding: 0 15px;
+    .hero h1{
+        font-size:38px;
     }
 
-    .container {
-        width: 92%;
+    .hero p{
+        font-size:17px;
     }
 
-    .card {
-        padding: 22px;
+    .hero-top{
+        top:14px;
+        left:14px;
+        right:14px;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
+    .voltar{
+        padding:9px 14px;
+        font-size:13px;
     }
 
-    .theme {
-        width: 45px;
-        height: 45px;
-        right: 15px;
-        top: 15px;
+    .theme{
+        width:42px;
+        height:42px;
+        font-size:19px;
     }
+
+    .container{
+        width:92%;
+    }
+
+    .card{
+        padding:22px;
+        border-radius:22px;
+    }
+
+    .card h2{
+        font-size:26px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .acoes .button{
+        width:100%;
+    }
+
 }
+
+
+/* =========================================================
+   MOVIMENTO REDUZIDO
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+        scroll-behavior:auto !important;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<header>
-    <button class="theme" onclick="tema()" aria-label="Alternar tema">🌙</button>
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-    <div>
-        <h1>🌿 Criado para um Propósito</h1>
+
+<header class="hero">
+
+    <div class="hero-top">
+
+        <a class="voltar" href="index.html">
+            <span aria-hidden="true">←</span> Todas as jornadas
+        </a>
+
+        <button id="tema" class="theme" type="button" aria-label="Tema escuro" aria-pressed="false">🌙</button>
+
+    </div>
+
+    <div class="hero-text">
+        <h1><span aria-hidden="true">🌿</span> Criado para um Propósito</h1>
         <p>Você foi criado por Deus e para Deus.</p>
     </div>
+
 </header>
 
-<div class="container">
 
-    <div class="card">
-        <h2>📅 Seu progresso</h2>
-        <br>
+<main id="conteudo" class="container">
 
-        <p>Dia atual: <b id="diaAtualTexto">1 de 40</b></p>
+    <!-- ---------- progresso ---------- -->
 
-        <div class="progress">
+    <section class="card" aria-labelledby="titulo-progresso">
+
+        <h2 id="titulo-progresso"><span aria-hidden="true">📅</span> Seu progresso</h2>
+
+        <p class="dia-atual">Dia atual: <b id="diaAtualTexto">1 de 40</b></p>
+
+        <div id="barraTrilho" class="progress" role="progressbar"
+             aria-label="Progresso da jornada"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
             <span id="barra"></span>
         </div>
 
-        <p id="progressoTexto" style="margin-top:10px;font-size:13px;opacity:.75;">
-            0 de 40 dias concluídos
+        <p id="progressoTexto" class="progresso-texto">
+            0 de 40 dias concluídos (0%)
         </p>
 
-        <a id="continuar" href="#" class="button">
-            ▶ Continuar leitura
-        </a>
-    </div>
+        <p id="diaAtualTitulo" class="dia-titulo" aria-live="polite"></p>
 
-    <div class="card">
-        <h2>📖 Capítulos</h2>
-        <br>
-        <div class="grid" id="dias"></div>
-    </div>
+        <div class="acoes">
 
-</div>
+            <a id="continuar" href="dia1.html" class="button">
+                <span aria-hidden="true">▶</span> Começar leitura
+            </a>
+
+            <button id="recomecar" type="button" class="button secundario" hidden>
+                Recomeçar jornada
+            </button>
+
+        </div>
+
+        <p class="nota">
+            Seu progresso fica salvo apenas neste aparelho e neste navegador.
+        </p>
+
+    </section>
+
+
+    <!-- ---------- jornada concluída ---------- -->
+
+    <section id="concluida" class="card concluida" aria-labelledby="titulo-concluida" hidden>
+
+        <h2 id="titulo-concluida"><span aria-hidden="true">🎉</span> Jornada concluída</h2>
+
+        <p>
+            Você chegou ao fim dos 40 dias. Que tudo o que você viveu aqui
+            continue moldando a sua caminhada com Deus.
+        </p>
+
+        <div class="acoes">
+            <a id="rever" href="dia1.html" class="button secundario">Revisar desde o dia 1</a>
+            <a id="proxima" href="oracao.html" class="button">Conhecer 40 Dias de Oração →</a>
+        </div>
+
+    </section>
+
+
+    <!-- ---------- capítulos ---------- -->
+
+    <section class="card" aria-labelledby="titulo-capitulos">
+
+        <h2 id="titulo-capitulos"><span aria-hidden="true">📖</span> Capítulos</h2>
+
+        <div id="dias">
+            <noscript>
+                <p>Ative o JavaScript para ver os capítulos e acompanhar o seu progresso.</p>
+            </noscript>
+        </div>
+
+    </section>
+
+</main>
+
 
 <footer>
     Feito com ❤️ para registrar sua jornada com Deus.
+    <br>
+    <a href="index.html">← Voltar para todas as jornadas</a>
 </footer>
+
+
+<dialog id="confirmar" aria-labelledby="titulo-confirmar">
+    <form method="dialog">
+
+        <h2 id="titulo-confirmar">Recomeçar a jornada?</h2>
+
+        <p>
+            Isso apaga o progresso dos 40 dias <b>neste aparelho</b>.
+            Não é possível desfazer.
+        </p>
+
+        <div class="dialogo-acoes">
+            <button type="submit" value="cancelar" class="button secundario">Cancelar</button>
+            <button type="submit" value="confirmar" class="button perigo">Apagar e recomeçar</button>
+        </div>
+
+    </form>
+</dialog>
+
 
 <script>
 /*
- * CRIADO PARA UM PROPÓSITO
+ * CRIADO PARA UM PROPÓSITO — configuração da jornada
  *
- * O progresso desta jornada utiliza a chave exclusiva:
- * proposito_dia1, proposito_dia2, ..., proposito_dia40.
+ * O progresso usa as chaves proposito_dia1, proposito_dia2, ..., proposito_dia40.
+ * A jornada de oração deve usar oracao_dia1 ... oracao_dia40 (prefixo "oracao_dia").
+ * Assim as jornadas nunca compartilham o progresso.
  *
- * A página 40 Dias de Oração deve utilizar:
- * oracao_dia1, oracao_dia2, ..., oracao_dia40.
- *
- * Assim, as jornadas não compartilham o progresso.
+ * diasPublicados: quantos dias já têm página (dia1.html, dia2.html, ...).
+ * Os dias acima desse número abrem em-breve.html. Atualize conforme for publicando.
  */
-
-const PREFIXO_PROGRESSO = "proposito_dia";
-const container = document.getElementById("dias");
-
-function diaConcluido(numero) {
-    try {
-        return localStorage.getItem(`${PREFIXO_PROGRESSO}${numero}`) === "concluido";
-    } catch (erro) {
-        return false;
-    }
-}
-
-function salvarTema(valor) {
-    try {
-        localStorage.setItem("tema", valor);
-    } catch (erro) {
-        // O tema continua funcionando mesmo sem armazenamento.
-    }
-}
-
-function obterTema() {
-    try {
-        return localStorage.getItem("tema") || "light";
-    } catch (erro) {
-        return "light";
-    }
-}
-
-// Títulos dos 40 dias
-
-const titulos = [
-    "",
-    "Deus é o começo de tudo",
-    "Você foi criado com propósito",
-    "O que tem guiado seus passos?",
-    "Chamados para a eternidade",
-    "Olhando a vida pela perspectiva de Deus",
-    "Uma jornada passageira",
-    "O verdadeiro sentido da existência",
-    "Criados para agradar ao Senhor",
-    "O que agrada a Deus?",
-    "O verdadeiro significado da adoração",
-    "Vivendo uma amizade com Deus",
-    "Fortalecendo sua comunhão com Deus",
-    "Uma vida de adoração",
-    "Quando Deus parece em silêncio",
-    "Chamados para fazer parte da família de Deus",
-    "O que tem valor eterno",
-    "Encontrando seu lugar",
-    "Vivendo em comunhão",
-    "Construindo relacionamentos saudáveis",
-    "Reconstruindo a comunhão",
-    "Cuidando da igreja de Cristo",
-    "Refletindo o caráter de Cristo",
-    "Crescendo na fé",
-    "Transformados pela Palavra",
-    "Aprendendo nas dificuldades",
-    "Vencendo as tentações",
-    "Firmes diante da tentação",
-    "O crescimento acontece aos poucos",
-    "Abraçando o chamado de Deus",
-    "Preparados para servir",
-    "Descobrindo os dons que Deus lhe deu",
-    "Colocando seus dons em prática",
-    "O coração de um servo",
-    "Vivendo para servir",
-    "A força que vem da fraqueza",
-    "Enviados para uma missão",
-    "Compartilhando a esperança em Cristo",
-    "Vivendo uma fé autêntica",
-    "Uma vida em equilíbrio",
-    "Vivendo o propósito de Deus"
-];
-
-// Abre um dia e verifica se o arquivo existe.
-
-function abrirDia(numero) {
-    const url = `dia${numero}.html`;
-
-    fetch(url)
-        .then(resposta => {
-            if (resposta.ok) {
-                window.location.href = url;
-            } else {
-                window.location.href = "em-breve.html";
-            }
-        })
-        .catch(() => {
-            window.location.href = "em-breve.html";
-        });
-}
-
-// Calcula o próximo dia a partir do progresso desta jornada.
-
-function obterDiaAtual() {
-    for (let i = 1; i <= 40; i++) {
-        if (!diaConcluido(i)) {
-            return i;
-        }
-    }
-
-    // Todos os dias foram concluídos.
-    return 40;
-}
-
-// Atualiza a barra e os indicadores de progresso.
-
-function atualizarProgresso() {
-    let diasConcluidos = 0;
-
-    for (let i = 1; i <= 40; i++) {
-        if (diaConcluido(i)) {
-            diasConcluidos++;
-        }
-    }
-
-    const percentual = (diasConcluidos / 40) * 100;
-    const diaAtual = obterDiaAtual();
-
-    document.getElementById("barra").style.width = `${percentual}%`;
-
-    document.getElementById("diaAtualTexto").textContent =
-        `${diaAtual} de 40`;
-
-    document.getElementById("progressoTexto").textContent =
-        `${diasConcluidos} de 40 dias concluídos (${Math.round(percentual)}%)`;
-
-    document.getElementById("continuar").onclick = function(evento) {
-        evento.preventDefault();
-        abrirDia(diaAtual);
-    };
-}
-
-// Cria os cartões dos capítulos.
-
-function renderizarDias() {
-    container.innerHTML = "";
-
-    for (let i = 1; i <= 40; i++) {
-        const concluido = diaConcluido(i);
-        const liberado = i === 1 || diaConcluido(i - 1);
-
-        let status = "lock";
-        let emoji = "🔒";
-
-        if (concluido) {
-            status = "done";
-            emoji = "✅";
-        } else if (liberado) {
-            status = "current";
-            emoji = "📖";
-        }
-
-        const cartao = document.createElement("div");
-        cartao.className = `day ${status}`;
-
-        const titulo = document.createElement("h3");
-        titulo.textContent = `${emoji} Dia ${i}`;
-
-        const espaco = document.createElement("br");
-
-        const descricao = document.createElement("p");
-        descricao.textContent = titulos[i];
-
-        cartao.append(titulo, espaco, descricao);
-
-        if (liberado || concluido) {
-            cartao.tabIndex = 0;
-            cartao.setAttribute("role", "link");
-            cartao.addEventListener("click", () => abrirDia(i));
-
-            cartao.addEventListener("keydown", evento => {
-                if (evento.key === "Enter" || evento.key === " ") {
-                    evento.preventDefault();
-                    abrirDia(i);
-                }
-            });
-        } else {
-            cartao.setAttribute("aria-disabled", "true");
-        }
-
-        container.appendChild(cartao);
-    }
-}
-
-// Alterna o tema claro/escuro.
-
-function tema() {
-    document.body.classList.toggle("dark");
-
-    salvarTema(
-        document.body.classList.contains("dark") ? "dark" : "light"
-    );
-}
-
-// Restaura o tema salvo.
-
-function aplicarTemaSalvo() {
-    document.body.classList.toggle("dark", obterTema() === "dark");
-}
-
-// Inicializa a página.
-
-function iniciarPagina() {
-    aplicarTemaSalvo();
-    renderizarDias();
-    atualizarProgresso();
-}
-
-// Atualiza os dados quando o usuário volta para esta página.
-
-window.addEventListener("pageshow", () => {
-    renderizarDias();
-    atualizarProgresso();
-});
-
-iniciarPagina();
+window.JORNADA = {
+    prefixo: "proposito_dia",
+    total: 40,
+    diasPublicados: 40,
+    paginaDia: function (n) { return "dia" + n + ".html"; },
+    paginaEmBreve: "em-breve.html",
+    proximaJornada: { href: "oracao.html", texto: "40 Dias de Oração" },
+    titulos: [
+        "",
+        "Deus é o começo de tudo",
+        "Você foi criado com propósito",
+        "O que tem guiado seus passos?",
+        "Chamados para a eternidade",
+        "Olhando a vida pela perspectiva de Deus",
+        "Uma jornada passageira",
+        "O verdadeiro sentido da existência",
+        "Criados para agradar ao Senhor",
+        "O que agrada a Deus?",
+        "O verdadeiro significado da adoração",
+        "Vivendo uma amizade com Deus",
+        "Fortalecendo sua comunhão com Deus",
+        "Uma vida de adoração",
+        "Quando Deus parece em silêncio",
+        "Chamados para fazer parte da família de Deus",
+        "O que tem valor eterno",
+        "Encontrando seu lugar",
+        "Vivendo em comunhão",
+        "Construindo relacionamentos saudáveis",
+        "Reconstruindo a comunhão",
+        "Cuidando da igreja de Cristo",
+        "Refletindo o caráter de Cristo",
+        "Crescendo na fé",
+        "Transformados pela Palavra",
+        "Aprendendo nas dificuldades",
+        "Vencendo as tentações",
+        "Firmes diante da tentação",
+        "O crescimento acontece aos poucos",
+        "Abraçando o chamado de Deus",
+        "Preparados para servir",
+        "Descobrindo os dons que Deus lhe deu",
+        "Colocando seus dons em prática",
+        "O coração de um servo",
+        "Vivendo para servir",
+        "A força que vem da fraqueza",
+        "Enviados para uma missão",
+        "Compartilhando a esperança em Cristo",
+        "Vivendo uma fé autêntica",
+        "Uma vida em equilíbrio",
+        "Vivendo o propósito de Deus"
+    ]
+};
 </script>
 
+<script src="jornada.js"></script>
+
 </body>
+
 </html>
