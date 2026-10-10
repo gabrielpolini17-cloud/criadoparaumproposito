@@ -6,8 +6,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Caminhos de Propósito</title>
+<title>Caminhos de Propósito — jornadas de fé, reflexão e transformação</title>
+<meta name="description" content="Jornadas para conhecer melhor a Deus, fortalecer sua fé e descobrir como viver uma vida com propósito. Comece pela jornada de 40 dias: Criado para um Propósito.">
+<meta name="theme-color" content="#354f3b">
+<link rel="canonical" href="https://criadoparaumproposito.vercel.app/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🌿%3C/text%3E%3C/svg%3E">
 
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Caminhos de Propósito">
+<meta property="og:title" content="Caminhos de Propósito — jornadas de fé, reflexão e transformação">
+<meta property="og:description" content="Jornadas para conhecer melhor a Deus, fortalecer sua fé e descobrir como viver uma vida com propósito. Comece pela jornada de 40 dias: Criado para um Propósito.">
+<meta property="og:url" content="https://criadoparaumproposito.vercel.app/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -84,7 +100,7 @@ body::after{
         rgba(14,27,18,.38),
         rgba(14,27,18,.78)
     ),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=90");
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80");
 
     background-size:cover;
     background-position:center;
@@ -256,7 +272,7 @@ body::after{
 
 .section-heading p{
     font-size:13px;
-    color:#7a827a;
+    color:#626a62;
 }
 
 
@@ -282,7 +298,7 @@ body::after{
             rgba(20,35,23,.48),
             rgba(20,35,23,.08)
         ),
-        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1800&q=90");
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80");
 
     background-size:cover;
     background-position:center;
@@ -370,7 +386,7 @@ body::after{
     margin-bottom:27px;
 }
 
-.meta span{
+.meta > span{
     background:rgba(255,255,255,.11);
 
     border:1px solid rgba(255,255,255,.17);
@@ -498,8 +514,8 @@ body::after{
         );
 }
 
-.card:hover .card-image{
-    background-size:110%;
+.card:hover .card-image img{
+    transform:scale(1.07);
 }
 
 .card-icon{
@@ -563,7 +579,7 @@ body::after{
     font-size:14px;
     line-height:1.65;
 
-    color:#707870;
+    color:#5c645c;
 
     margin-bottom:21px;
 }
@@ -578,7 +594,7 @@ body::after{
 
 .duration{
     font-size:12px;
-    color:#7c837c;
+    color:#626a62;
 }
 
 .coming{
@@ -590,7 +606,7 @@ body::after{
 
     background:#f0f2ed;
 
-    color:#858a83;
+    color:#666c65;
 
     font-size:11px;
 
@@ -693,7 +709,7 @@ body::after{
 
     letter-spacing:2px;
 
-    color:#8a9088;
+    color:#6a716a;
 }
 
 
@@ -790,7 +806,7 @@ footer{
 
     text-align:center;
 
-    color:#7c827c;
+    color:#626a62;
 
     font-size:13px;
 
@@ -1073,18 +1089,271 @@ footer strong{
     font-size: 12px !important;
 }
 
-@media (max-width: 700px) {
-    .support {
-        margin-bottom: 55px;
-        padding: 38px 23px;
-        border-radius: 25px;
-    }
 
-    .support h2 {
-        font-size: 30px;
-    }
+
+
+
+
+/* =====================================================
+   AJUSTES (v2)
+===================================================== */
+
+.skip-link{
+    position:absolute;
+    left:16px;
+    top:-60px;
+    z-index:100;
+    padding:10px 18px;
+    background:#354f3b;
+    color:white;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    transition:top .2s;
 }
 
+.skip-link:focus{
+    top:16px;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible{
+    outline:3px solid #b49a5d;
+    outline-offset:3px;
+}
+
+.hero-actions{
+    margin-top:34px;
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn-ghost{
+    background:rgba(255,255,255,.12);
+    color:white;
+    border:1px solid rgba(255,255,255,.42);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    box-shadow:none;
+}
+
+.btn-ghost:hover{
+    background:rgba(255,255,255,.2);
+}
+
+/* imagens dos cards (agora <img> com lazy-load) */
+.card-image img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .7s ease;
+}
+
+/* card largo: jornada de oração */
+.card-wide{
+    display:grid;
+    grid-template-columns:minmax(0,5fr) minmax(0,7fr);
+}
+
+.card-wide .card-image{
+    height:100%;
+    min-height:250px;
+}
+
+.card-wide .card-body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:38px;
+}
+
+.card-wide h3{
+    font-size:34px;
+}
+
+.card-wide p{
+    max-width:480px;
+}
+
+/* ver todas as jornadas */
+.more{
+    margin-top:0;
+}
+
+.more summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    width:fit-content;
+    margin:34px auto 0;
+    padding:14px 28px;
+    border-radius:40px;
+    background:white;
+    color:#405b45;
+    font-weight:700;
+    font-size:14px;
+    border:1px solid rgba(79,111,82,.25);
+    box-shadow:0 8px 24px rgba(40,55,43,.07);
+    transition:transform .3s, box-shadow .3s;
+}
+
+.more summary::-webkit-details-marker{
+    display:none;
+}
+
+.more summary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 30px rgba(40,55,43,.12);
+}
+
+.more[open] summary{
+    margin-bottom:25px;
+}
+
+.more .when-open{
+    display:none;
+}
+
+.more[open] .when-open{
+    display:inline;
+}
+
+.more[open] .when-closed{
+    display:none;
+}
+
+/* apoio: chave visivel + compartilhar */
+.pix-box{
+    max-width:520px;
+    margin:24px auto 0;
+    padding:16px 20px;
+    text-align:left;
+    background:white;
+    border:1px dashed rgba(79,111,82,.4);
+    border-radius:18px;
+}
+
+.pix-box small{
+    display:block;
+    margin-bottom:6px;
+    color:#668269;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.pix-box code{
+    display:block;
+    font-family:"Inter",sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:#354f3b;
+    word-break:break-all;
+    user-select:all;
+}
+
+.pix-box span{
+    display:block;
+    margin-top:6px;
+    font-size:12px;
+    color:#626a62;
+}
+
+.support-actions{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:22px;
+}
+
+.support-actions .support-button{
+    margin-top:0;
+}
+
+.support-button.secondary{
+    background:white;
+    color:#4f6f52;
+    border:1.5px solid rgba(79,111,82,.35);
+    text-decoration:none;
+}
+
+.support-button.secondary:hover{
+    background:#f1f5ee;
+    color:#354f3b;
+}
+
+/* rodape */
+.footer-nav{
+    display:flex;
+    gap:22px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin:18px 0 6px;
+}
+
+.footer-nav a{
+    color:#526454;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.footer-nav a:hover{
+    text-decoration:underline;
+}
+
+.section[id], .support[id]{
+    scroll-margin-top:24px;
+}
+
+@media(max-width:700px){
+
+    .hero{
+        padding-bottom:100px;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+        max-width:320px;
+    }
+
+    .card-wide{
+        grid-template-columns:1fr;
+    }
+
+    .card-wide .card-image{
+        height:190px;
+        min-height:0;
+    }
+
+    .card-wide .card-body{
+        padding:26px;
+    }
+
+    .card-wide h3{
+        font-size:27px;
+    }
+
+    .support{
+        margin-bottom:55px;
+        padding:38px 23px;
+        border-radius:25px;
+    }
+
+    .support h2{
+        font-size:30px;
+    }
+
+}
 
 </style>
 
@@ -1093,8 +1362,7 @@ footer strong{
 
 <body>
 
-    
-    
+<a class="skip-link" href="#jornadas">Ir para as jornadas</a>
 
 
 <!-- =====================================================
@@ -1105,7 +1373,7 @@ footer strong{
 
     <div class="hero-content">
 
-        <div class="symbol">
+        <div class="symbol" aria-hidden="true">
             🌿
         </div>
 
@@ -1119,6 +1387,15 @@ footer strong{
             uma vida que realmente tenha propósito.
         </p>
 
+        <div class="hero-actions">
+            <a href="home.html" class="btn">
+                Começar minha jornada <span aria-hidden="true">→</span>
+            </a>
+            <a href="#em-breve" class="btn btn-ghost">
+                Ver todas as jornadas
+            </a>
+        </div>
+
         <div class="hero-small">
             FÉ • REFLEXÃO • TRANSFORMAÇÃO
         </div>
@@ -1129,7 +1406,7 @@ footer strong{
 
 
 
-<div class="container">
+<main class="container">
 
 
 <!-- =====================================================
@@ -1161,16 +1438,16 @@ footer strong{
      DESTAQUE
 ===================================================== -->
 
-<section class="section">
+<section class="section" id="jornadas">
 
     <div class="section-heading">
 
         <div>
-            <h2>🌿 Comece por aqui</h2>
+            <h2><span aria-hidden="true">🌿</span> Comece por aqui</h2>
         </div>
 
         <p>
-            Uma jornada disponível agora
+            Disponível agora
         </p>
 
     </div>
@@ -1196,17 +1473,17 @@ footer strong{
 
             <div class="meta">
 
-                <span>📖 40 dias</span>
-                <span>🌿 Reflexão diária</span>
-                <span>🙏 Oração</span>
+                <span><span aria-hidden="true">📖</span> 40 dias</span>
+                <span><span aria-hidden="true">🌿</span> Reflexão diária</span>
+                <span><span aria-hidden="true">🙏</span> Oração</span>
 
             </div>
 
-            <a href="propositos.html" class="btn">
+            <a href="home.html" class="btn">
 
                 Começar minha jornada
 
-                <span>→</span>
+                <span aria-hidden="true">→</span>
 
             </a>
 
@@ -1219,7 +1496,7 @@ footer strong{
 
 
 <!-- =====================================================
-     PRÓXIMAS JORNADAS
+     TAMBÉM DISPONÍVEL
 ===================================================== -->
 
 <section class="section">
@@ -1227,11 +1504,49 @@ footer strong{
     <div class="section-heading">
 
         <div>
-            <h2>✨ Próximas jornadas</h2>
+            <h2><span aria-hidden="true">🙏</span> Também disponível</h2>
         </div>
 
         <p>
-            Novas experiências estão chegando
+            Mais uma jornada para começar hoje
+        </p>
+
+    </div>
+
+        <article class="card card-wide">
+            <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                <div class="card-icon" aria-hidden="true">🙏</div>
+            </div>
+            <div class="card-body">
+                <span class="card-status">Disponível agora</span>
+                <h3>40 Dias de Oração</h3>
+                <p>Uma jornada para desenvolver uma vida de oração mais profunda, constante e sincera com Deus.</p>
+                <div class="card-footer">
+                    <span class="duration"><span aria-hidden="true">🙏</span> Oração</span>
+                    <a href="oracao.html" class="btn btn-green">Começar jornada <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </article>
+
+</section>
+
+
+
+<!-- =====================================================
+     EM BREVE
+===================================================== -->
+
+<section class="section" id="em-breve">
+
+    <div class="section-heading">
+
+        <div>
+            <h2><span aria-hidden="true">✨</span> Em breve</h2>
+        </div>
+
+        <p>
+            18 novas jornadas estão chegando
         </p>
 
     </div>
@@ -1239,898 +1554,326 @@ footer strong{
 
     <div class="grid">
 
-
-        <!-- 01 -->
-
-        <div class="card">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="card-icon">🙏</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    JORNADA DISPONÍVEL
-                </span>
-
-                <h3>
-                    40 Dias de Oração
-                </h3>
-
-                <p>
-                    Uma jornada para desenvolver uma vida de oração
-                    mais profunda, constante e sincera com Deus.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🙏 Oração
-                    </span>
-
-                    <a href="oracao.html" class="btn btn-green">
-                        Começar jornada →
-                    </a>
-
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🕊️</div>
                 </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 02 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🕊️</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    Coração em Paz
-                </h3>
-
-                <p>
-                    Reflexões para aprender a confiar em Deus,
-                    entregar preocupações e encontrar descanso nEle.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🕊️ Interior
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>Coração em Paz</h3>
+                    <p>Reflexões para aprender a confiar em Deus, entregar preocupações e encontrar descanso nEle.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🕊️</span> Interior</span>
+                        <span class="coming">Em breve</span>
+                    </div>
                 </div>
+            </article>
 
-            </div>
-
-        </div>
-
-
-
-        <!-- 03 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">📖</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    Conhecendo a Palavra
-                </h3>
-
-                <p>
-                    Uma jornada para conhecer melhor a Bíblia
-                    e transformar conhecimento em prática.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        📖 Bíblia
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">📖</div>
                 </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 04 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🔥</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    Reacendendo a Fé
-                </h3>
-
-                <p>
-                    Uma jornada para quem deseja se aproximar
-                    novamente de Deus e reconstruir sua vida espiritual.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🔥 Renovação
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>Conhecendo a Palavra</h3>
+                    <p>Uma jornada para conhecer melhor a Bíblia e transformar conhecimento em prática.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">📖</span> Bíblia</span>
+                        <span class="coming">Em breve</span>
+                    </div>
                 </div>
+            </article>
 
-            </div>
-
-        </div>
-
-
-
-        <!-- 05 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🎯</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    Descobrindo o Chamado
-                </h3>
-
-                <p>
-                    Uma jornada para descobrir dons, talentos
-                    e maneiras de servir a Deus e às pessoas.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🎯 Direção
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🔥</div>
                 </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 06 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">❤️</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    Preparando o Coração
-                </h3>
-
-                <p>
-                    Uma jornada sobre identidade, espera,
-                    amor e relacionamentos guiados por Deus.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        ❤️ Preparação
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>Reacendendo a Fé</h3>
+                    <p>Uma jornada para quem deseja se aproximar novamente de Deus e reconstruir sua vida espiritual.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🔥</span> Renovação</span>
+                        <span class="coming">Em breve</span>
+                    </div>
                 </div>
+            </article>
 
-            </div>
-
-        </div>
-
-
-
-        <!-- 07 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🤝</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    30 Dias Fazendo o Bem
-                </h3>
-
-                <p>
-                    Uma jornada de pequenas atitudes para transformar
-                    o dia de outras pessoas através do amor e do serviço.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🤝 Ação
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🎯</div>
                 </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 08 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">⚡</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    21 Dias de Disciplina
-                </h3>
-
-                <p>
-                    Um desafio para desenvolver constância,
-                    autocontrole e hábitos que fortalecem sua caminhada.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        ⚡ Desafio
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>Descobrindo o Chamado</h3>
+                    <p>Uma jornada para descobrir dons, talentos e maneiras de servir a Deus e às pessoas.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🎯</span> Direção</span>
+                        <span class="coming">Em breve</span>
+                    </div>
                 </div>
+            </article>
 
-            </div>
-
-        </div>
-
-
-
-        <!-- 09 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🙏</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    30 Dias de Gratidão
-                </h3>
-
-                <p>
-                    Um registro diário para perceber, lembrar
-                    e agradecer pelas coisas boas que Deus coloca no caminho.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🙏 Registro
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">❤️</div>
                 </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 10 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">✍️</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    40 Dias Escrevendo para Deus
-                </h3>
-
-                <p>
-                    Um diário espiritual para colocar em palavras
-                    pensamentos, sentimentos, sonhos e orações.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        ✍️ Diário
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>Preparando o Coração</h3>
+                    <p>Uma jornada sobre identidade, espera, amor e relacionamentos guiados por Deus.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">❤️</span> Preparação</span>
+                        <span class="coming">Em breve</span>
+                    </div>
                 </div>
+            </article>
 
-            </div>
-
-        </div>
-
-
-
-        <!-- 11 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🌊</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    30 Dias Entregando as Preocupações
-                </h3>
-
-                <p>
-                    Uma experiência diária para colocar diante de Deus
-                    aquilo que pesa no coração e aprender a entregar.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🌊 Interação
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🤝</div>
                 </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 12 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">👥</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    21 Dias para Melhorar seus Relacionamentos
-                </h3>
-
-                <p>
-                    Uma jornada para aprender a ouvir, perdoar,
-                    valorizar e construir relacionamentos mais saudáveis.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        👥 Pessoas
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>30 Dias Fazendo o Bem</h3>
+                    <p>Uma jornada de pequenas atitudes para transformar o dia de outras pessoas através do amor e do serviço.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🤝</span> Ação</span>
+                        <span class="coming">Em breve</span>
+                    </div>
                 </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 13 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🎁</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    30 Dias de Generosidade
-                </h3>
-
-                <p>
-                    Uma jornada para transformar generosidade em prática
-                    através de atitudes concretas de amor e serviço.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🎁 Serviço
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 14 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🎯</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    30 Dias Vivendo com Intenção
-                </h3>
-
-                <p>
-                    Uma jornada para sair do automático,
-                    tomar decisões conscientes e viver com propósito.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🎯 Mudança
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 15 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🌙</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    7 Dias de Silêncio
-                </h3>
-
-                <p>
-                    Uma experiência para desacelerar, silenciar
-                    os ruídos e criar espaço para ouvir e refletir.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🌙 Experiência
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 16 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🪞</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    30 Dias Conhecendo a Si Mesmo
-                </h3>
-
-                <p>
-                    Uma jornada de autoconhecimento para compreender
-                    melhor seus pensamentos, emoções, valores e escolhas.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🪞 Autoconhecimento
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 17 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">📋</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    30 Dias Construindo seu Futuro
-                </h3>
-
-                <p>
-                    Uma jornada para organizar sonhos, metas,
-                    decisões e próximos passos para o futuro.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        📋 Planejamento
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 18 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🌅</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    21 Dias Reconstruindo a Esperança
-                </h3>
-
-                <p>
-                    Uma jornada de recomeço para recuperar esperança,
-                    enxergar possibilidades e dar novos passos.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🌅 Recomeço
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 19 -->
-
-        <div class="card locked">
-
-            <div
-                class="card-image"
-                style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85');">
-
-                <div class="lock">🔒</div>
-
-                <div class="card-icon">🕊️</div>
-
-            </div>
-
-            <div class="card-body">
-
-                <span class="card-status">
-                    EM BREVE
-                </span>
-
-                <h3>
-                    40 Dias de Pequenas Renúncias
-                </h3>
-
-                <p>
-                    Uma jornada de disciplina espiritual baseada
-                    em pequenas escolhas de entrega, simplicidade e fé.
-                </p>
-
-                <div class="card-footer">
-
-                    <span class="duration">
-                        🕊️ Disciplina espiritual
-                    </span>
-
-                    <span class="coming">
-                        Em breve
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
+            </article>
 
     </div>
+
+    <details class="more">
+
+        <summary>
+            <span class="when-closed">Ver as outras 12 jornadas</span>
+            <span class="when-open">Mostrar menos</span>
+        </summary>
+
+        <div class="grid">
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">⚡</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>21 Dias de Disciplina</h3>
+                    <p>Um desafio para desenvolver constância, autocontrole e hábitos que fortalecem sua caminhada.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">⚡</span> Desafio</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🙏</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>30 Dias de Gratidão</h3>
+                    <p>Um registro diário para perceber, lembrar e agradecer pelas coisas boas que Deus coloca no caminho.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🙏</span> Registro</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">✍️</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>40 Dias Escrevendo para Deus</h3>
+                    <p>Um diário espiritual para colocar em palavras pensamentos, sentimentos, sonhos e orações.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">✍️</span> Diário</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🌊</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>30 Dias Entregando as Preocupações</h3>
+                    <p>Uma experiência diária para colocar diante de Deus aquilo que pesa no coração e aprender a entregar.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🌊</span> Interação</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">👥</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>21 Dias para Melhorar seus Relacionamentos</h3>
+                    <p>Uma jornada para aprender a ouvir, perdoar, valorizar e construir relacionamentos mais saudáveis.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">👥</span> Pessoas</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🎁</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>30 Dias de Generosidade</h3>
+                    <p>Uma jornada para transformar generosidade em prática através de atitudes concretas de amor e serviço.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🎁</span> Serviço</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🎯</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>30 Dias Vivendo com Intenção</h3>
+                    <p>Uma jornada para sair do automático, tomar decisões conscientes e viver com propósito.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🎯</span> Mudança</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🌙</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>7 Dias de Silêncio</h3>
+                    <p>Uma experiência para desacelerar, silenciar os ruídos e criar espaço para ouvir e refletir.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🌙</span> Experiência</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🪞</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>30 Dias Conhecendo a Si Mesmo</h3>
+                    <p>Uma jornada de autoconhecimento para compreender melhor seus pensamentos, emoções, valores e escolhas.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🪞</span> Autoconhecimento</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">📋</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>30 Dias Construindo seu Futuro</h3>
+                    <p>Uma jornada para organizar sonhos, metas, decisões e próximos passos para o futuro.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">📋</span> Planejamento</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🌅</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>21 Dias Reconstruindo a Esperança</h3>
+                    <p>Uma jornada de recomeço para recuperar esperança, enxergar possibilidades e dar novos passos.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🌅</span> Recomeço</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card locked">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="" loading="lazy" decoding="async" width="700" height="390">
+                    <div class="lock" aria-hidden="true">🔒</div>
+                    <div class="card-icon" aria-hidden="true">🕊️</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-status">EM BREVE</span>
+                    <h3>40 Dias de Pequenas Renúncias</h3>
+                    <p>Uma jornada de disciplina espiritual baseada em pequenas escolhas de entrega, simplicidade e fé.</p>
+                    <div class="card-footer">
+                        <span class="duration"><span aria-hidden="true">🕊️</span> Disciplina espiritual</span>
+                        <span class="coming">Em breve</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </details>
 
 </section>
 
@@ -2142,7 +1885,7 @@ footer strong{
 
 <div class="quote">
 
-    <div class="quote-symbol">
+    <div class="quote-symbol" aria-hidden="true">
         ✦
     </div>
 
@@ -2165,9 +1908,9 @@ footer strong{
      APOIE O CAMINHOS DE PROPÓSITO
 ===================================================== -->
 
-<section class="support">
+<section class="support" id="apoie">
 
-    <div class="support-icon">♡</div>
+    <div class="support-icon" aria-hidden="true">♡</div>
 
     <span class="support-label">FAÇA PARTE DESTE PROPÓSITO</span>
 
@@ -2185,9 +1928,23 @@ footer strong{
         alcance ainda mais pessoas.
     </p>
 
-    <button type="button" class="support-button" onclick="copiarPix()">
-        <span>♡</span> Apoiar via Pix
-    </button>
+    <div class="pix-box">
+        <small>Chave Pix (aleatória)</small>
+        <code id="pix-chave">54010892-4d45-4fde-a760-525b91712f48</code>
+        <span>Titular: Gabriel dos Santos Polini • Itaú</span>
+    </div>
+
+    <div class="support-actions">
+
+        <button type="button" class="support-button" onclick="copiarPix()">
+            <span aria-hidden="true">♡</span> Copiar chave Pix
+        </button>
+
+        <a class="support-button secondary" href="https://wa.me/?text=Conhe%C3%A7a%20o%20Caminhos%20de%20Prop%C3%B3sito%3A%20jornadas%20de%20f%C3%A9%2C%20reflex%C3%A3o%20e%20transforma%C3%A7%C3%A3o.%20https%3A%2F%2Fcriadoparaumproposito.vercel.app%2F" target="_blank" rel="noopener">
+            Compartilhar no WhatsApp
+        </a>
+
+    </div>
 
     <p class="support-note" id="pix-feedback" aria-live="polite">
         Sua contribuição é voluntária. Compartilhar o projeto
@@ -2215,8 +1972,8 @@ footer strong{
             dar o primeiro passo.
         </p>
 
-        <a href="index.html" class="btn">
-            🌿 Começar Criado para um Propósito
+        <a href="home.html" class="btn">
+            <span aria-hidden="true">🌿</span> Começar Criado para um Propósito
         </a>
 
     </div>
@@ -2224,7 +1981,7 @@ footer strong{
 </section>
 
 
-</div>
+</main>
 
 
 
@@ -2234,7 +1991,7 @@ footer strong{
 
 <footer>
 
-    <div class="footer-symbol">
+    <div class="footer-symbol" aria-hidden="true">
         🌿
     </div>
 
@@ -2246,7 +2003,13 @@ footer strong{
 
     Jornadas de fé, reflexão e transformação.
 
-    <br><br>
+    <nav class="footer-nav" aria-label="Rodapé">
+        <a href="#jornadas">Jornadas</a>
+        <a href="#em-breve">Em breve</a>
+        <a href="#apoie">Apoiar o projeto</a>
+    </nav>
+
+    <br>
 
     © 2026 • Feito para crescer, refletir e caminhar com Deus.
 
@@ -2257,17 +2020,22 @@ footer strong{
 
 <script>
 async function copiarPix() {
-    const chavePix = "54010892-4d45-4fde-a760-525b91712f48";
+    const chaveEl = document.getElementById("pix-chave");
     const feedback = document.getElementById("pix-feedback");
+    const chavePix = chaveEl.textContent.trim();
 
     try {
         await navigator.clipboard.writeText(chavePix);
         feedback.textContent =
-            "Chave Pix copiada! Agora é só colar no aplicativo do seu banco. Titular: Gabriel dos Santos Polini, Itaú.";
+            "Chave Pix copiada! Agora é só colar no aplicativo do seu banco. Muito obrigado pelo apoio.";
     } catch (erro) {
+        const faixa = document.createRange();
+        faixa.selectNodeContents(chaveEl);
+        const selecao = window.getSelection();
+        selecao.removeAllRanges();
+        selecao.addRange(faixa);
         feedback.textContent =
-            "Chave Pix: " + chavePix +
-            " — Titular: Gabriel dos Santos Polini, Itaú. Copie a chave para contribuir.";
+            "Não consegui copiar automaticamente. A chave já está selecionada acima: é só copiar.";
     }
 }
 </script>
