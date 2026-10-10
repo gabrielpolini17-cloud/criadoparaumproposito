@@ -257,8 +257,21 @@ const container = document.getElementById("dias");
 
 function diaConcluido(numero) {
     try {
-        return localStorage.getItem(`${PREFIXO_PROGRESSO}${numero}`) === "concluido";
+        const chaveNova = `proposito_dia${numero}`;
+        const chaveAntiga = `dia${numero}`;
+
+        if (localStorage.getItem(chaveNova) === "concluido") {
+            return true;
+        }
+
+        if (localStorage.getItem(chaveAntiga) === "concluido") {
+            localStorage.setItem(chaveNova, "concluido");
+            return true;
+        }
+
+        return false;
     } catch (erro) {
+        console.error("Erro ao verificar o progresso:", erro);
         return false;
     }
 }
