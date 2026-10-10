@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>40 Dias de Oração — Dia 3</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #11110f;
+    color: #eeeae1;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: rgba(181, 143, 82, 0.05);
+    filter: blur(110px);
+    top: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+    padding: 24px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.brand {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaa49a;
+}
+
+.day-counter {
+    font-size: 13px;
+    color: #aaa49a;
+}
+
+.day-counter strong {
+    color: #eeeae1;
+    font-weight: 500;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 25px 70px;
+    position: relative;
+}
+
+.intro-content {
+    max-width: 750px;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #a58a61;
+    margin-bottom: 28px;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: clamp(50px, 9vw, 92px);
+    line-height: 1.05;
+    margin-bottom: 30px;
+}
+
+.intro-text {
+    max-width: 530px;
+    margin: auto;
+    color: #aaa49a;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #77736c;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.scroll-indicator::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 35px;
+    background: #5b574f;
+    margin: 10px auto 0;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    max-width: 780px;
+    margin: auto;
+    padding: 0 22px 100px;
+}
+
+.block {
+    margin-bottom: 100px;
+}
+
+.label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8d887f;
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   REFLEXÃO
+========================= */
+
+.reflection-text {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(27px, 5vw, 42px);
+    line-height: 1.45;
+    font-weight: 400;
+    color: #e7e2d8;
+}
+
+.reflection-text span {
+    color: #a58a61;
+}
+
+
+/* =========================
+   VERSÍCULO
+========================= */
+
+.verse-block {
+    text-align: center;
+    padding: 80px 25px;
+    border-top: 1px solid #282722;
+    border-bottom: 1px solid #282722;
+}
+
+.verse {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(24px, 4vw, 34px);
+    line-height: 1.6;
+    color: #ddd8cf;
+}
+
+.reference {
+    margin-top: 25px;
+    color: #a58a61;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   EXPERIÊNCIA
+========================= */
+
+.experience {
+    text-align: center;
+}
+
+.experience h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.experience-description {
+    max-width: 510px;
+    margin: auto;
+    color: #858179;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.concern-input-area {
+    margin-top: 45px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 140px;
+    resize: vertical;
+    background: #171714;
+    border: 1px solid #302e28;
+    border-radius: 17px;
+    padding: 22px;
+    color: #e5dfd3;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    outline: none;
+    transition: 0.3s;
+}
+
+textarea::placeholder {
+    color: #5d5a53;
+}
+
+textarea:focus {
+    border-color: #756447;
+    background: #191916;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.primary-button {
+    margin-top: 20px;
+    border: none;
+    background: #e7e0d4;
+    color: #171714;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+    background: #fffaf0;
+}
+
+.primary-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+.concern-count {
+    margin-top: 15px;
+    color: #66635c;
+    font-size: 11px;
+}
+
+
+/* =========================
+   CAIXA
+========================= */
+
+.box-area {
+    margin-top: 70px;
+    perspective: 1000px;
+}
+
+.box {
+    width: 220px;
+    height: 150px;
+    margin: auto;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.box-base {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    height: 120px;
+    background: #29251e;
+    border: 1px solid #4a4032;
+    border-radius: 5px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+}
+
+.box-lid {
+    position: absolute;
+    top: 5px;
+    left: -8px;
+    width: 236px;
+    height: 35px;
+    background: #342d23;
+    border: 1px solid #4a4032;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    transition: transform 1s ease;
+    z-index: 3;
+}
+
+.box-front {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    height: 70px;
+    border-top: 1px solid #493e30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8f8068;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.box.open .box-lid {
+    transform: rotateX(-100deg);
+}
+
+
+/* =========================
+   PREOCUPAÇÕES
+========================= */
+
+.concerns {
+    margin-top: 50px;
+    display: grid;
+    gap: 12px;
+}
+
+.concern {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #171714;
+    border: 1px solid #302e28;
+    border-radius: 14px;
+    padding: 18px 20px;
+    text-align: left;
+    animation: appear 0.5s ease;
+}
+
+.concern-text {
+    color: #c9c3b8;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.deliver-small {
+    flex-shrink: 0;
+    border: 1px solid #4d493f;
+    background: transparent;
+    color: #b8ae9e;
+    border-radius: 50px;
+    padding: 9px 15px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.deliver-small:hover {
+    background: #e7e0d4;
+    color: #171714;
+}
+
+
+/* =========================
+   ESTADO VAZIO
+========================= */
+
+.empty-state {
+    margin-top: 35px;
+    color: #65615a;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+.final-message {
+    display: none;
+    margin-top: 70px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.final-message.active {
+    display: block;
+}
+
+.final-symbol {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.final-message h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.final-message p {
+    max-width: 480px;
+    margin: auto;
+    color: #858179;
+    line-height: 1.9;
+}
+
+
+/* =========================
+   PRIVACIDADE
+========================= */
+
+.privacy {
+    background: #171714;
+    border: 1px solid #292823;
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.privacy-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #25231e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.privacy h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.privacy p {
+    color: #858179;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.finish {
+    text-align: center;
+    border-top: 1px solid #282722;
+    padding-top: 60px;
+}
+
+.finish p {
+    color: #77736c;
+    margin-bottom: 25px;
+}
+
+.finish-button {
+    border: 1px solid #49463e;
+    background: transparent;
+    color: #d9d3c7;
+    padding: 14px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.finish-button:hover {
+    background: #e7e0d4;
+    color: #171714;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(30px);
+    background: #e7e0d4;
+    color: #171714;
+    padding: 14px 22px;
+    border-radius: 50px;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+    z-index: 100;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px;
+    }
+
+    .brand {
+        font-size: 10px;
+    }
+
+    .intro {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .block {
+        margin-bottom: 75px;
+    }
+
+    .concern {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .deliver-small {
+        width: 100%;
+    }
+
+    .privacy {
+        padding: 22px;
+    }
+
+    .box {
+        transform: scale(0.85);
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="brand">
+        40 Dias de Oração
+    </div>
+
+    <div class="day-counter">
+        <strong>03</strong> / 40
+    </div>
+
+</header>
+
+
+<!-- =========================
+     ABERTURA
+========================= -->
+
+<section class="intro">
+
+    <div class="intro-content">
+
+        <div class="small-title">
+            Dia 03
+        </div>
+
+        <h1>
+            Você não precisa<br>
+            carregar tudo.
+        </h1>
+
+        <p class="intro-text">
+
+            Existem coisas que você pode
+            resolver.
+
+            Existem outras que simplesmente
+            precisam ser entregues.
+
+        </p>
+
+    </div>
+
+    <div class="scroll-indicator">
+        continue
+    </div>
+
+</section>
+
+
+<main>
+
+
+    <!-- =========================
+         REFLEXÃO
+    ========================= -->
+
+    <section class="block">
+
+        <div class="label">
+            Pare por um momento
+        </div>
+
+        <div class="reflection-text">
+
+            Algumas preocupações ficam
+            rodando na nossa cabeça
+            porque tentamos controlar
+            aquilo que <span>nunca esteve
+            completamente em nossas mãos.</span>
+
+        </div>
+
+        <br>
+
+        <div class="reflection-text">
+
+            Hoje, você vai fazer algo
+            diferente.
+
+            Vai reconhecer aquilo que
+            está pesando e colocar
+            cada coisa diante de Deus.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         VERSÍCULO
+========================= -->
+
+    <section class="block verse-block">
+
+        <div class="verse">
+
+            “Lancem sobre ele toda a sua ansiedade,
+            porque ele tem cuidado de vocês.”
+
+        </div>
+
+        <div class="reference">
+            1 PEDRO 5:7
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIÊNCIA
+    ========================= -->
+
+    <section class="block experience">
+
+        <div class="label">
+            Seu exercício de hoje
+        </div>
+
+        <h2>
+            O que está pesando?
+        </h2>
+
+        <p class="experience-description">
+
+            Escreva uma preocupação por vez.
+
+            Não precisa encontrar uma solução.
+            Apenas coloque em palavras aquilo
+            que está ocupando espaço dentro de você.
+
+        </p>
+
+
+        <div class="concern-input-area">
+
+            <textarea
+                id="concernInput"
+                placeholder="Tenho me preocupado com..."
+            ></textarea>
+
+
+            <br>
+
+
+            <button
+                class="primary-button"
+                id="addConcern">
+
+                Colocar na caixa
+
+            </button>
+
+
+            <div class="concern-count">
+
+                Você pode entregar quantas preocupações quiser.
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             CAIXA
+        ========================= -->
+
+        <div class="box-area">
+
+            <div class="box" id="box">
+
+                <div class="box-lid"></div>
+
+                <div class="box-base"></div>
+
+                <div class="box-front">
+                    Entrega
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             LISTA
+        ========================= -->
+
+        <div
+            class="concerns"
+            id="concerns">
+        </div>
+
+
+        <div
+            class="empty-state"
+            id="emptyState">
+
+            Sua caixa está vazia.<br>
+            Comece colocando nela aquilo
+            que você não quer mais carregar sozinho.
+
+        </div>
+
+
+        <!-- =========================
+             FINAL
+        ========================= -->
+
+        <div
+            class="final-message"
+            id="finalMessage">
+
+            <div class="final-symbol">
+                🕊
+            </div>
+
+            <h2>
+                Agora, deixe nas mãos Dele.
+            </h2>
+
+            <p>
+
+                Você reconheceu o que estava
+                pesando sobre você.
+
+                Agora não precisa continuar
+                tentando controlar tudo.
+
+                <br><br>
+
+                <strong>
+                    Entregue. Confie. Descanse.
+                </strong>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRIVACIDADE
+    ========================= -->
+
+    <section class="block">
+
+        <div class="privacy">
+
+            <div class="privacy-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <h3>
+                    Suas palavras não ficam aqui.
+                </h3>
+
+                <p>
+
+                    O site não possui banco de dados
+                    para armazenar suas respostas.
+
+                    O que você escrever não é enviado
+                    para nós e não fica salvo.
+
+                    Suas preocupações existem apenas
+                    enquanto esta página estiver aberta.
+
+                    Quando você as entrega, elas são
+                    apagadas da página.
+
+                    Este espaço é entre você e Deus.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL DO DIA
+    ========================= -->
+
+    <section class="finish">
+
+        <p>
+            Você chegou ao fim do terceiro dia.
+        </p>
+
+        <button
+            class="finish-button"
+            id="finishButton">
+
+            Concluir Dia 3
+
+        </button>
+
+    </section>
+
+
+</main>
+
+
+<div
+    class="toast"
+    id="toast">
+
+    Dia 3 concluído.
+
+</div>
+
+
+<script>
+
+
+/* =========================
+   ELEMENTOS
+========================= */
+
+const input =
+    document.getElementById("concernInput");
+
+const addButton =
+    document.getElementById("addConcern");
+
+const concernsContainer =
+    document.getElementById("concerns");
+
+const emptyState =
+    document.getElementById("emptyState");
+
+const box =
+    document.getElementById("box");
+
+const finalMessage =
+    document.getElementById("finalMessage");
+
+
+/* =========================
+   ARRAY TEMPORÁRIO
+========================= */
+
+let concerns = [];
+
+
+/* =========================
+   ADICIONAR PREOCUPAÇÃO
+========================= */
+
+addButton.addEventListener("click", function() {
+
+    const text =
+        input.value.trim();
+
+
+    if (!text) {
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    concerns.push(text);
+
+
+    input.value = "";
+
+    renderConcerns();
+
+});
+
+
+/* =========================
+   ENTER PARA ADICIONAR
+========================= */
+
+input.addEventListener("keydown", function(event) {
+
+    if (
+        event.key === "Enter" &&
+        !event.shiftKey
+    ) {
+
+        event.preventDefault();
+
+        addButton.click();
+
+    }
+
+});
+
+
+/* =========================
+   RENDERIZAR
+========================= */
+
+function renderConcerns() {
+
+    concernsContainer.innerHTML = "";
+
+
+    if (concerns.length === 0) {
+
+        emptyState.style.display = "block";
+
+        return;
+
+    }
+
+
+    emptyState.style.display = "none";
+
+
+    concerns.forEach(function(concern, index) {
+
+
+        const item =
+            document.createElement("div");
+
+        item.className = "concern";
+
+
+        const text =
+            document.createElement("div");
+
+        text.className = "concern-text";
+
+        text.textContent = concern;
+
+
+        const button =
+            document.createElement("button");
+
+        button.className = "deliver-small";
+
+        button.textContent =
+            "Entregar";
+
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                deliverConcern(
+                    index,
+                    item
+                );
+
+            }
+        );
+
+
+        item.appendChild(text);
+
+        item.appendChild(button);
+
+        concernsContainer.appendChild(item);
+
+    });
+
+}
+
+
+/* =========================
+   ENTREGAR
+========================= */
+
+function deliverConcern(index, element) {
+
+
+    box.classList.add("open");
+
+
+    element.style.transition =
+        "all 0.7s ease";
+
+
+    element.style.opacity = "0";
+
+    element.style.transform =
+        "translateY(-25px) scale(0.95)";
+
+
+    setTimeout(function() {
+
+        concerns.splice(index, 1);
+
+        renderConcerns();
+
+
+        setTimeout(function() {
+
+            box.classList.remove("open");
+
+        }, 400);
+
+
+        checkFinished();
+
+    }, 700);
+
+}
+
+
+/* =========================
+   VERIFICAR FINAL
+========================= */
+
+function checkFinished() {
+
+    /*
+        A pessoa precisa ter colocado
+        pelo menos uma preocupação
+        antes de concluir a experiência.
+    */
+
+    if (
+        concerns.length === 0 &&
+        document.querySelectorAll(".concern").length === 0
+    ) {
+
+        if (
+            document
+            .querySelectorAll(".concern")
+            .length === 0
+        ) {
+
+            /*
+                Só mostramos a mensagem
+                depois que a pessoa realmente
+                adicionou e entregou algo.
+            */
+
+            if (
+                concernsWasUsed
+            ) {
+
+                finalMessage
+                    .classList
+                    .add("active");
+
+                finalMessage
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+            }
+
+        }
+
+    }
+
+}
+
+
+/* =========================
+   CONTROLE DA EXPERIÊNCIA
+========================= */
+
+let concernsWasUsed = false;
+
+
+/*
+   Sobrescreve o clique para marcar
+   que a experiência começou.
+*/
+
+const originalAdd =
+    addButton.onclick;
+
+
+/*
+   Quando adicionar uma preocupação,
+   marca a experiência como iniciada.
+*/
+
+addButton.addEventListener("click", function() {
+
+    if (
+        input.value.trim().length > 0
+    ) {
+
+        concernsWasUsed = true;
+
+    }
+
+});
+
+
+/* =========================
+   CONCLUIR
+========================= */
+
+const finishButton =
+    document.getElementById("finishButton");
+
+const toast =
+    document.getElementById("toast");
+
+
+finishButton.addEventListener(
+    "click",
+    function() {
+
+        toast.classList.add("show");
+
+        finishButton.textContent =
+            "Dia 3 concluído ✓";
+
+
+        setTimeout(function() {
+
+            toast.classList.remove("show");
+
+        }, 2500);
+
+    }
+);
+
+</script>
+
+</body>
+</html>
