@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dia 5 — Ore por quem você ama</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #11110f;
+  --surface: #171714;
+  --surface-hover: #1d1c18;
+  --text: #eeeae1;
+  --muted: #aaa49a;
+  --gold: #a58a61;
+  --gold-soft: rgba(165,138,97,.13);
+  --border: #302e28;
+  --cream: #e7e0d4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  top: -350px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(181,143,82,.045);
+  filter: blur(120px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 26px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.day-count {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 24px 100px;
+  position: relative;
+}
+
+.small-title {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 8.5vw, 88px);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -2px;
+  max-width: 850px;
+}
+
+h1 span,
+.gold {
+  color: var(--gold);
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 420px;
+  margin-top: 26px;
+  font-weight: 300;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #77736a;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(var(--gold), transparent);
+}
+
+main {
+  width: min(100% - 40px, 790px);
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.section {
+  margin-bottom: 100px;
+  animation: fadeIn .7s ease both;
+}
+
+.section-label {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 5vw, 43px);
+  line-height: 1.25;
+  font-weight: 400;
+  margin-bottom: 22px;
+}
+
+p {
+  line-height: 1.9;
+}
+
+.support {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.verse {
+  text-align: center;
+  padding: 38px 24px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 100px;
+}
+
+.verse blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 4vw, 33px);
+  line-height: 1.55;
+  max-width: 640px;
+  margin: 0 auto 18px;
+}
+
+.verse cite {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 25px;
+  margin-top: 26px;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.choice {
+  background: #12120f;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 15px 14px;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.6;
+  transition: .2s ease;
+}
+
+.choice:hover {
+  border-color: #62533d;
+  background: var(--surface-hover);
+}
+
+.choice.selected {
+  color: var(--text);
+  border-color: var(--gold);
+  background: var(--gold-soft);
+}
+
+.choice .choice-icon {
+  display: block;
+  color: var(--gold);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.field-label {
+  display: block;
+  color: var(--text);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  color: var(--text);
+  background: #12120f;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 14px 15px;
+  font-size: 13px;
+  line-height: 1.8;
+  transition: border-color .2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6f6b62;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.field-gap {
+  margin-top: 22px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 14px 23px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: .2s ease;
+  margin-top: 24px;
+}
+
+.primary-button {
+  color: #171510;
+  background: var(--cream);
+  border: 1px solid var(--cream);
+}
+
+.primary-button:hover {
+  background: white;
+  transform: translateY(-1px);
+}
+
+.secondary-button {
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+  border-color: var(--gold);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.helper {
+  color: #817b70;
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 24px 0;
+}
+
+.person-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.person-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #12120f;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.person-initial {
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--gold);
+  background: var(--gold-soft);
+  font-family: 'Playfair Display', serif;
+}
+
+.person-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.person-name {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.person-reason {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 3px;
+  overflow-wrap: anywhere;
+}
+
+.remove-person {
+  color: #928a7b;
+  background: transparent;
+  border: 0;
+  padding: 7px;
+  font-size: 17px;
+}
+
+.prompt-box {
+  border-left: 2px solid var(--gold);
+  padding: 7px 0 7px 18px;
+  margin: 25px 0;
+}
+
+.prompt-box p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.prayer-box {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #191813, #141411);
+  margin-top: 25px;
+}
+
+.prayer-box p {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  line-height: 1.95;
+  color: #d9d2c5;
+  white-space: pre-line;
+}
+
+.prayer-box p + p {
+  margin-top: 15px;
+}
+
+.prayer-highlight {
+  color: var(--gold);
+}
+
+.progress-wrap {
+  margin: 0 0 30px;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.progress-track {
+  height: 2px;
+  background: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  transition: width .35s ease;
+}
+
+.completion {
+  text-align: center;
+  padding: 45px 25px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(165,138,97,.04);
+}
+
+.completion-mark {
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  margin: 0 auto 22px;
+}
+
+.completion h2 {
+  font-size: 35px;
+}
+
+.completion p {
+  max-width: 470px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.privacy-note {
+  margin-top: 45px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  gap: 13px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.privacy-icon {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 20px;
+  text-align: center;
+  color: #777168;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  background: var(--cream);
+  color: #171510;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s ease;
+  z-index: 20;
+  width: max-content;
+  max-width: calc(100% - 30px);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 22px 20px;
+  }
+
+  .brand {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h1 {
+    letter-spacing: -1px;
+  }
+
+  main {
+    width: calc(100% - 36px);
+  }
+
+  .section,
+  .verse {
+    margin-bottom: 75px;
+  }
+
+  .choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 19px;
+  }
+
+  .prayer-box {
+    padding: 22px;
+  }
+
+  .prayer-box p {
+    font-size: 17px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .button-row {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">40 Dias de Oração</div>
+  <div class="day-count">DIA 05 <span style="color:#5d594f">/ 40</span></div>
+</header>
+
+<section class="hero">
+  <div class="small-title">Uma jornada de intimidade com Deus</div>
+  <h1>Ore por quem<br>você <span>ama.</span></h1>
+  <p class="hero-description">
+    Hoje, tire um pouco do olhar de si mesmo e leve diante de Deus as pessoas que fazem parte da sua vida.
+  </p>
+  <div class="scroll-cue">
+    <span>Comece sua oração</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<main>
+  <section class="section">
+    <div class="section-label">01 — Uma lembrança importante</div>
+    <h2>O amor também se expressa em <span class="gold">oração.</span></h2>
+    <p class="support">
+      Existem pessoas que ocupam um lugar especial no nosso coração. Algumas caminham conosco todos os dias; outras estão enfrentando batalhas que talvez nem saibamos.
+    </p>
+    <p class="support" style="margin-top:16px">
+      Interceder é apresentar essas pessoas a Deus com amor. Não é tentar controlar suas escolhas, exigir que tudo aconteça do nosso jeito ou assumir a responsabilidade de resolver todos os seus problemas. É reconhecer que podemos amar, apoiar e orar, confiando que Deus vê aquilo que não conseguimos ver.
+    </p>
+    <div class="prompt-box">
+      <p>Você não precisa encontrar as palavras perfeitas. Comece lembrando de alguém e levando essa pessoa diante de Deus com sinceridade.</p>
+    </div>
+  </section>
+
+  <section class="verse">
+    <blockquote>
+      “Orai uns pelos outros, para que sareis. A oração feita por um justo pode muito em seus efeitos.”
+    </blockquote>
+    <cite>Tiago 5:16</cite>
+  </section>
+
+  <section class="section" id="intercessao">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span>SUA JORNADA DE HOJE</span>
+        <span id="progressText">ETAPA 1 DE 4</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="section-label">02 — Quem veio ao seu coração?</div>
+    <h2>Por quem você quer <span class="gold">orar hoje?</span></h2>
+    <p class="support">
+      Escolha as áreas pelas quais deseja interceder. Você pode marcar mais de uma.
+    </p>
+
+    <div class="card">
+      <div class="choice-grid" id="groupChoices">
+        <button type="button" class="choice" data-group="Família" aria-pressed="false">
+          <span class="choice-icon">⌂</span>
+          <strong>Minha família</strong><br>
+          <span>Quem faz parte da minha história.</span>
+        </button>
+        <button type="button" class="choice" data-group="Amigos" aria-pressed="false">
+          <span class="choice-icon">♡</span>
+          <strong>Meus amigos</strong><br>
+          <span>Quem caminha comigo.</span>
+        </button>
+        <button type="button" class="choice" data-group="Igreja" aria-pressed="false">
+          <span class="choice-icon">✧</span>
+          <strong>Minha igreja</strong><br>
+          <span>Irmãos na fé e liderança.</span>
+        </button>
+        <button type="button" class="choice" data-group="Outras pessoas" aria-pressed="false">
+          <span class="choice-icon">○</span>
+          <strong>Outras pessoas</strong><br>
+          <span>Alguém que precisa de oração.</span>
+        </button>
+      </div>
+      <p class="helper">Não existe uma quantidade certa. Escolha com sinceridade.</p>
+      <button class="primary-button" type="button" id="continueGroups">Continuar →</button>
+    </div>
+  </section>
+
+  <section class="section hidden" id="peopleSection">
+    <div class="section-label">03 — Dê um nome à sua oração</div>
+    <h2>Lembre-se de cada pessoa com <span class="gold">carinho.</span></h2>
+    <p class="support">
+      Se quiser, escreva o nome de alguém e aquilo pelo qual deseja orar. Você pode incluir uma pessoa ou várias — até mesmo apenas um nome já é suficiente para começar.
+    </p>
+
+    <div class="card">
+      <div class="card-title">Adicionar alguém à sua lista de oração</div>
+      <p class="card-description">Use nomes, apelidos ou uma descrição. Preencha apenas o que se sentir confortável em registrar.</p>
+
+      <form id="personForm">
+        <label class="field-label" for="personName">Nome da pessoa</label>
+        <input id="personName" type="text" maxlength="70" placeholder="Ex.: minha mãe, João, uma amiga..." autocomplete="off" required>
+
+        <div class="field-gap">
+          <label class="field-label" for="personReason">Pelo que você deseja orar por ela?</label>
+          <input id="personReason" type="text" maxlength="180" placeholder="Ex.: saúde, paz, direção, fé, proteção...">
+        </div>
+
+        <button class="primary-button" type="submit">+ Adicionar à lista</button>
+      </form>
+
+      <div id="peopleList" class="person-list"></div>
+      <p class="helper" id="peopleHint">Você também pode seguir sem registrar nomes, levando as pessoas em seu coração.</p>
+
+      <div class="divider"></div>
+      <button class="secondary-button" type="button" id="continuePeople">Continuar para a reflexão →</button>
+    </div>
+  </section>
+
+  <section class="section hidden" id="reflectionSection">
+    <div class="section-label">04 — Olhe além do que você vê</div>
+    <h2>O que você deseja colocar diante de <span class="gold">Deus?</span></h2>
+    <p class="support">
+      Pense nas necessidades dessas pessoas. Talvez você saiba exatamente o que está acontecendo; talvez só perceba que alguém precisa de cuidado. Você não precisa ter todas as respostas para interceder.
+    </p>
+
+    <div class="card">
+      <div class="card-title">Escolha os motivos da sua oração</div>
+      <p class="card-description">Marque quantos fizerem sentido para você.</p>
+
+      <div class="choice-grid" id="reasonChoices">
+        <button type="button" class="choice" data-reason="Saúde e restauração" aria-pressed="false">
+          <span class="choice-icon">＋</span>
+          Saúde e restauração
+        </button>
+        <button type="button" class="choice" data-reason="Paz e consolo" aria-pressed="false">
+          <span class="choice-icon">⌁</span>
+          Paz e consolo
+        </button>
+        <button type="button" class="choice" data-reason="Proteção e livramento" aria-pressed="false">
+          <span class="choice-icon">◇</span>
+          Proteção e livramento
+        </button>
+        <button type="button" class="choice" data-reason="Sabedoria e direção" aria-pressed="false">
+          <span class="choice-icon">✧</span>
+          Sabedoria e direção
+        </button>
+        <button type="button" class="choice" data-reason="Fé e vida com Deus" aria-pressed="false">
+          <span class="choice-icon">✦</span>
+          Fé e vida com Deus
+        </button>
+        <button type="button" class="choice" data-reason="Relacionamentos e reconciliação" aria-pressed="false">
+          <span class="choice-icon">♡</span>
+          Relacionamentos e reconciliação
+        </button>
+        <button type="button" class="choice" data-reason="Trabalho e provisão" aria-pressed="false">
+          <span class="choice-icon">⌂</span>
+          Trabalho e provisão
+        </button>
+        <button type="button" class="choice" data-reason="Gratidão pela vida dessas pessoas" aria-pressed="false">
+          <span class="choice-icon">∞</span>
+          Gratidão pela vida delas
+        </button>
+      </div>
+
+      <div class="field-gap">
+        <label class="field-label" for="personalThought">Há algo específico que você gostaria de apresentar a Deus?</label>
+        <textarea id="personalThought" maxlength="900" placeholder="Escreva com sinceridade. Pode ser uma preocupação, um pedido, uma esperança ou simplesmente algo pelo qual você é grato..."></textarea>
+      </div>
+
+      <button class="primary-button" type="button" id="buildPrayer">Preparar minha oração →</button>
+    </div>
+  </section>
+
+  <section class="section hidden" id="prayerSection">
+    <div class="section-label">05 — Coloque essas vidas diante de Deus</div>
+    <h2>Agora, ore com o <span class="gold">coração presente.</span></h2>
+    <p class="support">
+      Leia a oração devagar, adapte as palavras se desejar e fale com Deus com liberdade. Esta não é uma fórmula: é um ponto de partida para uma conversa sincera com Ele.
+    </p>
+
+    <div class="prayer-box">
+      <p id="prayerText"></p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Continue em oração do seu jeito</div>
+      <p class="card-description">
+        Você pode falar em voz alta, orar em silêncio ou acrescentar aquilo que ficou no seu coração. Não precisa cumprir um tempo determinado.
+      </p>
+      <label class="field-label" for="extraPrayer">Se desejar, escreva uma última oração</label>
+      <textarea id="extraPrayer" maxlength="1000" placeholder="Senhor, também quero Te pedir..."></textarea>
+      <button class="primary-button" type="button" id="finishPrayer">Concluí minha oração</button>
+    </div>
+  </section>
+
+  <section class="section hidden" id="completionSection">
+    <div class="completion">
+      <div class="completion-mark">✓</div>
+      <div class="section-label">Dia 5 concluído</div>
+      <h2>Continue amando em <span class="gold">oração.</span></h2>
+      <p>
+        Você dedicou este momento a lembrar de pessoas importantes e apresentá-las a Deus. Que essa intercessão também inspire atitudes concretas de amor, cuidado, escuta e presença.
+      </p>
+      <p style="margin-top:15px">
+        Nem sempre você poderá resolver o que alguém enfrenta. Mas pode caminhar ao lado, oferecer ajuda quando possível e confiar a Deus aquilo que está além do seu alcance.
+      </p>
+      <button class="primary-button" type="button" id="saveDay">Salvar conclusão do dia</button>
+      <div id="savedMessage" class="helper hidden" style="margin-top:15px;color:var(--gold)">
+        Conclusão registrada neste navegador.
+      </div>
+    </div>
+
+    <div class="privacy-note">
+      <span class="privacy-icon">◇</span>
+      <span>Seus registros desta página são mantidos apenas durante esta sessão. Não são enviados a um servidor; ao atualizar ou fechar a página, os nomes e textos digitados podem ser perdidos.</span>
+    </div>
+
+    <div style="text-align:center;margin-top:55px">
+      <p class="section-label">UM PASSO DE CADA VEZ</p>
+      <h2 style="font-size:30px">A jornada continua.</h2>
+      <p class="support">Siga adiante, levando consigo aquilo que aprendeu hoje.</p>
+      <a class="primary-button" href="dia6.html" style="text-decoration:none">Ir para o Dia 6 →</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  40 DIAS DE ORAÇÃO · UM DIA DE CADA VEZ
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+
+  const selectedGroups = new Set();
+  const selectedReasons = new Set();
+  const people = [];
+
+  let currentStage = 1;
+  let toastTimeout;
+
+  const stageSections = [
+    "intercessao",
+    "peopleSection",
+    "reflectionSection",
+    "prayerSection"
+  ];
+
+  function toast(message) {
+    const el = $("toast");
+    el.textContent = message;
+    el.classList.add("show");
+
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      el.classList.remove("show");
+    }, 2800);
+  }
+
+  function updateProgress(stage) {
+    currentStage = stage;
+    $("progressText").textContent = `ETAPA ${stage} DE 4`;
+    $("progressFill").style.width = `${(stage / 4) * 100}%`;
+  }
+
+  function showSection(id) {
+    $(id).classList.remove("hidden");
+    $(id).scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function selectToggle(button, set, value) {
+    if (set.has(value)) {
+      set.delete(value);
+      button.classList.remove("selected");
+      button.setAttribute("aria-pressed", "false");
+    } else {
+      set.add(value);
+      button.classList.add("selected");
+      button.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  document.querySelectorAll("[data-group]").forEach(button => {
+    button.addEventListener("click", () => {
+      selectToggle(button, selectedGroups, button.dataset.group);
+    });
+  });
+
+  $("continueGroups").addEventListener("click", () => {
+    if (selectedGroups.size === 0) {
+      toast("Escolha ao menos uma área ou siga o que está no seu coração.");
+      return;
+    }
+
+    updateProgress(2);
+    showSection("peopleSection");
+  });
+
+  function renderPeople() {
+    const list = $("peopleList");
+    list.innerHTML = "";
+
+    people.forEach((person, index) => {
+      const row = document.createElement("div");
+      row.className = "person-row";
+
+      const initial = document.createElement("div");
+      initial.className = "person-initial";
+      initial.textContent = person.name.trim().charAt(0).toUpperCase() || "♡";
+
+      const info = document.createElement("div");
+      info.className = "person-info";
+
+      const name = document.createElement("div");
+      name.className = "person-name";
+      name.textContent = person.name;
+
+      info.appendChild(name);
+
+      if (person.reason) {
+        const reason = document.createElement("div");
+        reason.className = "person-reason";
+        reason.textContent = person.reason;
+        info.appendChild(reason);
+      }
+
+      const remove = document.createElement("button");
+      remove.className = "remove-person";
+      remove.type = "button";
+      remove.textContent = "×";
+      remove.setAttribute("aria-label", `Remover ${person.name}`);
+      remove.addEventListener("click", () => {
+        people.splice(index, 1);
+        renderPeople();
+      });
+
+      row.append(initial, info, remove);
+      list.appendChild(row);
+    });
+
+    $("peopleHint").textContent = people.length
+      ? `${people.length} ${people.length === 1 ? "pessoa adicionada" : "pessoas adicionadas"}. Você pode incluir mais nomes ou continuar.`
+      : "Você também pode seguir sem registrar nomes, levando as pessoas em seu coração.";
+  }
+
+  $("personForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const name = $("personName").value.trim();
+    const reason = $("personReason").value.trim();
+
+    if (!name) {
+      toast("Escreva um nome ou uma descrição para continuar.");
+      $("personName").focus();
+      return;
+    }
+
+    people.push({ name, reason });
+    renderPeople();
+
+    $("personName").value = "";
+    $("personReason").value = "";
+    $("personName").focus();
+
+    toast("Pessoa adicionada à sua lista de oração.");
+  });
+
+  $("continuePeople").addEventListener("click", () => {
+    updateProgress(3);
+    showSection("reflectionSection");
+  });
+
+  document.querySelectorAll("[data-reason]").forEach(button => {
+    button.addEventListener("click", () => {
+      selectToggle(button, selectedReasons, button.dataset.reason);
+    });
+  });
+
+  function listInPortuguese(items) {
+    if (items.length === 0) return "";
+    if (items.length === 1) return items[0];
+    if (items.length === 2) return `${items[0]} e ${items[1]}`;
+    return `${items.slice(0, -1).join(", ")} e ${items[items.length - 1]}`;
+  }
+
+  function buildPersonalPrayer() {
+    const groupList = [...selectedGroups];
+    const reasonList = [...selectedReasons];
+    const names = people.map(person => person.name);
+    const details = people
+      .filter(person => person.reason)
+      .map(person => `${person.name}: ${person.reason}`);
+
+    const personalThought = $("personalThought").value.trim();
+
+    let prayer = `Pai amado,\n\nObrigado pela vida das pessoas que colocaste no meu caminho. Obrigado pelos laços de amor, pela companhia, pelos aprendizados e até pelas oportunidades de crescer através das dificuldades.\n\n`;
+
+    if (groupList.length) {
+      prayer += `Hoje, quero apresentar diante de Ti ${listInPortuguese(groupList.map(group => group.toLowerCase()))}. `;
+      prayer += `Tu conheces cada história, cada necessidade e cada detalhe que eu não consigo enxergar.\n\n`;
+    }
+
+    if (names.length) {
+      prayer += `Quero orar especialmente por ${listInPortuguese(names)}. `;
+      prayer += `Cuida de cada uma dessas vidas, Senhor. Que elas encontrem auxílio, esperança e pessoas dispostas a caminhar ao seu lado.\n\n`;
+    } else {
+      prayer += `Mesmo sem registrar nomes, Tu conheces as pessoas que estão no meu coração. Recebe cada uma delas nesta oração.\n\n`;
+    }
+
+    if (reasonList.length) {
+      prayer += `Peço especialmente por ${listInPortuguese(reasonList.map(item => item.toLowerCase()))}. `;
+      prayer += `Age segundo a Tua sabedoria, sustenta quem está cansado, consola quem sofre e concede discernimento para os passos que precisam ser dados.\n\n`;
+    } else {
+      prayer += `Peço que cada pessoa receba o cuidado de que necessita. Ajuda-me a perceber como posso amar melhor, servir com humildade e oferecer apoio de maneira sábia.\n\n`;
+    }
+
+    if (details.length) {
+      prayer += `Também coloco diante de Ti estas necessidades que registrei: ${details.join("; ")}. `;
+      prayer += `Tu conheces a profundidade de cada situação. Dá força, sabedoria, consolo e provisão conforme a necessidade de cada um.\n\n`;
+    }
+
+    if (personalThought) {
+      prayer += `Pai, quero compartilhar contigo algo que está no meu coração: ${personalThought}\n\n`;
+    }
+
+    prayer += `Ensina-me a interceder sem tentar controlar a vida dos outros. Mostra-me quando devo falar, quando devo ouvir, quando devo ajudar e quando preciso confiar a Ti aquilo que não posso resolver.\n\n`;
+    prayer += `Que o meu amor não fique apenas nas palavras. Ajuda-me a demonstrá-lo com atitudes, paciência, generosidade e presença. Que eu respeite as escolhas de cada pessoa e não confunda cuidado com controle.\n\n`;
+    prayer += `Entrego essas vidas em Tuas mãos. Dá-nos sabedoria para enfrentar cada dia e mantém nossos corações firmes em Ti.\n\nEm nome de Jesus, amém.`;
+
+    return prayer;
+  }
+
+  $("buildPrayer").addEventListener("click", () => {
+    $("prayerText").textContent = buildPersonalPrayer();
+    updateProgress(4);
+    showSection("prayerSection");
+  });
+
+  $("finishPrayer").addEventListener("click", () => {
+    showSection("completionSection");
+  });
+
+  $("saveDay").addEventListener("click", () => {
+    try {
+      localStorage.setItem("dia5_concluido", "true");
+      $("savedMessage").classList.remove("hidden");
+      $("saveDay").textContent = "Conclusão salva ✓";
+      toast("Dia 5 concluído e registrado neste navegador.");
+    } catch (error) {
+      toast("Não foi possível salvar neste navegador. Você pode continuar mesmo assim.");
+    }
+  });
+
+  // Recupera apenas o estado de conclusão, sem guardar nomes ou textos pessoais.
+  try {
+    if (localStorage.getItem("dia5_concluido") === "true") {
+      $("savedMessage").classList.remove("hidden");
+      $("saveDay").textContent = "Conclusão já registrada ✓";
+    }
+  } catch (error) {
+    // A página continua funcionando mesmo se o navegador bloquear o armazenamento.
+  }
+})();
+</script>
+
+</body>
+</html>
