@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dia 6 — Quando o medo chegar</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: "DM Sans", sans-serif;
+
+    background: #11110f;
+
+    color: #eeeae1;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   LUZ DE FUNDO
+========================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 700px;
+
+    height: 700px;
+
+    border-radius: 50%;
+
+    background: rgba(181, 143, 82, 0.045);
+
+    filter: blur(120px);
+
+    top: -350px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+    width: 100%;
+
+    padding: 24px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    z-index: 10;
+}
+
+.brand {
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #aaa49a;
+}
+
+.day-counter {
+
+    font-size: 13px;
+
+    color: #aaa49a;
+}
+
+.day-counter strong {
+
+    color: #eeeae1;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 25px 70px;
+
+    position: relative;
+}
+
+.intro-content {
+
+    max-width: 760px;
+}
+
+.small-title {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #a58a61;
+
+    margin-bottom: 28px;
+}
+
+h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-weight: 400;
+
+    font-size: clamp(48px, 9vw, 92px);
+
+    line-height: 1.05;
+
+    margin-bottom: 30px;
+}
+
+.intro-text {
+
+    max-width: 530px;
+
+    margin: auto;
+
+    color: #aaa49a;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    font-weight: 300;
+}
+
+.scroll-indicator {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #77736c;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.scroll-indicator::after {
+
+    content: "";
+
+    display: block;
+
+    width: 1px;
+
+    height: 35px;
+
+    background: #5b574f;
+
+    margin: 10px auto 0;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+
+    max-width: 780px;
+
+    margin: auto;
+
+    padding: 0 22px 100px;
+}
+
+.block {
+
+    margin-bottom: 100px;
+}
+
+.label {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #8d887f;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   REFLEXÃO
+========================= */
+
+.reflection {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(27px, 5vw, 42px);
+
+    line-height: 1.45;
+
+    color: #e7e2d8;
+}
+
+.reflection span {
+
+    color: #a58a61;
+}
+
+
+/* =========================
+   TEXTO DE APOIO
+========================= */
+
+.support-text {
+
+    color: #aaa49a;
+
+    line-height: 1.9;
+
+    font-size: 16px;
+
+    max-width: 650px;
+}
+
+
+/* =========================
+   VERSÍCULO
+========================= */
+
+.verse-block {
+
+    text-align: center;
+
+    padding: 80px 25px;
+
+    border-top: 1px solid #282722;
+
+    border-bottom: 1px solid #282722;
+}
+
+.verse {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(24px, 4vw, 34px);
+
+    line-height: 1.6;
+
+    color: #ddd8cf;
+}
+
+.reference {
+
+    margin-top: 25px;
+
+    color: #a58a61;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   EXPERIÊNCIA
+========================= */
+
+.conversation {
+
+    text-align: center;
+}
+
+.conversation h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 40px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+.conversation-intro {
+
+    max-width: 500px;
+
+    margin: auto;
+
+    color: #858179;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   BOTÃO INICIAR
+========================= */
+
+.start-area {
+
+    margin-top: 45px;
+}
+
+.primary-button {
+
+    border: none;
+
+    background: #e7e0d4;
+
+    color: #171714;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.primary-button:hover {
+
+    transform: translateY(-2px);
+
+    background: #fffaf0;
+}
+
+
+/* =========================
+   CONVERSA
+========================= */
+
+.conversation-box {
+
+    display: none;
+
+    margin-top: 60px;
+
+    animation: fadeIn 0.8s ease;
+}
+
+.conversation-box.active {
+
+    display: block;
+}
+
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 45px;
+}
+
+.progress-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #34322d;
+
+    transition: 0.4s;
+}
+
+.progress-dot.active {
+
+    background: #b39a6d;
+
+    box-shadow: 0 0 12px rgba(179,154,109,0.35);
+}
+
+
+/* =========================
+   PERGUNTA
+========================= */
+
+.question-number {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #77736c;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+.question {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(30px, 5vw, 44px);
+
+    line-height: 1.35;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   OPÇÕES
+========================= */
+
+.options {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+    max-width: 580px;
+
+    margin: auto;
+}
+
+.option {
+
+    background: #171714;
+
+    border: 1px solid #302e28;
+
+    color: #c8c1b5;
+
+    padding: 17px 15px;
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.option:hover {
+
+    border-color: #756447;
+
+    color: #eeeae1;
+
+    transform: translateY(-2px);
+}
+
+.option.selected {
+
+    border-color: #a58a61;
+
+    background: #1d1b17;
+
+    color: #eeeae1;
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.answer-area {
+
+    max-width: 600px;
+
+    margin: auto;
+}
+
+textarea {
+
+    width: 100%;
+
+    min-height: 180px;
+
+    resize: vertical;
+
+    background: #171714;
+
+    border: 1px solid #302e28;
+
+    border-radius: 17px;
+
+    padding: 22px;
+
+    color: #e5dfd3;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+textarea:focus {
+
+    border-color: #756447;
+}
+
+textarea::placeholder {
+
+    color: #5d5a53;
+}
+
+
+/* =========================
+   CONTINUAR
+========================= */
+
+.next-area {
+
+    margin-top: 25px;
+}
+
+.next-button {
+
+    border: 1px solid #4d493f;
+
+    background: transparent;
+
+    color: #d9d3c7;
+
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.next-button:hover {
+
+    background: #e7e0d4;
+
+    color: #171714;
+}
+
+.next-button:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   SILÊNCIO
+========================= */
+
+.silence {
+
+    display: none;
+
+    text-align: center;
+
+    animation: fadeIn 1s ease;
+}
+
+.silence.active {
+
+    display: block;
+}
+
+.silence-light {
+
+    width: 80px;
+
+    height: 80px;
+
+    margin: 0 auto 40px;
+
+    border-radius: 50%;
+
+    background: rgba(179,154,109,0.12);
+
+    box-shadow:
+
+        0 0 30px rgba(179,154,109,0.15),
+
+        0 0 80px rgba(179,154,109,0.08);
+
+    animation: breathing 4s infinite ease-in-out;
+}
+
+.silence h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+.silence p {
+
+    color: #858179;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   ORAÇÃO FINAL
+========================= */
+
+.prayer-result {
+
+    display: none;
+
+    animation: fadeIn 1s ease;
+}
+
+.prayer-result.active {
+
+    display: block;
+}
+
+.prayer-card {
+
+    background: #171714;
+
+    border: 1px solid #302e28;
+
+    border-radius: 20px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+}
+
+.prayer-card-symbol {
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+.prayer-card h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 36px;
+
+    font-weight: 400;
+
+    margin-bottom: 30px;
+}
+
+.prayer-text {
+
+    color: #aaa49a;
+
+    line-height: 2;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 19px;
+
+    white-space: pre-line;
+}
+
+.amem-button {
+
+    margin-top: 35px;
+
+    border: none;
+
+    background: #e7e0d4;
+
+    color: #171714;
+
+    padding: 15px 35px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.amem-button:hover {
+
+    transform: translateY(-2px);
+
+    background: #fffaf0;
+}
+
+
+/* =========================
+   PRIVACIDADE
+========================= */
+
+.privacy {
+
+    background: #171714;
+
+    border: 1px solid #292823;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    display: flex;
+
+    gap: 18px;
+
+    align-items: flex-start;
+}
+
+.privacy-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: #25231e;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.privacy h3 {
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    margin-bottom: 7px;
+}
+
+.privacy p {
+
+    color: #858179;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   ENCERRAMENTO
+========================= */
+
+.finish {
+
+    text-align: center;
+
+    border-top: 1px solid #282722;
+
+    padding-top: 60px;
+}
+
+.finish p {
+
+    color: #77736c;
+
+    margin-bottom: 25px;
+}
+
+.finish-button {
+
+    border: 1px solid #49463e;
+
+    background: transparent;
+
+    color: #d9d3c7;
+
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.finish-button:hover {
+
+    background: #e7e0d4;
+
+    color: #171714;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+
+    position: fixed;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%) translateY(30px);
+
+    background: #e7e0d4;
+
+    color: #171714;
+
+    padding: 14px 22px;
+
+    border-radius: 50px;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.4s;
+
+    z-index: 100;
+}
+
+.toast.show {
+
+    opacity: 1;
+
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes breathing {
+
+    0%, 100% {
+
+        transform: scale(0.9);
+
+        opacity: 0.65;
+    }
+
+    50% {
+
+        transform: scale(1.1);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+
+        padding: 20px;
+    }
+
+    .brand {
+
+        font-size: 10px;
+    }
+
+    .intro {
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+    main {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+    .block {
+
+        margin-bottom: 75px;
+    }
+
+    .options {
+
+        grid-template-columns: 1fr;
+    }
+
+    .privacy {
+
+        padding: 22px;
+    }
+
+    .prayer-card {
+
+        padding: 30px 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="brand">
+        40 DIAS DE ORAÇÃO
+    </div>
+
+    <div class="day-counter">
+        DIA <strong>05</strong> / 40
+    </div>
+
+</header>
+
+
+
+<section class="intro">
+
+    <div class="intro-content">
+
+        <div class="small-title">
+            Uma jornada de oração
+        </div>
+
+        <h1>
+            Quando o<br>medo chegar
+        </h1>
+
+        <p class="intro-text">
+
+            Existem medos que chegam silenciosamente.
+            Outros aparecem de repente e parecem tomar
+            conta de tudo.
+
+            Hoje, você não precisa enfrentá-los sozinho.
+
+        </p>
+
+    </div>
+
+
+    <div class="scroll-indicator">
+        continue
+    </div>
+
+</section>
+
+
+
+<main>
+
+
+    <!-- REFLEXÃO -->
+
+    <section class="block">
+
+        <div class="label">
+            Uma reflexão
+        </div>
+
+        <div class="reflection">
+
+            O medo pode até bater à porta,
+            mas você não precisa
+            <span>deixar que ele governe o seu coração.</span>
+
+        </div>
+
+        <br><br>
+
+        <p class="support-text">
+
+            Todos nós sentimos medo.
+
+            Medo do futuro, de perder alguém,
+            de não conseguir, de ficar sozinho,
+            de tomar a decisão errada ou de não saber
+            o que vai acontecer amanhã.
+
+            O problema não é sentir medo.
+            O problema é permitir que ele ocupe o lugar
+            que pertence à confiança em Deus.
+
+            Hoje, faça uma pausa.
+
+            Respire.
+
+            E lembre-se: aquilo que assusta você
+            não é maior do que Aquele em quem você confia.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- VERSÍCULO -->
+
+    <section class="block verse-block">
+
+        <div class="verse">
+
+            “Quando eu estiver com medo,
+            confiarei em ti.”
+
+        </div>
+
+        <div class="reference">
+
+            SALMO 56:3
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EXPERIÊNCIA -->
+
+    <section class="block conversation">
+
+        <h2>
+            Vamos conversar com Deus
+        </h2>
+
+        <p class="conversation-intro">
+
+            Antes de orar, pare por alguns instantes.
+            Identifique aquilo que está ocupando
+            espaço dentro de você.
+
+            Não precisa esconder nada.
+
+        </p>
+
+
+        <div class="start-area">
+
+            <button
+                class="primary-button"
+                onclick="startExperience()">
+
+                Começar minha reflexão
+
+            </button>
+
+        </div>
+
+
+
+        <div
+            class="conversation-box"
+            id="conversationBox">
+
+
+            <!-- PROGRESSO -->
+
+            <div class="progress">
+
+                <div
+                    class="progress-dot active"
+                    id="dot1">
+                </div>
+
+                <div
+                    class="progress-dot"
+                    id="dot2">
+                </div>
+
+                <div
+                    class="progress-dot"
+                    id="dot3">
+                </div>
+
+            </div>
+
+
+
+            <!-- PERGUNTA 1 -->
+
+            <div
+                class="question-step"
+                id="step1">
+
+                <div class="question-number">
+                    PASSO 01
+                </div>
+
+                <div class="question">
+
+                    O que mais tem despertado
+                    medo em seu coração?
+
+                </div>
+
+
+                <div class="options">
+
+                    <button
+                        class="option"
+                        onclick="selectOption(this, 'futuro')">
+
+                        O futuro
+
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectOption(this, 'relacionamentos')">
+
+                        Meus relacionamentos
+
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectOption(this, 'trabalho')">
+
+                        Trabalho e finanças
+
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectOption(this, 'saude')">
+
+                        Minha saúde
+
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectOption(this, 'decisoes')">
+
+                        Decisões que preciso tomar
+
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectOption(this, 'outro')">
+
+                        Outra coisa
+
+                    </button>
+
+                </div>
+
+
+                <div class="next-area">
+
+                    <button
+                        class="next-button"
+                        id="next1"
+                        disabled
+                        onclick="nextStep(2)">
+
+                        Continuar →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PERGUNTA 2 -->
+
+            <div
+                class="question-step"
+                id="step2"
+                style="display:none;">
+
+                <div class="question-number">
+                    PASSO 02
+                </div>
+
+                <div class="question">
+
+                    Como esse medo tem afetado
+                    você ultimamente?
+
+                </div>
+
+
+                <div class="options">
+
+                    <button
+                        class="option"
+                        onclick="selectOption(this, 'ansiedade')">
+
+                        Tem me deixado ansioso
+
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectOption(this, 'pensamentos')">
+
+                        Ocupa meus pensamentos
+
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectOption(this, 'paralisia')">
+
+                        Está me impedindo de agir
+
+                    </button>
+
+                    <button
+                        class="option"
+                        onclick="selectOption(this, 'sono')">
+
+                        Tem tirado minha paz
+
+                    </button>
+
+                </div>
+
+
+                <div class="next-area">
+
+                    <button
+                        class="next-button"
+                        id="next2"
+                        disabled
+                        onclick="nextStep(3)">
+
+                        Continuar →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PERGUNTA 3 -->
+
+            <div
+                class="question-step"
+                id="step3"
+                style="display:none;">
+
+                <div class="question-number">
+                    PASSO 03
+                </div>
+
+                <div class="question">
+
+                    Agora coloque esse medo
+                    diante de Deus.
+
+                </div>
+
+
+                <p
+                    class="conversation-intro"
+                    style="margin-bottom:25px;">
+
+                    Escreva aquilo que você gostaria
+                    de entregar a Ele hoje.
+
+                    Pode ser uma frase, uma oração
+                    ou simplesmente aquilo que está
+                    no seu coração.
+
+                </p>
+
+
+                <div class="answer-area">
+
+                    <textarea
+                        id="fearText"
+                        placeholder="Deus, hoje eu quero entregar a Ti..."></textarea>
+
+                </div>
+
+
+                <div class="next-area">
+
+                    <button
+                        class="next-button"
+                        id="next3"
+                        disabled
+                        onclick="finishReflection()">
+
+                        Entregar a Deus →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MOMENTO DE SILÊNCIO -->
+
+    <section
+        class="block silence"
+        id="silence">
+
+        <div class="silence-light"></div>
+
+        <h2>
+            Agora, apenas fique em silêncio.
+        </h2>
+
+        <p>
+
+            Respire lentamente.
+
+            <br><br>
+
+            Não tente resolver tudo.
+
+            <br>
+
+            Não tente controlar o amanhã.
+
+            <br><br>
+
+            Apenas lembre-se:
+
+            <br>
+
+            <strong>
+                Deus está aqui.
+            </strong>
+
+        </p>
+
+        <br><br>
+
+        <button
+            class="primary-button"
+            onclick="showPrayer()">
+
+            Estou pronto para orar
+
+        </button>
+
+    </section>
+
+
+
+    <!-- ORAÇÃO FINAL -->
+
+    <section
+        class="block prayer-result"
+        id="prayerResult">
+
+        <div class="prayer-card">
+
+            <div class="prayer-card-symbol">
+                ✦
+            </div>
+
+            <h2>
+                Uma oração para hoje
+            </h2>
+
+            <div class="prayer-text">
+
+                Senhor,
+
+                hoje eu coloco diante de Ti
+                os medos que existem dentro de mim.
+
+                Tu conheces aquilo que me preocupa,
+                aquilo que me tira a paz
+                e aquilo que eu ainda não consigo compreender.
+
+                Eu não quero ser governado pelo medo.
+
+                Quero aprender a confiar em Ti,
+                mesmo quando não consigo enxergar
+                o que está à frente.
+
+                Entrego a Ti o meu futuro,
+                minhas preocupações,
+                minhas decisões
+                e tudo aquilo que está fora do meu controle.
+
+                Quando o medo chegar,
+                lembra-me de que Tu estás comigo.
+
+                Dá-me coragem para continuar,
+                sabedoria para agir
+                e fé para descansar.
+
+                Que a minha confiança em Ti
+                seja maior do que os meus medos.
+
+                Eu entrego tudo em Tuas mãos.
+
+                Amém.
+
+            </div>
+
+
+            <button
+                class="amem-button"
+                onclick="completeDay()">
+
+                Amém
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PRIVACIDADE -->
+
+    <section class="block">
+
+        <div class="privacy">
+
+            <div class="privacy-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <h3>
+                    Este momento é somente seu
+                </h3>
+
+                <p>
+
+                    O que você escreveu nesta experiência
+                    permanece apenas neste dispositivo.
+
+                    Nada é enviado para servidores
+                    ou compartilhado com outras pessoas.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FINAL -->
+
+    <section
+        class="block finish"
+        id="finish">
+
+        <p>
+            Você chegou até aqui.
+            Agora continue caminhando pela fé.
+        </p>
+
+        <button
+            class="finish-button"
+            onclick="goNextDay()">
+
+            Continuar para o Dia 6 →
+
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<div
+    class="toast"
+    id="toast">
+
+    Seu medo foi colocado em oração.
+
+</div>
+
+
+
+<script>
+
+/* =========================
+   VARIÁVEIS
+========================= */
+
+let currentStep = 1;
+
+let selectedAnswers = {};
+
+
+/* =========================
+   INICIAR
+========================= */
+
+function startExperience() {
+
+    const box = document.getElementById("conversationBox");
+
+    box.classList.add("active");
+
+    setTimeout(() => {
+
+        box.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 200);
+
+}
+
+
+/* =========================
+   SELECIONAR OPÇÃO
+========================= */
+
+function selectOption(button, value) {
+
+    const parent = button.parentElement;
+
+    const options = parent.querySelectorAll(".option");
+
+    options.forEach(option => {
+
+        option.classList.remove("selected");
+
+    });
+
+    button.classList.add("selected");
+
+    selectedAnswers[currentStep] = value;
+
+
+    const nextButton =
+        document.getElementById("next" + currentStep);
+
+    if (nextButton) {
+
+        nextButton.disabled = false;
+
+    }
+
+}
+
+
+/* =========================
+   PRÓXIMO PASSO
+========================= */
+
+function nextStep(step) {
+
+    document
+        .getElementById("step" + currentStep)
+        .style.display = "none";
+
+
+    currentStep = step;
+
+
+    document
+        .getElementById("step" + currentStep)
+        .style.display = "block";
+
+
+    updateProgress();
+
+
+    document
+        .getElementById("conversationBox")
+        .scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "center"
+
+        });
+
+}
+
+
+/* =========================
+   PROGRESSO
+========================= */
+
+function updateProgress() {
+
+    for (let i = 1; i <= 3; i++) {
+
+        const dot =
+            document.getElementById("dot" + i);
+
+        if (i <= currentStep) {
+
+            dot.classList.add("active");
+
+        } else {
+
+            dot.classList.remove("active");
+
+        }
+
+    }
+
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+const fearText =
+    document.getElementById("fearText");
+
+fearText.addEventListener("input", function() {
+
+    const button =
+        document.getElementById("next3");
+
+    button.disabled =
+        this.value.trim().length < 5;
+
+});
+
+
+/* =========================
+   FINALIZAR REFLEXÃO
+========================= */
+
+function finishReflection() {
+
+    const text =
+        document.getElementById("fearText").value.trim();
+
+
+    if (text.length < 5) {
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "dia5_medo",
+        text
+    );
+
+
+    document
+        .getElementById("conversationBox")
+        .style.display = "none";
+
+
+    const silence =
+        document.getElementById("silence");
+
+    silence.classList.add("active");
+
+
+    setTimeout(() => {
+
+        silence.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "center"
+
+        });
+
+    }, 300);
+
+}
+
+
+/* =========================
+   MOSTRAR ORAÇÃO
+========================= */
+
+function showPrayer() {
+
+    document
+        .getElementById("silence")
+        .classList.remove("active");
+
+
+    const prayer =
+        document.getElementById("prayerResult");
+
+    prayer.classList.add("active");
+
+
+    setTimeout(() => {
+
+        prayer.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "center"
+
+        });
+
+    }, 300);
+
+}
+
+
+/* =========================
+   COMPLETAR DIA
+========================= */
+
+function completeDay() {
+
+    localStorage.setItem(
+        "dia5_concluido",
+        "true"
+    );
+
+
+    showToast(
+        "Dia 6 concluído. Continue caminhando."
+    );
+
+
+    setTimeout(() => {
+
+        document
+            .getElementById("finish")
+            .scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "center"
+
+            });
+
+    }, 700);
+
+}
+
+
+/* =========================
+   PRÓXIMO DIA
+========================= */
+
+function goNextDay() {
+
+    window.location.href = "dia6.html";
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message) {
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 3000);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
